@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "scope": "Each staged file plus all G1 historical blobs; pattern scan, explicit whitelist, schema-only SQL check, sanitized public evidence and size/mode checks",
+  "files_checked_g1": 104,
+  "secret_findings": [],
+  "large_files_over_2mb": [],
+  "nested_git_or_symlinks": [],
+  "remote_initially_empty": true,
+  "g1_checkpoint_preserved": "87b605b26cda9b8e3210beef807efb130a273a74",
+  "limits": [
+    "Pattern scanning is not a proof against every possible secret format",
+    "Original ownership is user-authorized KLCN source plus agent-authored coursework files; dependencies and private/source data excluded",
+    "Old test credentials are synthetic test fixtures; no .env, production credentials or development rows staged"
+  ],
+  "files_checked_current_at_previous_gate": 101,
+  "note": "Final staged gate is repeated after adding this summary and final documents; raw inventory remains local."
+}

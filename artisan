@@ -1,18 +1,22 @@
 #!/usr/bin/env php
 <?php
 
-use Illuminate\Foundation\Application;
+use App\Support\RuntimeIsolation;
 use Symfony\Component\Console\Input\ArgvInput;
 
+require_once __DIR__.'/app/Support/RuntimeIsolation.php';
+
+if (! RuntimeIsolation::allowsCommand($argv)) {
+    fwrite(STDERR, "MNM G3: chỉ cho phép lệnh kiểm tra; database và nghiệp vụ đang khóa.\n");
+    exit(78);
+}
+
+if (! is_file(__DIR__.'/vendor/autoload.php')) {
+    fwrite(STDERR, "MNM G3: chưa cài dependency; chưa xác minh Laravel boot.\n");
+    exit(78);
+}
+
 define('LARAVEL_START', microtime(true));
-
-// Register the Composer autoloader...
 require __DIR__.'/vendor/autoload.php';
-
-// Bootstrap Laravel and handle the command...
-/** @var Application $app */
 $app = require_once __DIR__.'/bootstrap/app.php';
-
-$status = $app->handleCommand(new ArgvInput);
-
-exit($status);
+exit($app->handleCommand(new ArgvInput));

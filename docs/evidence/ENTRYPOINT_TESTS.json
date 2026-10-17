@@ -1,0 +1,100 @@
+[
+  {
+    "command": [
+      "php.exe",
+      "artisan",
+      "migrate"
+    ],
+    "exit_code": 78
+  },
+  {
+    "command": [
+      "php.exe",
+      "artisan",
+      "db:seed"
+    ],
+    "exit_code": 78
+  },
+  {
+    "command": [
+      "php.exe",
+      "artisan",
+      "migrate:fresh",
+      "--seed"
+    ],
+    "exit_code": 78
+  },
+  {
+    "command": [
+      "php.exe",
+      "artisan",
+      "alerts:scan"
+    ],
+    "exit_code": 78
+  },
+  {
+    "command": [
+      "php.exe",
+      "artisan",
+      "klcn:create-user"
+    ],
+    "exit_code": 78
+  },
+  {
+    "command": [
+      "php.exe",
+      "artisan",
+      "queue:work"
+    ],
+    "exit_code": 78
+  },
+  {
+    "command": [
+      "php.exe",
+      "artisan",
+      "schedule:run"
+    ],
+    "exit_code": 78
+  },
+  {
+    "command": [
+      "php.exe",
+      "artisan",
+      "tinker"
+    ],
+    "exit_code": 78
+  },
+  {
+    "command": [
+      "php.exe",
+      "artisan",
+      "db:show"
+    ],
+    "exit_code": 78
+  },
+  {
+    "command": [
+      "php.exe",
+      "artisan",
+      "config:cache"
+    ],
+    "exit_code": 78
+  },
+  {
+    "command": [
+      "php.exe",
+      "artisan",
+      "--env=legacy",
+      "migrate"
+    ],
+    "exit_code": 78
+  },
+  {
+    "command": [
+      "php.exe",
+      "artisan",
+      "route:list"
+    ],
+    "exit_code": 78
+  }
+]

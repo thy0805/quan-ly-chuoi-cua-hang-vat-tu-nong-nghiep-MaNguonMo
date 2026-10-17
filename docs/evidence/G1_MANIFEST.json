@@ -1,0 +1,619 @@
+{
+  "checkpoint": "G1",
+  "g1_commit": "87b605b26cda9b8e3210beef807efb130a273a74",
+  "source_project": "KLCN SourceCode/api-laravel",
+  "files": [
+    {
+      "path": ".editorconfig",
+      "source": "SourceCode/api-laravel/.editorconfig",
+      "sha256": "fe39e0ad06edea8e256e44f1fc4f319a8acfa785a7470af5cf6b9ed12dc34406",
+      "bytes": 275
+    },
+    {
+      "path": ".gitattributes",
+      "source": "SourceCode/api-laravel/.gitattributes",
+      "sha256": "a40eb27ee0b545ca5b5542daaf99fec51f84f23b3766a6353864ef2a115bc51c",
+      "bytes": 186
+    },
+    {
+      "path": "artisan",
+      "source": "SourceCode/api-laravel/artisan",
+      "sha256": "f91a517c0c5d3a904c3f390933964a5e08ec1fc68146882730daac4aca4ffcec",
+      "bytes": 425
+    },
+    {
+      "path": "composer.json",
+      "source": "SourceCode/api-laravel/composer.json",
+      "sha256": "b05c3db66a6262ec254d3e34c5d30fba0b6ac9c4fc6122997717f2622392bd23",
+      "bytes": 2745
+    },
+    {
+      "path": "composer.lock",
+      "source": "SourceCode/api-laravel/composer.lock",
+      "sha256": "a420d963c57edd339dec373502fa0468a231d4c0c3b0cd9c500c9c65e4a0ff95",
+      "bytes": 317788
+    },
+    {
+      "path": "package.json",
+      "source": "SourceCode/api-laravel/package.json",
+      "sha256": "023d511d768e05b69e8127e18ae0e3d4a2e91702e8dd82917c655e53e5908de5",
+      "bytes": 461
+    },
+    {
+      "path": "phpunit.xml",
+      "source": "SourceCode/api-laravel/phpunit.xml",
+      "sha256": "493369cfb7feea104da4bec214c2cc6526ca2f1b9d937c50a2961fc59cb61aaf",
+      "bytes": 1322
+    },
+    {
+      "path": "vite.config.js",
+      "source": "SourceCode/api-laravel/vite.config.js",
+      "sha256": "f413e14379e2db8b200c63a6326b925f6d47cc0df458c77bfe188cfc23e8081f",
+      "bytes": 632
+    },
+    {
+      "path": "app/Http/Controllers/AuthController.php",
+      "source": "SourceCode/api-laravel/app/Http/Controllers/AuthController.php",
+      "sha256": "589d4892890b468c3ec628ec23996e2a0e98dd1fe9ea88457f8b9d8d241182f3",
+      "bytes": 1109
+    },
+    {
+      "path": "app/Http/Controllers/CatalogController.php",
+      "source": "SourceCode/api-laravel/app/Http/Controllers/CatalogController.php",
+      "sha256": "587029567e979a7366a911d59bbf872e8e155ec49bacd0cb0470d1634abbc5cb",
+      "bytes": 3164
+    },
+    {
+      "path": "app/Http/Controllers/CatalogWriteController.php",
+      "source": "SourceCode/api-laravel/app/Http/Controllers/CatalogWriteController.php",
+      "sha256": "526e055e5befa6f56b4fb04ffa680b4063de7f26c93685e42e7060c018ae4557",
+      "bytes": 9436
+    },
+    {
+      "path": "app/Http/Controllers/Controller.php",
+      "source": "SourceCode/api-laravel/app/Http/Controllers/Controller.php",
+      "sha256": "e8ae1d379d50027fd478b2f00f4b0f211fcc2290606bb941f17251a651276e1b",
+      "bytes": 70
+    },
+    {
+      "path": "app/Http/Controllers/CustomerController.php",
+      "source": "SourceCode/api-laravel/app/Http/Controllers/CustomerController.php",
+      "sha256": "412a86c6f13463d2da55601fffe002e2720f3ac3c95f8337028d742305e833ce",
+      "bytes": 4082
+    },
+    {
+      "path": "app/Http/Controllers/DebtController.php",
+      "source": "SourceCode/api-laravel/app/Http/Controllers/DebtController.php",
+      "sha256": "23e0674d6ab5a81b7878b3f76744ed9b65d710ba377bf04c2ed299f6385ae477",
+      "bytes": 4938
+    },
+    {
+      "path": "app/Http/Controllers/InventoryAlertController.php",
+      "source": "SourceCode/api-laravel/app/Http/Controllers/InventoryAlertController.php",
+      "sha256": "81bb6b5c95b393ff51e7a1f3928154ef106aefeb1039bb7c06b2f94b71cb8950",
+      "bytes": 10776
+    },
+    {
+      "path": "app/Http/Controllers/InventoryController.php",
+      "source": "SourceCode/api-laravel/app/Http/Controllers/InventoryController.php",
+      "sha256": "82aa6b68964b1136b5638ec3308f200fddb58d9453ae3de88460e4eda3c7858f",
+      "bytes": 7916
+    },
+    {
+      "path": "app/Http/Controllers/MobileAuthController.php",
+      "source": "SourceCode/api-laravel/app/Http/Controllers/MobileAuthController.php",
+      "sha256": "41eda8117d11d62923f568338586b2f5e06f88eb0f99c1954ceb0cd45951c739",
+      "bytes": 2446
+    },
+    {
+      "path": "app/Http/Controllers/NotificationController.php",
+      "source": "SourceCode/api-laravel/app/Http/Controllers/NotificationController.php",
+      "sha256": "4313eae4d9bebaca41de5deff259ad8eb0c0bc08f688cd31b36ae50883e3b897",
+      "bytes": 1324
+    },
+    {
+      "path": "app/Http/Controllers/OrganizationController.php",
+      "source": "SourceCode/api-laravel/app/Http/Controllers/OrganizationController.php",
+      "sha256": "cb0922ebb843405dd94b9957170bd8bf221c2d1cd5284eedb9eabc283a00646f",
+      "bytes": 8431
+    },
+    {
+      "path": "app/Http/Controllers/OutboxController.php",
+      "source": "SourceCode/api-laravel/app/Http/Controllers/OutboxController.php",
+      "sha256": "068d988b7d3dc3eaae4f3d62f3b2a275aadc626c2df4aeec680c0298b8dc2b2e",
+      "bytes": 3341
+    },
+    {
+      "path": "app/Http/Controllers/ProductContentController.php",
+      "source": "SourceCode/api-laravel/app/Http/Controllers/ProductContentController.php",
+      "sha256": "1d4179eaa507b2b95ee133a37947e060c5b4cb2d33b04f75cd68ca18b17e8be3",
+      "bytes": 1984
+    },
+    {
+      "path": "app/Http/Controllers/ProfileController.php",
+      "source": "SourceCode/api-laravel/app/Http/Controllers/ProfileController.php",
+      "sha256": "34d4a74c57b45aa944a9117b335a51ed40ca81abd76552a1528289e42aae162d",
+      "bytes": 1913
+    },
+    {
+      "path": "app/Http/Controllers/PurchaseReceiptController.php",
+      "source": "SourceCode/api-laravel/app/Http/Controllers/PurchaseReceiptController.php",
+      "sha256": "02d7e6e49a0947ca39028a5f2f3d0c2a01e1a725a0aa95c7d49de6ebe89312d1",
+      "bytes": 14118
+    },
+    {
+      "path": "app/Http/Controllers/SalesOrderController.php",
+      "source": "SourceCode/api-laravel/app/Http/Controllers/SalesOrderController.php",
+      "sha256": "21a08c9d5fffb3f54c5e85b53e20b4d2afb95b10e925a3aa03291a903d997dfe",
+      "bytes": 11175
+    },
+    {
+      "path": "app/Http/Controllers/SalesReportController.php",
+      "source": "SourceCode/api-laravel/app/Http/Controllers/SalesReportController.php",
+      "sha256": "fdc3b75992d6c3fdc578dca4dc40d5c5cc7338717f18b1a427700ffec0aa2652",
+      "bytes": 9200
+    },
+    {
+      "path": "app/Http/Controllers/StockTransferController.php",
+      "source": "SourceCode/api-laravel/app/Http/Controllers/StockTransferController.php",
+      "sha256": "c45887b6958257387656fb72e8a6bc39825d3b821706ad8af4c6d663cfb9fc61",
+      "bytes": 16745
+    },
+    {
+      "path": "app/Http/Controllers/SupplierController.php",
+      "source": "SourceCode/api-laravel/app/Http/Controllers/SupplierController.php",
+      "sha256": "b9445f10ba393f26560f7687ce54ca49ed2d101d1fa21d912debddeb83d7f262",
+      "bytes": 3701
+    },
+    {
+      "path": "app/Http/Controllers/UserManagementController.php",
+      "source": "SourceCode/api-laravel/app/Http/Controllers/UserManagementController.php",
+      "sha256": "42cbcd933ce09cdbe348f404b671bb4d14edcf431a5eaa64331b2f01db33ded5",
+      "bytes": 12780
+    },
+    {
+      "path": "app/Http/Middleware/EnsureActiveUser.php",
+      "source": "SourceCode/api-laravel/app/Http/Middleware/EnsureActiveUser.php",
+      "sha256": "55cf774c1c974f9dea028932842155da0865db2cd26aed6a14da09af47fc4c0e",
+      "bytes": 327
+    },
+    {
+      "path": "app/Http/Middleware/SerializeBigIntIds.php",
+      "source": "SourceCode/api-laravel/app/Http/Middleware/SerializeBigIntIds.php",
+      "sha256": "422decf61d25e09fe0832c033460b307d91bd797218bfc1f1ad97c0e969ffe46",
+      "bytes": 1193
+    },
+    {
+      "path": "app/Http/Middleware/ValidateBearerToken.php",
+      "source": "SourceCode/api-laravel/app/Http/Middleware/ValidateBearerToken.php",
+      "sha256": "417968af3b82fd36556baeba3af47d49cb727013c456acf761ee88144f9ff57b",
+      "bytes": 676
+    },
+    {
+      "path": "app/Http/Middleware/ValidateBigIntRouteIds.php",
+      "source": "SourceCode/api-laravel/app/Http/Middleware/ValidateBigIntRouteIds.php",
+      "sha256": "1abdfec1d72e1064acffb2ade967991407e390cf0c8b9a9c255a87d4dfa1af73",
+      "bytes": 657
+    },
+    {
+      "path": "app/Models/User.php",
+      "source": "SourceCode/api-laravel/app/Models/User.php",
+      "sha256": "7430e608b88cfc5e0c0e9e11143becaf4d478a4942de461e0d2fde11133d4350",
+      "bytes": 552
+    },
+    {
+      "path": "app/Providers/AppServiceProvider.php",
+      "source": "SourceCode/api-laravel/app/Providers/AppServiceProvider.php",
+      "sha256": "caf306ef6a25a547bbb7edd5508a39b51c365083eb6dd58378cf2242018e94c7",
+      "bytes": 361
+    },
+    {
+      "path": "app/Support/BranchAccess.php",
+      "source": "SourceCode/api-laravel/app/Support/BranchAccess.php",
+      "sha256": "ab0a8726b33994a48a1f2527a5100468da5392ee7e31d256aec5a0cd019e360d",
+      "bytes": 1438
+    },
+    {
+      "path": "app/Support/CatalogPermission.php",
+      "source": "SourceCode/api-laravel/app/Support/CatalogPermission.php",
+      "sha256": "193d9738ca0f23b817cb4f1b62efe7ce9ddbf52bef304e3170a9335d3e195d6d",
+      "bytes": 685
+    },
+    {
+      "path": "app/Support/DebtAccess.php",
+      "source": "SourceCode/api-laravel/app/Support/DebtAccess.php",
+      "sha256": "6baac51fad40e5e647258ce623c98afb9c5cb4a6c8996553d83325e67b32edc1",
+      "bytes": 1578
+    },
+    {
+      "path": "app/Support/DebtService.php",
+      "source": "SourceCode/api-laravel/app/Support/DebtService.php",
+      "sha256": "fcfd098aab39d6459da5754ab38f7ab139d80bf26e43eecbff8ab4e67383735f",
+      "bytes": 7292
+    },
+    {
+      "path": "app/Support/DecimalId.php",
+      "source": "SourceCode/api-laravel/app/Support/DecimalId.php",
+      "sha256": "1e1375aba336dbfac5b323c6c9e03933134d450a5749b340c64566c8d60fbae3",
+      "bytes": 917
+    },
+    {
+      "path": "app/Support/DecimalLimit.php",
+      "source": "SourceCode/api-laravel/app/Support/DecimalLimit.php",
+      "sha256": "6db501a3d5e4d4067884365ab7a401f15c6646a47184816a4b4265a409ac9d60",
+      "bytes": 1235
+    },
+    {
+      "path": "app/Support/InventoryAlertScanner.php",
+      "source": "SourceCode/api-laravel/app/Support/InventoryAlertScanner.php",
+      "sha256": "063052905a54a7d0d68d09e301ec0a54f0ab0059a419b3ec7c9eb52d12e2023b",
+      "bytes": 7596
+    },
+    {
+      "path": "app/Support/NotificationStore.php",
+      "source": "SourceCode/api-laravel/app/Support/NotificationStore.php",
+      "sha256": "8940a14069902b4bc9e2dc559603c7cc5e2e6f2051b56255ed8ac36d7bd34cbe",
+      "bytes": 2203
+    },
+    {
+      "path": "app/Support/OutboxService.php",
+      "source": "SourceCode/api-laravel/app/Support/OutboxService.php",
+      "sha256": "97eb83d2d5b457a9bbe548dfcc7724f37b88d91485fb9fec29f81a39782cf2fa",
+      "bytes": 674
+    },
+    {
+      "path": "app/Support/PartnerAccess.php",
+      "source": "SourceCode/api-laravel/app/Support/PartnerAccess.php",
+      "sha256": "3a1d88a3530ffd46bc2cd269b165d08943ff2e144f9e32fa8eb0496470e852cb",
+      "bytes": 754
+    },
+    {
+      "path": "app/Support/ProductContentStore.php",
+      "source": "SourceCode/api-laravel/app/Support/ProductContentStore.php",
+      "sha256": "0d3f5ffd31138b1d7dddedad25f60a97354b1cd6c107e9c1ab10181b78105a03",
+      "bytes": 1478
+    },
+    {
+      "path": "app/Support/PurchaseReceiptService.php",
+      "source": "SourceCode/api-laravel/app/Support/PurchaseReceiptService.php",
+      "sha256": "78a0d0973a9b92d879b68d03c4fe2ab469659646f5bf022d8b465ae18bab3786",
+      "bytes": 11361
+    },
+    {
+      "path": "app/Support/ReceiptAccess.php",
+      "source": "SourceCode/api-laravel/app/Support/ReceiptAccess.php",
+      "sha256": "278ab537248c1a1b06d0ce7f237b7d32be09200d29a5f0ec0c4353e4ab3a48fc",
+      "bytes": 1517
+    },
+    {
+      "path": "app/Support/SaleService.php",
+      "source": "SourceCode/api-laravel/app/Support/SaleService.php",
+      "sha256": "29545ee21747d22b625035fcade5917f735be4b84d77a514d8b7e04279163243",
+      "bytes": 12058
+    },
+    {
+      "path": "app/Support/SalesAccess.php",
+      "source": "SourceCode/api-laravel/app/Support/SalesAccess.php",
+      "sha256": "35ed7a8360aada8de2c31be7ebe0132a142e73f5eeb17ea32bd0ed9ea1c6aae4",
+      "bytes": 1133
+    },
+    {
+      "path": "app/Support/StockTransferService.php",
+      "source": "SourceCode/api-laravel/app/Support/StockTransferService.php",
+      "sha256": "0f209ad637e5d1321ed31438ab9d7dfd5197a692beb553231290ae4d5bf206e8",
+      "bytes": 14866
+    },
+    {
+      "path": "app/Support/TransferAccess.php",
+      "source": "SourceCode/api-laravel/app/Support/TransferAccess.php",
+      "sha256": "3310938588259681177731d67d028bef85b261ed1bd4ece9e764236578b95893",
+      "bytes": 2145
+    },
+    {
+      "path": "bootstrap/app.php",
+      "source": "SourceCode/api-laravel/bootstrap/app.php",
+      "sha256": "093afe03ee4d28a3668b59012fae1b27278f7c595c7915a229fc63abec741be4",
+      "bytes": 1134
+    },
+    {
+      "path": "bootstrap/providers.php",
+      "source": "SourceCode/api-laravel/bootstrap/providers.php",
+      "sha256": "f720e185207a343d4c19fc99dbb317a4187efbcd7d38a303a695bbdd77ffb943",
+      "bytes": 89
+    },
+    {
+      "path": "config/app.php",
+      "source": "SourceCode/api-laravel/config/app.php",
+      "sha256": "b4b25e15efa76846a7f2e19fd1044fec4945e4e928c4098126a2b0042b034383",
+      "bytes": 4281
+    },
+    {
+      "path": "config/auth.php",
+      "source": "SourceCode/api-laravel/config/auth.php",
+      "sha256": "c7e204e9785c9f596d66fb884b493f658f2327f157646bdb4088efd6b3a7773f",
+      "bytes": 4040
+    },
+    {
+      "path": "config/cache.php",
+      "source": "SourceCode/api-laravel/config/cache.php",
+      "sha256": "ee4ad2bba1edfcff52e9599f37371f2370d0b167cc226ce72d46cdf6edf2dc55",
+      "bytes": 4369
+    },
+    {
+      "path": "config/cors.php",
+      "source": "SourceCode/api-laravel/config/cors.php",
+      "sha256": "08c1332e24cd3517602b4fd3ff5ab873df85b6927f86b3408ff7f552faa9cccf",
+      "bytes": 391
+    },
+    {
+      "path": "config/database.php",
+      "source": "SourceCode/api-laravel/config/database.php",
+      "sha256": "64add819e2328895f61923901d2f3dfe5047e15243e4ddce22c08f50ae751943",
+      "bytes": 6909
+    },
+    {
+      "path": "config/filesystems.php",
+      "source": "SourceCode/api-laravel/config/filesystems.php",
+      "sha256": "ba7060d7a23e490c3ce830656f6d24ad3ccf5b868e3293f2a12e411959dc5635",
+      "bytes": 2532
+    },
+    {
+      "path": "config/logging.php",
+      "source": "SourceCode/api-laravel/config/logging.php",
+      "sha256": "beb1ffd0db910f6f0b4f75214c3d5aa385d692733ece8a450f4c169d2c99ce38",
+      "bytes": 4606
+    },
+    {
+      "path": "config/mail.php",
+      "source": "SourceCode/api-laravel/config/mail.php",
+      "sha256": "c43ff49a31c5f32ce21eb7159f2a4b3cd2f4074eaed5838d265646dbfedd3474",
+      "bytes": 3631
+    },
+    {
+      "path": "config/mobile_auth.php",
+      "source": "SourceCode/api-laravel/config/mobile_auth.php",
+      "sha256": "a735b2b05563d73d28b326c3a82652c423d8782fe2bfd8fd84a360535fc32234",
+      "bytes": 99
+    },
+    {
+      "path": "config/mongodb.php",
+      "source": "SourceCode/api-laravel/config/mongodb.php",
+      "sha256": "f474f0b8c6575bf68c726961a06aedc1bd42135abdc6e7a7299660f0b85e329c",
+      "bytes": 139
+    },
+    {
+      "path": "config/queue.php",
+      "source": "SourceCode/api-laravel/config/queue.php",
+      "sha256": "6101774da7c8b79af46d0028f2b8b31a484c3f7eda10b76e5b27b6093ad364a4",
+      "bytes": 4199
+    },
+    {
+      "path": "config/services.php",
+      "source": "SourceCode/api-laravel/config/services.php",
+      "sha256": "b7ee786ea1adbc92db9f229f479431c94503527c47051da3862eb0e4d7db70aa",
+      "bytes": 1039
+    },
+    {
+      "path": "config/session.php",
+      "source": "SourceCode/api-laravel/config/session.php",
+      "sha256": "64272cfbef6f47c65bf857f1c5b1e853700c0d0278de46b86663fd83ef4aeed8",
+      "bytes": 8423
+    },
+    {
+      "path": "database/.gitignore",
+      "source": "SourceCode/api-laravel/database/.gitignore",
+      "sha256": "e758642d95e83e907e010b6e46b07b3f953c7cef11fe5ebefc2a77b9d7b4d5f7",
+      "bytes": 10
+    },
+    {
+      "path": "database/migrations/2026_10_12_000001_create_personal_access_tokens_table.php",
+      "source": "SourceCode/api-laravel/database/migrations/2026_10_12_000001_create_personal_access_tokens_table.php",
+      "sha256": "fa99aa7b8088515cddd5c9878b7c717b0363819cf237d70e3536d8661fa6c53d",
+      "bytes": 779
+    },
+    {
+      "path": "database/patches/20260927_catalog_active.sql",
+      "source": "SourceCode/api-laravel/database/patches/20260927_catalog_active.sql",
+      "sha256": "89629d0e5fa2f99b0e4750149ff3e8b353961c65c0f572d56f8cc453d94e7ddd",
+      "bytes": 475
+    },
+    {
+      "path": "database/patches/20260927_debt_sources.sql",
+      "source": "SourceCode/api-laravel/database/patches/20260927_debt_sources.sql",
+      "sha256": "343a5378b3042ef190a37916fb55ee2a677baf7ee93fb0952af71575be8f4f67",
+      "bytes": 2119
+    },
+    {
+      "path": "database/patches/20260927_inventory_alert_incidents.sql",
+      "source": "SourceCode/api-laravel/database/patches/20260927_inventory_alert_incidents.sql",
+      "sha256": "5b6fdf5b6a5c6e37a3b07a728b6fb047efdcb95083ec1c187cf9d7948568abe6",
+      "bytes": 1236
+    },
+    {
+      "path": "database/patches/20260927_outbox_delivery.sql",
+      "source": "SourceCode/api-laravel/database/patches/20260927_outbox_delivery.sql",
+      "sha256": "1c56f1c2e8fdff8c3685eb86da5f2c253a76846ba73cbdc621536075a0076dc2",
+      "bytes": 1053
+    },
+    {
+      "path": "database/patches/20260927_product_expiry_warning.sql",
+      "source": "SourceCode/api-laravel/database/patches/20260927_product_expiry_warning.sql",
+      "sha256": "31145d4ac67100e4668eb1b1b120c97988b184b8dea6eaf2a6c4ef44d33ee974",
+      "bytes": 245
+    },
+    {
+      "path": "database/patches/20260927_product_tax.sql",
+      "source": "SourceCode/api-laravel/database/patches/20260927_product_tax.sql",
+      "sha256": "118fac2f7cc10ae8f2342ba3b8e597058f2a7dcb80497c74f54c24166b7e228b",
+      "bytes": 554
+    },
+    {
+      "path": "database/patches/20260927_receipts_cost.sql",
+      "source": "SourceCode/api-laravel/database/patches/20260927_receipts_cost.sql",
+      "sha256": "262403344496c0d32b8e2ebec75005660a7f278a685b7cac984d1c73fb052649",
+      "bytes": 2014
+    },
+    {
+      "path": "database/patches/20260927_sale_idempotency.sql",
+      "source": "SourceCode/api-laravel/database/patches/20260927_sale_idempotency.sql",
+      "sha256": "6d8cf5b1ddd76acf033d5adca661387202d8d33e6e97f36b030f121469f375a0",
+      "bytes": 154
+    },
+    {
+      "path": "database/patches/20260927_sales_season.sql",
+      "source": "SourceCode/api-laravel/database/patches/20260927_sales_season.sql",
+      "sha256": "4325946131d3cca204f635c8253e254ccfac999fd0570cda28402c42e24109c6",
+      "bytes": 81
+    },
+    {
+      "path": "database/patches/20260927_stock_transfer_flow.sql",
+      "source": "SourceCode/api-laravel/database/patches/20260927_stock_transfer_flow.sql",
+      "sha256": "588204dc1a39496bee207bd47d779eb7d2755e0550a59501c6fb1705c09f1878",
+      "bytes": 2148
+    },
+    {
+      "path": "database/patches/20260927_transfer_reconciliation.sql",
+      "source": "SourceCode/api-laravel/database/patches/20260927_transfer_reconciliation.sql",
+      "sha256": "294182d1636e309e663eadca56a6c9e574196b9888c6f8dcd38250c70c380fda",
+      "bytes": 1860
+    },
+    {
+      "path": "database/patches/20260927_warehouse_product_settings.sql",
+      "source": "SourceCode/api-laravel/database/patches/20260927_warehouse_product_settings.sql",
+      "sha256": "e97299fd113b228d7063e1d3f2bb4774b2dc09381f045e9eec560cdc5ca137e0",
+      "bytes": 581
+    },
+    {
+      "path": "database/patches/20261003_purchase_supplier_invoice.sql",
+      "source": "SourceCode/api-laravel/database/patches/20261003_purchase_supplier_invoice.sql",
+      "sha256": "782306f68a2e093dbfe354aea136d822ef7fe9741d80d66c7690278077b37126",
+      "bytes": 810
+    },
+    {
+      "path": "database/schema/klcn186.sql",
+      "source": "SourceCode/api-laravel/database/schema/klcn186.sql",
+      "sha256": "3172800a0cc4fdefa772bae23ba9f3b1731ed078dbddfc45e5db42721b95ad88",
+      "bytes": 15842
+    },
+    {
+      "path": "database/seeders/DatabaseSeeder.php",
+      "source": "SourceCode/api-laravel/database/seeders/DatabaseSeeder.php",
+      "sha256": "985f63ef68aa23b94bfd7149df07c271fdb6df26c2aab405b4fba7fcf1a7d1f9",
+      "bytes": 492
+    },
+    {
+      "path": "database/seeders/DemoDataSeeder.php",
+      "source": "SourceCode/api-laravel/database/seeders/DemoDataSeeder.php",
+      "sha256": "3db2a1c34a4f911fb443d7d7005c7d87d779eecdfe40d02fbe8f786a8b12cd23",
+      "bytes": 3055
+    },
+    {
+      "path": "public/.htaccess",
+      "source": "SourceCode/api-laravel/public/.htaccess",
+      "sha256": "b7e379c77639fd56144947dbae84c84eb466d9c686ea81f2f013ae85421da923",
+      "bytes": 740
+    },
+    {
+      "path": "public/favicon.ico",
+      "source": "SourceCode/api-laravel/public/favicon.ico",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "public/index.php",
+      "source": "SourceCode/api-laravel/public/index.php",
+      "sha256": "eba77cba39695b6bd091fe5211d481f7ebb2ce2d8d26230b5a609465d0a4aff9",
+      "bytes": 543
+    },
+    {
+      "path": "public/robots.txt",
+      "source": "SourceCode/api-laravel/public/robots.txt",
+      "sha256": "e5c4b84484ee4216e9373be99380320c25dd94805f99f0a805846f087636553f",
+      "bytes": 24
+    },
+    {
+      "path": "resources/css/app.css",
+      "source": "SourceCode/api-laravel/resources/css/app.css",
+      "sha256": "02db84e827e06d8349293e9797eb8d81465e109e91976775964c4bf873b6fab5",
+      "bytes": 339
+    },
+    {
+      "path": "resources/js/app.js",
+      "source": "SourceCode/api-laravel/resources/js/app.js",
+      "sha256": "101ead936a2281d53dcc064b7e2a2ab0d53b92ef3ef7b34b668673007895c860",
+      "bytes": 3
+    },
+    {
+      "path": "resources/views/welcome.blade.php",
+      "source": "SourceCode/api-laravel/resources/views/welcome.blade.php",
+      "sha256": "cad37219edcf617e71e30fe75d86ebad62f0d79c2dd056f09d88db2e75e40a23",
+      "bytes": 72230
+    },
+    {
+      "path": "routes/api.php",
+      "source": "SourceCode/api-laravel/routes/api.php",
+      "sha256": "b1c5db182e81f3425b649b7f7cfe280fc8c94adad37e3d7370b59c83281d1666",
+      "bytes": 7489
+    },
+    {
+      "path": "routes/console.php",
+      "source": "SourceCode/api-laravel/routes/console.php",
+      "sha256": "1e062d547b106e59fe7522bf37ff52f5ce77f2bd0334aaf4b5d93f5558b85f02",
+      "bytes": 2799
+    },
+    {
+      "path": "routes/web.php",
+      "source": "SourceCode/api-laravel/routes/web.php",
+      "sha256": "55dd3fd92b9565b69a58771345961ff07717d41e1d32cb38979e6cabc3c6d3d1",
+      "bytes": 325
+    },
+    {
+      "path": "tests/TestCase.php",
+      "source": "SourceCode/api-laravel/tests/TestCase.php",
+      "sha256": "c7c209f5579c42647c1f7b2a79ac828e8b54ac62a98442045a6e94fa2c0d0ebc",
+      "bytes": 142
+    },
+    {
+      "path": "tests/Feature/CatalogAccessTest.php",
+      "source": "SourceCode/api-laravel/tests/Feature/CatalogAccessTest.php",
+      "sha256": "59a29daa185d2708bd61f666e941b4cea738bf6560feaf35b68c4ebdab26259c",
+      "bytes": 10507
+    },
+    {
+      "path": "tests/Feature/ExampleTest.php",
+      "source": "SourceCode/api-laravel/tests/Feature/ExampleTest.php",
+      "sha256": "aaa4a192fb4aa96d4e81eda06a29968da3d9a73b71026b87a67297e66dd985b8",
+      "bytes": 359
+    },
+    {
+      "path": "tests/Feature/InventoryAccessTest.php",
+      "source": "SourceCode/api-laravel/tests/Feature/InventoryAccessTest.php",
+      "sha256": "8439e202c005a1d6d037b3b83f300b13864f2efa04859c786dde5fc2116a5b27",
+      "bytes": 93946
+    },
+    {
+      "path": "tests/Feature/MobileAuthTest.php",
+      "source": "SourceCode/api-laravel/tests/Feature/MobileAuthTest.php",
+      "sha256": "a4ec670ee4c13d052cbe5d401f960dd166cae6d47b1bca15ab3983c0fb9d4896",
+      "bytes": 14334
+    },
+    {
+      "path": "tests/Feature/MobileSalesFixture.php",
+      "source": "SourceCode/api-laravel/tests/Feature/MobileSalesFixture.php",
+      "sha256": "c337b3483338a430683d17fac5306f67d5e36f38341ea48e06eb270cde6dd853",
+      "bytes": 9250
+    },
+    {
+      "path": "tests/Feature/MobileSalesIntegrationTest.php",
+      "source": "SourceCode/api-laravel/tests/Feature/MobileSalesIntegrationTest.php",
+      "sha256": "814d6ce73a9e7e7c459937de736ebb5fd91f1cc3ad7153015cf59e3b48e43dce",
+      "bytes": 15470
+    },
+    {
+      "path": "tests/Unit/ExampleTest.php",
+      "source": "SourceCode/api-laravel/tests/Unit/ExampleTest.php",
+      "sha256": "ffacae5c1a2a44c809420af5b3b404910da1b12167d58764dac6d10b8ba8cfaf",
+      "bytes": 243
+    }
+  ]
+}

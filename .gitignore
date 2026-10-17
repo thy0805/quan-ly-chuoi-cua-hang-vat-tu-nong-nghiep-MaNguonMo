@@ -16,3 +16,11 @@
 *.zip
 __pycache__/
 *.pyc
+
+/.agent/archive/
+/.agent/logs/
+/storage/mnm/**
+!/storage/mnm/**/
+!/storage/mnm/**/.gitignore
+/.agent/scripts/*
+!/.agent/scripts/test_g23_isolation.php

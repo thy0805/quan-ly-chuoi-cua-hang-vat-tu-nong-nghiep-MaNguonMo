@@ -1,0 +1,561 @@
+[
+  {
+    "path": "app/Http/Controllers/AuthController.php",
+    "app_imports": [],
+    "tables": [],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Http/Controllers/CatalogController.php",
+    "app_imports": [
+      "App\\Support\\BranchAccess",
+      "App\\Support\\DecimalId"
+    ],
+    "tables": [
+      "product_categories",
+      "product_categories as category",
+      "products as product",
+      "units",
+      "units as unit"
+    ],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Http/Controllers/CatalogWriteController.php",
+    "app_imports": [
+      "App\\Support\\CatalogPermission",
+      "App\\Support\\DecimalId",
+      "App\\Support\\DecimalLimit"
+    ],
+    "tables": [
+      "product_categories",
+      "products",
+      "units"
+    ],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Http/Controllers/Controller.php",
+    "app_imports": [],
+    "tables": [],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Http/Controllers/CustomerController.php",
+    "app_imports": [
+      "App\\Support\\PartnerAccess",
+      "App\\Support\\DecimalId"
+    ],
+    "tables": [
+      "chains",
+      "chains as chain",
+      "customers",
+      "customers as customer"
+    ],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Http/Controllers/DebtController.php",
+    "app_imports": [
+      "App\\Support\\BranchAccess",
+      "App\\Support\\DebtAccess",
+      "App\\Support\\DebtService",
+      "App\\Support\\DecimalId"
+    ],
+    "tables": [
+      "branches as branch",
+      "debt_transactions",
+      "debt_transactions as charge",
+      "debts as debt"
+    ],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Http/Controllers/InventoryAlertController.php",
+    "app_imports": [
+      "App\\Support\\BranchAccess",
+      "App\\Support\\DecimalId",
+      "App\\Support\\DecimalLimit"
+    ],
+    "tables": [
+      "branches as branch",
+      "chains as chain",
+      "inventories as inventory",
+      "product_categories as category",
+      "product_lots as lot",
+      "products as product",
+      "roles as role",
+      "units as unit",
+      "user_role_assignments as assignment",
+      "warehouse_product_settings",
+      "warehouse_product_settings as setting",
+      "warehouses as warehouse"
+    ],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Http/Controllers/InventoryController.php",
+    "app_imports": [
+      "App\\Support\\BranchAccess",
+      "App\\Support\\DecimalId"
+    ],
+    "tables": [
+      "branches as branch",
+      "inventories as inventory",
+      "product_lots as lot",
+      "products as product",
+      "stock_movements as movement",
+      "units as unit",
+      "warehouses as warehouse"
+    ],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Http/Controllers/MobileAuthController.php",
+    "app_imports": [
+      "App\\Models\\User",
+      "App\\Support\\BranchAccess"
+    ],
+    "tables": [],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Http/Controllers/NotificationController.php",
+    "app_imports": [
+      "App\\Support\\BranchAccess",
+      "App\\Support\\NotificationStore"
+    ],
+    "tables": [],
+    "mongo_or_outbox": true
+  },
+  {
+    "path": "app/Http/Controllers/OrganizationController.php",
+    "app_imports": [
+      "App\\Support\\BranchAccess",
+      "App\\Support\\DecimalId",
+      "App\\Support\\PartnerAccess"
+    ],
+    "tables": [
+      "branches",
+      "chains",
+      "roles",
+      "user_role_assignments",
+      "warehouses"
+    ],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Http/Controllers/OutboxController.php",
+    "app_imports": [
+      "App\\Support\\DecimalId"
+    ],
+    "tables": [
+      "branches",
+      "branches as branch",
+      "outbox_events",
+      "roles as role",
+      "user_role_assignments as assignment"
+    ],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Http/Controllers/ProductContentController.php",
+    "app_imports": [
+      "App\\Support\\BranchAccess",
+      "App\\Support\\CatalogPermission",
+      "App\\Support\\ProductContentStore"
+    ],
+    "tables": [
+      "products"
+    ],
+    "mongo_or_outbox": true
+  },
+  {
+    "path": "app/Http/Controllers/ProfileController.php",
+    "app_imports": [
+      "App\\Support\\BranchAccess",
+      "App\\Support\\CatalogPermission"
+    ],
+    "tables": [
+      "chains",
+      "roles as role",
+      "user_role_assignments as assignment"
+    ],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Http/Controllers/PurchaseReceiptController.php",
+    "app_imports": [
+      "App\\Support\\BranchAccess",
+      "App\\Support\\DecimalId",
+      "App\\Support\\DecimalLimit",
+      "App\\Support\\PurchaseReceiptService",
+      "App\\Support\\ReceiptAccess"
+    ],
+    "tables": [
+      "branches as branch",
+      "chains as chain",
+      "product_categories as category",
+      "product_lots as lot",
+      "products as product",
+      "purchase_receipt_items",
+      "purchase_receipt_items as item",
+      "purchase_receipts",
+      "purchase_receipts as receipt",
+      "suppliers",
+      "suppliers as supplier",
+      "units as unit",
+      "users as creator",
+      "warehouses as warehouse"
+    ],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Http/Controllers/SalesOrderController.php",
+    "app_imports": [
+      "App\\Support\\BranchAccess",
+      "App\\Support\\DecimalId",
+      "App\\Support\\DecimalLimit",
+      "App\\Support\\SaleService",
+      "App\\Support\\SalesAccess"
+    ],
+    "tables": [
+      "branches as branch",
+      "chains as chain",
+      "customers",
+      "inventories as inventory",
+      "payments",
+      "product_categories as category",
+      "product_lots as lot",
+      "products as product",
+      "sales_order_items as item",
+      "sales_orders as sale",
+      "units as unit",
+      "warehouses",
+      "warehouses as warehouse"
+    ],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Http/Controllers/SalesReportController.php",
+    "app_imports": [
+      "App\\Support\\BranchAccess",
+      "App\\Support\\DecimalId"
+    ],
+    "tables": [
+      "branches as branch",
+      "invoices as invoice",
+      "payments",
+      "sales_order_items as item",
+      "sales_orders as sale"
+    ],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Http/Controllers/StockTransferController.php",
+    "app_imports": [
+      "App\\Support\\BranchAccess",
+      "App\\Support\\DecimalId",
+      "App\\Support\\DecimalLimit",
+      "App\\Support\\OutboxService",
+      "App\\Support\\StockTransferService",
+      "App\\Support\\TransferAccess"
+    ],
+    "tables": [
+      "branches as branch",
+      "branches as source_branch",
+      "branches as target_branch",
+      "chains as chain",
+      "inventories as inventory",
+      "product_categories as category",
+      "product_lots as lot",
+      "products as product",
+      "stock_transfer_items",
+      "stock_transfer_items as item",
+      "stock_transfers",
+      "stock_transfers as transfer",
+      "units as unit",
+      "users as requester",
+      "warehouses as source",
+      "warehouses as target",
+      "warehouses as warehouse"
+    ],
+    "mongo_or_outbox": true
+  },
+  {
+    "path": "app/Http/Controllers/SupplierController.php",
+    "app_imports": [
+      "App\\Support\\PartnerAccess",
+      "App\\Support\\DecimalId"
+    ],
+    "tables": [
+      "chains",
+      "chains as chain",
+      "suppliers",
+      "suppliers as supplier"
+    ],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Http/Controllers/UserManagementController.php",
+    "app_imports": [
+      "App\\Support\\PartnerAccess",
+      "App\\Support\\DecimalId"
+    ],
+    "tables": [
+      "branches",
+      "branches as branch",
+      "chains",
+      "roles",
+      "roles as role",
+      "user_role_assignments",
+      "user_role_assignments as assignment",
+      "users",
+      "users as user"
+    ],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Http/Middleware/EnsureActiveUser.php",
+    "app_imports": [],
+    "tables": [],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Http/Middleware/SerializeBigIntIds.php",
+    "app_imports": [],
+    "tables": [],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Http/Middleware/ValidateBearerToken.php",
+    "app_imports": [],
+    "tables": [],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Http/Middleware/ValidateBigIntRouteIds.php",
+    "app_imports": [
+      "App\\Support\\DecimalId"
+    ],
+    "tables": [],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Models/User.php",
+    "app_imports": [],
+    "tables": [],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Providers/AppServiceProvider.php",
+    "app_imports": [],
+    "tables": [],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Support/BranchAccess.php",
+    "app_imports": [
+      "App\\Models\\User"
+    ],
+    "tables": [
+      "branches",
+      "branches as branch",
+      "roles as role",
+      "user_role_assignments as assignment"
+    ],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Support/CatalogPermission.php",
+    "app_imports": [
+      "App\\Models\\User"
+    ],
+    "tables": [
+      "roles as role",
+      "user_role_assignments as assignment"
+    ],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Support/DebtAccess.php",
+    "app_imports": [
+      "App\\Models\\User"
+    ],
+    "tables": [
+      "branches as assigned_branch",
+      "roles as role",
+      "user_role_assignments as assignment"
+    ],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Support/DebtService.php",
+    "app_imports": [
+      "App\\Models\\User"
+    ],
+    "tables": [
+      "branches",
+      "debt_transactions",
+      "debts",
+      "invoices",
+      "payments",
+      "warehouses"
+    ],
+    "mongo_or_outbox": true
+  },
+  {
+    "path": "app/Support/DecimalId.php",
+    "app_imports": [],
+    "tables": [],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Support/DecimalLimit.php",
+    "app_imports": [],
+    "tables": [],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Support/InventoryAlertScanner.php",
+    "app_imports": [],
+    "tables": [
+      "branches",
+      "branches as assigned_branch",
+      "branches as branch",
+      "inventories as inventory",
+      "inventory_alert_incidents",
+      "product_lots as lot",
+      "products as product",
+      "roles as role",
+      "user_role_assignments as assignment",
+      "users as user",
+      "warehouse_product_settings as setting",
+      "warehouses as warehouse"
+    ],
+    "mongo_or_outbox": true
+  },
+  {
+    "path": "app/Support/NotificationStore.php",
+    "app_imports": [],
+    "tables": [],
+    "mongo_or_outbox": true
+  },
+  {
+    "path": "app/Support/OutboxService.php",
+    "app_imports": [],
+    "tables": [
+      "outbox_events"
+    ],
+    "mongo_or_outbox": true
+  },
+  {
+    "path": "app/Support/PartnerAccess.php",
+    "app_imports": [
+      "App\\Models\\User"
+    ],
+    "tables": [
+      "branches as branch",
+      "roles as role",
+      "user_role_assignments as assignment"
+    ],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Support/ProductContentStore.php",
+    "app_imports": [],
+    "tables": [],
+    "mongo_or_outbox": true
+  },
+  {
+    "path": "app/Support/PurchaseReceiptService.php",
+    "app_imports": [],
+    "tables": [
+      "branches as branch",
+      "chains as chain",
+      "inventories",
+      "product_lots",
+      "purchase_receipt_items",
+      "purchase_receipts",
+      "stock_movements",
+      "warehouses",
+      "warehouses as warehouse"
+    ],
+    "mongo_or_outbox": true
+  },
+  {
+    "path": "app/Support/ReceiptAccess.php",
+    "app_imports": [
+      "App\\Models\\User"
+    ],
+    "tables": [
+      "branches as branch",
+      "roles as role",
+      "user_role_assignments as assignment"
+    ],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Support/SalesAccess.php",
+    "app_imports": [
+      "App\\Models\\User"
+    ],
+    "tables": [
+      "branches as branch",
+      "roles as role",
+      "user_role_assignments as assignment"
+    ],
+    "mongo_or_outbox": false
+  },
+  {
+    "path": "app/Support/SaleService.php",
+    "app_imports": [],
+    "tables": [
+      "branches as branch",
+      "chains as chain",
+      "debt_transactions",
+      "inventories",
+      "invoices",
+      "payments",
+      "product_categories as category",
+      "product_lots as lot",
+      "products as product",
+      "sales_order_items",
+      "sales_orders",
+      "stock_movements",
+      "units as unit",
+      "warehouses"
+    ],
+    "mongo_or_outbox": true
+  },
+  {
+    "path": "app/Support/StockTransferService.php",
+    "app_imports": [
+      "App\\Models\\User"
+    ],
+    "tables": [
+      "branches as source_branch",
+      "branches as target_branch",
+      "chains as chain",
+      "inventories",
+      "stock_movements",
+      "stock_transfer_items",
+      "stock_transfers",
+      "warehouses",
+      "warehouses as source"
+    ],
+    "mongo_or_outbox": true
+  },
+  {
+    "path": "app/Support/TransferAccess.php",
+    "app_imports": [
+      "App\\Models\\User"
+    ],
+    "tables": [
+      "branches as branch",
+      "roles as role",
+      "user_role_assignments as assignment"
+    ],
+    "mongo_or_outbox": false
+  }
+]

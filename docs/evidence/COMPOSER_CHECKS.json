@@ -1,0 +1,37 @@
+[
+  {
+    "command": [
+      "php.exe",
+      "composer.phar",
+      "validate",
+      "--strict",
+      "--no-check-publish",
+      "--no-plugins",
+      "--no-scripts"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "php.exe",
+      "composer.phar",
+      "check-platform-reqs",
+      "--lock",
+      "--no-plugins",
+      "--no-scripts"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "php.exe",
+      "composer.phar",
+      "install",
+      "--dry-run",
+      "--no-plugins",
+      "--no-scripts",
+      "--no-interaction"
+    ],
+    "exit_code": 0
+  }
+]

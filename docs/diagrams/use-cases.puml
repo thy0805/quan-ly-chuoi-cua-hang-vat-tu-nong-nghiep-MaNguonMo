@@ -1,0 +1,20 @@
+@startuml
+left to right direction
+actor "Quản lý (Admin)" as Admin
+actor "Nhân viên (User)" as User
+rectangle "Quản lý vật tư — phạm vi G2, chưa triển khai G4" {
+  usecase "Đăng nhập / đăng xuất" as Auth
+  usecase "Xem danh mục / đơn vị" as Read
+  usecase "Tra cứu vật tư / phân trang" as Search
+  usecase "CRUD danh mục / vật tư / đơn vị" as Manage
+  usecase "Quản lý tài khoản nhân viên" as Accounts
+}
+User --> Auth
+User --> Read
+User --> Search
+Admin --> Auth
+Admin --> Read
+Admin --> Search
+Admin --> Manage
+Admin --> Accounts
+@enduml

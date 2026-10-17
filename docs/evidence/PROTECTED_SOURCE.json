@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "repos": {
+    "klcn_documents": {
+      "head": "4ee9b0d1ed52f18cf984b4511cc89df841a4721e",
+      "status_lines": 5343,
+      "hashed_files": 2969,
+      "comparison": {
+        "head": true,
+        "status": true,
+        "hashes": true,
+        "git_metadata_hashes": true
+      }
+    },
+    "klcn_source": {
+      "head": "fc514c8a040d7d2804791ceea5a255427f5bf086",
+      "status_lines": 11,
+      "hashed_files": 319,
+      "comparison": {
+        "head": true,
+        "status": true,
+        "hashes": true,
+        "git_metadata_hashes": true
+      }
+    },
+    "nosql_source": {
+      "head": "21288936d172b8485b425c1adc7ca21972da5e48",
+      "status_lines": 0,
+      "hashed_files": 1030,
+      "comparison": {
+        "head": true,
+        "status": true,
+        "hashes": true,
+        "git_metadata_hashes": true
+      }
+    }
+  },
+  "limits": [
+    "Ignored original file contents not hashed",
+    "Parent status excludes only new project subtree; parent tracked files and Git metadata verified",
+    "No database probes performed"
+  ]
+}

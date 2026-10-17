@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "g1_commit": "87b605b26cda9b8e3210beef807efb130a273a74",
+  "files": 104,
+  "copied_source_hashes_verified": 102,
+  "archive_hashes_verified": 104,
+  "staged_whitelist_exact": true,
+  "secret_findings": [],
+  "sql_data_statements": 0,
+  "remote_before": [],
+  "scope": "G1 source and two sanitized adapted files only; historical KLCN modules are not MNM runtime features"
+}

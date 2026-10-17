@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "g1_commit": "87b605b26cda9b8e3210beef807efb130a273a74",
+  "g1_archive_files_verified": 104,
+  "source_diff_counts": {
+    "COPIED": 15,
+    "ADAPTED": 22,
+    "QUARANTINED": 65
+  },
+  "php_lint": 26,
+  "isolation_assertions": 38,
+  "entrypoint_process_checks": 12,
+  "composer_checks": 3,
+  "removed_packages": [
+    "laravel/sanctum",
+    "laravel/tinker",
+    "mongodb/mongodb",
+    "psy/psysh"
+  ],
+  "remaining_package_versions_unchanged": true,
+  "no_symlink_or_junction": true,
+  "no_legacy_routes_or_console_commands": true,
+  "no_db_execution": true,
+  "limits": [
+    "No dependency installation: Composer dry-run only",
+    "No real Laravel boot: ServiceProvider/DB boundary tested with test doubles",
+    "No MySQL connection, DDL, migration, seed or business function execution",
+    "Schema/ERD are design artifacts awaiting G4 execution and browser QA",
+    "Protected source before/after evidence is in source-comparison.json"
+  ]
+}

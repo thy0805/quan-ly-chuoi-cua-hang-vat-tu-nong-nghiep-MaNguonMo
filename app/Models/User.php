@@ -3,12 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens;
-
     public $timestamps = false;
 
     protected $fillable = ['username', 'password_hash', 'is_active'];
@@ -17,7 +14,7 @@ class User extends Authenticatable
 
     protected function casts(): array
     {
-        return ['is_active' => 'boolean', 'is_catalog_admin' => 'boolean'];
+        return ['is_active' => 'boolean'];
     }
 
     public function getAuthPasswordName(): string
