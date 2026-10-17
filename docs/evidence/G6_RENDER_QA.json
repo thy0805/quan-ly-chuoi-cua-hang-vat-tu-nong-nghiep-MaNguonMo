@@ -1,0 +1,35 @@
+{
+  "status": "VERIFIED in stated SVG/browser scope",
+  "browser": "Codex in-app browser",
+  "svg_rendering": "Actual Chromium render; SVG source generated from schema/model, not Mermaid/PlantUML engine compilation",
+  "erd": {
+    "outside": [],
+    "texts": 110,
+    "visual": "Four tables/26 columns;3 FK including self reference;users independent;labels, legend and connectors inspected",
+    "screenshot": "docs/g6/diagrams/erd-browser.jpg"
+  },
+  "uml": {
+    "outside": [],
+    "texts": 25,
+    "visual": "Two actors,9 ellipses,14 associations;Admin linked to shared and management use cases;Vietnamese text/boundary inspected",
+    "screenshot": "docs/g6/diagrams/use-cases-browser.jpg"
+  },
+  "limits": [
+    "G6 remains DRAFT pending Thy acceptance",
+    "Not physical printer or Word/PDF layout QA"
+  ],
+  "consoleErrors": [
+    {
+      "level": "error",
+      "message": "Uncaught (in promise) TypeError: Cannot use 'in' operator to search for 'animation' in undefined",
+      "timestamp": "2026-10-17T15:59:55.480Z"
+    },
+    {
+      "level": "error",
+      "message": "Uncaught (in promise) TypeError: Cannot use 'in' operator to search for 'animation' in undefined",
+      "timestamp": "2026-10-17T16:00:16.554Z"
+    }
+  ],
+  "static_svg_script_count": 0,
+  "console_note": "Two unattributed promise/animation TypeErrors were observed by the browser tool; SVG sources contain no scripts or animation. Origin not established, so no claim of a clean browser console; static visible rendering and text bounds were verified independently."
+}

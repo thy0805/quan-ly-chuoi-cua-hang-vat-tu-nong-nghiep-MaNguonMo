@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1150" viewBox="0 0 1500 1150" role="img" aria-label="ERD MySQL thực tế — Nhóm 6">
+<style>text{font-family:Segoe UI,Arial,sans-serif;fill:#173d33}.mono{font-family:Consolas,monospace}.small{font-size:14px}.muted{fill:#52645e}.edge{stroke:#4a7668;stroke-width:2;fill:none}</style>
+<rect width="1500" height="1150" fill="#f5f8f4"/>
+<text x="70" y="55" font-size="30" class="" text-anchor="start">ERD MYSQL · VẬT TƯ NÔNG NGHIỆP</text>
+<text x="70" y="90" font-size="18" class="muted" text-anchor="start">G6 DRAFT · 4 bảng nghiệp vụ · 26 cột · 3 khóa ngoại · đọc trực tiếp MySQL 8.4.3</text>
+<rect x="70" y="150" width="430" height="234" rx="10" fill="white" stroke="#b8ccc0"/>
+<path d="M80 150 H490 Q500 150 500 160 V192 H70 V160 Q70 150 80 150" fill="#215d48"/>
+<text x="88" y="179" font-size="22" fill="white" style="fill:white">product_categories</text>
+<text x="88" y="208" font-size="12" class="muted" text-anchor="start">CỘT</text>
+<text x="255" y="208" font-size="12" class="muted" text-anchor="start">KIỂU</text>
+<text x="395" y="208" font-size="12" class="muted" text-anchor="start">RÀNG BUỘC</text>
+<line x1="70" x2="500" y1="214" y2="214" stroke="#e4ece5"/>
+<text x="88" y="237" font-size="16" class="mono" text-anchor="start">id</text>
+<text x="255" y="237" font-size="14" class="mono" text-anchor="start">bigint</text>
+<text x="395" y="237" font-size="13" class="muted" text-anchor="start">PK, AI</text>
+<line x1="70" x2="500" y1="248" y2="248" stroke="#e4ece5"/>
+<text x="88" y="271" font-size="16" class="mono" text-anchor="start">parent_id</text>
+<text x="255" y="271" font-size="14" class="mono" text-anchor="start">bigint</text>
+<text x="395" y="271" font-size="13" class="muted" text-anchor="start">FK, NULL</text>
+<line x1="70" x2="500" y1="282" y2="282" stroke="#e4ece5"/>
+<text x="88" y="305" font-size="16" class="mono" text-anchor="start">code</text>
+<text x="255" y="305" font-size="14" class="mono" text-anchor="start">varchar(40)</text>
+<text x="395" y="305" font-size="13" class="muted" text-anchor="start">UK</text>
+<line x1="70" x2="500" y1="316" y2="316" stroke="#e4ece5"/>
+<text x="88" y="339" font-size="16" class="mono" text-anchor="start">name</text>
+<text x="255" y="339" font-size="14" class="mono" text-anchor="start">varchar(160)</text>
+<text x="395" y="339" font-size="13" class="muted" text-anchor="start">NOT NULL</text>
+<line x1="70" x2="500" y1="350" y2="350" stroke="#e4ece5"/>
+<text x="88" y="373" font-size="16" class="mono" text-anchor="start">is_active</text>
+<text x="255" y="373" font-size="14" class="mono" text-anchor="start">tinyint(1)</text>
+<text x="395" y="373" font-size="13" class="muted" text-anchor="start">NOT NULL</text>
+<rect x="70" y="550" width="430" height="200" rx="10" fill="white" stroke="#b8ccc0"/>
+<path d="M80 550 H490 Q500 550 500 560 V592 H70 V560 Q70 550 80 550" fill="#215d48"/>
+<text x="88" y="579" font-size="22" fill="white" style="fill:white">units</text>
+<text x="88" y="608" font-size="12" class="muted" text-anchor="start">CỘT</text>
+<text x="255" y="608" font-size="12" class="muted" text-anchor="start">KIỂU</text>
+<text x="395" y="608" font-size="12" class="muted" text-anchor="start">RÀNG BUỘC</text>
+<line x1="70" x2="500" y1="614" y2="614" stroke="#e4ece5"/>
+<text x="88" y="637" font-size="16" class="mono" text-anchor="start">id</text>
+<text x="255" y="637" font-size="14" class="mono" text-anchor="start">bigint</text>
+<text x="395" y="637" font-size="13" class="muted" text-anchor="start">PK, AI</text>
+<line x1="70" x2="500" y1="648" y2="648" stroke="#e4ece5"/>
+<text x="88" y="671" font-size="16" class="mono" text-anchor="start">code</text>
+<text x="255" y="671" font-size="14" class="mono" text-anchor="start">varchar(40)</text>
+<text x="395" y="671" font-size="13" class="muted" text-anchor="start">UK</text>
+<line x1="70" x2="500" y1="682" y2="682" stroke="#e4ece5"/>
+<text x="88" y="705" font-size="16" class="mono" text-anchor="start">name</text>
+<text x="255" y="705" font-size="14" class="mono" text-anchor="start">varchar(100)</text>
+<text x="395" y="705" font-size="13" class="muted" text-anchor="start">NOT NULL</text>
+<line x1="70" x2="500" y1="716" y2="716" stroke="#e4ece5"/>
+<text x="88" y="739" font-size="16" class="mono" text-anchor="start">is_active</text>
+<text x="255" y="739" font-size="14" class="mono" text-anchor="start">tinyint(1)</text>
+<text x="395" y="739" font-size="13" class="muted" text-anchor="start">NOT NULL</text>
+<rect x="760" y="150" width="650" height="404" rx="10" fill="white" stroke="#b8ccc0"/>
+<path d="M770 150 H1400 Q1410 150 1410 160 V192 H760 V160 Q760 150 770 150" fill="#215d48"/>
+<text x="778" y="179" font-size="22" fill="white" style="fill:white">products</text>
+<text x="778" y="208" font-size="12" class="muted" text-anchor="start">CỘT</text>
+<text x="1020" y="208" font-size="12" class="muted" text-anchor="start">KIỂU</text>
+<text x="1225" y="208" font-size="12" class="muted" text-anchor="start">RÀNG BUỘC</text>
+<line x1="760" x2="1410" y1="214" y2="214" stroke="#e4ece5"/>
+<text x="778" y="237" font-size="16" class="mono" text-anchor="start">id</text>
+<text x="1020" y="237" font-size="14" class="mono" text-anchor="start">bigint</text>
+<text x="1225" y="237" font-size="13" class="muted" text-anchor="start">PK, AI</text>
+<line x1="760" x2="1410" y1="248" y2="248" stroke="#e4ece5"/>
+<text x="778" y="271" font-size="16" class="mono" text-anchor="start">category_id</text>
+<text x="1020" y="271" font-size="14" class="mono" text-anchor="start">bigint</text>
+<text x="1225" y="271" font-size="13" class="muted" text-anchor="start">FK</text>
+<line x1="760" x2="1410" y1="282" y2="282" stroke="#e4ece5"/>
+<text x="778" y="305" font-size="16" class="mono" text-anchor="start">unit_id</text>
+<text x="1020" y="305" font-size="14" class="mono" text-anchor="start">bigint</text>
+<text x="1225" y="305" font-size="13" class="muted" text-anchor="start">FK</text>
+<line x1="760" x2="1410" y1="316" y2="316" stroke="#e4ece5"/>
+<text x="778" y="339" font-size="16" class="mono" text-anchor="start">code</text>
+<text x="1020" y="339" font-size="14" class="mono" text-anchor="start">varchar(60)</text>
+<text x="1225" y="339" font-size="13" class="muted" text-anchor="start">UK</text>
+<line x1="760" x2="1410" y1="350" y2="350" stroke="#e4ece5"/>
+<text x="778" y="373" font-size="16" class="mono" text-anchor="start">name</text>
+<text x="1020" y="373" font-size="14" class="mono" text-anchor="start">varchar(200)</text>
+<text x="1225" y="373" font-size="13" class="muted" text-anchor="start">NOT NULL</text>
+<line x1="760" x2="1410" y1="384" y2="384" stroke="#e4ece5"/>
+<text x="778" y="407" font-size="16" class="mono" text-anchor="start">active_ingredient</text>
+<text x="1020" y="407" font-size="14" class="mono" text-anchor="start">varchar(200)</text>
+<text x="1225" y="407" font-size="13" class="muted" text-anchor="start">NULL</text>
+<line x1="760" x2="1410" y1="418" y2="418" stroke="#e4ece5"/>
+<text x="778" y="441" font-size="16" class="mono" text-anchor="start">sale_price</text>
+<text x="1020" y="441" font-size="14" class="mono" text-anchor="start">decimal(18,2)</text>
+<text x="1225" y="441" font-size="13" class="muted" text-anchor="start">NOT NULL</text>
+<line x1="760" x2="1410" y1="452" y2="452" stroke="#e4ece5"/>
+<text x="778" y="475" font-size="16" class="mono" text-anchor="start">tax_rate</text>
+<text x="1020" y="475" font-size="14" class="mono" text-anchor="start">decimal(5,2)</text>
+<text x="1225" y="475" font-size="13" class="muted" text-anchor="start">NULL</text>
+<line x1="760" x2="1410" y1="486" y2="486" stroke="#e4ece5"/>
+<text x="778" y="509" font-size="16" class="mono" text-anchor="start">expiry_warning_days</text>
+<text x="1020" y="509" font-size="14" class="mono" text-anchor="start">int</text>
+<text x="1225" y="509" font-size="13" class="muted" text-anchor="start">NULL</text>
+<line x1="760" x2="1410" y1="520" y2="520" stroke="#e4ece5"/>
+<text x="778" y="543" font-size="16" class="mono" text-anchor="start">is_active</text>
+<text x="1020" y="543" font-size="14" class="mono" text-anchor="start">tinyint(1)</text>
+<text x="1225" y="543" font-size="13" class="muted" text-anchor="start">NOT NULL</text>
+<rect x="760" y="690" width="650" height="302" rx="10" fill="white" stroke="#b8ccc0"/>
+<path d="M770 690 H1400 Q1410 690 1410 700 V732 H760 V700 Q760 690 770 690" fill="#215d48"/>
+<text x="778" y="719" font-size="22" fill="white" style="fill:white">users</text>
+<text x="778" y="748" font-size="12" class="muted" text-anchor="start">CỘT</text>
+<text x="1020" y="748" font-size="12" class="muted" text-anchor="start">KIỂU</text>
+<text x="1225" y="748" font-size="12" class="muted" text-anchor="start">RÀNG BUỘC</text>
+<line x1="760" x2="1410" y1="754" y2="754" stroke="#e4ece5"/>
+<text x="778" y="777" font-size="16" class="mono" text-anchor="start">id</text>
+<text x="1020" y="777" font-size="14" class="mono" text-anchor="start">bigint</text>
+<text x="1225" y="777" font-size="13" class="muted" text-anchor="start">PK, AI</text>
+<line x1="760" x2="1410" y1="788" y2="788" stroke="#e4ece5"/>
+<text x="778" y="811" font-size="16" class="mono" text-anchor="start">username</text>
+<text x="1020" y="811" font-size="14" class="mono" text-anchor="start">varchar(80)</text>
+<text x="1225" y="811" font-size="13" class="muted" text-anchor="start">UK</text>
+<line x1="760" x2="1410" y1="822" y2="822" stroke="#e4ece5"/>
+<text x="778" y="845" font-size="16" class="mono" text-anchor="start">password_hash</text>
+<text x="1020" y="845" font-size="14" class="mono" text-anchor="start">text</text>
+<text x="1225" y="845" font-size="13" class="muted" text-anchor="start">NOT NULL</text>
+<line x1="760" x2="1410" y1="856" y2="856" stroke="#e4ece5"/>
+<text x="778" y="879" font-size="16" class="mono" text-anchor="start">role</text>
+<text x="1020" y="879" font-size="14" class="mono" text-anchor="start">enum(admin,user)</text>
+<text x="1225" y="879" font-size="13" class="muted" text-anchor="start">NOT NULL</text>
+<line x1="760" x2="1410" y1="890" y2="890" stroke="#e4ece5"/>
+<text x="778" y="913" font-size="16" class="mono" text-anchor="start">is_active</text>
+<text x="1020" y="913" font-size="14" class="mono" text-anchor="start">tinyint(1)</text>
+<text x="1225" y="913" font-size="13" class="muted" text-anchor="start">NOT NULL</text>
+<line x1="760" x2="1410" y1="924" y2="924" stroke="#e4ece5"/>
+<text x="778" y="947" font-size="16" class="mono" text-anchor="start">created_at</text>
+<text x="1020" y="947" font-size="14" class="mono" text-anchor="start">datetime</text>
+<text x="1225" y="947" font-size="13" class="muted" text-anchor="start">NOT NULL</text>
+<line x1="760" x2="1410" y1="958" y2="958" stroke="#e4ece5"/>
+<text x="778" y="981" font-size="16" class="mono" text-anchor="start">admin_slot</text>
+<text x="1020" y="981" font-size="14" class="mono" text-anchor="start">tinyint</text>
+<text x="1225" y="981" font-size="13" class="muted" text-anchor="start">UK, NULL, GENERATED</text>
+<path d="M 500 231 H 630 V 265 H 760" class="edge"/>
+<text x="515" y="222" font-size="16" class="" text-anchor="start">1</text>
+<text x="707" y="253" font-size="16" class="" text-anchor="start">0..*</text>
+<path d="M 500 631 H 620 V 299 H 760" class="edge"/>
+<text x="515" y="620" font-size="16" class="" text-anchor="start">1</text>
+<text x="707" y="289" font-size="16" class="" text-anchor="start">0..*</text>
+<path d="M 760 256 L 744 265 L 760 274 M 744 265 H 732" class="edge"/>
+<circle cx="726" cy="265" r="5" fill="#f5f8f4" stroke="#4a7668" stroke-width="2"/>
+<path d="M 760 290 L 744 299 L 760 308 M 744 299 H 732" class="edge"/>
+<circle cx="726" cy="299" r="5" fill="#f5f8f4" stroke="#4a7668" stroke-width="2"/>
+<path d="M 510 221 V 241 M 510 621 V 641" class="edge"/>
+<path d="M 70 231 H 28 V 265 H 70" class="edge"/>
+<text x="12" y="212" font-size="14" class="" text-anchor="start">0..1</text>
+<text x="12" y="292" font-size="14" class="" text-anchor="start">0..*</text>
+<path d="M 70 256 L 54 265 L 70 274" class="edge"/>
+<text x="70" y="848" font-size="17" class="" text-anchor="start">PK: khóa chính · FK: khóa ngoại · UK: duy nhất · AI: tự tăng</text>
+<text x="70" y="882" font-size="16" class="muted" text-anchor="start">NULL: được rỗng; các cột còn lại NOT NULL.</text>
+<text x="70" y="916" font-size="16" class="muted" text-anchor="start">parent_id cho phép tối đa một cha; một cha có thể có nhiều con.</text>
+<text x="70" y="950" font-size="16" class="muted" text-anchor="start">Cả 3 FK: ON UPDATE RESTRICT / ON DELETE RESTRICT.</text>
+<text x="70" y="984" font-size="16" class="muted" text-anchor="start">users độc lập; không tạo quan hệ nghiệp vụ giả với catalog.</text>
+<text x="70" y="1030" font-size="17" class="" text-anchor="start">admin_slot: GENERATED STORED + UNIQUE; role=admin → 1, role=user → NULL.</text>
+<text x="70" y="1064" font-size="16" class="muted" text-anchor="start">7 CHECK + 2 trigger tự trỏ; cycle/active references còn được kiểm trong Eloquent/domain.</text>
+<text x="70" y="1110" font-size="15" class="muted" text-anchor="start">Nguồn: docs/evidence/G6_MYSQL_SCHEMA.json · migration ledger không tính là bảng nghiệp vụ.</text>
+</svg>

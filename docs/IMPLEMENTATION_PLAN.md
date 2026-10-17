@@ -1,15 +1,9 @@
-# Kế hoạch sau kiểm kỹ thuật G5
+Cập nhật hiện hành18/10/2026: G6/G6-R đã ACCEPTED/LOCKED, được chốt Git theo decision G6_ACCEPTED_G7_DRAFT_AUTHORIZED_20261018. Publication đang kiểm, SHA sau push đọc tại context/receipt mới. Sau remote readback sạch chỉ chuẩn bị G7 DRAFT, chưa commit/push G7. Các trạng thái G6 DRAFT/chưa push bên dưới giữ checkpoint cũ; source/nghiệp vụ và accepted G6 content không sửa.
 
-Nguồn: [context](../context.md), [PLAN](../.agent/PLAN.md), [checklist hiện hành](../.agent/G5_PUBLICATION_G6_CHECKLIST.md), [G5_RESULT](G5_RESULT.md). Quyền theo [decision](../.agent/decisions/G5_ACCEPTED_G6_DRAFT_AUTHORIZED_20261017.md).
+# Tiến độ hiện hành — G6 DRAFT
 
-| Giai đoạn | Trạng thái | Evidence / bước tiếp |
-|---|---|---|
-| G1/G2/G3/ENV03/ENV04 | LOCKED theo phạm vi | Giữ checkpoint/thiết kế/accepted archive |
-| G4A MySQL/Eloquent/migration/seeder | LOCKED, đã push |61332e5e7236a7b28dd71197b3f3848b14aaff74 |
-| G4B Auth/role/CRUD | LOCKED, đã push |411aa5d716c1162a836dd35eda994dcefab1cd4c; trước G5 worktree clean |
-| G5 Blade/Bootstrap/dashboard/visual QA | VERIFIED kỹ thuật trong ma trận |31/674;29TCP;54lint;22ảnh3viewport; protected/source/docs readback |
-| G5 bàn giao ZIP | IN_PROGRESS tới receipt PASS | .agent/logs/g5/package-final.json |
-| G5 nghiệm thu/publication | LOCKED / publication IN_PROGRESS | Nghiệm thu ZIP; kiểm/stage/push/readback theo quyền mới |
-| G6 báo cáo/demo | TODO, được duyệt DRAFT sau publication G5 | Rubric gốc/renderERD/UseCase và demo cần phê duyệt riêng |
+Nguồn: [PLAN](../.agent/PLAN.md), [checklist](../.agent/G5_PUBLICATION_G6_CHECKLIST.md), [G6_RESULT](G6_RESULT.md). G1–G5 đã nghiệm thu theo phạm vi; source G5 main 68770c0d2dc8b0e743a69564112be41eed54dd69 đã push/remote SHA-tree kiểm khớp.
 
-Không migrate/seed/reset demo, đổi nghiệp vụ/schema hoặc mở Shop/POS/checkout/kho/công nợ. Một ZIP mỗi checkpoint; không push giai đoạn chưa được nghiệm thu/ủy quyền.
+G6 được duyệt chỉ tài liệu/sơ đồ/demo, đang DRAFT chờ nghiệm thu. Đã đọc metadata và render SVG ERD/UML thực tế, chuẩn bị8tài liệu/HTML/rubric/startup/demo; technical verification ở G6_VERIFICATION. G6 không sửa source/schema/dữ liệu/installation, không migrate/seed/reset/xóa demo, chưa commit/push. Không tự mở chức năng điểm cộng hoặc stage khác.
+
+Pending: rubric gốc; nhóm xác nhận phân công; định dạng báo cáo nộp Word/PDF/slide nếu yêu cầu; buổi demo thật/livCRUD QA được duyệt riêng. Một ZIP G6/SHA, dừng nghiệm thu. Hồ sơ checkpoint G5 giữ nguyên byte và trạng thái theo thời điểm, không dùng câu chờ trong đó thay nguồn hiện hành.

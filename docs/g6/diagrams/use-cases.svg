@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1280" viewBox="0 0 1200 1280" role="img" aria-label="UML Use Case G5 — Admin và User">
+<style>text{font-family:Segoe UI,Arial,sans-serif;fill:#173d33}.mono{font-family:Consolas,monospace}.small{font-size:14px}.muted{fill:#52645e}.edge{stroke:#4a7668;stroke-width:2;fill:none}</style>
+<rect width="1200" height="1280" fill="#f5f8f4"/>
+<text x="55" y="50" font-size="30" class="" text-anchor="start">UML USE CASE · ADMIN / USER</text>
+<text x="55" y="86" font-size="18" class="muted" text-anchor="start">G6 DRAFT · Chỉ mô tả chức năng đã triển khai tại checkpoint G5</text>
+<rect x="330" y="125" width="805" height="1050" rx="12" fill="white" stroke="#98b5a7" stroke-width="2"/>
+<text x="730" y="158" font-size="19" class="" text-anchor="middle">ỨNG DỤNG QUẢN LÝ VẬT TƯ NÔNG NGHIỆP</text>
+<circle cx="130" cy="280" r="22" fill="white" stroke="#215d48" stroke-width="3"/>
+<path d="M 130 302 V 365 M 90 335 H 170 M 130 365 L 98 407 M 130 365 L 162 407" class="edge"/>
+<text x="130" y="437" font-size="19" class="" text-anchor="middle">Nhân viên (User)</text>
+<circle cx="130" cy="780" r="22" fill="white" stroke="#215d48" stroke-width="3"/>
+<path d="M 130 802 V 865 M 90 835 H 170 M 130 865 L 98 907 M 130 865 L 162 907" class="edge"/>
+<text x="130" y="937" font-size="19" class="" text-anchor="middle">Quản trị viên (Admin)</text>
+<path d="M 170 335 L 443 225" class="edge"/>
+<path d="M 170 835 L 443 225" class="edge"/>
+<ellipse cx="730" cy="225" rx="287" ry="40" fill="#f2f7ef" stroke="#567d69" stroke-width="1.5"/>
+<text x="730" y="219" font-size="19" class="" text-anchor="middle">UC01 · Đăng nhập</text>
+<text x="730" y="244" font-size="14" class="muted" text-anchor="middle">Auth::attempt + active</text>
+<path d="M 170 335 L 443 325" class="edge"/>
+<path d="M 170 835 L 443 325" class="edge"/>
+<ellipse cx="730" cy="325" rx="287" ry="40" fill="#f2f7ef" stroke="#567d69" stroke-width="1.5"/>
+<text x="730" y="319" font-size="19" class="" text-anchor="middle">UC02 · Đăng xuất</text>
+<text x="730" y="344" font-size="14" class="muted" text-anchor="middle">Hủy session, tạo lại CSRF</text>
+<path d="M 170 335 L 443 425" class="edge"/>
+<path d="M 170 835 L 443 425" class="edge"/>
+<ellipse cx="730" cy="425" rx="287" ry="40" fill="#f2f7ef" stroke="#567d69" stroke-width="1.5"/>
+<text x="730" y="419" font-size="19" class="" text-anchor="middle">UC03 · Xem tổng quan</text>
+<text x="730" y="444" font-size="14" class="muted" text-anchor="middle">Thống kê thật, giới hạn theo vai trò</text>
+<path d="M 170 335 L 443 525" class="edge"/>
+<path d="M 170 835 L 443 525" class="edge"/>
+<ellipse cx="730" cy="525" rx="287" ry="40" fill="#f2f7ef" stroke="#567d69" stroke-width="1.5"/>
+<text x="730" y="519" font-size="19" class="" text-anchor="middle">UC04 · Xem danh mục / đơn vị</text>
+<text x="730" y="544" font-size="14" class="muted" text-anchor="middle">Danh sách, tìm kiếm, phân trang</text>
+<path d="M 170 335 L 443 625" class="edge"/>
+<path d="M 170 835 L 443 625" class="edge"/>
+<ellipse cx="730" cy="625" rx="287" ry="40" fill="#f2f7ef" stroke="#567d69" stroke-width="1.5"/>
+<text x="730" y="619" font-size="19" class="" text-anchor="middle">UC05 · Tra cứu / xem chi tiết vật tư</text>
+<text x="730" y="644" font-size="14" class="muted" text-anchor="middle">Tìm kiếm, lọc, phân trang</text>
+<path d="M 170 835 L 443 725" class="edge"/>
+<ellipse cx="730" cy="725" rx="287" ry="40" fill="#e5f0e8" stroke="#567d69" stroke-width="1.5"/>
+<text x="730" y="719" font-size="19" class="" text-anchor="middle">UC06 · Quản lý danh mục</text>
+<text x="730" y="744" font-size="14" class="muted" text-anchor="middle">CRUD, cây cha-con, RESTRICT</text>
+<path d="M 170 835 L 443 825" class="edge"/>
+<ellipse cx="730" cy="825" rx="287" ry="40" fill="#e5f0e8" stroke="#567d69" stroke-width="1.5"/>
+<text x="730" y="819" font-size="19" class="" text-anchor="middle">UC07 · Quản lý đơn vị tính</text>
+<text x="730" y="844" font-size="14" class="muted" text-anchor="middle">CRUD, RESTRICT</text>
+<path d="M 170 835 L 443 925" class="edge"/>
+<ellipse cx="730" cy="925" rx="287" ry="40" fill="#e5f0e8" stroke="#567d69" stroke-width="1.5"/>
+<text x="730" y="919" font-size="19" class="" text-anchor="middle">UC08 · Quản lý vật tư</text>
+<text x="730" y="944" font-size="14" class="muted" text-anchor="middle">CRUD, validation, tham chiếu</text>
+<path d="M 170 835 L 443 1025" class="edge"/>
+<ellipse cx="730" cy="1025" rx="287" ry="40" fill="#e5f0e8" stroke="#567d69" stroke-width="1.5"/>
+<text x="730" y="1019" font-size="19" class="" text-anchor="middle">UC09 · Quản lý tài khoản nhân viên</text>
+<text x="730" y="1044" font-size="14" class="muted" text-anchor="middle">CRUD User; bảo vệ Admin duy nhất</text>
+<text x="55" y="1214" font-size="17" class="" text-anchor="start">Hai vai trò cùng dùng UC01–UC05. UC06–UC09 chỉ Admin; kiểm quyền ở server.</text>
+<text x="55" y="1246" font-size="15" class="muted" text-anchor="start">Đăng nhập nhận tài khoản active; các chức năng còn lại cần session hợp lệ. Không thêm Use Case dự kiến.</text>
+</svg>

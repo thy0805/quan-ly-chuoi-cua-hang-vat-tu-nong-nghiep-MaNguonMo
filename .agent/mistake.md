@@ -1,5 +1,9 @@
 # Lỗi cần tránh
 
+## Escape đường dẫn trong tài liệu và kiểm đúng lệnh bàn giao
+
+G6: chuỗi sinh Markdown diễn giải backslash Windows thành escape, mất dấu phân cách và có byte0x08/0x0B/0x0C. Helper kiểm startup lại dùng đường dẫn đúng riêng, nên PASS helper không chứng minh block tài liệu. G6-R sửa riêng block sang dấu `/`, quét control/fence/link toàn bộ Markdown G6; PowerShell Parser và runtime lấy trực tiếp block từ file, chỉ đổi cổng rảnh, GET login/4assets và asset byte readback. Phòng tránh: dùng dấu `/` hoặc raw string khi sinh path; quét control; luôn trích lệnh sản phẩm cuối để kiểm, không dựng lại lệnh tương đương. Giữ ZIP cũ và ghi rõ correction, không nâng bằng chứng helper cũ thành xác minh lệnh sai.
+
 ## Laravel 13 gộp cấu hình mặc định và console bootstrap
 
 Laravel13 mặc định merge connection/store framework vào config ứng dụng, nên file chỉ khai báo MySQL vẫn có SQLite/PostgreSQL trong container. G4A đã dùng dontMergeFrameworkConfiguration, cấu hình view compiled riêng và withExceptions để boot/đọc lỗi thật; connection extension phải gán config name trước tạo MySqlConnection để migrator không đổi default thành null. Kiểm container và migration thật, không chỉ lint/config file.

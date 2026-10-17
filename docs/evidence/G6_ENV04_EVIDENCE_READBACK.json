@@ -1,0 +1,277 @@
+{
+  "historical_evidence": "docs/evidence/ENV04_FILE_READBACK.json",
+  "historical_evidence_sha256": "56ab1a536acf490bb8f26d9784620b39cb4d58ad676c4bec143a4f84fdfbdb40",
+  "historical_report": "docs/ENV04_REPAIR_RESULT.md",
+  "current_readonly_files_checked": 44,
+  "current_total_bytes": 3837376,
+  "current_manifest_hash_match": "44/44",
+  "files": [
+    {
+      "relative_path": "lib/plugin/component_reference_cache.dll",
+      "bytes": 72304,
+      "sha256": "ca3503295026c7ec00c98291cf57924f49cbd066f806ba878e59cbfa29f8f180",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/burmesedict.dict",
+      "bytes": 254448,
+      "sha256": "99f1b2afe6672bc495a872e85dd5ed2be5ffc4d9b8377deff2dbc18a2b4538e5",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/char.brk",
+      "bytes": 13776,
+      "sha256": "446460cfac65b5340c15ef7bd01fa583df95073254d58364c9c15131d59ffd8e",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/cjdict.dict",
+      "bytes": 2007296,
+      "sha256": "3850478c713b2004cbb96ef4b9f049caf16d6faf32a883d2e63c09659d0c59c7",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/de.res",
+      "bytes": 2992,
+      "sha256": "a08312a9303b1373f7129bdb6ebd798cb39073476f75d30f1602c0c6a99c05b2",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/el.res",
+      "bytes": 160,
+      "sha256": "de0af623cf2c0440bfd567bb89116f02c78dc666b7fe3f62baaa47315937ebe3",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/en.res",
+      "bytes": 1776,
+      "sha256": "74c5fbfbfc3517d5383a84f9cbfbd0e3ab7c47fbdd09320d0429938fdb6ca984",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/en_US.res",
+      "bytes": 80,
+      "sha256": "ee066818c0bfc2e92c9f4486f3087c3669b998786b0363a04467136d80c00d8b",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/en_US_POSIX.res",
+      "bytes": 160,
+      "sha256": "f0b36c871bf8cde086d24478f43c465de47a62ad267922022f0b2cf29bc5f94c",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/es.res",
+      "bytes": 2176,
+      "sha256": "4db4b3ef626368fa010b546855296c5fa1556e5843d62fa5647e19bbe25cfdc6",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/fi.res",
+      "bytes": 160,
+      "sha256": "197b8e3503cd0495e2bafe9631a420764771d9d5ba78f46e72cab3b0ea361ea5",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/fr.res",
+      "bytes": 1200,
+      "sha256": "d95b1d5e778b175096289618ba726c7f31844609cdd1a69b5bb6748873f2d7ce",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/it.res",
+      "bytes": 688,
+      "sha256": "86b433f7a2456522c6c9310e6a23d7783e414f72c66dd5d4643096225caeec6a",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/ja.res",
+      "bytes": 2784,
+      "sha256": "2cf394b51397cf3bc8f172275e1a956ee243658caa1120ef13c809ba276aeb5a",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/khmerdict.dict",
+      "bytes": 445552,
+      "sha256": "080582d61636c7f9039d65bc37452d100faa07f3ba7f5e21aa32aa1672441413",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/ko.res",
+      "bytes": 544,
+      "sha256": "7af4ffd62b4dffaf18f453701fd37361f6c3c2d05a1edce201c45f37949f882c",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/laodict.dict",
+      "bytes": 162624,
+      "sha256": "b044d4232c2fea926b88f6047c4efcd683e7cf0573cf9f60990aa7500c60ef0c",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/line.brk",
+      "bytes": 24896,
+      "sha256": "8f33609cc01f7b0822b88ed41e597f7d86f03b720ae5c01c65ab939baf76dd46",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/line_cj.brk",
+      "bytes": 24928,
+      "sha256": "913b34f78bf38dcd7da00b89485ba98d7f2bd0e4251b5ace892ae6d008845a5d",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/line_loose.brk",
+      "bytes": 25056,
+      "sha256": "62a698a3e36d1560e9fd236db1d2892a2b426cccd3f7eb0d9bf539707e390af1",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/line_loose_cj.brk",
+      "bytes": 26080,
+      "sha256": "f19e7a1ac95fc2d77815fc5c43e75fc6a03c12918e51c54f0e42bcaf8470acc9",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/line_loose_phrase_cj.brk",
+      "bytes": 28048,
+      "sha256": "9f39440557e15433ae2c60d00df7942c860edfa3f1165e7c8bd69506b4b94be7",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/line_normal.brk",
+      "bytes": 24720,
+      "sha256": "9d13850f7fcf41ab45bcd849f46da6360a65f622fa7d1a2527f850c828a4ba6a",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/line_normal_cj.brk",
+      "bytes": 24912,
+      "sha256": "e8e5744f278a0b74e7413540df1f0e1bccbf32d1abd13f66a3c3180157e098d4",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/line_normal_phrase_cj.brk",
+      "bytes": 26816,
+      "sha256": "7b780bfcaa7df37a5be6c77a8d7fb54556cf68dc8e9913b9e79e0bc6622a11f5",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/line_phrase_cj.brk",
+      "bytes": 26752,
+      "sha256": "48223ba1953d41279d5c604d106a065d768a6b87ad2c8a5c582f347d3ca5f065",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/pt.res",
+      "bytes": 2288,
+      "sha256": "200c5c8d1a5d1ef45a57b40517cb966842ce9fa63d0147f8f6fb210a8a8dbefe",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/res_index.res",
+      "bytes": 240,
+      "sha256": "0ef57bf600536ec93b119a45e72df7033a41e790e9693dfc27ec307d4fbd806e",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/root.res",
+      "bytes": 800,
+      "sha256": "71ff2f726ce21fa2216719a316b496ae167500acfa2aab7c688fe3505510564c",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/ru.res",
+      "bytes": 336,
+      "sha256": "9e934ecf7041a7aead1c5aa813582e36b21565fb626e762cf6247c709d936614",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/sent.brk",
+      "bytes": 19648,
+      "sha256": "dc2fb441d45343f78a3e59f90deb377467120711eacea139871e36e155f3b66e",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/sent_el.brk",
+      "bytes": 19664,
+      "sha256": "5e1017739667911bfa8d2eef0c8dffc7c1d2f160f13da458526cd3e5cabec6f6",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/sv.res",
+      "bytes": 160,
+      "sha256": "197b8e3503cd0495e2bafe9631a420764771d9d5ba78f46e72cab3b0ea361ea5",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/thaidict.dict",
+      "bytes": 126144,
+      "sha256": "ea47ae521cea65077bf047a75d1e9d28c495ec2f8cf4d2734fcb65a888229be9",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/title.brk",
+      "bytes": 12112,
+      "sha256": "b817f207ebc792bfa86f35df3f0ac723f32944de2efea50e867a186ce760f033",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/word.brk",
+      "bytes": 22592,
+      "sha256": "56a0c6dd1b9c02c80f2e70c52c1ea3c75f6920f354bca2cebe1df68c494ff248",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/word_fi_sv.brk",
+      "bytes": 22576,
+      "sha256": "266c3a1e9682c6a6cdc86d385bfeddf3bff973130b876b6def12935276b35aee",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/word_POSIX.brk",
+      "bytes": 22608,
+      "sha256": "2438d53c175fdaf355b329969bf1819cd29817c0eba5a4bd2e93375aa280b1fd",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/zh.res",
+      "bytes": 272,
+      "sha256": "35e7c34f5b94dda401bfc8d79c88dacc80a6985d821df44b5b8b667eacfe3646",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/brkitr/zh_Hant.res",
+      "bytes": 272,
+      "sha256": "35e7c34f5b94dda401bfc8d79c88dacc80a6985d821df44b5b8b667eacfe3646",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/cnvalias.icu",
+      "bytes": 63984,
+      "sha256": "46e08176356b7a4091fb3b0d35ced44474c75355dad0927b3a55fbfc4514afbb",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/uemoji.icu",
+      "bytes": 13024,
+      "sha256": "24fa209262a147ddc729780b1bd7d2c771070053727498dcb34059adf5b56207",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/ulayout.icu",
+      "bytes": 13728,
+      "sha256": "defaf7bb85bb7803f2b81d5c8bcd0cc92e84786a7f86de157578096b387fc263",
+      "matches_historical_manifest": true
+    },
+    {
+      "relative_path": "lib/private/icudt73l/unames.icu",
+      "bytes": 296000,
+      "sha256": "35884989cfb2fcdd940d7837fbfdc6cbb49cd2ed3d95524d69e2bb93e8a1fb7b",
+      "matches_historical_manifest": true
+    }
+  ],
+  "installation_changes_this_turn": 0,
+  "repair_replayed": false,
+  "separate_from_mysql_runtime": "Successful G5 SQL service is separate from historical restoration evidence. Current hash check verifies presence, not independently reconstructing past copy/shutdown actions."
+}

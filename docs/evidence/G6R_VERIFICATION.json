@@ -1,0 +1,205 @@
+{
+  "status": "VERIFIED technical G6-R DRAFT; acceptance pending",
+  "g5_commit": "68770c0d2dc8b0e743a69564112be41eed54dd69",
+  "review": "Thy/GPT Web reviewed G6 content/diagrams and original ZIP, requested only demo-command correction; G6 not locked",
+  "original_zip_unchanged": {
+    "path": "MNM_NHOM6_G6_DRAFT_20261017.zip",
+    "sha256": "55d1f9ef7063f7835d8af7058be4da40ab10a681d97b20c325b07c982c649338",
+    "crc": "PASS"
+  },
+  "correction": {
+    "path": "docs/g6/DEMO_KHOI_DONG.md",
+    "original_invalid_controls": [
+      {
+        "offset": 1386,
+        "hex": "0x08"
+      },
+      {
+        "offset": 1447,
+        "hex": "0x0B"
+      },
+      {
+        "offset": 1460,
+        "hex": "0x0C"
+      }
+    ],
+    "outside_powershell_block_unchanged": true,
+    "forward_slash_paths": true,
+    "exact_markdown_command_runtime": "PASS, only localhost port changed; G6R_STARTUP_CHECK.json",
+    "old_evidence_limit": "Original G6 helper used separate valid paths, so did not verify damaged document command"
+  },
+  "markdown": {
+    "files_scanned": 8,
+    "files": [
+      {
+        "path": "docs/g6/DE_TAI_CHUC_NANG.md",
+        "sha256": "9c332e311efc3c55c7653e067db378fb1a4a408c0a5a30f295a22acaa174796b",
+        "invalid_controls": 0,
+        "balanced_code_blocks": 0
+      },
+      {
+        "path": "docs/g6/DEMO_KHOI_DONG.md",
+        "sha256": "f5f65b7ddc29bf161254573c8a092db061a0d0e0d2c750a50ae434b56bad6296",
+        "invalid_controls": 0,
+        "balanced_code_blocks": 1
+      },
+      {
+        "path": "docs/g6/ERD_MYSQL_THUC_TE.md",
+        "sha256": "feb24fbc8f6ea40c04afe4a215b0d4fb1e74b1614ab9721aa1d2ca018c5e4868",
+        "invalid_controls": 0,
+        "balanced_code_blocks": 0
+      },
+      {
+        "path": "docs/g6/MINH_HOA_LARAVEL.md",
+        "sha256": "cb55109c26d70c677a23af78064a95c7b862e0c63e392838fe7484679630351a",
+        "invalid_controls": 0,
+        "balanced_code_blocks": 8
+      },
+      {
+        "path": "docs/g6/NGHIEM_THU_GIOI_HAN.md",
+        "sha256": "3a79c6cd601fee56f47cbc526d0241df5b2bdbffefd1ffe1e22a374290ea7458",
+        "invalid_controls": 0,
+        "balanced_code_blocks": 0
+      },
+      {
+        "path": "docs/g6/README.md",
+        "sha256": "d9e03da5993d1528430d4a1b51bb875fcaf09b66a510614c419289ebd0de0014",
+        "invalid_controls": 0,
+        "balanced_code_blocks": 0
+      },
+      {
+        "path": "docs/g6/RUBRIC_DOI_CHIEU.md",
+        "sha256": "1f87f2f5808faa98f2dd562fe360de2133e998dde3fec42499773946b6280547",
+        "invalid_controls": 0,
+        "balanced_code_blocks": 0
+      },
+      {
+        "path": "docs/g6/UML_USE_CASE.md",
+        "sha256": "78140a3e6b1f3e8e361f07ab8a78bda65f30e49dda35cfa787f807768f028646",
+        "invalid_controls": 0,
+        "balanced_code_blocks": 0
+      }
+    ],
+    "invalid_controls": 0,
+    "broken_relative_links": 0,
+    "relative_links_checked": 93,
+    "code_fences_balanced": true
+  },
+  "preserved": {
+    "other_g6_markdown_byte_identical": 7,
+    "diagram_sources_screenshots_and_index_byte_identical": 8,
+    "application_source_changes": 0,
+    "accepted_source_hashes": "26/26 PASS",
+    "accepted_archives_unchanged": 5,
+    "fixture_before_after_equal": true,
+    "fixture": {
+      "demo_rows_and_hashes_unchanged": true,
+      "schema_unchanged_except_auto_increment_counters": true,
+      "migration_ledger_unchanged": true,
+      "counts": {
+        "product_categories": 5,
+        "products": 4,
+        "units": 3,
+        "users": 3
+      },
+      "identity": {
+        "db": "mnm_vat_tu_nong_nghiep",
+        "version": "8.4.3",
+        "account": "mnm_runtime_20261017@localhost"
+      }
+    },
+    "protected_git": {
+      "parent": {
+        "head": "4ee9b0d1ed52f18cf984b4511cc89df841a4721e",
+        "status_lines": 5343,
+        "head_status_metadata_match_baseline": true
+      },
+      "klcn": {
+        "head": "fc514c8a040d7d2804791ceea5a255427f5bf086",
+        "status_lines": 11,
+        "head_status_metadata_match_baseline": true
+      },
+      "nosql": {
+        "head": "21288936d172b8485b425c1adc7ca21972da5e48",
+        "status_lines": 0,
+        "head_status_metadata_match_baseline": true
+      }
+    },
+    "protected_limit": "HEAD/status/Gitmetadata/stated hashes; not full database/source audit"
+  },
+  "files_changed_since_original_g6_zip": [
+    {
+      "path": ".agent/DOC_INDEX.md",
+      "before_sha256": "e96220a97ca326ca09c13d2cbb6537827c42cc7d7c84cd1a5ebbc167e36d217f",
+      "after_sha256": "ee6a0c4f9dbae62558ebac02125ec9be526e870ae4b23c3f913ad9687e196deb",
+      "bytes": 11576
+    },
+    {
+      "path": ".agent/PLAN.md",
+      "before_sha256": "68e071b578289c4d67af4204bb6311755edad93b6c483fe4917c5a96ad943cdc",
+      "after_sha256": "3aeaa0d6a90666b855a466b68b1c2553fed42dba7c955767bf6ea27cd75ea7c4",
+      "bytes": 2529
+    },
+    {
+      "path": ".agent/mistake.md",
+      "before_sha256": "bedf946fd3bca661226ad50f57ca4081d3e214fd916b789824aab2160619c322",
+      "after_sha256": "674e57aa88172e343bcdf9fe0d6c2a55d2933bb8adeeed0607141b2a41f27bc6",
+      "bytes": 8292
+    },
+    {
+      "path": "context.md",
+      "before_sha256": "28fb67e3a724973d658feb3a219f416495236c4a481340740af9b2212d835e36",
+      "after_sha256": "8038d6db5cc9fdd35b0da9b1d3c727789a03648e0c52765d3933f96fc40752f4",
+      "bytes": 4691
+    },
+    {
+      "path": "docs/G6_RESULT.md",
+      "before_sha256": "d34e0799059d24f1a0dd230219a2d7d5b75f0bb91c1f22934b15011224fc57d6",
+      "after_sha256": "c9699f82382a35576058710fe60b292b5bea40b5a8b6ae3b21aa197d21444f2a",
+      "bytes": 4801
+    },
+    {
+      "path": "docs/evidence/G6_STARTUP_CHECK.json",
+      "before_sha256": "9cde89a8a2af6c62929ac26b0b342a8e37edeef80bc46ad781bb5116ec385b17",
+      "after_sha256": "5c25bcb0ed07438d0530b59c4b68fbb128ec3c3140a8cdc41430850da6894f86",
+      "bytes": 3100
+    },
+    {
+      "path": "docs/evidence/G6_VERIFICATION.json",
+      "before_sha256": "0aa955d1716338610982ca7dacaedcaf213a6b1ad148881ebbc70edf238eed26",
+      "after_sha256": "b514e1b5f2f324b04827e12e54ffe59b3b47fbc7b4209de42338df5246d28262",
+      "bytes": 18365
+    },
+    {
+      "path": "docs/g6/DEMO_KHOI_DONG.md",
+      "before_sha256": "0853ce922d115d4585bd519896617f6cbfb70f060380f8eb4a5db7037cc911db",
+      "after_sha256": "f5f65b7ddc29bf161254573c8a092db061a0d0e0d2c750a50ae434b56bad6296",
+      "bytes": 5718
+    }
+  ],
+  "files_added": [
+    "docs/G6R_RESULT.md",
+    ".agent/G6R_CHECKLIST.md",
+    "docs/evidence/G6R_STARTUP_CHECK.json",
+    "docs/evidence/G6R_VERIFICATION.json"
+  ],
+  "local_support_only": [
+    ".agent/scripts/g6r_fix.py",
+    ".agent/scripts/g6r_startup_check.py",
+    ".agent/scripts/g6r_verify.py",
+    ".agent/scripts/g6r_package.py",
+    ".agent/scripts/g6_verify.py",
+    ".agent/logs/g6r/",
+    ".agent/logs/g4b/g6r-before-20261017.*",
+    ".agent/logs/g4b/g6r-after-20261017.*"
+  ],
+  "archive_generated_files_replaced": ["BAT_DAU_DOC.md", "MANIFEST_SHA256.json"],
+  "verification_reference": "docs/evidence/G6_VERIFICATION.json",
+  "git": {
+    "head": "68770c0d2dc8b0e743a69564112be41eed54dd69",
+    "staged_files": 0,
+    "g6_uncommitted_unpushed": true
+  },
+  "database_mutations_migration_seed": 0,
+  "scope_limit": "Unauthenticated startup GET; no live business demo or full test rerun. Existing runtime storage may write isolated cache/view/session files. G6 remains DRAFT."
+}

@@ -1,0 +1,76 @@
+{
+  "identity": {
+    "db": "mnm_vat_tu_nong_nghiep",
+    "version": "8.4.3",
+    "account": "mnm_runtime_20261017@localhost"
+  },
+  "tables": [
+    "migrations",
+    "product_categories",
+    "products",
+    "units",
+    "users"
+  ],
+  "foreign_keys": [
+    {
+      "CONSTRAINT_NAME": "product_categories_parent_id_foreign",
+      "TABLE_NAME": "product_categories",
+      "REFERENCED_TABLE_NAME": "product_categories",
+      "UPDATE_RULE": "RESTRICT",
+      "DELETE_RULE": "RESTRICT"
+    },
+    {
+      "CONSTRAINT_NAME": "products_category_id_foreign",
+      "TABLE_NAME": "products",
+      "REFERENCED_TABLE_NAME": "product_categories",
+      "UPDATE_RULE": "RESTRICT",
+      "DELETE_RULE": "RESTRICT"
+    },
+    {
+      "CONSTRAINT_NAME": "products_unit_id_foreign",
+      "TABLE_NAME": "products",
+      "REFERENCED_TABLE_NAME": "units",
+      "UPDATE_RULE": "RESTRICT",
+      "DELETE_RULE": "RESTRICT"
+    }
+  ],
+  "check_constraints": [
+    {
+      "CONSTRAINT_NAME": "categories_active_check",
+      "TABLE_NAME": "product_categories"
+    },
+    {
+      "CONSTRAINT_NAME": "products_active_check",
+      "TABLE_NAME": "products"
+    },
+    {
+      "CONSTRAINT_NAME": "products_expiry_check",
+      "TABLE_NAME": "products"
+    },
+    {
+      "CONSTRAINT_NAME": "products_price_check",
+      "TABLE_NAME": "products"
+    },
+    {
+      "CONSTRAINT_NAME": "products_tax_check",
+      "TABLE_NAME": "products"
+    },
+    {
+      "CONSTRAINT_NAME": "units_active_check",
+      "TABLE_NAME": "units"
+    },
+    {
+      "CONSTRAINT_NAME": "users_active_check",
+      "TABLE_NAME": "users"
+    }
+  ],
+  "trigger_names": [
+    "categories_no_self_insert",
+    "categories_no_self_update"
+  ],
+  "trigger_definitions_match_g4a": true,
+  "admin_active_count": 1,
+  "runtime_schema_only_crud": true,
+  "metadata_readback_uses_migrator_only_for_trigger_visibility": true,
+  "sql_mutations": 0
+}

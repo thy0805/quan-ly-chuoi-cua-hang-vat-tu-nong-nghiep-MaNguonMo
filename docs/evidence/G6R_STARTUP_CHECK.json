@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "method": "Executed exact PowerShell block extracted from Markdown using Windows PowerShell -File; only localhost port literal substituted with an available ephemeral port",
+  "document": "docs/g6/DEMO_KHOI_DONG.md",
+  "documented_command": "Set-Location -LiteralPath 'D:/Hoctap/KhoaLuanCuNhan/LapTrinhMaNguonModoAN/public'\n& 'C:/laragon/bin/php/php-8.3.30-Win32-vs16-x64/php.exe' -S 127.0.0.1:8086 '../vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php'",
+  "executed_command": "Set-Location -LiteralPath 'D:/Hoctap/KhoaLuanCuNhan/LapTrinhMaNguonModoAN/public'\n& 'C:/laragon/bin/php/php-8.3.30-Win32-vs16-x64/php.exe' -S 127.0.0.1:64134 '../vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php'",
+  "port_only_substitution": true,
+  "parser": {
+    "commandNames": [
+      "Set-Location",
+      "C:/laragon/bin/php/php-8.3.30-Win32-vs16-x64/php.exe"
+    ],
+    "errors": 0,
+    "statements": 2
+  },
+  "paths_exist": {
+    "public": "D:/Hoctap/KhoaLuanCuNhan/LapTrinhMaNguonModoAN/public",
+    "php_executable": "C:/laragon/bin/php/php-8.3.30-Win32-vs16-x64/php.exe",
+    "framework_router": "//CUTE/USBSSD/Hoctap/KhoaLuanCuNhan/LapTrinhMaNguonModoAN/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php"
+  },
+  "requests": [
+    {
+      "path": "/login",
+      "status": 200,
+      "mime": "text/html; charset=utf-8",
+      "bytes": 4935,
+      "sha256": null
+    },
+    {
+      "path": "/assets/bootstrap/bootstrap.min.css",
+      "status": 200,
+      "mime": "text/css; charset=UTF-8",
+      "bytes": 232111,
+      "sha256": "d85327d99c7a3ee1f9b5d0500d1370acea3ad2db39c163c2f51f232baedbdede"
+    },
+    {
+      "path": "/assets/bootstrap/bootstrap.bundle.min.js",
+      "status": 200,
+      "mime": "application/javascript",
+      "bytes": 80496,
+      "sha256": "e4fd49181388c48ec5040bd3fe66f57c29c8e67fcd8502b3354b96ec7ab47cc7"
+    },
+    {
+      "path": "/assets/app.css",
+      "status": 200,
+      "mime": "text/css; charset=UTF-8",
+      "bytes": 15466,
+      "sha256": "cfb473e5ac36ac2b6b16dead9c083920cb8e907fc59947e165a5842ce2067c54"
+    },
+    {
+      "path": "/assets/app.js",
+      "status": 200,
+      "mime": "application/javascript",
+      "bytes": 1686,
+      "sha256": "45e1e11851457e34c276f15934c5f85c15a8670e78c746948472c17a1db46302"
+    }
+  ],
+  "temporary_process": {
+    "powershell_pid": 22000,
+    "php_pid": 25480,
+    "server_port": 64134,
+    "php_identity_checked": true,
+    "temporary_server_stopped": true,
+    "port_closed": true
+  },
+  "authentication": "Existing private .env loaded normally; no credentials injected or printed; Laravel isolation guard unchanged",
+  "business_database_writes": 0,
+  "application_source_changes": 0,
+  "runtime_files": "Framework may write isolated session/view/cache files normally",
+  "scope": "Unauthenticated GET login and four static assets, byte readback of assets; no install/migration/seed/business write or MySQL restart; fixture checked separately before/after"
+}

@@ -1,3 +1,5 @@
+Cập nhật hiện hành18/10/2026: G6/G6-R đã ACCEPTED/LOCKED, được chốt Git theo decision G6_ACCEPTED_G7_DRAFT_AUTHORIZED_20261018. Publication đang kiểm, SHA sau push đọc tại context/receipt mới. Sau remote readback sạch chỉ chuẩn bị G7 DRAFT, chưa commit/push G7. Các trạng thái G6 DRAFT/chưa push bên dưới giữ checkpoint cũ; source/nghiệp vụ và accepted G6 content không sửa.
+
 # Kiến trúc hiện hành — G5
 
 Laravel monolith13.33, PHP 8.3.30, MySQL 8.4.3 độc lập `mnm_vat_tu_nong_nghiep`. Thiết kế chuẩn: G2_DECISIONS.md và ERD_MYSQL.md. Schema bốn bảng/ba FK/bảy CHECK/hai trigger giữ nguyên G4A; không sử dụng Next.js/Flutter/PostgreSQL/MongoDB/worker.
@@ -14,3 +16,5 @@ G3 HTTP503/DB-deny là checkpoint lịch sử, đã thay theo quyền G4A/G4B. C
 G5 assets tại public/assets (Bootstrap CSS/bundle/MIT, app.css/app.js); không CDN runtime hoặc npm build. Components Blade dùng lại status/error/filter/pagination/modal; JavaScript hỗ trợ menu, hiện mật khẩu và xác nhận xóa, nội dung nhãn qua textContent. Bản dịch lang/vi/validation.php theo locale vi hiện hữu, không đổi validation rule/status. Bảng mobile cuộn trong vùng có nhãn và hướng dẫn, không ép tên thành từng ký tự. Chỉ số thống kê không giả doanh thu/tồn kho. Các controller/rule ghi dữ liệu cũ và dependency lock giữ nguyên.
 
 Scaffold Vite/Tailwind cũ trong package.json và welcome.blade.php còn giữ nguyên; không route hiện hành render welcome, Blade G5 không gọi @vite và không cần cài/chạy npm. Đây là tệp kế thừa chưa dùng, không phải frontend đang phục vụ.
+
+Source G5 đã ACCEPTED/LOCKED/publish; G6 chỉ tài liệu, kiến trúc runtime giữ nguyên. ERD runtime và minh họa đọc tại docs/g6; việc render sơ đồ không tạo thêm module hoặc bảng. Receipt commit hiện hành G6_G5_PUBLICATION.

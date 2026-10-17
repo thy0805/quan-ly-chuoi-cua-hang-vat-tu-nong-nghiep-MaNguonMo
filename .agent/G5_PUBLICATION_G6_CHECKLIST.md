@@ -14,9 +14,11 @@ ACCEPTANCE: G5 archive/source/regression/secret/protected/staged readback PASS �
 |---|---|---|---|---|---|
 | P01 | ZIP26source/HEAD/protected; secret trước stage | Accepted ZIP/Git | VERIFIED | G5_PUBLICATION_PREFLIGHT; source/ZIP/protected | Không sửa nguồn |
 | P02 | Hồi quy/fixture/lint trước commit | MySQL/test | VERIFIED |31/674;fixture giữ;54lint/JS | Rollback, không seed |
-| P03 | Whitelist stage/commit/push/readback | main/origin riêng | IN_PROGRESS | Preflight đạt; đang rà stage | Không force |
-| D01 | Đọc metadata schema thực | MySQL riêng | TODO | Chưa thực hiện | SELECT only |
-| D02 | ERD/UML nguồn và render | Metadata/code/route | TODO | Chưa có | Không dùng nguyên KLCN |
-| D03 | Tài liệu/rubric/phân công/demo/startup | Source/test/UI | TODO | Chưa có | Không thêm chức năng |
-| V01 | Link/semantic/visual/protected | Artifact cuối | TODO | Chưa có | G6 vẫn DRAFT |
-| H01 | ZIP/manifest/SHA/bàn giao | Whitelist | TODO | Chưa có | Không G6 push/stage mới |
+| P03 | Whitelist stage/commit/push/readback | main/origin riêng | VERIFIED | 68770c0d2dc8b0e743a69564112be41eed54dd69;G6_G5_PUBLICATION/STAGE_REVIEW | Không force |
+| D01 | Đọc metadata schema thực | MySQL riêng | VERIFIED | G6_MYSQL_SCHEMA/READBACK;4tables26columns3FK7CHECK2trigger | SELECT only |
+| D02 | ERD/UML nguồn và render | Metadata/code/route | VERIFIED kỹ thuật | G6_RENDER_QA;SVG/MMD/PUML/JSON;2ảnh browser | Không dùng nguyên KLCN |
+| D03 | Tài liệu/rubric/phân công/demo/startup | Source/test/UI | VERIFIED kỹ thuật | G6_VERIFICATION;8trích đoạn khớp;12test reference;STARTUP_CHECK | G6 chưa nghiệm thu |
+| V01 | Link/semantic/visual/protected | Artifact cuối | VERIFIED | G6_VERIFICATION;57Markdown;0link hỏng;26source/4archive giữ hash;protected khớp | G6 vẫn DRAFT |
+| H01 | ZIP/manifest/SHA/bàn giao | Whitelist | VERIFIED chỉ khi receipt final PASS | Preview41member/40payload CRC/hash PASS; .agent/logs/g6/package-final.json quyết định ZIP cuối | Không G6 push/stage mới |
+
+Gate bàn giao: receipt package-final phải PASS CRC/exact-set/từng SHA và readback byte workspace; nếu chưa PASS thì H01 vẫn APPLIED_UNVERIFIED và không báo hoàn tất ZIP. Quyết định nghiệm thu của Thy độc lập với kiểm kỹ thuật.

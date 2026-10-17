@@ -1,0 +1,86 @@
+{
+  "actors": [
+    "User",
+    "Admin"
+  ],
+  "use_cases": [
+    {
+      "id": "UC01",
+      "name": "Đăng nhập",
+      "description": "Auth::attempt + active",
+      "actors": [
+        "User",
+        "Admin"
+      ]
+    },
+    {
+      "id": "UC02",
+      "name": "Đăng xuất",
+      "description": "Hủy session, tạo lại CSRF",
+      "actors": [
+        "User",
+        "Admin"
+      ]
+    },
+    {
+      "id": "UC03",
+      "name": "Xem tổng quan",
+      "description": "Thống kê thật, giới hạn theo vai trò",
+      "actors": [
+        "User",
+        "Admin"
+      ]
+    },
+    {
+      "id": "UC04",
+      "name": "Xem danh mục / đơn vị",
+      "description": "Danh sách, tìm kiếm, phân trang",
+      "actors": [
+        "User",
+        "Admin"
+      ]
+    },
+    {
+      "id": "UC05",
+      "name": "Tra cứu / xem chi tiết vật tư",
+      "description": "Tìm kiếm, lọc, phân trang",
+      "actors": [
+        "User",
+        "Admin"
+      ]
+    },
+    {
+      "id": "UC06",
+      "name": "Quản lý danh mục",
+      "description": "CRUD, cây cha-con, RESTRICT",
+      "actors": [
+        "Admin"
+      ]
+    },
+    {
+      "id": "UC07",
+      "name": "Quản lý đơn vị tính",
+      "description": "CRUD, RESTRICT",
+      "actors": [
+        "Admin"
+      ]
+    },
+    {
+      "id": "UC08",
+      "name": "Quản lý vật tư",
+      "description": "CRUD, validation, tham chiếu",
+      "actors": [
+        "Admin"
+      ]
+    },
+    {
+      "id": "UC09",
+      "name": "Quản lý tài khoản nhân viên",
+      "description": "CRUD User; bảo vệ Admin duy nhất",
+      "actors": [
+        "Admin"
+      ]
+    }
+  ],
+  "scope": "Implemented G5; no upload/AJAX/orders/POS/Shop"
+}

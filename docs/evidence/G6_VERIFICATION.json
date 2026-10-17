@@ -1,0 +1,470 @@
+{
+  "status": "VERIFIED technical G6 DRAFT; acceptance pending",
+  "source_checkpoint": "68770c0d2dc8b0e743a69564112be41eed54dd69",
+  "g6_uncommitted_unpushed": true,
+  "g6_application_source_changes": 0,
+  "accepted_source_hashes": "26/26 PASS",
+  "accepted_archives_unchanged": 4,
+  "protected_git": {
+    "parent": {
+      "head": "4ee9b0d1ed52f18cf984b4511cc89df841a4721e",
+      "status_lines": 5343,
+      "head_status_metadata_match_baseline": true
+    },
+    "klcn": {
+      "head": "fc514c8a040d7d2804791ceea5a255427f5bf086",
+      "status_lines": 11,
+      "head_status_metadata_match_baseline": true
+    },
+    "nosql": {
+      "head": "21288936d172b8485b425c1adc7ca21972da5e48",
+      "status_lines": 0,
+      "head_status_metadata_match_baseline": true
+    }
+  },
+  "protected_limit": "HEAD/status/Gitmetadata/stated hashes; not full database/source audit",
+  "structural": {
+    "business_tables": 4,
+    "columns": 26,
+    "foreign_keys": 3,
+    "checks": 7,
+    "triggers": 2,
+    "use_case_actors": 2,
+    "use_cases": 9,
+    "associations": 14,
+    "erd_fields_svg_match_metadata": true,
+    "dictionary_26_rows_match_metadata": true
+  },
+  "semantic": {
+    "source_snippets_exact": 8,
+    "rubric_code_test_references": 12,
+    "role_model_matches_current_routes": true,
+    "env04_present44hashes_verified_separately_no_repair": true
+  },
+  "runtime_artifacts": {
+    "svg_browser_render": "PASS in G6_RENDER_QA",
+    "screenshots": [
+      {
+        "path": "docs/g6/diagrams/erd-browser.jpg",
+        "bytes": 142224,
+        "sha256": "19205f0357859bfb5e3e3ba1d22dea2314808480b52ae910d6304eed291758b3",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "path": "docs/g6/diagrams/use-cases-browser.jpg",
+        "bytes": 136132,
+        "sha256": "aa9f4612352a1adf4a7423efd8f9d85f7297e4f9a6d528703f43068b76ab5d74",
+        "width": 1584,
+        "height": 1280
+      }
+    ],
+    "startup": "PASS in G6_STARTUP_CHECK",
+    "fixture": {
+      "demo_rows_and_hashes_unchanged": true,
+      "schema_unchanged_except_auto_increment_counters": true,
+      "migration_ledger_unchanged": true,
+      "counts": {
+        "product_categories": 5,
+        "products": 4,
+        "units": 3,
+        "users": 3
+      },
+      "identity": {
+        "db": "mnm_vat_tu_nong_nghiep",
+        "version": "8.4.3",
+        "account": "mnm_runtime_20261017@localhost"
+      }
+    }
+  },
+  "documentation": {
+    "owned_markdown_count": 59,
+    "inventory": [
+      {
+        "path": ".agent/AUTH02_CHECKLIST.md",
+        "sha256": "8caf93074a6d074b9ee17a34d44c9c29bc278124744a0601bd76fc1327217898",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": ".agent/CLONE_CHECKLIST.md",
+        "sha256": "09b23486dc297d1b87aef725e7ff04e0d29874417faa22c628929ea5c5f6cee8",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": ".agent/DOC_INDEX.md",
+        "sha256": "ee6a0c4f9dbae62558ebac02125ec9be526e870ae4b23c3f913ad9687e196deb",
+        "classification": "current_or_g6_draft"
+      },
+      {
+        "path": ".agent/ENV03_CHECKLIST.md",
+        "sha256": "67dc1072e5bcb3e792434b7ca21f14d5a62b419bea85dd107025b894db670c2a",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": ".agent/ENV04_CHECKLIST.md",
+        "sha256": "c25f6533984826a43c4fd43046c348ab13680701c25de24f019e06b109074dca",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": ".agent/G23_CHECKLIST.md",
+        "sha256": "ccae3c39bad2ef431ad9845744dda8f97b50f344fcda0cfc5f17797488df1da9",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": ".agent/G4A_CHECKLIST.md",
+        "sha256": "d983c1e8cbecde43900e401269b6593886ef872fe496d60bedd50874e18b2872",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": ".agent/G4A_IMPLEMENTATION_CHECKLIST.md",
+        "sha256": "32849b270cc6213ed6d8cdec8d24243083b2b0cfafcfe3c18f6b55ad05c79418",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": ".agent/G4A_RESUME_CHECKLIST.md",
+        "sha256": "c895bbb88571154bca30be8c22b3a3cd76982d87033396ebeaf53cd608205a66",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": ".agent/G4B_CHECKLIST.md",
+        "sha256": "4295b430892ab5131ab9fd602a0c11dea0f54511f5ddbbfd06f60df6cd367290",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": ".agent/G5_CHECKLIST.md",
+        "sha256": "9c6659683b729edbd4cd5a9b96ec895628733209fea2cf415b3b82a53f498af4",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": ".agent/G5_PUBLICATION_G6_CHECKLIST.md",
+        "sha256": "dbbd43c9d26cd183b33f6cf1abd9723b4c0efd9c95b4534cf2822a1072aee5f9",
+        "classification": "current_or_g6_draft"
+      },
+      {
+        "path": ".agent/G6R_CHECKLIST.md",
+        "sha256": "f65af142404d2229f77821dba22e44a076f195a0e127f18d8544a2aeeac89086",
+        "classification": "current_or_g6_draft"
+      },
+      {
+        "path": ".agent/PLAN.md",
+        "sha256": "3aeaa0d6a90666b855a466b68b1c2553fed42dba7c955767bf6ea27cd75ea7c4",
+        "classification": "current_or_g6_draft"
+      },
+      {
+        "path": ".agent/decisions/AUTH02_LOCAL_LOGIN_20261017.md",
+        "sha256": "d75efdda1bc3839a4a16ea92416806fc9d012f9736327011c4b4dada56c53104",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": ".agent/decisions/CLONE_FIRST_20261017.md",
+        "sha256": "79130fa452deefe6ec2c4b47a4ca4691c26165e371a43d9bf1b9d49c314b56ee",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": ".agent/decisions/ENV03_DIAGNOSTIC_AUTHORIZED_20261017.md",
+        "sha256": "374155f85389284975cdda97cbd0fc450d0be8e4df7c00033ea31608839ce339",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": ".agent/decisions/ENV04_ACCEPTED_G4A_RESUMED_20261017.md",
+        "sha256": "6f47edf3d9bb2f3f2d8be568f730f78e1a8e7408dab63957c2205efd577f6631",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": ".agent/decisions/ENV04_CONDITIONAL_REPAIR_AUTHORIZED_20261017.md",
+        "sha256": "bcdc000080eb7bfaf0a6cc4ae8cca0ddd857d6e2c1075a1ac7b3fb8ad26a5fba",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": ".agent/decisions/ENV04_OWNER_SHUTDOWN_AUTHORIZED_20261017.md",
+        "sha256": "f397a3b80e5e7f5c622bfa74f5cfc141e3d8fe773de793e23806bda8206a4219",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": ".agent/decisions/G23_ACCEPTED_SCOPE_20261017.md",
+        "sha256": "dd9dd008da1ca4f7f9eb81bb8d71b41ae7e667a7a886bd3baa606890bd82e303",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": ".agent/decisions/G4A_ACCEPTED_G4B_AUTHORIZED_20261017.md",
+        "sha256": "808b2535f553b2f70ff2461f71d2ea009f09cf6c7f58e6673804262f3ba7444c",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": ".agent/decisions/G4A_AUTHORIZED_20261017.md",
+        "sha256": "2b051aaf30e582ca7e5e2c5ecda0e23037832cf7a3badf0dc232fb19a9444959",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": ".agent/decisions/G4A_DIRECT_MYSQL_AUTHORIZED_20261017.md",
+        "sha256": "b45d3a495c4925c3ab29d469921d2052b2bb6c8660a16c2cb687b50f70cd886f",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": ".agent/decisions/G4A_TRIGGER_ADMIN_DDL_20261017.md",
+        "sha256": "ac08d9c8a9941c96c35d7c8cb579e714619409042dfebca5bdd14af7fd662cc6",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": ".agent/decisions/G4B_ACCEPTED_G5_AUTHORIZED_20261017.md",
+        "sha256": "ffcc6218426dc65723102d84bf517a7a04c57d39d9a0e4fd437992946c11592c",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": ".agent/decisions/G5_ACCEPTED_G6_DRAFT_AUTHORIZED_20261017.md",
+        "sha256": "00ad6429700e4265560d1d1d61cf8c91847e3cd33ddd2ace280002c1d71a727c",
+        "classification": "current_or_g6_draft"
+      },
+      {
+        "path": ".agent/mistake.md",
+        "sha256": "674e57aa88172e343bcdf9fe0d6c2a55d2933bb8adeeed0607141b2a41f27bc6",
+        "classification": "current_or_g6_draft"
+      },
+      {
+        "path": ".agent/rule.md",
+        "sha256": "0abafa77187b1d6985b5f124958dff2e78befc78c663447874fb91b2c936fdcb",
+        "classification": "current_or_g6_draft"
+      },
+      {
+        "path": "AGENTS.md",
+        "sha256": "09af9e999627dc0908e86b7740e3e1ca39139b4a3342d2386b51b7349029f490",
+        "classification": "current_or_g6_draft"
+      },
+      {
+        "path": "README.md",
+        "sha256": "2a23ea67beb41cab459dcdaa3ae73a77c2ba8391f5bc1464eb799e21d0dd1ba1",
+        "classification": "current_or_g6_draft"
+      },
+      {
+        "path": "context.md",
+        "sha256": "8038d6db5cc9fdd35b0da9b1d3c727789a03648e0c52765d3933f96fc40752f4",
+        "classification": "current_or_g6_draft"
+      },
+      {
+        "path": "docs/ARCHITECTURE.md",
+        "sha256": "8da15b14ba09233766fbe703dc3ff3437625a2c2cd80354155104c604e66983e",
+        "classification": "current_or_g6_draft"
+      },
+      {
+        "path": "docs/AUDIT_KLCN.md",
+        "sha256": "661c27232953d2c64e70af2a1f8e38295fc6aec60a654a8755fe6ffa3c4d49aa",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": "docs/BIEN_BAN_GIAI_DOAN_1.md",
+        "sha256": "a1f65d1187e31e2e1acbb1b6156851b41c8433d4dae5598830cad2039e1cb396",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": "docs/CONVERSION_MAPPING.md",
+        "sha256": "3cdb3943c27b5dddbad96c265001d4476e7cb5b7ac8443cb484877adaf2f7b1f",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": "docs/ENV03_DIAGNOSTIC.md",
+        "sha256": "79bf99ab921e1b5a08bc6380d32382d3efc1ed87e963df1362f0893bc3af7277",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": "docs/ENV04_REPAIR_RESULT.md",
+        "sha256": "7602573bc52d96e7babdf287e12146a4d7b47c434a9200dbbdf19c795c279d5b",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": "docs/ERD_MYSQL.md",
+        "sha256": "47ae8b87e9a043a699465c2f8d2f50ed3559d5ccef28206d782d1bf471b96921",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": "docs/FUNCTIONS_USE_CASES.md",
+        "sha256": "55cc37736300bb0a1602c3390e6eb6d689170da5e6322e31f3fffb4776635740",
+        "classification": "current_or_g6_draft"
+      },
+      {
+        "path": "docs/G2_DECISIONS.md",
+        "sha256": "60345ddf3db20d859e4d6da844be502c7d50e78b650c4110590b8c9380528bde",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": "docs/G3_ISOLATION_RESULT.md",
+        "sha256": "fd527c12a2ef71360deaf8fa73db9ed248b15ab44732e94c34f2515be710525a",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": "docs/G4A_RESULT.md",
+        "sha256": "d4c428e3114a2d4efa1998233c68678c5f0995561defa2c724762e3c1fe4e1df",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": "docs/G4B_RESULT.md",
+        "sha256": "28f457dab1517b24e00d2292dec5601cd0d56141f13320cb6f0cdd8686a5ed06",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": "docs/G5_RESULT.md",
+        "sha256": "1bb36957d93cae79f054ad8d0bfcfe20a754469f1487b11192d29402620ecf7f",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": "docs/G6R_RESULT.md",
+        "sha256": "0b787f760ae2ba21203f653ab82c9cb2ecf9415a657bd673906fd2fec6ca6bf6",
+        "classification": "current_or_g6_draft"
+      },
+      {
+        "path": "docs/G6_RESULT.md",
+        "sha256": "c9699f82382a35576058710fe60b292b5bea40b5a8b6ae3b21aa197d21444f2a",
+        "classification": "current_or_g6_draft"
+      },
+      {
+        "path": "docs/IMPLEMENTATION_PLAN.md",
+        "sha256": "a5d60cf7f319af4d9e12b8ef804a02de4663f53b38a17ab0ab7fc8ca4aa11d51",
+        "classification": "current_or_g6_draft"
+      },
+      {
+        "path": "docs/PUBLICATION.md",
+        "sha256": "b31c2d92233e8d5db7337be84ef42c53053cb0e56f214023491ec356fb62b0d7",
+        "classification": "current_or_g6_draft"
+      },
+      {
+        "path": "docs/README_GUI_GPT_WEB.md",
+        "sha256": "e15cbda7ef6e8d88f2b75352429b420e3998c65fb6be17b960de2a956c535d93",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": "docs/REUSED_FILES.md",
+        "sha256": "28a025b064075573088f8b842de522556f3b844ef917775e2c912b6ec5475747",
+        "classification": "historical_or_locked_design"
+      },
+      {
+        "path": "docs/g6/DEMO_KHOI_DONG.md",
+        "sha256": "f5f65b7ddc29bf161254573c8a092db061a0d0e0d2c750a50ae434b56bad6296",
+        "classification": "current_or_g6_draft"
+      },
+      {
+        "path": "docs/g6/DE_TAI_CHUC_NANG.md",
+        "sha256": "9c332e311efc3c55c7653e067db378fb1a4a408c0a5a30f295a22acaa174796b",
+        "classification": "current_or_g6_draft"
+      },
+      {
+        "path": "docs/g6/ERD_MYSQL_THUC_TE.md",
+        "sha256": "feb24fbc8f6ea40c04afe4a215b0d4fb1e74b1614ab9721aa1d2ca018c5e4868",
+        "classification": "current_or_g6_draft"
+      },
+      {
+        "path": "docs/g6/MINH_HOA_LARAVEL.md",
+        "sha256": "cb55109c26d70c677a23af78064a95c7b862e0c63e392838fe7484679630351a",
+        "classification": "current_or_g6_draft"
+      },
+      {
+        "path": "docs/g6/NGHIEM_THU_GIOI_HAN.md",
+        "sha256": "3a79c6cd601fee56f47cbc526d0241df5b2bdbffefd1ffe1e22a374290ea7458",
+        "classification": "current_or_g6_draft"
+      },
+      {
+        "path": "docs/g6/README.md",
+        "sha256": "d9e03da5993d1528430d4a1b51bb875fcaf09b66a510614c419289ebd0de0014",
+        "classification": "current_or_g6_draft"
+      },
+      {
+        "path": "docs/g6/RUBRIC_DOI_CHIEU.md",
+        "sha256": "1f87f2f5808faa98f2dd562fe360de2133e998dde3fec42499773946b6280547",
+        "classification": "current_or_g6_draft"
+      },
+      {
+        "path": "docs/g6/UML_USE_CASE.md",
+        "sha256": "78140a3e6b1f3e8e361f07ab8a78bda65f30e49dda35cfa787f807768f028646",
+        "classification": "current_or_g6_draft"
+      }
+    ],
+    "relative_links_checked": 177,
+    "broken_relative_links": 0,
+    "current_semantic_review": [
+      ".agent/DOC_INDEX.md",
+      ".agent/G5_PUBLICATION_G6_CHECKLIST.md",
+      ".agent/G6R_CHECKLIST.md",
+      ".agent/PLAN.md",
+      ".agent/decisions/G5_ACCEPTED_G6_DRAFT_AUTHORIZED_20261017.md",
+      ".agent/mistake.md",
+      ".agent/rule.md",
+      "AGENTS.md",
+      "README.md",
+      "context.md",
+      "docs/ARCHITECTURE.md",
+      "docs/FUNCTIONS_USE_CASES.md",
+      "docs/G6R_RESULT.md",
+      "docs/G6_RESULT.md",
+      "docs/IMPLEMENTATION_PLAN.md",
+      "docs/PUBLICATION.md",
+      "docs/g6/DEMO_KHOI_DONG.md",
+      "docs/g6/DE_TAI_CHUC_NANG.md",
+      "docs/g6/ERD_MYSQL_THUC_TE.md",
+      "docs/g6/MINH_HOA_LARAVEL.md",
+      "docs/g6/NGHIEM_THU_GIOI_HAN.md",
+      "docs/g6/README.md",
+      "docs/g6/RUBRIC_DOI_CHIEU.md",
+      "docs/g6/UML_USE_CASE.md"
+    ],
+    "historical_policy": "Inventory retained checkpoint meaning, current sources reconciled; no skill/third-party/private/archive/log or protected project edits"
+  },
+  "security": {
+    "files_scanned": 287,
+    "known_current_secret_values_patterns": "PASS",
+    "private_dump_dependency_nested_git_reparse_size_exclusions": "PASS",
+    "limit": "Known values/patterns/whitelist, not guarantee every secret detected"
+  },
+  "git_status": {
+    "mnm_head": "68770c0d2dc8b0e743a69564112be41eed54dd69",
+    "staged_files": 0,
+    "g6_changed_paths": [
+      ".agent/DOC_INDEX.md",
+      ".agent/G5_PUBLICATION_G6_CHECKLIST.md",
+      ".agent/PLAN.md",
+      ".agent/mistake.md",
+      "AGENTS.md",
+      "README.md",
+      "context.md",
+      "docs/ARCHITECTURE.md",
+      "docs/FUNCTIONS_USE_CASES.md",
+      "docs/IMPLEMENTATION_PLAN.md",
+      "docs/PUBLICATION.md",
+      ".agent/G6R_CHECKLIST.md",
+      "docs/G6R_RESULT.md",
+      "docs/G6_RESULT.md",
+      "docs/evidence/G6R_STARTUP_CHECK.json",
+      "docs/evidence/G6R_VERIFICATION.json",
+      "docs/evidence/G6_ENV04_EVIDENCE_READBACK.json",
+      "docs/evidence/G6_FIXTURE_INTEGRITY.json",
+      "docs/evidence/G6_G5_PUBLICATION.json",
+      "docs/evidence/G6_G5_STAGE_REVIEW.json",
+      "docs/evidence/G6_MYSQL_READBACK.json",
+      "docs/evidence/G6_MYSQL_SCHEMA.json",
+      "docs/evidence/G6_RENDER_QA.json",
+      "docs/evidence/G6_STARTUP_CHECK.json",
+      "docs/evidence/G6_VERIFICATION.json",
+      "docs/g6/DEMO_KHOI_DONG.md",
+      "docs/g6/DE_TAI_CHUC_NANG.md",
+      "docs/g6/ERD_MYSQL_THUC_TE.md",
+      "docs/g6/MINH_HOA_LARAVEL.md",
+      "docs/g6/NGHIEM_THU_GIOI_HAN.md",
+      "docs/g6/README.md",
+      "docs/g6/RUBRIC_DOI_CHIEU.md",
+      "docs/g6/UML_USE_CASE.md",
+      "docs/g6/diagrams/erd-browser.jpg",
+      "docs/g6/diagrams/erd.mmd",
+      "docs/g6/diagrams/erd.svg",
+      "docs/g6/diagrams/use-cases-browser.jpg",
+      "docs/g6/diagrams/use-cases.json",
+      "docs/g6/diagrams/use-cases.puml",
+      "docs/g6/diagrams/use-cases.svg",
+      "docs/g6/index.html"
+    ]
+  },
+  "pending": [
+    "Thy/GPT Web acceptance",
+    "Official marking rubric",
+    "Team confirms contribution/allocation",
+    "Final submission Word/PDF/slides if required",
+    "Actual assessed demo; separate QA data scope for live CRUD writes"
+  ],
+  "next": "Package whitelist/CRC/member hashes and stop G6 DRAFT; do not commit/push G6 or open next stage"
+}

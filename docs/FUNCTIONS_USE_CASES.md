@@ -1,3 +1,5 @@
+Cập nhật hiện hành18/10/2026: G6/G6-R đã ACCEPTED/LOCKED, được chốt Git theo decision G6_ACCEPTED_G7_DRAFT_AUTHORIZED_20261018. Publication đang kiểm, SHA sau push đọc tại context/receipt mới. Sau remote readback sạch chỉ chuẩn bị G7 DRAFT, chưa commit/push G7. Các trạng thái G6 DRAFT/chưa push bên dưới giữ checkpoint cũ; source/nghiệp vụ và accepted G6 content không sửa.
+
 # Chức năng, rubric và phân công — G5
 
 Trạng thái hiện hành dựa kiểm G5 trên MySQL8.4.3:31test/674assertions,29lượt TCP và browser thật1366/768/320. G4B đã được Thy nghiệm thu; G5 đã ACCEPTED/LOCKED trong phạm vi bằng chứng; G6 chỉ DRAFT theo quyền mới. Rubric dựa mô tả Thy cung cấp, chưa có phiếu chấm gốc. G5 nghiệm thu theo decision G5_ACCEPTED_G6_DRAFT_AUTHORIZED; rubric gốc chưa được cung cấp.
@@ -12,7 +14,7 @@ Trạng thái hiện hành dựa kiểm G5 trên MySQL8.4.3:31test/674assertions
 | Search/pagination | code/name/active ingredient; active_only/is_active/category/unit; per_page1..50, name/id hoặc username/id | VERIFIED G4B |
 | Form validation | Rule G1 theo G2_DECISIONS và ERD_MYSQL, CSRF và ID | VERIFIED G4B |
 | Eloquent/migration/seeder | Bốn bảng nghiệp vụ, ba FK, synthetic demo | LOCKED G4A; regression VERIFIED G5 |
-| ERD/Use Case/chức năng | Hồ sơ G2; Mermaid/PlantUML chưa render | APPLIED_UNVERIFIED cho render |
+| ERD/Use Case/chức năng | G6 schema-derived SVG + source Mermaid/PlantUML/JSON; browserQA | VERIFIED render kỹ thuật, G6 DRAFT chờ nghiệm thu |
 
 Guest chỉ login; User xem danh mục/đơn vị và tìm vật tư; Admin thêm/sửa/xóa theo rule và quản lý tài khoản. Không Shop, POS, checkout hoặc lịch sử đơn. Responsive G5 đã kiểm trong ma trận G5_BROWSER_QA.json và22ảnh; không có upload/AJAX ghi dữ liệu hoặc đặt hàng. Dashboard chỉ thống kê dữ liệu hiện có, không tạo nghiệp vụ mới.
 
@@ -24,3 +26,5 @@ Guest chỉ login; User xem danh mục/đơn vị và tìm vật tư; Admin thê
 | Nguyễn Hồ Minh Trọng | Product/Blade/Bootstrap, tích hợp UI, báo cáo/demo và kiểm rubric |
 
 Mỗi module cần người khác review; Thy xác nhận phân công khi triển khai nhóm.
+
+Hồ sơ G6 hiện hành: [đề tài/phân công](g6/DE_TAI_CHUC_NANG.md), [Use Case](g6/UML_USE_CASE.md), [rubric](g6/RUBRIC_DOI_CHIEU.md), [demo](g6/DEMO_KHOI_DONG.md). Phân công vẫn đề xuất, chưa xác nhận đóng góp. Sơ đồ G2 cũ giữ lịch sử; SVG G6 render từ cùng metadata/model, không tuyên bố đã compile engine PlantUML/Mermaid.

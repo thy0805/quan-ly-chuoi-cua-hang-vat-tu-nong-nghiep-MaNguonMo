@@ -1,0 +1,53 @@
+{
+  "status": "PASS",
+  "base": "68770c0d2dc8b0e743a69564112be41eed54dd69",
+  "archive_sha256": "a432d9ad33c9f60cafe9f40a9daae5099457529a45dfc7fcae04870acb2cb01f",
+  "archive_payload_files": 44,
+  "source_hashes_verified": 26,
+  "protected_git": {
+    "parent": {
+      "head": "4ee9b0d1ed52f18cf984b4511cc89df841a4721e",
+      "status_lines": 5345,
+      "head_status_metadata_match_turn_baseline": true,
+      "historical_metadata_head_match": true,
+      "historical_status_delta_word_lock_files": 2
+    },
+    "klcn": {
+      "head": "fc514c8a040d7d2804791ceea5a255427f5bf086",
+      "status_lines": 11,
+      "head_status_metadata_match_turn_baseline": true,
+      "historical_metadata_head_match": true,
+      "historical_status_delta_word_lock_files": 0
+    },
+    "nosql": {
+      "head": "21288936d172b8485b425c1adc7ca21972da5e48",
+      "status_lines": 0,
+      "head_status_metadata_match_turn_baseline": true,
+      "historical_metadata_head_match": true,
+      "historical_status_delta_word_lock_files": 0
+    }
+  },
+  "secret_scan": "PASS",
+  "database_write_or_full_test_run": false,
+  "accepted_manifest_payload": 44,
+  "acceptance": "G6/G6-R ACCEPTED/LOCKED by Thy/GPT Web, supplied evidence only",
+  "fixture_readback": {
+    "demo_rows_and_hashes_unchanged": true,
+    "schema_unchanged_except_auto_increment_counters": true,
+    "migration_ledger_unchanged": true,
+    "counts": {
+      "product_categories": 5,
+      "products": 4,
+      "units": 3,
+      "users": 3
+    },
+    "identity": {
+      "db": "mnm_vat_tu_nong_nghiep",
+      "version": "8.4.3",
+      "account": "mnm_runtime_20261017@localhost"
+    }
+  },
+  "no_full_test_rerun": "Documents only;31/674 and browser matrix are accepted G5 evidence17/10",
+  "publication": "Stage/commit/push/readback gates required; this is not a push receipt",
+  "protected_limit": "HEAD/status/Gitmetadata vs turn baseline, not whole protected source/database audit;2Word lockfiles preexisting vs historical parent baseline"
+}

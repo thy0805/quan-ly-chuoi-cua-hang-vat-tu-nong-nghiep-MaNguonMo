@@ -1,4 +1,14 @@
-# Publication G5 — được nghiệm thu và cho phép checkpoint
+Cập nhật hiện hành18/10/2026: G6/G6-R đã ACCEPTED/LOCKED, được chốt Git theo decision G6_ACCEPTED_G7_DRAFT_AUTHORIZED_20261018. Publication đang kiểm, SHA sau push đọc tại context/receipt mới. Sau remote readback sạch chỉ chuẩn bị G7 DRAFT, chưa commit/push G7. Các trạng thái G6 DRAFT/chưa push bên dưới giữ checkpoint cũ; source/nghiệp vụ và accepted G6 content không sửa.
+
+# Publication hiện hành — G5 đã push, G6 DRAFT còn local
+
+main **68770c0d2dc8b0e743a69564112be41eed54dd69** trên repository Mã nguồn mở. Remote/fetched SHA và tree khớp;257tracked, checkpoint78file gồm26source/test/assets và52hồ sơ/evidence/ảnh; worktree sạch trước G6. [Receipt](evidence/G6_G5_PUBLICATION.json), [78staged review](evidence/G6_G5_STAGE_REVIEW.json), [preflight](evidence/G5_PUBLICATION_PREFLIGHT.json). Hồi quy31/674/lint/fixture/protected/secret đạt trước commit; không force hoặc remote repo khác.
+
+G6 chỉ tài liệu/diagram/evidence/governance, chưa stage/commit/push và chờ nghiệm thu. SHA receipt G5 là nguồn Git hiện hành; các phần dưới giữ lịch sử trước push theo thời điểm.
+
+---
+
+# Lịch sử chuẩn bị publication G5
 
 G5 ACCEPTED/LOCKED source/test/HTTP/browser QA theo decision G5_ACCEPTED_G6_DRAFT_AUTHORIZED_20261017. Publication G5 chạy riêng sau ZIP26source/hồi quy31/674/protected/secret/staged review, đúng main/origin Mã nguồn mở, không force. Receipt kiểm trước commit: [G5_PUBLICATION_PREFLIGHT](evidence/G5_PUBLICATION_PREFLIGHT.json); SHA G5 đọc từ lịch sử main và receipt remote sau push. Không coi preflight như bằng chứng push hoàn tất.
 

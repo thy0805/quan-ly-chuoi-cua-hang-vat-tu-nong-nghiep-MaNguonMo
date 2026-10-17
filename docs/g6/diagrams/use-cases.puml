@@ -1,0 +1,30 @@
+@startuml
+left to right direction
+actor "Nhân viên (User)" as User
+actor "Quản trị viên (Admin)" as Admin
+rectangle "Quản lý vật tư nông nghiệp — G5 đã triển khai" {
+  usecase "UC01\nĐăng nhập" as UC01
+  usecase "UC02\nĐăng xuất" as UC02
+  usecase "UC03\nXem tổng quan" as UC03
+  usecase "UC04\nXem danh mục / đơn vị" as UC04
+  usecase "UC05\nTra cứu / xem chi tiết vật tư" as UC05
+  usecase "UC06\nQuản lý danh mục" as UC06
+  usecase "UC07\nQuản lý đơn vị tính" as UC07
+  usecase "UC08\nQuản lý vật tư" as UC08
+  usecase "UC09\nQuản lý tài khoản nhân viên" as UC09
+}
+User -- UC01
+Admin -- UC01
+User -- UC02
+Admin -- UC02
+User -- UC03
+Admin -- UC03
+User -- UC04
+Admin -- UC04
+User -- UC05
+Admin -- UC05
+Admin -- UC06
+Admin -- UC07
+Admin -- UC08
+Admin -- UC09
+@enduml

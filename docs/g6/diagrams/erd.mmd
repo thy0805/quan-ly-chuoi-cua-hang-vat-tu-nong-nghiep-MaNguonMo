@@ -1,0 +1,38 @@
+erDiagram
+    users {
+        BIGINT id PK
+        VARCHAR username UK
+        TEXT password_hash
+        ENUM role
+        TINYINT is_active
+        DATETIME created_at
+        TINYINT admin_slot UK
+    }
+    product_categories {
+        BIGINT id PK
+        BIGINT parent_id FK
+        VARCHAR code UK
+        VARCHAR name
+        TINYINT is_active
+    }
+    units {
+        BIGINT id PK
+        VARCHAR code UK
+        VARCHAR name
+        TINYINT is_active
+    }
+    products {
+        BIGINT id PK
+        BIGINT category_id FK
+        BIGINT unit_id FK
+        VARCHAR code UK
+        VARCHAR name
+        VARCHAR active_ingredient
+        DECIMAL sale_price
+        DECIMAL tax_rate
+        INT expiry_warning_days
+        TINYINT is_active
+    }
+    product_categories o|--o{ product_categories : parent_children
+    product_categories ||--o{ products : category
+    units ||--o{ products : unit

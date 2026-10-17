@@ -1,0 +1,16 @@
+{
+  "demo_rows_and_hashes_unchanged": true,
+  "schema_unchanged_except_auto_increment_counters": true,
+  "migration_ledger_unchanged": true,
+  "counts": {
+    "product_categories": 5,
+    "products": 4,
+    "units": 3,
+    "users": 3
+  },
+  "identity": {
+    "db": "mnm_vat_tu_nong_nghiep",
+    "version": "8.4.3",
+    "account": "mnm_runtime_20261017@localhost"
+  }
+}

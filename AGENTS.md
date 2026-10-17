@@ -2,8 +2,8 @@
 
 - Giao tiếp tiếng Việt có dấu, gọi Thy/xưng tui; không thêm comment code khi chưa được yêu cầu.
 - Chỉ sửa LapTrinhMaNguonModoAN. KLCN/NoSQL/Mobile/Word/Rose và repo cha chỉ đọc; không thay index/config hoặc database của chúng.
-- Đầu phiên đọc context.md, .agent/PLAN.md, G5_PUBLICATION_G6_CHECKLIST.md, DOC_INDEX.md, mistake.md và decision hiện hành. Viết hồ sơ đọc .agent/rule.md.
-- Quyền hiện hành: G5 ACCEPTED/LOCKED trong source/test/HTTP/browser QA; được commit/push G5 main sau kiểm, rồi chuẩn bị G6 DRAFT tài liệu/ERD/UML/demo. G6 chưa được commit/push; dừng G6 DRAFT. Xem decision G5_ACCEPTED_G6_DRAFT_AUTHORIZED_20261017.
+- Đầu phiên đọc context.md, .agent/PLAN.md, G6_PUBLICATION_G7_CHECKLIST.md, DOC_INDEX.md, mistake.md và decision hiện hành. Viết hồ sơ đọc .agent/rule.md.
+- Quyền hiện hành: G6/G6-R ACCEPTED/LOCKED theo decision G6_ACCEPTED_G7_DRAFT_AUTHORIZED_20261018. Được explicit stage/commit/push riêng G6 sau kiểm; readback sạch rồi chỉ chuẩn bị G7 DRAFT Markdown/slide outline/rubric/demo. Không G7 commit/push hoặc G8; không sửa source hay accepted G6 content.
 - Giữ accepted ZIP/evidence và schema/models/migrations/Auth/Requests/Middleware/domain/config/dependencies/32route cũ. Dashboard mới chỉ GET có auth+active, thống kê bằng Eloquent trên bốn bảng hiện có.
 - Admin ghi, User chỉ xem/tìm/phân trang; middleware kiểm trước controller/render. Không public registration/remember/reset-password hoặc Sanctum/token. Giữ singleton Admin, cây/active references/DecimalId/decimal-string/DELETE RESTRICT/transaction.
 - G5 dùng Blade/Bootstrap5.3.8 offline có MIT license; validation tiếng Việt giữ nguyên rule/field/error key/status. Không thêm Next/Flutter/Shop/POS/checkout/kho/lô/công nợ/outbox/worker.
