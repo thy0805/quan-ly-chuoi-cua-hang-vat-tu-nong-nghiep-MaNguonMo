@@ -1,0 +1,30 @@
+{
+  "status": "PASS in stated scope",
+  "runtime_require": {
+    "php": "^8.3",
+    "laravel/framework": "^13.17"
+  },
+  "composer_scripts": {},
+  "database_config": "Only mysql connection declared; runtime identity/grants readback G5_MYSQL_READBACK",
+  "frontend": "Active Blade views use Bootstrap local assets; no Next/Flutter build required",
+  "unused_scaffold_retained": [
+    "package.json contains original Vite/Tailwind dev scripts; not installed/run/required by G5",
+    "resources/views/welcome.blade.php contains original Tailwind scaffold; no route renders it"
+  ],
+  "unchanged_locked_paths": [
+    "composer.json",
+    "composer.lock",
+    "config",
+    "bootstrap/app.php",
+    "app/Models",
+    "database"
+  ],
+  "source_basis": [
+    "composer.json",
+    "config/database.php",
+    "routes/web.php",
+    "app/Http/Controllers/DashboardController.php",
+    "docs/evidence/G5_MYSQL_READBACK.json"
+  ],
+  "limit": "Static/runtime scoped checks, not scan of third-party vendor or ignored legacy archives"
+}

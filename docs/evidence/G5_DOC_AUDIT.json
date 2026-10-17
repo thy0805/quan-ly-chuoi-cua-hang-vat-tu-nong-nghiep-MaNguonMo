@@ -1,0 +1,314 @@
+{
+  "date_local": "2026-10-17",
+  "scope": "Owned MNM Markdown excluding third-party/skills/private/archive/logs; protected parent/KLCN/NoSQL read-only",
+  "inventory_count": 46,
+  "inventory": [
+    {
+      "path": ".agent/AUTH02_CHECKLIST.md",
+      "status": "historical_checkpoint",
+      "sha256": "8caf93074a6d074b9ee17a34d44c9c29bc278124744a0601bd76fc1327217898",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": ".agent/CLONE_CHECKLIST.md",
+      "status": "historical_checkpoint",
+      "sha256": "09b23486dc297d1b87aef725e7ff04e0d29874417faa22c628929ea5c5f6cee8",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": ".agent/DOC_INDEX.md",
+      "status": "current",
+      "sha256": "197cd34effd7c9d4a6e72513dc013232e469fad7092ce9e19624235917430446",
+      "review": "Current state/technology/source/next action reconciled"
+    },
+    {
+      "path": ".agent/ENV03_CHECKLIST.md",
+      "status": "historical_checkpoint",
+      "sha256": "67dc1072e5bcb3e792434b7ca21f14d5a62b419bea85dd107025b894db670c2a",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": ".agent/ENV04_CHECKLIST.md",
+      "status": "historical_checkpoint",
+      "sha256": "c25f6533984826a43c4fd43046c348ab13680701c25de24f019e06b109074dca",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": ".agent/G23_CHECKLIST.md",
+      "status": "historical_checkpoint",
+      "sha256": "ccae3c39bad2ef431ad9845744dda8f97b50f344fcda0cfc5f17797488df1da9",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": ".agent/G4A_CHECKLIST.md",
+      "status": "historical_checkpoint",
+      "sha256": "d983c1e8cbecde43900e401269b6593886ef872fe496d60bedd50874e18b2872",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": ".agent/G4A_IMPLEMENTATION_CHECKLIST.md",
+      "status": "historical_checkpoint",
+      "sha256": "32849b270cc6213ed6d8cdec8d24243083b2b0cfafcfe3c18f6b55ad05c79418",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": ".agent/G4A_RESUME_CHECKLIST.md",
+      "status": "historical_checkpoint",
+      "sha256": "c895bbb88571154bca30be8c22b3a3cd76982d87033396ebeaf53cd608205a66",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": ".agent/G4B_CHECKLIST.md",
+      "status": "historical_checkpoint",
+      "sha256": "4295b430892ab5131ab9fd602a0c11dea0f54511f5ddbbfd06f60df6cd367290",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": ".agent/G5_CHECKLIST.md",
+      "status": "current",
+      "sha256": "1e3dd6814e2fbe36f3639a89ed3939b909828f8284b6467ec15b54148cca2408",
+      "review": "Current state/technology/source/next action reconciled"
+    },
+    {
+      "path": ".agent/PLAN.md",
+      "status": "current",
+      "sha256": "e0b7936d5fe3d92e1fd0d55fdfeaad5e34a6a5f266d1b50b7e71168fce400fc0",
+      "review": "Current state/technology/source/next action reconciled"
+    },
+    {
+      "path": ".agent/decisions/AUTH02_LOCAL_LOGIN_20261017.md",
+      "status": "historical_checkpoint",
+      "sha256": "d75efdda1bc3839a4a16ea92416806fc9d012f9736327011c4b4dada56c53104",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": ".agent/decisions/CLONE_FIRST_20261017.md",
+      "status": "historical_checkpoint",
+      "sha256": "79130fa452deefe6ec2c4b47a4ca4691c26165e371a43d9bf1b9d49c314b56ee",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": ".agent/decisions/ENV03_DIAGNOSTIC_AUTHORIZED_20261017.md",
+      "status": "historical_checkpoint",
+      "sha256": "374155f85389284975cdda97cbd0fc450d0be8e4df7c00033ea31608839ce339",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": ".agent/decisions/ENV04_ACCEPTED_G4A_RESUMED_20261017.md",
+      "status": "historical_checkpoint",
+      "sha256": "6f47edf3d9bb2f3f2d8be568f730f78e1a8e7408dab63957c2205efd577f6631",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": ".agent/decisions/ENV04_CONDITIONAL_REPAIR_AUTHORIZED_20261017.md",
+      "status": "historical_checkpoint",
+      "sha256": "bcdc000080eb7bfaf0a6cc4ae8cca0ddd857d6e2c1075a1ac7b3fb8ad26a5fba",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": ".agent/decisions/ENV04_OWNER_SHUTDOWN_AUTHORIZED_20261017.md",
+      "status": "historical_checkpoint",
+      "sha256": "f397a3b80e5e7f5c622bfa74f5cfc141e3d8fe773de793e23806bda8206a4219",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": ".agent/decisions/G23_ACCEPTED_SCOPE_20261017.md",
+      "status": "historical_checkpoint",
+      "sha256": "dd9dd008da1ca4f7f9eb81bb8d71b41ae7e667a7a886bd3baa606890bd82e303",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": ".agent/decisions/G4A_ACCEPTED_G4B_AUTHORIZED_20261017.md",
+      "status": "historical_checkpoint",
+      "sha256": "808b2535f553b2f70ff2461f71d2ea009f09cf6c7f58e6673804262f3ba7444c",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": ".agent/decisions/G4A_AUTHORIZED_20261017.md",
+      "status": "historical_checkpoint",
+      "sha256": "2b051aaf30e582ca7e5e2c5ecda0e23037832cf7a3badf0dc232fb19a9444959",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": ".agent/decisions/G4A_DIRECT_MYSQL_AUTHORIZED_20261017.md",
+      "status": "historical_checkpoint",
+      "sha256": "b45d3a495c4925c3ab29d469921d2052b2bb6c8660a16c2cb687b50f70cd886f",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": ".agent/decisions/G4A_TRIGGER_ADMIN_DDL_20261017.md",
+      "status": "historical_checkpoint",
+      "sha256": "ac08d9c8a9941c96c35d7c8cb579e714619409042dfebca5bdd14af7fd662cc6",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": ".agent/decisions/G4B_ACCEPTED_G5_AUTHORIZED_20261017.md",
+      "status": "current",
+      "sha256": "ffcc6218426dc65723102d84bf517a7a04c57d39d9a0e4fd437992946c11592c",
+      "review": "Current state/technology/source/next action reconciled"
+    },
+    {
+      "path": ".agent/mistake.md",
+      "status": "current",
+      "sha256": "bedf946fd3bca661226ad50f57ca4081d3e214fd916b789824aab2160619c322",
+      "review": "Current state/technology/source/next action reconciled"
+    },
+    {
+      "path": ".agent/rule.md",
+      "status": "current",
+      "sha256": "0abafa77187b1d6985b5f124958dff2e78befc78c663447874fb91b2c936fdcb",
+      "review": "Current state/technology/source/next action reconciled"
+    },
+    {
+      "path": "AGENTS.md",
+      "status": "current",
+      "sha256": "fa00b4a2dbc6ff2a3bbcefce48f7efdc23b23d7837ee175bbd4dda8ff7fe4bae",
+      "review": "Current state/technology/source/next action reconciled"
+    },
+    {
+      "path": "README.md",
+      "status": "current",
+      "sha256": "f9961852bfd99bdced6e76c897c7e8eacbd95be1c7e71642a034c74b892ed57a",
+      "review": "Current state/technology/source/next action reconciled"
+    },
+    {
+      "path": "context.md",
+      "status": "current",
+      "sha256": "980b9e0e04584eae0071a501f558202eeb4ebb8f746a1d3d44360c16cb475172",
+      "review": "Current state/technology/source/next action reconciled"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "status": "current",
+      "sha256": "5560042f596038e8f9b1f401e5e03702889f8eec7e0821808288891cec8634da",
+      "review": "Current state/technology/source/next action reconciled"
+    },
+    {
+      "path": "docs/AUDIT_KLCN.md",
+      "status": "historical_checkpoint",
+      "sha256": "661c27232953d2c64e70af2a1f8e38295fc6aec60a654a8755fe6ffa3c4d49aa",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": "docs/BIEN_BAN_GIAI_DOAN_1.md",
+      "status": "historical_checkpoint",
+      "sha256": "a1f65d1187e31e2e1acbb1b6156851b41c8433d4dae5598830cad2039e1cb396",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": "docs/CONVERSION_MAPPING.md",
+      "status": "historical_checkpoint",
+      "sha256": "3cdb3943c27b5dddbad96c265001d4476e7cb5b7ac8443cb484877adaf2f7b1f",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": "docs/ENV03_DIAGNOSTIC.md",
+      "status": "historical_checkpoint",
+      "sha256": "79bf99ab921e1b5a08bc6380d32382d3efc1ed87e963df1362f0893bc3af7277",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": "docs/ENV04_REPAIR_RESULT.md",
+      "status": "historical_checkpoint",
+      "sha256": "7602573bc52d96e7babdf287e12146a4d7b47c434a9200dbbdf19c795c279d5b",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": "docs/ERD_MYSQL.md",
+      "status": "locked_design",
+      "sha256": "47ae8b87e9a043a699465c2f8d2f50ed3559d5ccef28206d782d1bf471b96921",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": "docs/FUNCTIONS_USE_CASES.md",
+      "status": "current",
+      "sha256": "25bf66a165039af931cd7a8089dc499371257622d5972177fafbaa1fba19c374",
+      "review": "Current state/technology/source/next action reconciled"
+    },
+    {
+      "path": "docs/G2_DECISIONS.md",
+      "status": "locked_design",
+      "sha256": "60345ddf3db20d859e4d6da844be502c7d50e78b650c4110590b8c9380528bde",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": "docs/G3_ISOLATION_RESULT.md",
+      "status": "historical_checkpoint",
+      "sha256": "fd527c12a2ef71360deaf8fa73db9ed248b15ab44732e94c34f2515be710525a",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": "docs/G4A_RESULT.md",
+      "status": "historical_checkpoint",
+      "sha256": "d4c428e3114a2d4efa1998233c68678c5f0995561defa2c724762e3c1fe4e1df",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": "docs/G4B_RESULT.md",
+      "status": "historical_checkpoint",
+      "sha256": "28f457dab1517b24e00d2292dec5601cd0d56141f13320cb6f0cdd8686a5ed06",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": "docs/G5_RESULT.md",
+      "status": "current",
+      "sha256": "1bb36957d93cae79f054ad8d0bfcfe20a754469f1487b11192d29402620ecf7f",
+      "review": "Current state/technology/source/next action reconciled"
+    },
+    {
+      "path": "docs/IMPLEMENTATION_PLAN.md",
+      "status": "current",
+      "sha256": "c004107f82e2de0b1404fcf7b80c9def53b1cd9b17486cff7ac9fba96be474e4",
+      "review": "Current state/technology/source/next action reconciled"
+    },
+    {
+      "path": "docs/PUBLICATION.md",
+      "status": "current",
+      "sha256": "6f2433acd259d7a245180bc13a169570f8b1521a92b5ccc380b0e62b8eccff36",
+      "review": "Current state/technology/source/next action reconciled"
+    },
+    {
+      "path": "docs/README_GUI_GPT_WEB.md",
+      "status": "historical_checkpoint",
+      "sha256": "e15cbda7ef6e8d88f2b75352429b420e3998c65fb6be17b960de2a956c535d93",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    },
+    {
+      "path": "docs/REUSED_FILES.md",
+      "status": "historical_checkpoint",
+      "sha256": "28a025b064075573088f8b842de522556f3b844ef917775e2c912b6ec5475747",
+      "review": "Retained checkpoint semantics; superseded runtime indexed in DOC_INDEX"
+    }
+  ],
+  "relative_links_checked": 55,
+  "broken_relative_links": 0,
+  "semantic_review_current": [
+    ".agent/DOC_INDEX.md",
+    ".agent/G5_CHECKLIST.md",
+    ".agent/PLAN.md",
+    ".agent/decisions/G4B_ACCEPTED_G5_AUTHORIZED_20261017.md",
+    ".agent/mistake.md",
+    ".agent/rule.md",
+    "AGENTS.md",
+    "README.md",
+    "context.md",
+    "docs/ARCHITECTURE.md",
+    "docs/FUNCTIONS_USE_CASES.md",
+    "docs/G5_RESULT.md",
+    "docs/IMPLEMENTATION_PLAN.md",
+    "docs/PUBLICATION.md"
+  ],
+  "locked_design_review": [
+    "docs/G2_DECISIONS.md",
+    "docs/ERD_MYSQL.md"
+  ],
+  "historical_checkpoint_policy": "Preserve accepted source/evidence and past result; current DOC_INDEX has precedence",
+  "note": "No Word/PDF edited; Markdown tables/headings and local link targets read back; no claim UML/ERD rendered",
+  "sha256_basis": "Raw file bytes read back after final current-document edits",
+  "semantic_notes": [
+    "G4B published411aa5d716c1162a836dd35eda994dcefab1cd4c; G5 local awaiting acceptance",
+    "Unused original Vite/Tailwind scaffold retained, no active G5 view calls @vite",
+    "Browser available after restart;22screenshots in stated matrix",
+    "Final package verification receipt must PASS before handoff; no G5 commit/push/G6"
+  ]
+}

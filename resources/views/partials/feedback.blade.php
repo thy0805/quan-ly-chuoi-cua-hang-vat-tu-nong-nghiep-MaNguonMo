@@ -1,0 +1,2 @@
+@if(session('status'))<div class="alert alert-success d-flex align-items-center gap-2" role="status"><x-icon name="check" /><span>{{ session('status') }}</span></div>@endif
+@if($errors->any())<div class="alert alert-danger" role="alert" tabindex="-1" id="form-errors"><strong>Vui lòng kiểm tra thông tin.</strong><ul class="mb-0 mt-2">@foreach($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul></div>@endif

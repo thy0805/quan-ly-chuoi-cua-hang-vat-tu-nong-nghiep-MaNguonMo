@@ -1,0 +1,150 @@
+{
+  "date_local": "2026-10-17",
+  "status": "VERIFIED in stated browser matrix; acceptance pending",
+  "tool": "Codex in-app browser, actual localhost Laravel/MySQL",
+  "checks": [
+    {
+      "screen": "login",
+      "width": 1366,
+      "checked": true
+    },
+    {
+      "screen": "dashboard",
+      "width": 1366,
+      "checked": true,
+      "overflow": false
+    },
+    {
+      "screen": "products",
+      "width": 1366,
+      "checked": true
+    },
+    {
+      "screen": "create/invalid validation with old input",
+      "width": 768,
+      "checked": true,
+      "oldInputRetained": true,
+      "language": "vi",
+      "invalidWriteRejected": true
+    },
+    {
+      "screen": "offcanvas navigation",
+      "width": 768,
+      "checked": true
+    },
+    {
+      "screen": "dashboard",
+      "width": 768,
+      "documentWidth": 768,
+      "overflow": false,
+      "viewport": 768
+    },
+    {
+      "screen": "dashboard",
+      "width": 320,
+      "documentWidth": 320,
+      "overflow": false,
+      "viewport": 320
+    },
+    {
+      "screen": "products",
+      "width": 320,
+      "documentWidth": 320,
+      "overflow": false,
+      "tableScroll": true,
+      "viewport": 320
+    },
+    {
+      "screen": "search NPK",
+      "width": 320,
+      "results": 1,
+      "overflow": false
+    },
+    {
+      "screen": "product detail",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "screen": "delete modal cancel",
+      "width": 320,
+      "destructiveSubmit": false
+    },
+    {
+      "screen": "product edit (no save)",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "screen": "categories inactive filter",
+      "width": 1366,
+      "results": 1
+    },
+    {
+      "screen": "units list",
+      "width": 1366,
+      "checked": true
+    },
+    {
+      "screen": "users list",
+      "width": 1366,
+      "checked": true
+    },
+    {
+      "screen": "pagination next page",
+      "width": 1366,
+      "per_page": 1,
+      "page": 2,
+      "checked": true
+    },
+    {
+      "screen": "login",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "screen": "login",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "screen": "User catalog",
+      "width": 320,
+      "noAdminWriteControls": true
+    },
+    {
+      "screen": "User direct /users forbidden",
+      "width": 320,
+      "serverDenied": true
+    },
+    {
+      "screen": "User direct create forbidden",
+      "width": 320,
+      "serverDenied": true
+    },
+    {
+      "screen": "User dashboard",
+      "width": 320,
+      "accountCountsHidden": true
+    },
+    {
+      "screen": "Admin and User logout",
+      "checked": true
+    }
+  ],
+  "viewports": [
+    1366,
+    768,
+    320
+  ],
+  "notes": [
+    "Browser became available after user restarted Codex. Earlier disabled result was not evidence that their setting was off.",
+    "First Admin attempt returned 500 because MySQL was stopped; resumed unchanged authorized instance and retested successfully.",
+    "Browser writes: login/logout and invalid form only; delete modal canceled; no demo CRUD submitted.",
+    "Tables scroll horizontally within region on mobile; no page-wide overflow in sampled screens.",
+    "Full successful CRUD and CSRF/session/role/domain regression tested in rollback transactions by PHPUnit.",
+    "Viewport override reset; tab kept for user; preview loopback server remains available.",
+    "Final revisit: Admin login and refreshed dashboard captures1366/320 after table fix; viewport reset, Admin demo dashboard tab kept for Thy. Earlier logout check remains valid."
+  ],
+  "screenshots_directory": "docs/evidence/g5-screenshots"
+}

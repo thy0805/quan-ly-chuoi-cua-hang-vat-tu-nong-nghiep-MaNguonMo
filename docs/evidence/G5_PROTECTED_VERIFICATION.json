@@ -1,0 +1,43 @@
+{
+  "base_commit": "411aa5d716c1162a836dd35eda994dcefab1cd4c",
+  "g5_uncommitted_unpushed": true,
+  "protected_git": {
+    "parent": {
+      "head": "4ee9b0d1ed52f18cf984b4511cc89df841a4721e",
+      "status_lines": 5343,
+      "head_status_metadata_match_baseline": true
+    },
+    "klcn": {
+      "head": "fc514c8a040d7d2804791ceea5a255427f5bf086",
+      "status_lines": 11,
+      "head_status_metadata_match_baseline": true
+    },
+    "nosql": {
+      "head": "21288936d172b8485b425c1adc7ca21972da5e48",
+      "status_lines": 0,
+      "head_status_metadata_match_baseline": true
+    }
+  },
+  "protected_limit": "HEAD/status/Git metadata and stated locked hashes; not whole database/source hash audit",
+  "accepted_archives_env04_binary_config_unchanged": true,
+  "locked_backend_models_schema_dependencies_unchanged": true,
+  "secret_scan": {
+    "files_checked": 254,
+    "known_current_secrets_and_key_patterns": "PASS",
+    "size_nested_git_reparse_excluded_paths": "PASS"
+  },
+  "php_lint_files": 54,
+  "php_lint_passed": true,
+  "javascript_syntax": "PASS",
+  "source_files": 26,
+  "screenshots": 22,
+  "runtime": "Laravel PHP/MySQL only; source trees contain no Next.js/Flutter/MongoDB/PostgreSQL runtime",
+  "runtime_basis": [
+    "composer.json",
+    "config/database.php",
+    "bootstrap/app.php",
+    "routes/web.php",
+    "docs/evidence/G5_MYSQL_READBACK.json"
+  ],
+  "missing_framework_bootstrap_or_dependency_changes": false
+}

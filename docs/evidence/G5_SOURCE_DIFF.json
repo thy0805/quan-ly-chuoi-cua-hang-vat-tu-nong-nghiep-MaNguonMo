@@ -1,0 +1,163 @@
+{
+  "base_commit": "411aa5d716c1162a836dd35eda994dcefab1cd4c",
+  "source_count": 26,
+  "source_files": [
+    {
+      "path": "app/Http/Controllers/DashboardController.php",
+      "bytes": 941,
+      "sha256": "bd7af0a619bc5e909f2e688911cfacc2715f0645c0ac90e6ec102d2445dc2096",
+      "kind": "new"
+    },
+    {
+      "path": "lang/vi/validation.php",
+      "bytes": 1915,
+      "sha256": "9a2890b9a69d87460a0f89baeb8ad10a416a978062b555323c7acc9bab127711",
+      "kind": "new"
+    },
+    {
+      "path": "public/assets/app.css",
+      "bytes": 15466,
+      "sha256": "cfb473e5ac36ac2b6b16dead9c083920cb8e907fc59947e165a5842ce2067c54",
+      "kind": "new"
+    },
+    {
+      "path": "public/assets/app.js",
+      "bytes": 1686,
+      "sha256": "45e1e11851457e34c276f15934c5f85c15a8670e78c746948472c17a1db46302",
+      "kind": "new"
+    },
+    {
+      "path": "public/assets/bootstrap/LICENSE",
+      "bytes": 1093,
+      "sha256": "4620c84ad5ce8602ff65640ed6b7c8b78ebb9e036584f0ebc1ccc88206a4bb51",
+      "kind": "new"
+    },
+    {
+      "path": "public/assets/bootstrap/bootstrap.bundle.min.js",
+      "bytes": 80496,
+      "sha256": "e4fd49181388c48ec5040bd3fe66f57c29c8e67fcd8502b3354b96ec7ab47cc7",
+      "kind": "new"
+    },
+    {
+      "path": "public/assets/bootstrap/bootstrap.min.css",
+      "bytes": 232111,
+      "sha256": "d85327d99c7a3ee1f9b5d0500d1370acea3ad2db39c163c2f51f232baedbdede",
+      "kind": "new"
+    },
+    {
+      "path": "resources/views/auth/login.blade.php",
+      "bytes": 3469,
+      "sha256": "833c1dfa0a6da75e410396aaca5484c8e7049c3d263d67a2da55f904d7cd8a96",
+      "kind": "modified"
+    },
+    {
+      "path": "resources/views/catalog/form.blade.php",
+      "bytes": 5054,
+      "sha256": "3fbef1524aa0c6ffb38d3ff0c368f3d7b7acad4b7f56b5fd8901b8b94e731a83",
+      "kind": "modified"
+    },
+    {
+      "path": "resources/views/catalog/index.blade.php",
+      "bytes": 3032,
+      "sha256": "5e23015a59bd60babfa3b7d628f0c8565edb0dd36f5c4f9802463267cdd2a595",
+      "kind": "modified"
+    },
+    {
+      "path": "resources/views/catalog/show.blade.php",
+      "bytes": 1971,
+      "sha256": "f66ecfb905a19dd46817c41c6757e0edf0a4515c5fa936aafac8d872cb6bce48",
+      "kind": "modified"
+    },
+    {
+      "path": "resources/views/components/delete-button.blade.php",
+      "bytes": 305,
+      "sha256": "25190b4804f5620b87637c2b2dce1e983e3633afdadd83ff41cea58e01c9ccf4",
+      "kind": "new"
+    },
+    {
+      "path": "resources/views/components/field-error.blade.php",
+      "bytes": 124,
+      "sha256": "12f088504ba00973b9b57ae5b958f36d00ffaa17dd89a7c5b12dd336536247bb",
+      "kind": "new"
+    },
+    {
+      "path": "resources/views/components/filters.blade.php",
+      "bytes": 2548,
+      "sha256": "782ce7e55729eae9ec94685ccc9f4fdea8c7cac56efcdb9772ec1fee107e2cda",
+      "kind": "new"
+    },
+    {
+      "path": "resources/views/components/icon.blade.php",
+      "bytes": 1439,
+      "sha256": "056ebc3229dd57068c0e242c868134426d0024d8754a76d4dbb617dc926641a8",
+      "kind": "new"
+    },
+    {
+      "path": "resources/views/components/pagination.blade.php",
+      "bytes": 896,
+      "sha256": "a018b26d3a7c7ac1d6669a1ada1c7bb5ffad4b0d79cbb1d0b47fc26697f29391",
+      "kind": "new"
+    },
+    {
+      "path": "resources/views/components/status.blade.php",
+      "bytes": 216,
+      "sha256": "ad3da750191c367b59089fb9dd634ece735c9050205cb25e56790c796cc60c9c",
+      "kind": "new"
+    },
+    {
+      "path": "resources/views/dashboard.blade.php",
+      "bytes": 4210,
+      "sha256": "bfaa22fbc474dca9a47beb4e1bf3978750940d3e9431c6ad47ff8d8f011a0c53",
+      "kind": "new"
+    },
+    {
+      "path": "resources/views/layouts/app.blade.php",
+      "bytes": 4946,
+      "sha256": "36af0964668142165277229b622f39de9b6b451cdc0d970c5a48d5fbb9f96fd5",
+      "kind": "modified"
+    },
+    {
+      "path": "resources/views/partials/feedback.blade.php",
+      "bytes": 423,
+      "sha256": "fd01d45d056cc03452d6e7f121d8c2cae9f31f64d2dc8f1d95a90e73524fbe18",
+      "kind": "new"
+    },
+    {
+      "path": "resources/views/partials/table-hint.blade.php",
+      "bytes": 87,
+      "sha256": "f50cc8a9eae222c6b9b3f11e046894ed8c76784ddaf9d8663c4af5ea5fa7be88",
+      "kind": "new"
+    },
+    {
+      "path": "resources/views/users/form.blade.php",
+      "bytes": 3765,
+      "sha256": "fe3e664591221577dde0a06d3261fb4af346b8b779396cc325cffef15a8f966d",
+      "kind": "modified"
+    },
+    {
+      "path": "resources/views/users/index.blade.php",
+      "bytes": 1985,
+      "sha256": "9c2359546bf7dc21eec47e0e2c9d2d2ab6d1e584288cda68f4d7653505f330e1",
+      "kind": "modified"
+    },
+    {
+      "path": "resources/views/users/show.blade.php",
+      "bytes": 1480,
+      "sha256": "7973b40f1206ec558c5132b645d0c5d4f4ec74bb8d54bea05e150c2fcf3d4efe",
+      "kind": "modified"
+    },
+    {
+      "path": "routes/web.php",
+      "bytes": 2862,
+      "sha256": "208f43cda0bf5622776a21b0714caaa8e12456fef75600b8eff5f95edc78f2e8",
+      "kind": "modified"
+    },
+    {
+      "path": "tests/Feature/G5PresentationTest.php",
+      "bytes": 8790,
+      "sha256": "0f088ec16c202fd3bfc148d1c1bc6469b72585253f8c0202bd7527f5808a408f",
+      "kind": "new"
+    }
+  ],
+  "existing_backend_contracts_and_schema_unchanged": true
+}

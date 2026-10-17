@@ -1,17 +1,15 @@
-QUYỀN/TRẠNG THÁI MỚI: Thy đã ACCEPTED G4B source/test/HTTP/MySQL và duyệt checkpoint G4B rồi G5 theo .agent/decisions/G4B_ACCEPTED_G5_AUTHORIZED_20261017.md và G5_CHECKLIST. Các câu G4B chờ nghiệm thu/chưa có quyền push/G5 chưa mở ở phần dưới là checkpoint cũ. Source G5 chưa sửa; đang publication G4B. G5 chưa commit/push, G6 chưa mở.
+# Mã nguồn mở — G5 ACCEPTED/LOCKED; checkpoint Git rồi G6 DRAFT
 
-# Mã nguồn mở — G4B VERIFIED kỹ thuật, chờ nghiệm thu
+CURRENT TASK: Publish checkpoint G5 đã nghiệm thu; sau remote readback/clean mới chuẩn bị tài liệu/sơ đồ/demo G6 DRAFT.
+SOURCE CHECKPOINT: main411aa5d716c1162a836dd35eda994dcefab1cd4c trước commit G5; xem docs/evidence/G5_PUBLICATION_PREFLIGHT.json. SHA sau push cần đọc từ Git/receipt mới, không suy từ ghi chú.
+ALLOWED SCOPE: .agent/G5_PUBLICATION_G6_CHECKLIST.md; explicit whitelist commit/push G5; sau đó chỉ docs/sơ đồ/metadata SELECT/demo plan, không G6 commit/push.
+LOCKED: G1–G5 theo phạm vi nghiệm thu; source G5 đúng26hash của ZIP cfa1f3d3…f28a1e988; G4A/B schema/domain/Auth/dependencies/config; accepted archive/evidence; KLCN/NoSQL/Word/Rose READ ONLY.
+APPLIED BUT UNVERIFIED: Publication G5 chưa remote readback; G6 DRAFT chưa tạo.
+VERIFIED: Accepted ZIP80payload/81entry CRC/SHA và26source khớp; hồi quy mới31/674,54PHP lint/JS,fixture3/5/3/4 nội dung/schema/ledger giữ trừ AUTO_INCREMENT. Protected HEAD/status/Gitmetadata khớp baseline. Browser G5/22ảnh là evidence checkpoint đã nghiệm thu, chưa chạy lại lượt này.
+PENDING: Whitelist/secret/staged/commit/push/readback; G6 metadata/ERD/UML/render/rubric/demo/docs/ZIP. Dừng G6 DRAFT nghiệm thu; không stage mới.
+LAST EVIDENCE: decision G5_ACCEPTED_G6_DRAFT_AUTHORIZED_20261017;G5_PUBLICATION_PREFLIGHT; logs/g4b/g5-publication-regression-20261017 và fixture.
+NEXT EXACT ACTION: Rà từng staged blob và secret; commit G5/push noforce đúng origin main; remote SHA/tree/clean; sau đó bắt đầu D01 G6.
 
-CURRENT TASK: Hoàn tất G4B Auth/Role/CRUD HTTP và hồ sơ bàn giao; dừng chờ Thy/GPT Web nghiệm thu.
-SOURCE CHECKPOINT: main/origin main61332e5e7236a7b28dd71197b3f3848b14aaff74 (G4A đã nghiệm thu/push). G4B chưa stage/commit/push, source bổ sung trong ZIP.
-ALLOWED SCOPE: G4B_CHECKLIST.md và decision G4A_ACCEPTED_G4B_AUTHORIZED_20261017; chỉ kiểm/bàn giao giai đoạn này, chưa có quyền publication G4B/G5.
-LOCKED: G4A schema/models/migrations/config/dependencies/evidence/accepted ZIP; ENV04; KLCN/NoSQL/Mobile/Word/Rose. Không migrate/seed/DROP/TRUNCATE/reset demo.
-APPLIED BUT UNVERIFIED: Không có chức năng G4B còn chờ test; các giới hạn chưa kiểm ghi ở G4B_RESULT. ZIP release chỉ dùng khi package-final.json đã xác nhận CRC/memberSHA.
-VERIFIED:23source/8Blade;26test425assertions (11G4A+15HTTP),24TCP requests/server tạm dừng;32route resolvedmiddleware;52PHP lint;demo3/5/3/4 rowhash/schema/ledger giữ;3FK/7CHECK/2trigger nguyên định nghĩa/1Admin;runtime schema CRUD;protected HEAD/status/metadata/ENV04 hash giữ;43Markdown phân loại/24relative link đạt;ZIP preview52payload/53entry CRC/hash/secret đạt.
-PENDING: Thy/GPT Web nghiệm thu G4B; quyền commit/push G4B và G5/G6 chưa có. Chưa visual QA/Bootstrap/responsive/render UML/ERD hoặc multi-client stress.
-LAST EVIDENCE: docs/G4B_RESULT.md và docs/evidence/G4B_*; .agent/logs/g4b/regression-parity-final,fixture-final,package-preview.json,package-final.json. Final ZIP MNM_NHOM6_G4B_VERIFIED_20261017.zip; SHA giao ngoài archive và receipt local.
-NEXT EXACT ACTION: Chờ phản hồi nghiệm thu G4B. Không tự commit/push, chạy DB setup hoặc mở G5. Nếu cần gửi GPT Web: gửi một ZIP cuối, đọc BAT_DAU_DOC.md rồi G4B_RESULT/SOURCE_DIFF/HTTP_QA.
+Credentials chỉ .env/.agent/private ignored; runtime account schema CRUD; không root/GUI/migrate/seed/reset demo. Preview PID/URL tại .agent/private/g5-preview.json; kiểm sống trước dùng. Browser hoạt động sau restart. MySQL phục vụ G5 không tự chứng minh phục hồi44file ENV04: đối chiếu evidence ENV04 riêng, không sửa installation/replay repair.
 
-Bốn bảng MySQL riêng, Eloquent và Laravel Web session/CSRF/active/Admin/User. Search giữ per_page1..50/active_only/wildcard và domain G4A. Mật khẩu giữ min10, giới hạn bcrypt72byte kiểm trước hash; không đổi mật khẩu demo. Tests synthetic trong transaction/rollback; AUTO_INCREMENT có thể tiến dù rowhash giữ. FK race kiểm interleaving một connection, không stress nhiều client.
-
-Credential chỉ .env/private ignored; g4b_run.py nạp/redact, không in config hoặc bắt Thy nhập GUI lại. Không cần root G4B; trigger readback dùng migrator hiện hữu chỉ SELECT. Baseline .agent/private/g4b/baseline.json chỉ verify, không ghi đè/reset. G4A accepted ZIP SHA823bc4100c8abffc3c6a709c87b192f0b426340f08c3fb65cad398594a3119c5 giữ nguyên. KLCN11dirtyMobile cũ/NoSQLclean/repocha5343dirtycũ không đổi theo protected Git receipt; không phải toàn bộ protected DB/source hash audit.
+Nguồn: PLAN → G5_PUBLICATION_G6_CHECKLIST; decision mới; code/MySQL thực; G2/ERD chỉ thiết kế lịch sử. G5_RESULT/evidence/ZIP giữ nguyên byte, các câu chờ nghiệm thu trong đó thuộc checkpoint trước quyết định mới. Protected verification không là audit toàn bộ DB/source.

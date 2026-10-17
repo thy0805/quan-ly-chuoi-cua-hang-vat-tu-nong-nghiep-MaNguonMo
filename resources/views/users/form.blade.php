@@ -1,14 +1,16 @@
 @extends('layouts.app')
-@section('title', 'Tài khoản')
+@section('title', $record ? 'Cập nhật tài khoản' : 'Thêm nhân viên')
 @section('content')
-    <h1>{{ $record ? 'Cập nhật tài khoản' : 'Thêm nhân viên' }}</h1>
-    <form method="post" action="{{ $record ? route('users.update',['record'=>$record->id]) : route('users.store') }}">
-        @csrf @if($record)@method('PUT')@endif
-        <label>Tên đăng nhập<input name="username" value="{{ old('username',$record?->username) }}" maxlength="80" required></label>
-        <p>Vai trò: {{ $record?->role ?? 'user' }}</p>
-        <label>Mật khẩu {{ $record ? '(để trống để giữ nguyên)' : '' }}<input type="password" name="password" autocomplete="new-password" @required(!$record)></label>
-        <label>Xác nhận mật khẩu<input type="password" name="password_confirmation" autocomplete="new-password" @required(!$record)></label>
-        <label>Đang hoạt động<input type="hidden" name="is_active" value="0"><input type="checkbox" name="is_active" value="1" @checked(old('is_active',$record?->is_active ?? true))></label>
-        <button type="submit">Lưu</button> <a href="{{ route('users.index') }}">Quay lại</a>
-    </form>
+<nav aria-label="Đường dẫn"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="{{ route('users.index') }}">Tài khoản</a></li><li class="breadcrumb-item active" aria-current="page">{{ $record ? 'Cập nhật' : 'Thêm mới' }}</li></ol></nav>
+<div class="page-heading"><div><h1>{{ $record ? 'Cập nhật tài khoản' : 'Thêm nhân viên' }}</h1><p class="page-description">Trường có dấu * là bắt buộc.</p></div></div>
+<div class="row g-4"><div class="col-xl-8"><form method="post" action="{{ $record ? route('users.update',['record'=>$record->id]) : route('users.store') }}" class="surface form-surface">
+    @csrf @if($record)@method('PUT')@endif
+    <h2 class="form-section-title">Thông tin truy cập</h2><div class="row g-4">
+        <div class="col-md-8"><label class="form-label" for="username">Tên đăng nhập <span class="text-danger">*</span></label><input class="form-control @error('username') is-invalid @enderror" id="username" name="username" value="{{ old('username',$record?->username) }}" maxlength="80" autocomplete="off" required @error('username') aria-invalid="true" aria-describedby="username-error" @enderror><x-field-error field="username" /></div>
+        <div class="col-md-4"><span class="form-label d-block">Vai trò</span><span class="role-badge d-inline-block mt-1">{{ $record?->role === 'admin' ? 'Quản trị viên' : 'Nhân viên' }}</span></div>
+        <div class="col-md-6"><label class="form-label" for="password">Mật khẩu @if(!$record)<span class="text-danger">*</span>@endif</label><input class="form-control @error('password') is-invalid @enderror" id="password" type="password" name="password" autocomplete="new-password" minlength="10" maxlength="255" @required(!$record) @error('password') aria-invalid="true" aria-describedby="password-error password-help" @else aria-describedby="password-help" @enderror><x-field-error field="password" /><div id="password-help" class="form-text">{{ $record ? 'Để trống để giữ nguyên. ' : '' }}Tối thiểu 10 ký tự, tối đa 72 byte.</div></div>
+        <div class="col-md-6"><label class="form-label" for="password_confirmation">Xác nhận mật khẩu @if(!$record)<span class="text-danger">*</span>@endif</label><input class="form-control" id="password_confirmation" type="password" name="password_confirmation" autocomplete="new-password" maxlength="255" @required(!$record)></div>
+        <div class="col-12"><div class="form-check form-switch"><input type="hidden" name="is_active" value="{{ $record?->role === 'admin' ? 1 : 0 }}"><input id="is_active" class="form-check-input" type="checkbox" role="switch" name="is_active" value="1" @checked(old('is_active',$record?->is_active ?? true)) @disabled($record?->role === 'admin')><label class="form-check-label" for="is_active">Đang hoạt động</label></div>@if($record?->role === 'admin')<div class="form-text">Tài khoản quản trị viên được bảo vệ và luôn hoạt động.</div>@endif<x-field-error field="is_active" /></div>
+    </div><div class="form-actions"><a class="btn btn-light" href="{{ route('users.index') }}">Quay lại</a><button class="btn btn-primary" type="submit"><x-icon name="check" />Lưu</button></div>
+</form></div><aside class="col-xl-4"><div class="info-card"><x-icon name="lock" /><h2>Đúng người,<br>đúng quyền truy cập.</h2><p>Nhân viên xem và tra cứu vật tư. Quản trị viên quản lý dữ liệu và tài khoản.</p><p>Tài khoản mới có vai trò nhân viên. Không chia sẻ mật khẩu trong báo cáo hoặc tài liệu công khai.</p></div></aside></div>
 @endsection

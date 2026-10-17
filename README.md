@@ -1,17 +1,13 @@
-QUYỀN/TRẠNG THÁI MỚI: Thy đã ACCEPTED G4B source/test/HTTP/MySQL và duyệt checkpoint G4B rồi G5 theo .agent/decisions/G4B_ACCEPTED_G5_AUTHORIZED_20261017.md và G5_CHECKLIST. Các câu G4B chờ nghiệm thu/chưa có quyền push/G5 chưa mở ở phần dưới là checkpoint cũ. Source G5 chưa sửa; đang publication G4B. G5 chưa commit/push, G6 chưa mở.
-
 # Quản lý cửa hàng vật tư nông nghiệp — Nhóm 6
 
-G4A đã được Thy nghiệm thu và push lên `main`: **61332e5e7236a7b28dd71197b3f3848b14aaff74**. G4B Auth/Authorization/CRUD đã kiểm trên MySQL thật: **26 test / 425 assertions**, gồm11 G4A và15 G4B; thêm24 lượt HTTP qua TCP localhost. G4B còn local, chờ nghiệm thu, chưa commit/push.
+G5 Blade/Bootstrap/dashboard đã được Thy/GPT Web **ACCEPTED/LOCKED** trong phạm vi source/test/HTTP/browser QA. Được duyệt publication riêng G5 trên `main`; kiểm trước commit tại [G5_PUBLICATION_PREFLIGHT](docs/evidence/G5_PUBLICATION_PREFLIGHT.json), SHA checkpoint xem lịch sử Git. Nền G4B411aa5d716c1162a836dd35eda994dcefab1cd4c. Sau checkpoint Git chỉ chuẩn bị G6 DRAFT tài liệu/sơ đồ/demo, chưa nghiệm thu hoặc được push G6. Đọc [G5_RESULT](docs/G5_RESULT.md) và [bằng chứng giao diện](docs/evidence/G5_BROWSER_QA.json).
 
-Đọc trước: [G4B_RESULT](docs/G4B_RESULT.md) → [HTTP QA](docs/evidence/G4B_HTTP_QA.json) → [source diff](docs/evidence/G4B_SOURCE_DIFF.json) → [fixture integrity](docs/evidence/G4B_FIXTURE_INTEGRITY.json). Source G4B chưa có trên GitHub; ZIP `MNM_NHOM6_G4B_VERIFIED_20261017.zip` cung cấp23 file source/test mới hoặc sửa và hồ sơ đã lọc, đối chiếu trên nền commit G4A.
+Source tại `D:\Hoctap\KhoaLuanCuNhan\LapTrinhMaNguonModoAN` (ổ mạng); database riêng `mnm_vat_tu_nong_nghiep`. Laravel13.33/PHP8.3.30/MySQL8.4.3, Eloquent, Blade và Bootstrap5.3.8 offline/MIT. [Repository riêng](https://github.com/thy0805/quan-ly-chuoi-cua-hang-vat-tu-nong-nghiep-MaNguonMo).
 
-Repository: [MaNguonMo](https://github.com/thy0805/quan-ly-chuoi-cua-hang-vat-tu-nong-nghiep-MaNguonMo). Root `D:\Hoctap\KhoaLuanCuNhan\LapTrinhMaNguonModoAN`; database độc lập `mnm_vat_tu_nong_nghiep`. Laravel 13.33/PHP 8.3.30/MySQL 8.4.3; Eloquent/migration/seeder G4A và Laravel Web session/CSRF/Blade tối thiểu G4B.
+Admin quản lý vật tư, danh mục, đơn vị và tài khoản; User xem/tìm/phân trang. Dashboard chỉ đọc dữ liệu thật. G5 bổ sung menu responsive, biểu mẫu/báo lỗi tiếng Việt, bộ lọc, trạng thái, chi tiết và xác nhận xóa; giữ Auth/role/CSRF/rule/schema/32route cũ. Không Shop/POS/đơn hàng/kho/công nợ.
 
-Admin quản lý tài khoản, danh mục, đơn vị và vật tư; User xem/tìm/phân trang. DELETE chặn tham chiếu; cây/active/decimal/Unicode giữ theo [G2](docs/G2_DECISIONS.md). Demo vẫn3 users/5 categories/3 units/4 products, rowhash và ledger không đổi; AUTO_INCREMENT có thể tiến khi test rollback. Không migrate/seed/reset demo trong G4B.
+Kết quả: **31test/674assertions**,29request TCP,33route (32cũ+dashboard),54PHP lint và JS syntax;22ảnh browser thực ở1366/768/320. Đây là ma trận mẫu đã nêu, chưa kiểm mọi trang trên mọi kích thước/thiết bị vật lý hoặc đa trình duyệt. Demo3users/5categories/3units/4products giữ nội dung/schema/ledger; AUTO_INCREMENT có thể tiến khi rollback. Không migrate/seed/reset demo.
 
-G5 Bootstrap/giao diện hoàn chỉnh và G6 báo cáo/demo chưa mở. Chưa visual QA/responsive, chưa render UML/ERD; không Shop/POS/checkout/kho/công nợ. Không xem kiểm thử G4B như nghiệm thu toàn bộ sản phẩm môn học. Credential chỉ private ignored, không nằm Git hoặc ZIP.
+Bàn giao `MNM_NHOM6_G5_VERIFIED_20261017.zip`:26file source/test/assets thay đổi trên nền commit G4B, hồ sơ/evidence/ảnh và manifest; không phải dependency hoặc toàn source Laravel. Đọc BAT_DAU_DOC.md bên trong; SHA ZIP giao ngoài archive. ZIP G5 giữ nguyên byte như hồ sơ trước publication; source checkpoint G5 được publish riêng theo quyền mới. Không .env/credentials/private/log thô/vendor/node_modules/dump. Preview localhost chỉ dùng khi tiến trình hiện tại còn chạy; không mặc định dịch vụ production.
 
-Điểm tiếp tục: [context](context.md), [PLAN](.agent/PLAN.md), [G4B checklist](.agent/G4B_CHECKLIST.md). Chờ Thy/GPT Web nghiệm thu G4B; không commit/push G4B hoặc tự mở G5.
-
-Nhóm6: Nguyễn Đức Thành Phát, Lý Vũ Nhân Hậu, Nguyễn Văn Minh, Nguyễn Hồ Minh Trọng. [Rubric/phân công](docs/FUNCTIONS_USE_CASES.md).
+Điểm tiếp tục: [context](context.md), [PLAN](.agent/PLAN.md), [checklist](.agent/G5_PUBLICATION_G6_CHECKLIST.md). G5 đã nghiệm thu; G6 DRAFT được chuẩn bị sau publication, rubric gốc vẫn chưa nhận. G5_RESULT/ảnh/log là evidence theo checkpoint, giữ nguyên. [Phân công đề xuất](docs/FUNCTIONS_USE_CASES.md) cho Nguyễn Đức Thành Phát, Lý Vũ Nhân Hậu, Nguyễn Văn Minh, Nguyễn Hồ Minh Trọng.

@@ -46,3 +46,12 @@ ENV04: MySQL native event đã tạo normal shutdown/complete, server và monito
 G4B: exception của script sau bootstrap có thể được Laravel console handler trình bày nhưng process vẫn exit0. Probe route đầu chưa resolve HTTP Kernel nên chưa đồng bộ middleware groups, không chứng minh ứng dụng thiếu CSRF. Đã resolve HTTP Kernel và đọc toàn bộ middleware của32route; HTTP thật vẫn kiểm419. Phòng tránh: parse payload JSON và invariant thành công, kèm runtime/readback; không chỉ dựa exit0.
 
 Khi port HTTP phải đối chiếu query/password rule với nguồn G1: giữ per_page1..50,active_only và min10; không tự thu hẹp thành danh sách kích thước UI hoặc min12. Bcrypt giới hạn72byte phải validation theo byte để mật khẩu Unicode vượt giới hạn trả422 trước khi hash, không phát sinh500.
+
+
+## Browser báo disabled và ảnh viewport chưa cập nhật
+
+G5: công cụ báo disabled dù ảnh setting bật; sau restart browser dùng được. Không suy người dùng tắt setting; xác minh kênh bằng mở trang/chụp thật. Khi đổi viewport, DOM có thể đổi trước ảnh vẽ; đọc state rồi chụp ở lượt kế tiếp và kiểm kích thước JPEG. Ảnh draft lỗi được giữ local ignored, không đóng gói như kết quả cuối.
+
+## Test nhiều request và singleton redirect giữ session cũ
+
+Test G5 tự reset session driver nhưng redirect singleton còn giữ store cũ, làm kiểm flash/old-input sai dù browser thật hoạt động. Sửa riêng helper test mới bằng forgetInstance('redirect') khi reset store; không đổi backend đã khóa để ép test qua. Login redirect có thể về intended URL từ request Guest trước đó; test cần kiểm đúng contract thay vì mặc định products cho mọi tình huống.

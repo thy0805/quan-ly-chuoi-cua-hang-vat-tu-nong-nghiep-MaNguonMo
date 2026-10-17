@@ -1,0 +1,158 @@
+{
+  "passed": true,
+  "transport": "TCP HTTP on loopback, real PHP public entry and encrypted cookie jar",
+  "checks": [
+    {
+      "method": "GET",
+      "path": "/products",
+      "status": 302
+    },
+    {
+      "method": "GET",
+      "path": "/assets/bootstrap/bootstrap.min.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/assets/bootstrap/bootstrap.bundle.min.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/assets/app.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/assets/app.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/login",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/login",
+      "status": 419
+    },
+    {
+      "method": "POST",
+      "path": "/login",
+      "status": 302
+    },
+    {
+      "method": "GET",
+      "path": "/products",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/dashboard",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/products",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/categories",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/units",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/users",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/products/create",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/categories/create",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/units/create",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/users/create",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/products",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/products/4",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/products/4/edit",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/logout",
+      "status": 302
+    },
+    {
+      "method": "GET",
+      "path": "/products",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/login",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/login",
+      "status": 302
+    },
+    {
+      "method": "GET",
+      "path": "/products",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/users",
+      "status": 403
+    },
+    {
+      "method": "GET",
+      "path": "/products/create",
+      "status": 403
+    },
+    {
+      "method": "POST",
+      "path": "/logout",
+      "status": 302
+    }
+  ],
+  "requests": 29,
+  "elapsed_seconds": 32.51,
+  "cookie_http_only_samesite_lax": true,
+  "anonymous_and_logged_out_cookie_replay_rejected": true,
+  "database_mutations": 0,
+  "temporary_server_stopped": true,
+  "visual_qa": "Separate live browser matrix and screenshots in G5_BROWSER_QA.json"
+}

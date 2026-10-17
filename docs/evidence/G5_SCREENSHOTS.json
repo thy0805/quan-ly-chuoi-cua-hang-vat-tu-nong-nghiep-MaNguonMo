@@ -1,0 +1,182 @@
+{
+  "screenshots": [
+    {
+      "path": "docs/evidence/g5-screenshots/categories-1366.jpg",
+      "bytes": 81338,
+      "sha256": "4176e7a064f64eebf9ffe87505d7b4ef1a6d17daa9a46f7edf30679142f9bcac",
+      "image_width": 1351,
+      "image_height": 984,
+      "viewport_width": 1366
+    },
+    {
+      "path": "docs/evidence/g5-screenshots/dashboard-1366.jpg",
+      "bytes": 115157,
+      "sha256": "3906dd078bd209eb5e969f265d36ce62ebbc96b7617c25815bd25c12c24af2e9",
+      "image_width": 1351,
+      "image_height": 1351,
+      "viewport_width": 1366
+    },
+    {
+      "path": "docs/evidence/g5-screenshots/dashboard-320.jpg",
+      "bytes": 66193,
+      "sha256": "79edacde6168734d1a6362e6524c79f86789ce9a1ab88fb0fd9da9afa4795386",
+      "image_width": 304,
+      "image_height": 2054,
+      "viewport_width": 320
+    },
+    {
+      "path": "docs/evidence/g5-screenshots/dashboard-768.jpg",
+      "bytes": 98184,
+      "sha256": "ab439e0f712a921b42d84b6832c455fe4758eae0ee0dd65b7e131e5b144c638f",
+      "image_width": 752,
+      "image_height": 1843,
+      "viewport_width": 768
+    },
+    {
+      "path": "docs/evidence/g5-screenshots/delete-confirm-320.jpg",
+      "bytes": 18850,
+      "sha256": "e4e1a6db5395c260d3ba453d2272a8590e78d080e1162c12bec74cdc0d516fce",
+      "image_width": 320,
+      "image_height": 850,
+      "viewport_width": 320
+    },
+    {
+      "path": "docs/evidence/g5-screenshots/detail-320.jpg",
+      "bytes": 27277,
+      "sha256": "1dd934fa4743a2da23cb640fcd93790d2771c8398244603d48a5c71ed913b550",
+      "image_width": 304,
+      "image_height": 1130,
+      "viewport_width": 320
+    },
+    {
+      "path": "docs/evidence/g5-screenshots/login-1366.jpg",
+      "bytes": 46710,
+      "sha256": "e2e1217333ea27a5a24024681710fb272f624cd7a804be86ca4ba82f2857c921",
+      "image_width": 1366,
+      "image_height": 900,
+      "viewport_width": 1366
+    },
+    {
+      "path": "docs/evidence/g5-screenshots/login-320.jpg",
+      "bytes": 17097,
+      "sha256": "773bbcf03678c5e32de6a367dd46b569f4b6c9cfc03bf5086ddf6314ed2d31c6",
+      "image_width": 320,
+      "image_height": 850,
+      "viewport_width": 320
+    },
+    {
+      "path": "docs/evidence/g5-screenshots/login-768.jpg",
+      "bytes": 37558,
+      "sha256": "86e0981b2b325e32603103f0722f3393f68d6b8080eedb823edba2ebf9a196fa",
+      "image_width": 768,
+      "image_height": 1024,
+      "viewport_width": 768
+    },
+    {
+      "path": "docs/evidence/g5-screenshots/pagination-1366.jpg",
+      "bytes": 64004,
+      "sha256": "be1a2533d1d3c425df0e6e864066465fa7d9f29185281ad2738c4f6013ef2fa4",
+      "image_width": 1366,
+      "image_height": 900,
+      "viewport_width": 1366
+    },
+    {
+      "path": "docs/evidence/g5-screenshots/product-create-1366.jpg",
+      "bytes": 79490,
+      "sha256": "113a3ca169fa41f4c3941c5fe2b1e9320fdeb75c04f0558e4bb5062f81ff7575",
+      "image_width": 1351,
+      "image_height": 1206,
+      "viewport_width": 1366
+    },
+    {
+      "path": "docs/evidence/g5-screenshots/product-edit-1366.jpg",
+      "bytes": 90632,
+      "sha256": "dbd51d44b4550cf40f16d4b48212de4757f1572b8bb1b57c9a8a1352a299c405",
+      "image_width": 1351,
+      "image_height": 1244,
+      "viewport_width": 1366
+    },
+    {
+      "path": "docs/evidence/g5-screenshots/product-edit-320.jpg",
+      "bytes": 57136,
+      "sha256": "c9667846a1d244798899fc5285be7576245346a63c50c146a79a9d021e9d5a96",
+      "image_width": 304,
+      "image_height": 1828,
+      "viewport_width": 320
+    },
+    {
+      "path": "docs/evidence/g5-screenshots/products-1366.jpg",
+      "bytes": 58307,
+      "sha256": "f3c9b4812f792631603eac38adbe39062ce4feb73d38259d9bf3468a4097614d",
+      "image_width": 1351,
+      "image_height": 890,
+      "viewport_width": 1366
+    },
+    {
+      "path": "docs/evidence/g5-screenshots/search-320.jpg",
+      "bytes": 30754,
+      "sha256": "58d77c58098e05fc869f15339dbd8655e978c54f03bbecc00da1fe661018710b",
+      "image_width": 304,
+      "image_height": 1145,
+      "viewport_width": 320
+    },
+    {
+      "path": "docs/evidence/g5-screenshots/units-1366.jpg",
+      "bytes": 47224,
+      "sha256": "dbea3159a30be59b11f3c7e210faa513a2383254890748ef8c4ad7219c698351",
+      "image_width": 1366,
+      "image_height": 900,
+      "viewport_width": 1366
+    },
+    {
+      "path": "docs/evidence/g5-screenshots/user-create-1366.jpg",
+      "bytes": 61355,
+      "sha256": "97a3933f2cae2c29755efc122de0ae6b918a222e0648d1ff8375d1beba96ae83",
+      "image_width": 1366,
+      "image_height": 900,
+      "viewport_width": 1366
+    },
+    {
+      "path": "docs/evidence/g5-screenshots/user-dashboard-320.jpg",
+      "bytes": 58668,
+      "sha256": "414401838ac71c1186e095bca69d362718c4797f8cc79b6e741003ec7a1a4fec",
+      "image_width": 304,
+      "image_height": 1830,
+      "viewport_width": 320
+    },
+    {
+      "path": "docs/evidence/g5-screenshots/user-forbidden-320.jpg",
+      "bytes": 5403,
+      "sha256": "c11653dae532932df77ae79558ec2295e9800268c518c6758770205f8b3cafd7",
+      "image_width": 320,
+      "image_height": 850,
+      "viewport_width": 320
+    },
+    {
+      "path": "docs/evidence/g5-screenshots/user-products-320.jpg",
+      "bytes": 36161,
+      "sha256": "b4fef0fc91b7f320d5a73c54eeffe68ac62cf7976a187eef3e150537f72c38ed",
+      "image_width": 304,
+      "image_height": 1277,
+      "viewport_width": 320
+    },
+    {
+      "path": "docs/evidence/g5-screenshots/users-1366.jpg",
+      "bytes": 71093,
+      "sha256": "0fbebc8d0708bbe2ac0583f8f310cd2f236a3c25abbe0a203774853c924f247c",
+      "image_width": 1366,
+      "image_height": 900,
+      "viewport_width": 1366
+    },
+    {
+      "path": "docs/evidence/g5-screenshots/validation-768.jpg",
+      "bytes": 71815,
+      "sha256": "c3fbf36266b537a9a29bfe87eeeea38ea422261db3ced3486fe7acd08f9729e7",
+      "image_width": 752,
+      "image_height": 1541,
+      "viewport_width": 768
+    }
+  ],
+  "count": 22,
+  "note": "Actual browser JPEG. Full-page captures can exclude 15/16px scrollbar; viewport widths are specified separately. Superseded draft captures are excluded."
+}

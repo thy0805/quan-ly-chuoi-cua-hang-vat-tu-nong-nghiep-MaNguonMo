@@ -1,0 +1,31 @@
+{
+  "version": "5.3.8",
+  "license": "MIT (bundle retains included dependency notices)",
+  "official_source": "https://getbootstrap.com/docs/5.3/getting-started/download/",
+  "sri_match_official_documentation": true,
+  "files": [
+    {
+      "path": "public/assets/bootstrap/bootstrap.min.css",
+      "source_url": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css",
+      "sha256": "d85327d99c7a3ee1f9b5d0500d1370acea3ad2db39c163c2f51f232baedbdede",
+      "bytes": 232111,
+      "sri_sha384": "sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    },
+    {
+      "path": "public/assets/bootstrap/bootstrap.bundle.min.js",
+      "source_url": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js",
+      "sha256": "e4fd49181388c48ec5040bd3fe66f57c29c8e67fcd8502b3354b96ec7ab47cc7",
+      "bytes": 80496,
+      "sri_sha384": "FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    },
+    {
+      "path": "public/assets/bootstrap/LICENSE",
+      "source_url": "https://raw.githubusercontent.com/twbs/bootstrap/v5.3.8/LICENSE",
+      "sha256": "4620c84ad5ce8602ff65640ed6b7c8b78ebb9e036584f0ebc1ccc88206a4bb51",
+      "bytes": 1093,
+      "sri_sha384": null
+    }
+  ],
+  "runtime_network_required": false,
+  "upstream_license_comments_preserved": true
+}

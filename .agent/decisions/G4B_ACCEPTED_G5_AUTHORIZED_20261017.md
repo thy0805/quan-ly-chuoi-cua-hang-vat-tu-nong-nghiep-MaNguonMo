@@ -9,3 +9,6 @@ G5 được phép hoàn thiện Blade/Bootstrap5 offline, login/layout/sidebar/h
 Không đổi schema,validation,Auth/role/API contract/công thức; không migrate/seed/reset demo; không protected source/database/Word/Rose. Không Shop/POS/kho/công nợ/outbox/Next/Tailwind/Flutter. G5 chưa được commit/push/LOCKED; dừng nghiệm thu trước G6.
 
 Công cụ browser hiện trả disabled dù ảnh Thy cho thấy đã bật; không tự đổi setting hoặc suy HTTP200 là visual QA. Nếu không khôi phục kênh hợp lệ, ghi browser screenshots/visual QA PENDING; tiếp tục code/HTTP/dữ liệu/protected và bàn giao đúng giới hạn.
+
+
+Cập nhật thực thi: sau Thy restart Codex, browser đã hoạt động và kiểm/chụp thật1366/768/320; xem G5_BROWSER_QA.json. Đoạn disabled ở trên giữ lịch sử, không còn là blocker. G4B đã push411aa5d716c1162a836dd35eda994dcefab1cd4c; G5 kiểm kỹ thuật, chờ nghiệm thu, chưa commit/push.

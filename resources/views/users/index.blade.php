@@ -1,16 +1,9 @@
 @extends('layouts.app')
 @section('title', 'Quản lý tài khoản')
 @section('content')
-    <h1>Quản lý tài khoản</h1>
-    <form method="get"><label>Tìm tài khoản<input name="q" value="{{ request('q') }}" maxlength="160"></label><button type="submit">Tìm</button></form>
-    <p><a href="{{ route('users.create') }}">Thêm nhân viên</a></p>
-    <table><thead><tr><th>Tên đăng nhập</th><th>Vai trò</th><th>Trạng thái</th><th>Thao tác</th></tr></thead><tbody>
-        @foreach($records as $row)
-            <tr><td>{{ $row->username }}</td><td>{{ $row->role }}</td><td>{{ $row->is_active ? 'Hoạt động' : 'Ngừng' }}</td><td>
-                <a href="{{ route('users.show',['record'=>$row->id]) }}">Xem</a> <a href="{{ route('users.edit',['record'=>$row->id]) }}">Sửa</a>
-                @if($row->role !== 'admin')<form method="post" action="{{ route('users.destroy',['record'=>$row->id]) }}">@csrf @method('DELETE')<button type="submit">Xóa</button></form>@endif
-            </td></tr>
-        @endforeach
-    </tbody></table>
-    <nav aria-label="Phân trang">@if($records->previousPageUrl())<a href="{{ $records->previousPageUrl() }}">Trang trước</a>@endif <span>Trang {{ $records->currentPage() }} / {{ $records->lastPage() }}</span> @if($records->nextPageUrl())<a href="{{ $records->nextPageUrl() }}">Trang sau</a>@endif</nav>
+<div class="page-heading"><div><p class="eyebrow">QUẢN TRỊ HỆ THỐNG</p><h1>Quản lý tài khoản</h1><p class="page-description">Tài khoản và quyền truy cập của các thành viên cửa hàng.</p></div><a class="btn btn-primary" href="{{ route('users.create') }}"><x-icon name="plus" />Thêm nhân viên</a></div>
+<section class="surface"><div class="surface-heading"><h2>Tất cả tài khoản</h2><span class="small text-muted">Tổng số: {{ $records->total() }}</span></div><x-filters catalog="users" />@include('partials.table-hint')<div class="table-responsive" tabindex="0" role="region" aria-label="Bảng dữ liệu, cuộn ngang để xem thêm"><table class="table align-middle mb-0"><thead><tr><th scope="col">Tên đăng nhập</th><th scope="col">Vai trò</th><th scope="col">Trạng thái</th><th scope="col">Thao tác</th></tr></thead><tbody>
+    @forelse($records as $row)<tr><td><a class="record-name" href="{{ route('users.show',['record'=>$row->id]) }}">{{ $row->username }}</a></td><td><span class="role-badge">{{ $row->role === 'admin' ? 'Quản trị viên' : 'Nhân viên' }}</span></td><td><x-status :active="$row->is_active" /></td><td><div class="row-actions"><a class="btn btn-sm btn-light" href="{{ route('users.show',['record'=>$row->id]) }}"><x-icon name="eye" />Xem</a><a class="btn btn-sm btn-outline-secondary" href="{{ route('users.edit',['record'=>$row->id]) }}"><x-icon name="edit" />Sửa</a>@if($row->role !== 'admin')<x-delete-button :action="route('users.destroy',['record'=>$row->id])" :label="$row->username" />@endif</div></td></tr>
+    @empty<tr><td colspan="4" class="empty-state"><x-icon name="users" /><strong>Chưa có dữ liệu phù hợp.</strong><p>Thử đổi từ khóa hoặc đặt lại bộ lọc.</p></td></tr>@endforelse
+</tbody></table></div><x-pagination :records="$records" /></section>
 @endsection

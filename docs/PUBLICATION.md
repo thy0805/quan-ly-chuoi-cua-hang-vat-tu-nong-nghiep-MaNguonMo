@@ -1,4 +1,22 @@
-# Publication hiện hành — G4A đã push, G4B chưa push
+# Publication G5 — được nghiệm thu và cho phép checkpoint
+
+G5 ACCEPTED/LOCKED source/test/HTTP/browser QA theo decision G5_ACCEPTED_G6_DRAFT_AUTHORIZED_20261017. Publication G5 chạy riêng sau ZIP26source/hồi quy31/674/protected/secret/staged review, đúng main/origin Mã nguồn mở, không force. Receipt kiểm trước commit: [G5_PUBLICATION_PREFLIGHT](evidence/G5_PUBLICATION_PREFLIGHT.json); SHA G5 đọc từ lịch sử main và receipt remote sau push. Không coi preflight như bằng chứng push hoàn tất.
+
+Phần dưới giữ thông tin Git trước publication G5 theo thời điểm; các câu G5 còn local chỉ thuộc checkpoint cũ.
+
+---
+
+# Lịch sử publication G4B — trước nghiệm thu G5
+
+Repository riêng: https://github.com/thy0805/quan-ly-chuoi-cua-hang-vat-tu-nong-nghiep-MaNguonMo; branch main; commit **411aa5d716c1162a836dd35eda994dcefab1cd4c**. Source G4B đã được Thy nghiệm thu trước publication. Whitelist48file thay đổi gồm22source ứng dụng,1test,25hồ sơ; tổng200tracked. Staged blob/diff/secret và protected kiểm trước commit, push không force, remote SHA/tree bằng local và worktree sạch trước G5.
+
+Receipt: [G5_G4B_PUBLICATION.json](evidence/G5_G4B_PUBLICATION.json). G5 chưa stage/commit/push; GitHub chỉ có G4B. Review G5 bằng ZIP delta trên nền SHA này; chưa có quyền publication G5. Secret scan giới hạn credential hiện hành đã biết/mẫu key và whitelist; không chứng minh phát hiện mọi dạng bí mật.
+
+Phần dưới là lịch sử publication G4A/G2/G3, giữ theo thời điểm; các câu chờ G4B/chưa có runtime trong đó không là trạng thái hiện hành.
+
+---
+
+# Lịch sử publication G4A — trước nghiệm thu G4B
 
 Repo: https://github.com/thy0805/quan-ly-chuoi-cua-hang-vat-tu-nong-nghiep-MaNguonMo; branch `main`; commit **61332e5e7236a7b28dd71197b3f3848b14aaff74**.
 

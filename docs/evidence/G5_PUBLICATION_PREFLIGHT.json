@@ -1,0 +1,56 @@
+{
+  "base_commit": "411aa5d716c1162a836dd35eda994dcefab1cd4c",
+  "accepted_g5_archive_crc_80_payload_sha256": "PASS",
+  "source_files": 26,
+  "source_hashes_match_accepted_zip": "PASS",
+  "locked_backend_schema_dependencies_unchanged": true,
+  "protected_git": {
+    "parent": {
+      "head": "4ee9b0d1ed52f18cf984b4511cc89df841a4721e",
+      "status_lines": 5343,
+      "head_status_metadata_match_baseline": true
+    },
+    "klcn": {
+      "head": "fc514c8a040d7d2804791ceea5a255427f5bf086",
+      "status_lines": 11,
+      "head_status_metadata_match_baseline": true
+    },
+    "nosql": {
+      "head": "21288936d172b8485b425c1adc7ca21972da5e48",
+      "status_lines": 0,
+      "head_status_metadata_match_baseline": true
+    }
+  },
+  "php_lint_files": 54,
+  "php_lint": "PASS",
+  "javascript_syntax": "PASS",
+  "secret_scan": "Performed separately against every staged blob before commit",
+  "sql_mutations": 0,
+  "protected_limit": "HEAD/status/Git metadata and stated hashes; not complete database/source audit",
+  "fresh_regression": {
+    "tool": "phpunit",
+    "result": "passed",
+    "tests": 31,
+    "passed": 31,
+    "assertions": 674,
+    "duration_ms": 42053
+  },
+  "fixture": {
+    "demo_rows_and_hashes_unchanged": true,
+    "schema_unchanged_except_auto_increment_counters": true,
+    "migration_ledger_unchanged": true,
+    "counts": {
+      "product_categories": 5,
+      "products": 4,
+      "units": 3,
+      "users": 3
+    },
+    "identity": {
+      "db": "mnm_vat_tu_nong_nghiep",
+      "version": "8.4.3",
+      "account": "mnm_runtime_20261017@localhost"
+    }
+  },
+  "g5_acceptance": "ACCEPTED/LOCKED in source/test/HTTP/browser QA supplied; GPT Web did not rerun Laravel",
+  "publication": "Authorized, staged review and remote readback must succeed separately"
+}

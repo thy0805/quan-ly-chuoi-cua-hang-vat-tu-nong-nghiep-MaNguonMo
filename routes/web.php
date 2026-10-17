@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CatalogController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -9,6 +10,7 @@ Route::get('/login', [SessionController::class, 'create'])->name('login');
 Route::post('/login', [SessionController::class, 'store'])->name('login.store');
 
 Route::middleware(['auth', 'active'])->group(function () {
+    Route::get('/dashboard', DashboardController::class)->name('dashboard');
     Route::get('/', fn () => redirect()->route('products.index'))->name('home');
     Route::post('/logout', [SessionController::class, 'destroy'])->name('logout');
     foreach (['categories', 'units', 'products'] as $catalog) {
