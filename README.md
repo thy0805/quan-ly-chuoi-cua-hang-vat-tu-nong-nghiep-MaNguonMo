@@ -28,6 +28,6 @@ G3 chỉ MySQL config riêng, storage/mnm, session/cache file riêng, queue null
 
 ## Điểm tiếp tục
 
-Dừng chờ nghiệm thu checkpoint/publication. G4 cần Thy cho phép dependency/runtime/DB riêng trước migrations/seed/Auth/Eloquent/Blade. Không gỡ guard hoặc chạy setup/migration để thử nhanh. Không credential vào Git.
+G2/G3 source đã xuất bản và readback tại `c73608680a9e94d6679e6cd791e2373aca560cb1`; biên bản publication nằm ở commit tiếp theo. Dừng chờ nghiệm thu checkpoint. G4 cần Thy cho phép dependency/runtime/DB riêng trước migrations/seed/Auth/Eloquent/Blade. Không gỡ guard hoặc chạy setup/migration để thử nhanh. Không credential vào Git.
 
 Nhóm6: Nguyễn Đức Thành Phát, Lý Vũ Nhân Hậu, Nguyễn Văn Minh, Nguyễn Hồ Minh Trọng; phân công đề xuất ở FUNCTIONS_USE_CASES.

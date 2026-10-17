@@ -1,6 +1,7 @@
 {
   "status": "PASS",
-  "scope": "Each staged file plus all G1 historical blobs; pattern scan, explicit whitelist, schema-only SQL check, sanitized public evidence and size/mode checks",
+  "scope": "Verified source publication gate; each current staged file and each historical G1 blob checked. Metadata-only publication receipt is scanned again before its commit.",
+  "files_checked_current": 102,
   "files_checked_g1": 104,
   "secret_findings": [],
   "large_files_over_2mb": [],
@@ -12,6 +13,5 @@
     "Original ownership is user-authorized KLCN source plus agent-authored coursework files; dependencies and private/source data excluded",
     "Old test credentials are synthetic test fixtures; no .env, production credentials or development rows staged"
   ],
-  "files_checked_current_at_previous_gate": 101,
-  "note": "Final staged gate is repeated after adding this summary and final documents; raw inventory remains local."
+  "source_commit": "c73608680a9e94d6679e6cd791e2373aca560cb1"
 }

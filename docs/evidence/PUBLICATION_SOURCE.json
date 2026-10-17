@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "repo": "https://github.com/thy0805/quan-ly-chuoi-cua-hang-vat-tu-nong-nghiep-MaNguonMo",
+  "branch": "main",
+  "commit": "c73608680a9e94d6679e6cd791e2373aca560cb1",
+  "remote_commit": "c73608680a9e94d6679e6cd791e2373aca560cb1",
+  "tree": "3067b5639b98232476eb9ce74a97f890dcabc356",
+  "github_api_tree_matches_all_local_blobs": true,
+  "fetched_commit_matches_local": true,
+  "files": 102,
+  "counts": {
+    "source_and_configuration": 39,
+    "tests": 1,
+    "documents_and_evidence": 34,
+    "empty_directory_markers": 28
+  },
+  "working_tree_clean": true,
+  "no_force_push": true,
+  "security_gate": "PASS",
+  "g1_commit": "87b605b26cda9b8e3210beef807efb130a273a74",
+  "limits": [
+    "G2 specification and G3 static/boundary isolation only; no Laravel boot or MySQL execution",
+    "Original protected source status snapshot kept locally and sanitized in docs/evidence/PROTECTED_SOURCE.json"
+  ]
+}

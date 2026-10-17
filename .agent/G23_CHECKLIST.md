@@ -12,5 +12,5 @@ ACCEPTANCE: Decision/schema có căn cứ; cấu hình chỉ MySQL riêng, DB ex
 | P02 | Call graph và DEC01–06/schema | Source KLCN đã clone | VERIFIED | G2_DECISIONS/ERD, call graph43 classes | Đặc tả, chưa migration implementation |
 | P03 | Cô lập runtime và dependency | P01/P02 | VERIFIED | G3_ISOLATION_RESULT; diff15/22/65; lock gỡ4 | Không chạy DB |
 | P04 | Kiểm ba lớp và diff | Source/checkpoint + config | VERIFIED | lint26,probe38,process12,Composer3; source-comparison toàn true | Chưa boot Laravel thật; schema chưa DDL |
-| P05 | Đồng bộ hồ sơ và gói checkpoint | Kết quả kiểm | IN_PROGRESS | context/PLAN/DOC_INDEX và ZIP sau publication | Hồ sơ G1 là lịch sử đã nghiệm thu |
-| P06 | Stage scan/commit/push/readback | Repo Mã nguồn mở duy nhất | IN_PROGRESS | logs/g23/publication.json khi push/readback đạt | Remote public kiểm trống; không force |
+| P05 | Đồng bộ hồ sơ và gói checkpoint | Kết quả kiểm | VERIFIED | Đọc lại23 Markdown, link0 lỗi; ZIP preview32 entry CRC/byte đạt; gói cuối kiểm riêng sau metadata | Hồ sơ G1 là lịch sử đã nghiệm thu |
+| P06 | Stage scan/commit/push/readback nguồn | Repo Mã nguồn mở duy nhất | VERIFIED | Sourcec73608680a9e94d6679e6cd791e2373aca560cb1, API tree102/102 khớp, scan102+G1104; working tree clean | Metadata receipt/ZIP cuối kiểm riêng; không force |
