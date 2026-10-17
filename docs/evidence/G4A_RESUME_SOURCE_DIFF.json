@@ -1,0 +1,9 @@
+{
+  "scope": "Documentation/evidence only; no runtime PHP/config/dependency/schema changes.",
+  "archived_previous_g4a_result_sha256": "0aac8416db9de752803181e9c0f30b744946f8154cffe1be094fada432ff9fa3",
+  "archive_local": ".agent/archive/g4a-startup-result-before-resume-20261017.md",
+  "source_files_hash_unchanged": 68,
+  "models_migrations_seeders_added": 0,
+  "protected_sources_and_existing_mysql_installation_hashes_match_baseline": true,
+  "no_sql_or_stage_commit_push": true
+}

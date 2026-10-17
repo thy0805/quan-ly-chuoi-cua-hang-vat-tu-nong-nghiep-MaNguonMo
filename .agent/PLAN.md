@@ -1,17 +1,13 @@
-# Kế hoạch G2/G3 và GitHub
+# Kế hoạch hiện hành — G4A checkpoint rồi G4B
 
-Scope contract/checklist hiện hành: [G23_CHECKLIST](G23_CHECKLIST.md). Thy đã cho phép G2/G3 và commit/push repo Mã nguồn mở, thay điểm dừng G1.
+Nguồn chuẩn: G4B_CHECKLIST.md và decisions/G4A_ACCEPTED_G4B_AUTHORIZED_20261017.md. G4A đã ACCEPTED/LOCKED theo Thy, không còn chờ nghiệm thu. G4A_RESULT/ZIP giữ byte theo checkpoint được duyệt.
 
-| Giai đoạn | Trạng thái | Evidence / điều kiện tiếp |
+| Pha | Trạng thái | Evidence/bước tiếp |
 |---|---|---|
-| G1 clone/audit | VERIFIED, ACCEPTED hồ sơ | G1 commit87b605b, archive104 và manifest102 |
-| G2 decision/schema | VERIFIED đặc tả | G2_DECISIONS + ERD_MYSQL,4 bảng/3FK; chưa DDL |
-| G3 isolation | VERIFIED tĩnh/biên | Lint26,probe38,process12,Composer3; runtime chủ động khóa, chưa boot Laravel |
-| Publication nguồn | VERIFIED | Sourcec73608680a9e94d6679e6cd791e2373aca560cb1, remote/API tree102/102; working tree clean; fresh probe38; metadata receipt ở commit tiếp theo |
-| G4 migrations/Eloquent/Auth/CRUD | TODO | Thy nghiệm thu và cho phép dependency/DB riêng trước thực thi |
-| G5 Blade/Bootstrap/MySQL/browser QA | TODO | G4 parity, quyền/DELETE/race đạt |
-| G6 báo cáo/demo | TODO | Rubric gốc, render sơ đồ và evidence chức năng thật |
+| G4A acceptance | LOCKED phạm vi | ZIP48hash/11tests131assertions;Thy17/10 |
+| G4A publication A01–A03 | IN_PROGRESS | Base/origin21c8842;scan/stage/commit/push/readback |
+| G4B HTTP B01–B04 | TODO | Chỉ bắt đầu sau push/tree sạch |
+| G4B commit/push | TODO,chưa được duyệt | Chờ nghiệm thu G4B |
+| G5/G6 | TODO,chưa mở | Không mở rộng |
 
-G1 CLONE_CHECKLIST và Z01 đóng gói trước là lịch sử. Không chạy verify_clone/package_handoff/clone/scaffold cũ lên source G3. verify_g23.py là kiểm hiện hành. Không đọc trạng thái giai đoạn chỉ từ commit.
-
-Bàn giao GitHub source ưu tiên và một ZIP hồ sơ nhỏ có SHA-256. Không public raw logs/archive/private/runtime. Sau publication dừng, không tự triển khai tiếp.
+Không migrate/seed/DROP/TRUNCATE/reset demo. Test MySQL transaction/fixture rollback và readback nội dung trước/sau. Phân biệt đã viết/đã kiểm/được nghiệm thu.

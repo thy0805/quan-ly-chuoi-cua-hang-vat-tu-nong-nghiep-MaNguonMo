@@ -1,0 +1,185 @@
+{
+  "status": "VERIFIED_PREFLIGHT_READBACK_G4A_BLOCKED_SQL_AUTH",
+  "captured_utc": "2026-10-17T11:12:11.156461+00:00",
+  "env04_accepted_locked": true,
+  "env04_zip_sha256": "5d7362d162c352faac0d16059b0836f067cf5ada9e861da3efec085dc812be02",
+  "env04_zip_manifest_entries_verified": 66,
+  "env04_locked_files_unchanged": [
+    {
+      "path": ".agent/ENV04_CHECKLIST.md",
+      "sha256": "c25f6533984826a43c4fd43046c348ab13680701c25de24f019e06b109074dca"
+    },
+    {
+      "path": ".agent/decisions/ENV04_CONDITIONAL_REPAIR_AUTHORIZED_20261017.md",
+      "sha256": "bcdc000080eb7bfaf0a6cc4ae8cca0ddd857d6e2c1075a1ac7b3fb8ad26a5fba"
+    },
+    {
+      "path": ".agent/decisions/ENV04_OWNER_SHUTDOWN_AUTHORIZED_20261017.md",
+      "sha256": "f397a3b80e5e7f5c622bfa74f5cfc141e3d8fe773de793e23806bda8206a4219"
+    },
+    {
+      "path": "docs/ENV04_REPAIR_RESULT.md",
+      "sha256": "7602573bc52d96e7babdf287e12146a4d7b47c434a9200dbbdf19c795c279d5b"
+    },
+    {
+      "path": "docs/evidence/ENV04_ACTION_RECEIPTS.json",
+      "sha256": "d8d74017fd9c774ffc3c6068445cf06abdf04ec3dc4c25ebfff5da7e0483688f"
+    },
+    {
+      "path": "docs/evidence/ENV04_FILE_READBACK.json",
+      "sha256": "56ab1a536acf490bb8f26d9784620b39cb4d58ad676c4bec143a4f84fdfbdb40"
+    },
+    {
+      "path": "docs/evidence/ENV04_INSTALLATION_INTEGRITY.json",
+      "sha256": "3474a7ac3fe8f2c5a03e8484572f3b5f48377bcff32d7f365324741d83f94d92"
+    },
+    {
+      "path": "docs/evidence/ENV04_LOG_SUMMARY.json",
+      "sha256": "11b0e4c7100c9bb886cf30047d86fa975fd3a2c46b0ad4a6fff5e268ffb35093"
+    },
+    {
+      "path": "docs/evidence/ENV04_PREFLIGHT.json",
+      "sha256": "ee3d078d6ca4afa58228d958422013944fd25e57ee242b1b6d62737eaf30f71b"
+    },
+    {
+      "path": "docs/evidence/ENV04_RUNTIME_READBACK.json",
+      "sha256": "7c6465ae4079b25be38dcc82b6f6ccc67f5b051cd9434fd0b5b5cd5cadaaf013"
+    },
+    {
+      "path": "docs/evidence/ENV04_VERIFICATION.json",
+      "sha256": "0ec2d151e5720515c823226e287d91f550a0994c15a9964483226aeb1351a723"
+    }
+  ],
+  "runtime": {
+    "monitor_pid": 10032,
+    "server_pid": 4968,
+    "one_instance": true,
+    "process_commands_match_existing_config": true,
+    "tcp_greeting_version": "8.4.3",
+    "ports": [
+      3306,
+      33060
+    ],
+    "loaded_component_path": "C:\\laragon\\bin\\mysql\\mysql-8.4.3-winx64\\lib\\plugin\\component_reference_cache.dll",
+    "loaded_component_version": "8.4.3.0",
+    "configured_datadir": "C:/laragon/data/mysql-8.4",
+    "configured_datadir_exists": true,
+    "authenticated_datadir_plugin_dir": "NOT_QUERIED",
+    "my_ini_sha256": "a0795e25b68c1fd804888087fb3bb9227fd580a5851e8d7b2fb657453ea8c12e",
+    "mysqld_sha256": "ee6b6ba65d99bcea50b6605bc0650588c4d5b91b11aefcf4d9e5bd2c12e07d8e",
+    "log_no_component_icu_or_error": true,
+    "log_sha256": "67ae471508ed0e02ea0e73413ff2e1c83c088c301f71c465fe16d2d719651cd6"
+  },
+  "installation": {
+    "total_files": 171,
+    "original_hashes_unchanged": 127,
+    "restored_hashes_unchanged": 44,
+    "no_file_changes_this_turn": true
+  },
+  "source": {
+    "baseline_files": 68,
+    "all_hashes_unchanged": true,
+    "vendor_exists": false,
+    "real_env_exists": false,
+    "new_migrations": 0,
+    "new_models": 0,
+    "new_seeders": 0
+  },
+  "protected_git": {
+    "parent": {
+      "head": "4ee9b0d1ed52f18cf984b4511cc89df841a4721e",
+      "status_lines": 5343,
+      "status_matches_baseline": true,
+      "git_metadata_hashes_match": true
+    },
+    "klcn": {
+      "head": "fc514c8a040d7d2804791ceea5a255427f5bf086",
+      "status_lines": 11,
+      "status_matches_baseline": true,
+      "git_metadata_hashes_match": true
+    },
+    "nosql": {
+      "head": "21288936d172b8485b425c1adc7ca21972da5e48",
+      "status_lines": 0,
+      "status_matches_baseline": true,
+      "git_metadata_hashes_match": true
+    }
+  },
+  "protected_verification_limit": "HEAD/status/available HEAD,index,config,packed-refs hashes against existing baseline; excludes MNM from parent. Not a full protected source or database content audit.",
+  "mnm": {
+    "branch": "main",
+    "head": "21c8842027c510ec4db0d09b859ccd522f8785de",
+    "g1_and_g23_commits_resolve": true,
+    "staged_files": 0,
+    "status": [
+      "M .agent/DOC_INDEX.md",
+      " M .agent/G23_CHECKLIST.md",
+      " M .agent/PLAN.md",
+      " M .agent/mistake.md",
+      " M AGENTS.md",
+      " M README.md",
+      " M context.md",
+      " M docs/IMPLEMENTATION_PLAN.md",
+      "?? .agent/ENV03_CHECKLIST.md",
+      "?? .agent/ENV04_CHECKLIST.md",
+      "?? .agent/G4A_CHECKLIST.md",
+      "?? .agent/G4A_RESUME_CHECKLIST.md",
+      "?? .agent/decisions/ENV03_DIAGNOSTIC_AUTHORIZED_20261017.md",
+      "?? .agent/decisions/ENV04_ACCEPTED_G4A_RESUMED_20261017.md",
+      "?? .agent/decisions/ENV04_CONDITIONAL_REPAIR_AUTHORIZED_20261017.md",
+      "?? .agent/decisions/ENV04_OWNER_SHUTDOWN_AUTHORIZED_20261017.md",
+      "?? .agent/decisions/G4A_AUTHORIZED_20261017.md",
+      "?? .agent/decisions/G4A_DIRECT_MYSQL_AUTHORIZED_20261017.md",
+      "?? docs/ENV03_DIAGNOSTIC.md",
+      "?? docs/ENV04_REPAIR_RESULT.md",
+      "?? docs/G4A_RESULT.md",
+      "?? docs/evidence/ENV03_DEPENDENCIES.json",
+      "?? docs/evidence/ENV03_OFFICIAL_PACKAGE.json",
+      "?? docs/evidence/ENV03_PACKAGE_INVENTORY.json",
+      "?? docs/evidence/ENV03_READBACK.json",
+      "?? docs/evidence/ENV03_REPAIR_MANIFEST.json",
+      "?? docs/evidence/ENV03_VERIFICATION.json",
+      "?? docs/evidence/ENV04_ACTION_RECEIPTS.json",
+      "?? docs/evidence/ENV04_FILE_READBACK.json",
+      "?? docs/evidence/ENV04_INSTALLATION_INTEGRITY.json",
+      "?? docs/evidence/ENV04_LOG_SUMMARY.json",
+      "?? docs/evidence/ENV04_PREFLIGHT.json",
+      "?? docs/evidence/ENV04_RUNTIME_READBACK.json",
+      "?? docs/evidence/ENV04_VERIFICATION.json",
+      "?? docs/evidence/G4A_MYSQL_READBACK.json",
+      "?? docs/evidence/G4A_MYSQL_STARTUP.json",
+      "?? docs/evidence/G4A_PREFLIGHT.json",
+      "?? docs/evidence/G4A_PREFLIGHT_VERIFICATION.json",
+      "?? docs/evidence/G4A_RESUME_AUTH_PREFLIGHT.json",
+      "?? docs/evidence/G4A_RESUME_SOURCE_DIFF.json",
+      "?? docs/evidence/G4A_RESUME_VERIFICATION.json",
+      "?? docs/evidence/G4A_STARTUP_LOG_SUMMARY.json",
+      "?? docs/evidence/G4A_STARTUP_SOURCE_DIFF.json",
+      "?? docs/evidence/G4A_STARTUP_VERIFICATION.json"
+    ],
+    "no_commit_push": true,
+    "remote_not_contacted": true
+  },
+  "auth_and_db": {
+    "authentication_attempts": 0,
+    "sql_statements": 0,
+    "database_provisioned": false,
+    "target_database_existence": "UNKNOWN",
+    "sql_identity_privileges": "UNKNOWN",
+    "new_accounts": 0,
+    "migration_seed_qa_run": false
+  },
+  "gate_result": "STOP before Composer install, guard changes and DDL because no authenticated SQL session is available.",
+  "structural_verification": "171 installation file paths/bytes/hash;68 source hashes;11 locked ENV04 artifacts;66 accepted ZIP manifest entries/CRC; protected Git.",
+  "semantic_verification": "ENV04 acceptance is limited to restoration/startup; no SQL privilege inference or default password assumption. G2 four-table design remains unchanged.",
+  "artifact_runtime_verification": "Existing PID tree, actual loaded DLL, listener ownership and MySQL protocol greeting read back without authentication, restart or repair. Authenticated SQL/Laravel runtime remains unverified.",
+  "final_protected_git_recheck_utc": "2026-10-17T11:16:01.267121+00:00",
+  "final_status_scope": "Only Markdown and docs/evidence JSON changes; no staged files; runtime baseline rehashed after documentation changes.",
+  "document_readback": {
+    "markdown_documents_scanned": 36,
+    "local_markdown_links_checked": 49,
+    "broken_local_links": 0,
+    "env04_historical_artifacts_not_rewritten": true,
+    "g4a_result_and_recovery_read_back": true
+  }
+}

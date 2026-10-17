@@ -1,0 +1,42 @@
+{
+  "status": "OFFICIAL_PACKAGE_INSPECTED_NOT_INSTALLED",
+  "captured_utc": "2026-10-17T09:56:15.408746+00:00",
+  "url": "https://cdn.mysql.com/archives/mysql-8.4/mysql-8.4.3-winx64.zip",
+  "bytes": 259751071,
+  "sha256": "e401d0420486d91bd14eda7b6b449498007863ca340991e529adff4787352e7e",
+  "md5_official_matches": "28c56dda41e66c07512f2de5d0b9c8dc",
+  "gpg_exit_code": 0,
+  "gpg_valid_signature_fingerprints": [
+    "BCA43417C3B485DD128EC6D4B7B3B788A8D3785C"
+  ],
+  "gpg_signature_key_expired_status": true,
+  "gpg_key_source": "https://repo.mysql.com/RPM-GPG-KEY-mysql-2023",
+  "official_files": 297,
+  "existing_official_files_matching_sha256": 126,
+  "existing_official_files_mismatching_sha256": [],
+  "missing_official_files": 171,
+  "lib_files": 166,
+  "lib_bytes": 358136314,
+  "nothing_copied_into_installation": true,
+  "scope": "Downloaded official archive and inspected in project staging; nothing installed or executed",
+  "existing_installation_files_total": 127,
+  "extra_installed_file": "my.ini (local configuration, not part of official ZIP)",
+  "missing_non_lib_files": [
+    "bin/abseil_dll-debug.pdb",
+    "bin/jemalloc.pdb",
+    "bin/libcrypto-3-x64.pdb",
+    "bin/libssl-3-x64.pdb",
+    "bin/mysqld.pdb"
+  ],
+  "icu_files": 43,
+  "icu_bytes": 3765072,
+  "gpg_signature_created_utc": "2024-09-18T17:02:36Z",
+  "gpg_key_expiry_utc": "2025-10-22T17:26:50Z",
+  "gpg_interpretation": "VALIDSIG for Oracle published archived key; signature cryptographically valid, key expired at diagnostic date. No expiry/trust warning suppressed; MD5 is supplemental, not sole authenticity proof.",
+  "candidate_authenticode": {
+    "status": "Valid",
+    "signer": "Oracle America, Inc.",
+    "file_version": "8.4.3.0",
+    "product_version": "8.4.3.0"
+  }
+}

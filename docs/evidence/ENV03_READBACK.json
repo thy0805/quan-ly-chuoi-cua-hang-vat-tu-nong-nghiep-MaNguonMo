@@ -1,0 +1,72 @@
+{
+  "status": "DIAGNOSTIC_ONLY_SERVER_STILL_RUNNING_NO_REPAIR",
+  "captured_utc": "2026-10-17T09:59:24.937565+00:00",
+  "monitor_pid": 18852,
+  "server_pid": 33712,
+  "instance_count": 1,
+  "processes": [
+    {
+      "ProcessId": 18852,
+      "ParentProcessId": 29372,
+      "ExecutablePath": "C:\\laragon\\bin\\mysql\\mysql-8.4.3-winx64\\bin\\mysqld.exe",
+      "CommandLine": "\"C:\\laragon\\bin\\mysql\\mysql-8.4.3-winx64\\bin\\mysqld.exe\" --defaults-file=C:\\laragon\\bin\\mysql\\mysql-8.4.3-winx64\\my.ini --console",
+      "CreationDate": "2026-10-17T16:39:58.829368+07:00"
+    },
+    {
+      "ProcessId": 33712,
+      "ParentProcessId": 18852,
+      "ExecutablePath": "C:\\laragon\\bin\\mysql\\mysql-8.4.3-winx64\\bin\\mysqld.exe",
+      "CommandLine": "C:\\laragon\\bin\\mysql\\mysql-8.4.3-winx64\\bin\\mysqld.exe --defaults-file=C:\\laragon\\bin\\mysql\\mysql-8.4.3-winx64\\my.ini --console",
+      "CreationDate": "2026-10-17T16:39:58.886542+07:00"
+    }
+  ],
+  "listeners": [
+    {
+      "LocalAddress": "::",
+      "LocalPort": 33060,
+      "OwningProcess": 33712
+    },
+    {
+      "LocalAddress": "::",
+      "LocalPort": 3306,
+      "OwningProcess": 33712
+    }
+  ],
+  "services": [],
+  "selected_non_secret_config": [
+    "port=3306",
+    "datadir=\"C:/laragon/data/mysql-8.4\"",
+    "port=3306"
+  ],
+  "configured_datadir": "C:/laragon/data/mysql-8.4",
+  "configured_datadir_exists": true,
+  "runtime_datadir_sql": "NOT_QUERIED_NO_AUTHENTICATED_SESSION",
+  "plugin_attempted_load_path": "C:/laragon/bin/mysql/mysql-8.4.3-winx64/lib/plugin/component_reference_cache.dll",
+  "plugin_path_evidence": "Actual startup stderr load path; no @@plugin_dir SQL query",
+  "explicit_plugin_dir_in_selected_my_ini": false,
+  "lib_directory_exists": false,
+  "component_file_exists_in_installation": false,
+  "mysqld_sha256": "ee6b6ba65d99bcea50b6605bc0650588c4d5b91b11aefcf4d9e5bd2c12e07d8e",
+  "my_ini_sha256": "a0795e25b68c1fd804888087fb3bb9227fd580a5851e8d7b2fb657453ea8c12e",
+  "official_server_bytes_match": true,
+  "official_component_bytes_available_in_staging_only": true,
+  "local_package_search": {
+    "result": "No matching trusted pre-existing package found in scoped paths",
+    "paths": [
+      "C:/Users/thy/Downloads",
+      "C:/laragon/tmp",
+      "C:/laragon/bin/mysql",
+      "C:/laragon"
+    ],
+    "limits": "Filename-scoped search for MySQL8.4.3 packages; not exhaustive whole-machine or network search"
+  },
+  "sql_statements": 0,
+  "authenticated_sessions": 0,
+  "restart_shutdown_or_second_instance": false,
+  "no_installation_config_datadir_acl_registry_firewall_write": true,
+  "limits": [
+    "Process command line and configured datadir do not substitute for authenticated @@datadir.",
+    "Filesystem absence proves missing component; static dependency inspection is not an actual loader test.",
+    "No database inventory, account privilege, ownership, data integrity or Laravel/G4A runtime certification."
+  ]
+}

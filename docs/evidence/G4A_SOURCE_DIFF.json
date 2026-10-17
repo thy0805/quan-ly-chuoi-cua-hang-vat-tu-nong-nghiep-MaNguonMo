@@ -1,0 +1,128 @@
+{
+  "base_commit": "21c8842027c510ec4db0d09b859ccd522f8785de",
+  "source_files": [
+    {
+      "path": "artisan",
+      "bytes": 657,
+      "sha256": "25b94c34769be90e6de54170c9d47bcc7d649ef56f339ec7b150395140446205"
+    },
+    {
+      "path": "bootstrap/app.php",
+      "bytes": 315,
+      "sha256": "b5ab88b28487232d68d80396ed1390a8e9452b184a619e9af41709273809a4d2"
+    },
+    {
+      "path": "app/Providers/AppServiceProvider.php",
+      "bytes": 1441,
+      "sha256": "2d6bd5879c40ae00a76ae8d6dc454c911798c3d40018373aa3765990cee7c0e0"
+    },
+    {
+      "path": "app/Support/RuntimeIsolation.php",
+      "bytes": 4094,
+      "sha256": "ec92ab9702cde2b98482989ca5baccecd6ccf2e5b6d421ec2e4f0b66f1bd90cc"
+    },
+    {
+      "path": "app/Models/User.php",
+      "bytes": 1955,
+      "sha256": "d5e40e6dc29631563a9523495c3b95738ed64c8193ea0e574ab9ce6d2b21ac0f"
+    },
+    {
+      "path": "app/Models/CatalogModel.php",
+      "bytes": 349,
+      "sha256": "97b0c0ed77da435ead26bf3ba2dba20b22f67aaab6e40548f689d3e5cedaa39e"
+    },
+    {
+      "path": "app/Models/ProductCategory.php",
+      "bytes": 1001,
+      "sha256": "a66abdbc109d3338a6dceb32bae4703ff22a530f416cfc72043790e01e1fec45"
+    },
+    {
+      "path": "app/Models/Unit.php",
+      "bytes": 454,
+      "sha256": "64bf4bbda4df20fab937ac00fff8faaf3480ba0894693b24e4ba835b08f061e0"
+    },
+    {
+      "path": "app/Models/Product.php",
+      "bytes": 1404,
+      "sha256": "a9750d6fb574f72bdefb56bc21a4ce492ba58c3fa83b5bf311c3d65a8dbe68de"
+    },
+    {
+      "path": "app/Support/CatalogIntegrity.php",
+      "bytes": 3339,
+      "sha256": "a81d05a21707e6b4b63c259925a3fcdb815458b780afc4701031291416e6ed90"
+    },
+    {
+      "path": "app/Support/MigrationTriggers.php",
+      "bytes": 3067,
+      "sha256": "02ecfcde14a498b136b90dccc4c19d29fb079767777d0f163db06e1b6f2fa7b4"
+    },
+    {
+      "path": "app/Support/FixtureRollbackGuard.php",
+      "bytes": 2114,
+      "sha256": "366dbf4dcb9c1f5fda6efa7b85ea2f67f9c23971e7992d17681559bf409bd0b4"
+    },
+    {
+      "path": "config/hashing.php",
+      "bytes": 97,
+      "sha256": "8e28e77f9431705524a946de479395feecc55cf1d66a5e3756e846554c0e3891"
+    },
+    {
+      "path": "config/view.php",
+      "bytes": 115,
+      "sha256": "63a03ace0bc5814c9db018c66c2bb0b7ebdc311b68837e0674b4f5f494be56e8"
+    },
+    {
+      "path": "database/seeders/DatabaseSeeder.php",
+      "bytes": 3164,
+      "sha256": "5c50559dbd39e91096d15b37a547c586e7675488c8fa690638625b7f4a9823ac"
+    },
+    {
+      "path": "phpunit.xml",
+      "bytes": 434,
+      "sha256": "23aa7c44b613a4ce683da158847755674e7e21df22e2619005005b7baada69b5"
+    },
+    {
+      "path": "tests/TestCase.php",
+      "bytes": 384,
+      "sha256": "3ffa4808cc035355271264a408f55683020b80faa114091c8819ae949c441df1"
+    },
+    {
+      "path": "tests/Feature/G4AMysqlTest.php",
+      "bytes": 16066,
+      "sha256": "4fa1b6d6fffc14b255fe1403ea9f45a95978b95290b6d7e998aab29544dde98f"
+    },
+    {
+      "path": "storage/mnm/framework/views/.gitignore",
+      "bytes": 14,
+      "sha256": "240a3e0d37d2e86b614063f5347eb02d4f99ca6c254de6b82871ff8d95532a7d"
+    },
+    {
+      "path": "database/migrations/2026_10_17_000001_create_users_table.php",
+      "bytes": 995,
+      "sha256": "4550661627866a4dfc62334f7e0c10f83ba8d52aa3c23af5b5d9a4e735231591"
+    },
+    {
+      "path": "database/migrations/2026_10_17_000002_create_product_categories_table.php",
+      "bytes": 1090,
+      "sha256": "28ef1a65cc080ff4527bdb21addeb341a73bf4a561a0e866b682bb4efca88f31"
+    },
+    {
+      "path": "database/migrations/2026_10_17_000003_create_units_table.php",
+      "bytes": 733,
+      "sha256": "661ab46bf1b728797659cbf214763a7195d4476af33cb9cdb1065f495fc31570"
+    },
+    {
+      "path": "database/migrations/2026_10_17_000004_create_products_table.php",
+      "bytes": 1610,
+      "sha256": "cb965d36a5357d5224731ec8fc83efae4e89254e90a5d3ffb4ddee88bd483bf9"
+    }
+  ],
+  "source_file_count": 23,
+  "composer_json_and_lock_changed": false,
+  "http_entrypoint_changed": false,
+  "notes": [
+    "Six prior runtime files changed; remaining listed files are new",
+    "Private config/dependencies/local helpers/logs excluded from Git; safe helpers included in review ZIP only",
+    "No commit, push, staging or remote contact"
+  ]
+}

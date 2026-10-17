@@ -1,0 +1,50 @@
+{
+  "status": "VERIFIED_AUTH02_AND_DATABASE_PROVISION",
+  "admin_authentication_attempts": 1,
+  "admin_password_stored": false,
+  "identity": {
+    "version": "8.4.3",
+    "port": 3306,
+    "datadir": "C:\\laragon\\data\\mysql-8.4\\",
+    "plugin_dir": "C:\\laragon\\bin\\mysql\\mysql-8.4.3-winx64\\lib\\plugin\\",
+    "login_user": "root@localhost",
+    "authenticated_user": "root@localhost"
+  },
+  "admin_create_database_create_user_grant_verified": true,
+  "target_initially_absent": true,
+  "database_created": "mnm_vat_tu_nong_nghiep",
+  "tables_before_migration": 0,
+  "accounts": [
+    {
+      "user": "mnm_runtime_20261017",
+      "host": "localhost",
+      "privileges": [
+        "SELECT",
+        "INSERT",
+        "UPDATE",
+        "DELETE"
+      ]
+    },
+    {
+      "user": "mnm_migrate_20261017",
+      "host": "localhost",
+      "privileges": [
+        "SELECT",
+        "INSERT",
+        "UPDATE",
+        "DELETE",
+        "CREATE",
+        "ALTER",
+        "DROP",
+        "INDEX",
+        "REFERENCES",
+        "TRIGGER"
+      ]
+    }
+  ],
+  "existing_accounts_modified": false,
+  "server_binlog": 1,
+  "server_trust_function_creators": 0,
+  "server_configuration_changed": false,
+  "root_scope_after_provision": "Only two exact schema-qualified self-parent triggers via ephemeral local runner; no root connection fallback in Laravel."
+}

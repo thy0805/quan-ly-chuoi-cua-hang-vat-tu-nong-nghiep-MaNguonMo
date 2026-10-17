@@ -1,0 +1,275 @@
+{
+  "captured_utc": "2026-10-17T12:37:35.735876+00:00",
+  "protected_git": {
+    "parent": {
+      "head": "4ee9b0d1ed52f18cf984b4511cc89df841a4721e",
+      "status_lines": 5343,
+      "matches_baseline": true,
+      "metadata_match": true
+    },
+    "klcn": {
+      "head": "fc514c8a040d7d2804791ceea5a255427f5bf086",
+      "status_lines": 11,
+      "matches_baseline": true,
+      "metadata_match": true
+    },
+    "nosql": {
+      "head": "21288936d172b8485b425c1adc7ca21972da5e48",
+      "status_lines": 0,
+      "matches_baseline": true,
+      "metadata_match": true
+    }
+  },
+  "protected_limit": "HEAD/status/HEAD,index,config,packed-refs hashes; not a full protected source/database hash audit",
+  "env04_locked_files_unchanged": 11,
+  "env04_zip_unchanged": true,
+  "mysql_binary_and_config_unchanged": true,
+  "composer_lock_unchanged": true,
+  "prior_runtime_files": 68,
+  "changed_prior_runtime_files": [
+    "app/Models/User.php",
+    "app/Providers/AppServiceProvider.php",
+    "app/Support/RuntimeIsolation.php",
+    "artisan",
+    "bootstrap/app.php",
+    "phpunit.xml"
+  ],
+  "unchanged_prior_runtime_files": 62,
+  "lint": [
+    {
+      "path": "app/Models/CatalogModel.php",
+      "exit_code": 0
+    },
+    {
+      "path": "app/Models/Product.php",
+      "exit_code": 0
+    },
+    {
+      "path": "app/Models/ProductCategory.php",
+      "exit_code": 0
+    },
+    {
+      "path": "app/Models/Unit.php",
+      "exit_code": 0
+    },
+    {
+      "path": "app/Models/User.php",
+      "exit_code": 0
+    },
+    {
+      "path": "app/Providers/AppServiceProvider.php",
+      "exit_code": 0
+    },
+    {
+      "path": "app/Support/CatalogIntegrity.php",
+      "exit_code": 0
+    },
+    {
+      "path": "app/Support/DecimalId.php",
+      "exit_code": 0
+    },
+    {
+      "path": "app/Support/DecimalLimit.php",
+      "exit_code": 0
+    },
+    {
+      "path": "app/Support/FixtureRollbackGuard.php",
+      "exit_code": 0
+    },
+    {
+      "path": "app/Support/MigrationTriggers.php",
+      "exit_code": 0
+    },
+    {
+      "path": "app/Support/RuntimeIsolation.php",
+      "exit_code": 0
+    },
+    {
+      "path": "app/Http/Controllers/Controller.php",
+      "exit_code": 0
+    },
+    {
+      "path": "bootstrap/app.php",
+      "exit_code": 0
+    },
+    {
+      "path": "bootstrap/providers.php",
+      "exit_code": 0
+    },
+    {
+      "path": "config/app.php",
+      "exit_code": 0
+    },
+    {
+      "path": "config/auth.php",
+      "exit_code": 0
+    },
+    {
+      "path": "config/cache.php",
+      "exit_code": 0
+    },
+    {
+      "path": "config/cors.php",
+      "exit_code": 0
+    },
+    {
+      "path": "config/database.php",
+      "exit_code": 0
+    },
+    {
+      "path": "config/filesystems.php",
+      "exit_code": 0
+    },
+    {
+      "path": "config/hashing.php",
+      "exit_code": 0
+    },
+    {
+      "path": "config/logging.php",
+      "exit_code": 0
+    },
+    {
+      "path": "config/mail.php",
+      "exit_code": 0
+    },
+    {
+      "path": "config/queue.php",
+      "exit_code": 0
+    },
+    {
+      "path": "config/services.php",
+      "exit_code": 0
+    },
+    {
+      "path": "config/session.php",
+      "exit_code": 0
+    },
+    {
+      "path": "config/view.php",
+      "exit_code": 0
+    },
+    {
+      "path": "database/migrations/2026_10_17_000001_create_users_table.php",
+      "exit_code": 0
+    },
+    {
+      "path": "database/migrations/2026_10_17_000002_create_product_categories_table.php",
+      "exit_code": 0
+    },
+    {
+      "path": "database/migrations/2026_10_17_000003_create_units_table.php",
+      "exit_code": 0
+    },
+    {
+      "path": "database/migrations/2026_10_17_000004_create_products_table.php",
+      "exit_code": 0
+    },
+    {
+      "path": "database/seeders/DatabaseSeeder.php",
+      "exit_code": 0
+    },
+    {
+      "path": "tests/TestCase.php",
+      "exit_code": 0
+    },
+    {
+      "path": "tests/Feature/G4AMysqlTest.php",
+      "exit_code": 0
+    },
+    {
+      "path": "artisan",
+      "exit_code": 0
+    },
+    {
+      "path": "public/index.php",
+      "exit_code": 0
+    }
+  ],
+  "mnm_head": "21c8842027c510ec4db0d09b859ccd522f8785de",
+  "mnm_branch": "main",
+  "mnm_status": [
+    "M .agent/DOC_INDEX.md",
+    " M .agent/G23_CHECKLIST.md",
+    " M .agent/PLAN.md",
+    " M .agent/mistake.md",
+    " M AGENTS.md",
+    " M README.md",
+    " M app/Models/User.php",
+    " M app/Providers/AppServiceProvider.php",
+    " M app/Support/RuntimeIsolation.php",
+    " M artisan",
+    " M bootstrap/app.php",
+    " M context.md",
+    " M docs/IMPLEMENTATION_PLAN.md",
+    " M phpunit.xml",
+    "?? .agent/AUTH02_CHECKLIST.md",
+    "?? .agent/ENV03_CHECKLIST.md",
+    "?? .agent/ENV04_CHECKLIST.md",
+    "?? .agent/G4A_CHECKLIST.md",
+    "?? .agent/G4A_IMPLEMENTATION_CHECKLIST.md",
+    "?? .agent/G4A_RESUME_CHECKLIST.md",
+    "?? .agent/decisions/AUTH02_LOCAL_LOGIN_20261017.md",
+    "?? .agent/decisions/ENV03_DIAGNOSTIC_AUTHORIZED_20261017.md",
+    "?? .agent/decisions/ENV04_ACCEPTED_G4A_RESUMED_20261017.md",
+    "?? .agent/decisions/ENV04_CONDITIONAL_REPAIR_AUTHORIZED_20261017.md",
+    "?? .agent/decisions/ENV04_OWNER_SHUTDOWN_AUTHORIZED_20261017.md",
+    "?? .agent/decisions/G4A_AUTHORIZED_20261017.md",
+    "?? .agent/decisions/G4A_DIRECT_MYSQL_AUTHORIZED_20261017.md",
+    "?? .agent/decisions/G4A_TRIGGER_ADMIN_DDL_20261017.md",
+    "?? app/Models/CatalogModel.php",
+    "?? app/Models/Product.php",
+    "?? app/Models/ProductCategory.php",
+    "?? app/Models/Unit.php",
+    "?? app/Support/CatalogIntegrity.php",
+    "?? app/Support/FixtureRollbackGuard.php",
+    "?? app/Support/MigrationTriggers.php",
+    "?? config/hashing.php",
+    "?? config/view.php",
+    "?? database/migrations/2026_10_17_000001_create_users_table.php",
+    "?? database/migrations/2026_10_17_000002_create_product_categories_table.php",
+    "?? database/migrations/2026_10_17_000003_create_units_table.php",
+    "?? database/migrations/2026_10_17_000004_create_products_table.php",
+    "?? database/seeders/DatabaseSeeder.php",
+    "?? docs/ENV03_DIAGNOSTIC.md",
+    "?? docs/ENV04_REPAIR_RESULT.md",
+    "?? docs/G4A_RESULT.md",
+    "?? docs/evidence/ENV03_DEPENDENCIES.json",
+    "?? docs/evidence/ENV03_OFFICIAL_PACKAGE.json",
+    "?? docs/evidence/ENV03_PACKAGE_INVENTORY.json",
+    "?? docs/evidence/ENV03_READBACK.json",
+    "?? docs/evidence/ENV03_REPAIR_MANIFEST.json",
+    "?? docs/evidence/ENV03_VERIFICATION.json",
+    "?? docs/evidence/ENV04_ACTION_RECEIPTS.json",
+    "?? docs/evidence/ENV04_FILE_READBACK.json",
+    "?? docs/evidence/ENV04_INSTALLATION_INTEGRITY.json",
+    "?? docs/evidence/ENV04_LOG_SUMMARY.json",
+    "?? docs/evidence/ENV04_PREFLIGHT.json",
+    "?? docs/evidence/ENV04_RUNTIME_READBACK.json",
+    "?? docs/evidence/ENV04_VERIFICATION.json",
+    "?? docs/evidence/G4A_MYSQL_QA.json",
+    "?? docs/evidence/G4A_MYSQL_READBACK.json",
+    "?? docs/evidence/G4A_MYSQL_STARTUP.json",
+    "?? docs/evidence/G4A_PREFLIGHT.json",
+    "?? docs/evidence/G4A_PREFLIGHT_VERIFICATION.json",
+    "?? docs/evidence/G4A_PROTECTED_VERIFICATION.json",
+    "?? docs/evidence/G4A_RESUME_AUTH_PREFLIGHT.json",
+    "?? docs/evidence/G4A_RESUME_SOURCE_DIFF.json",
+    "?? docs/evidence/G4A_RESUME_VERIFICATION.json",
+    "?? docs/evidence/G4A_SOURCE_DIFF.json",
+    "?? docs/evidence/G4A_SQL_PREFLIGHT.json",
+    "?? docs/evidence/G4A_STARTUP_LOG_SUMMARY.json",
+    "?? docs/evidence/G4A_STARTUP_SOURCE_DIFF.json",
+    "?? docs/evidence/G4A_STARTUP_VERIFICATION.json",
+    "?? storage/mnm/framework/views/.gitignore",
+    "?? tests/Feature/G4AMysqlTest.php",
+    "?? tests/TestCase.php"
+  ],
+  "staged_files": 0,
+  "credentials_vendor_ignored": [
+    ".env",
+    ".agent/private/g4a/credentials.json",
+    "vendor/autoload.php"
+  ],
+  "commit_push_performed": false,
+  "remote_contacted": false
+}

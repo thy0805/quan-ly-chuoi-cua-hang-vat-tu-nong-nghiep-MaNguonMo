@@ -1,0 +1,32 @@
+{
+  "status": "PREFLIGHT_BLOCKED",
+  "captured_utc": "2026-10-17T09:26:55.538305+00:00",
+  "checkpoint_local_and_remote": "21c8842027c510ec4db0d09b859ccd522f8785de",
+  "installed_mysqld_version": "Ver 8.4.3 for Win64 on x86_64 (MySQL Community Server - GPL)",
+  "installed_client_version": "Ver 8.4.3 for Win64 on x86_64 (MySQL Community Server - GPL)",
+  "php": {
+    "php": "8.3.30",
+    "pdo_drivers": [
+      "mysql",
+      "sqlite"
+    ]
+  },
+  "mysql_process_count": 0,
+  "mysql_service_count": 0,
+  "mysql_port_listeners": [],
+  "loopback_3306_connect_errno": 10061,
+  "server_session_version": null,
+  "database_inventory_verified": false,
+  "admin_privileges_verified": false,
+  "target_database_state": "UNKNOWN_NOT_QUERIED",
+  "db_connections_authenticated": 0,
+  "db_statements_executed": 0,
+  "dependency_installation_attempted": false,
+  "source_runtime_changes": [],
+  "no_commit_or_push": true,
+  "limitations": [
+    "Installed binary version is not evidence of a running server version",
+    "No server was started; existing Laragon datadir was not opened or modified",
+    "Protected verification in this preflight checks Git HEAD/status/metadata, not a fresh hash of every original file"
+  ]
+}

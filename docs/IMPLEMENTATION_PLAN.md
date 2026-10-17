@@ -1,14 +1,14 @@
-# Kế hoạch hiện hành sau chốt phạm vi G2/G3
+# Kế hoạch hiện hành sau G4A
 
-| Giai đoạn | Trạng thái | Điều kiện tiếp tục |
+Nguồn trạng thái: [context](../context.md),[checklist](../.agent/G4A_IMPLEMENTATION_CHECKLIST.md),[G4A_RESULT](G4A_RESULT.md).
+
+| Giai đoạn | Trạng thái | Evidence/bước tiếp |
 |---|---|---|
-| G1 clone/audit | ACCEPTED hồ sơ theo Thy; evidence hash đã kiểm local | Giữ manifest và Git G1 |
-| G2 quyết định/schema | VERIFIED đặc tả theo DEC01–06 | Thy/GPT Web nghiệm thu hồ sơ hiện tại |
-| G3 runtime isolation | VERIFIED kiểm tĩnh/biên, chưa boot Laravel/MySQL | Chưa được gỡ guard tự ý |
-| G4 migrations/Eloquent/Auth/catalog | TODO | Duyệt checkpoint, cấu hình/dependency/DB riêng và evidence boot; rồi mới thực thi DB |
-| G5 Blade/Bootstrap và QA MySQL/browser | TODO | Auth/CRUD đủ test quyền, cây, giá, DELETE race và parity |
-| G6 báo cáo/demo | TODO | Rubric gốc, ERD/Use Case render, chứng minh chức năng thật, dữ liệu demo synthetic |
+| G1/G2/G3/ENV03/ENV04 | LOCKED theo phạm vi | Giữ checkpoint/thiết kế/11 artifact ENV04 |
+| G4A dependency/boot/schema/models/seeder | VERIFIED phạm vi đã chạy | MySQL 8.4.3 thật/4 migration/seed/11 tests131 assertions |
+| G4A rollback/remigrate/finalhandoff | VERIFIED,chờ nghiệm thu | Rollback đúng bốn migration đạt; readback chỉ còn ledger migrations rỗng và0trigger; remigrate/reseed rồi11 tests/131 assertions cuối đạt. |
+| G4B Auth/CRUD HTTP | TODO,chưa mở | Thy nghiệm thu G4A và duyệt;server-side role/active/CSRF/DELETE/race |
+| G5 Blade/Bootstrap/browserQA | TODO,chưa mở | UI/search/pagination/validation/responsive sau Auth/CRUD |
+| G6 báo cáo/demo | TODO | Rubric gốc/renderERD/UseCase,chứng minh chức năng thực tế |
 
-G4 đi theo module: (1) nền dependency/boot/config isolation; (2) migrations/FK/constraint và synthetic seed; (3) Auth/role/active; (4) category/unit; (5) product/search/pagination/DELETE; (6) UI và regression. Mỗi bước có test MySQL thật phù hợp, không dùng SQLite để xác nhận dialect MySQL. Không coi G1 tests legacy đã pass là test ứng dụng mới.
-
-Mốc publication GitHub chỉ chuyển source/hồ sơ đã kiểm lên repo riêng, không mở quyền G4 hoặc runtime/database.
+Chưa commit/push G4A;không dùng testmodel thay testHTTP hoặc thuyết trình ứng dụng hoàn chỉnh. Một ZIP cho mỗi checkpoint;GitHub chỉ push khi đã được duyệt đúng phạm vi.

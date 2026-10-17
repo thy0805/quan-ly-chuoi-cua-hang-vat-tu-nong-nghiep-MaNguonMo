@@ -1,33 +1,15 @@
 # Quản lý cửa hàng vật tư nông nghiệp — Nhóm 6
 
-Môn Lập trình mã nguồn mở. Source Laravel độc lập dựa trên KLCN thật. **G2/G3: đã chốt đặc tả và cô lập runtime; chưa có ứng dụng MySQL/CRUD/Blade chạy được.**
+**G4A: VERIFIED trong phạm vi G4A; chờ Thy nghiệm thu.** Laravel 13.33.0/MySQL 8.4.3 đã boot,migrate,seed và kiểm11 tests/131 assertions trên database độc lập. Rollback đúng bốn migration đạt; readback chỉ còn ledger migrations rỗng và0trigger; remigrate/reseed rồi11 tests/131 assertions cuối đạt.
 
-Repo [MaNguonMo](https://github.com/thy0805/quan-ly-chuoi-cua-hang-vat-tu-nong-nghiep-MaNguonMo). Root `D:\Hoctap\KhoaLuanCuNhan\LapTrinhMaNguonModoAN`. KLCN/NoSQL có source, cấu hình, Git, database riêng và được giữ nguyên.
+Đọc [G4A_RESULT](docs/G4A_RESULT.md),[MySQL QA](docs/evidence/G4A_MYSQL_QA.json),[source diff](docs/evidence/G4A_SOURCE_DIFF.json),[protected verification](docs/evidence/G4A_PROTECTED_VERIFICATION.json). Một ZIP `MNM_NHOM6_G4A_VERIFIED_20261017.zip` chứa hồ sơ/code G4A để gửi GPT Web. Chưa commit/push G4A.
 
-## Đọc để nghiệm thu
+Repo riêng: [MaNguonMo](https://github.com/thy0805/quan-ly-chuoi-cua-hang-vat-tu-nong-nghiep-MaNguonMo). Checkpoint GitHub đã kiểm trước đó là21c8842027c510ec4db0d09b859ccd522f8785de; code G4A mới nằm local/ZIP, chưa push và không liên hệ remote trong lượt này.
 
-1. [G2_DECISIONS](docs/G2_DECISIONS.md): Admin quản lý/User nhân viên, DEC01–06.
-2. [G3_ISOLATION_RESULT](docs/G3_ISOLATION_RESULT.md): thay đổi, kiểm trực tiếp, giới hạn.
-3. [ERD_MYSQL](docs/ERD_MYSQL.md):4 bảng nghiệp vụ/3FK, constraint theo module.
-4. [CONVERSION_MAPPING](docs/CONVERSION_MAPPING.md), [ARCHITECTURE](docs/ARCHITECTURE.md), [IMPLEMENTATION_PLAN](docs/IMPLEMENTATION_PLAN.md).
-5. [FUNCTIONS_USE_CASES](docs/FUNCTIONS_USE_CASES.md): rubric/phân công; chức năng còn TODO.
-6. [Manifest G1](docs/evidence/G1_MANIFEST.json), [diff102 file](docs/evidence/SOURCE_DIFF.json), [verification G3](docs/evidence/G23_VERIFICATION.json).
-7. [Publication](docs/PUBLICATION.md), [context](context.md), [checklist](.agent/G23_CHECKLIST.md).
+Root `D:\Hoctap\KhoaLuanCuNhan\LapTrinhMaNguonModoAN`;database `mnm_vat_tu_nong_nghiep`. KLCN/NoSQL độc lập,không bị sửa theo protectedreadback. G1/G2/G3/ENV03/ENV04 LOCKED theo phạm vi;[G2_DECISIONS](docs/G2_DECISIONS.md)/[ERD_MYSQL](docs/ERD_MYSQL.md) giữ thiết kế4 bảng/3 FK/1 Admin. G1source giữ tại commit87b605b và archive local;không lấy testlegacy chứng nhận runtime mới.
 
-## Source G1 và source hiện tại
+Hiện có migration,Eloquent,validation domain,synthetic seed và testMySQL. HTTP vẫn503;Auth/CRUD HTTP/search/pagination/Blade/Bootstrap chưa triển khai. Không POS/Shop/checkout/kho/lô/Mongo/worker trong phạm vi đầu. Credential chỉ private ignored,không gửi qua chat hoặc Git/ZIP.
 
-Commit G1 `87b605b26cda9b8e3210beef807efb130a273a74` lưu102 file Laravel thật +2 mẫu/ignore trước sửa. Manifest lưu SHA filesystem nguyên byte; archive104 giữ local (Git có thể chuẩn hóa newline). G2/G3 giữ15, sửa22, quarantine65 khỏi runtime. Source legacy xem tại Git G1; không gọi như tính năng mới. Biên bản/audit/inventory G1 có nhãn lịch sử;75lint/17gate ở đó thuộc G1. Scaffold6 bảng ban đầu không dùng làm kiến trúc.
+Điểm tiếp tục: [context](context.md),[PLAN](.agent/PLAN.md),[checklist](.agent/G4A_IMPLEMENTATION_CHECKLIST.md). Không chạy migrate:fresh hoặc seeder đè dữ liệu. Rollback chỉ fixture mới có exact-set/rowhashguard;triggerDDL cần phiên quản trị hợp lệ theo [decision](.agent/decisions/G4A_TRIGGER_ADMIN_DDL_20261017.md). Dừng nghiệm thu trước G4B/G5/commit/push.
 
-## Trạng thái kỹ thuật
-
-Đích: Laravel/MySQL mnm_vat_tu_nong_nghiep/Eloquent/Migration/Seeder/Blade/Bootstrap/Auth session/middleware Admin/User. Chưa triển khai CRUD/Auth/UI; POS/Shop/checkout/kho/lô/Mongo/worker không thuộc đợt đầu.
-
-G3 chỉ MySQL config riêng, storage/mnm, session/cache file riêng, queue null. HTTP503 chủ động; provider từ chối mọi kết nối DB. Artisan chặn lệnh ghi trước autoload; Composer scripts/plugins/discovery khóa. Không .env thật, vendor/node_modules, dữ liệu DB, migration execution hoặc tài khoản mới.
-
-Đã kiểm lint26/26, probe38 assertions, entrypoint12 tiến trình và Composer validate/platform/dry-run3/3. Provider probe dùng test double; chưa boot Laravel/MySQL/browser. Không lấy tests G1 thay kiểm ứng dụng mới.
-
-## Điểm tiếp tục
-
-G2/G3 source đã xuất bản và readback tại `c73608680a9e94d6679e6cd791e2373aca560cb1`; biên bản publication nằm ở commit tiếp theo. Dừng chờ nghiệm thu checkpoint. G4 cần Thy cho phép dependency/runtime/DB riêng trước migrations/seed/Auth/Eloquent/Blade. Không gỡ guard hoặc chạy setup/migration để thử nhanh. Không credential vào Git.
-
-Nhóm6: Nguyễn Đức Thành Phát, Lý Vũ Nhân Hậu, Nguyễn Văn Minh, Nguyễn Hồ Minh Trọng; phân công đề xuất ở FUNCTIONS_USE_CASES.
+Nhóm 6: Nguyễn Đức Thành Phát,Lý Vũ Nhân Hậu,Nguyễn Văn Minh,Nguyễn Hồ Minh Trọng. Phân công/rubric ở [FUNCTIONS_USE_CASES](docs/FUNCTIONS_USE_CASES.md).

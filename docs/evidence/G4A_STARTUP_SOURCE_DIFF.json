@@ -1,0 +1,29 @@
+{
+  "checkpoint": "21c8842027c510ec4db0d09b859ccd522f8785de",
+  "modified_tracked_files": [
+    ".agent/DOC_INDEX.md",
+    ".agent/G23_CHECKLIST.md",
+    ".agent/PLAN.md",
+    ".agent/mistake.md",
+    "AGENTS.md",
+    "README.md",
+    "context.md",
+    "docs/IMPLEMENTATION_PLAN.md"
+  ],
+  "new_public_documents_or_evidence": [
+    ".agent/G4A_CHECKLIST.md",
+    ".agent/decisions/G4A_AUTHORIZED_20261017.md",
+    ".agent/decisions/G4A_DIRECT_MYSQL_AUTHORIZED_20261017.md",
+    "docs/G4A_RESULT.md",
+    "docs/evidence/G4A_MYSQL_READBACK.json",
+    "docs/evidence/G4A_MYSQL_STARTUP.json",
+    "docs/evidence/G4A_PREFLIGHT.json",
+    "docs/evidence/G4A_PREFLIGHT_VERIFICATION.json",
+    "docs/evidence/G4A_STARTUP_LOG_SUMMARY.json",
+    "docs/evidence/G4A_STARTUP_SOURCE_DIFF.json",
+    "docs/evidence/G4A_STARTUP_VERIFICATION.json"
+  ],
+  "runtime_files_changed": [],
+  "new_migrations_models_seeders": [],
+  "helpers_and_raw_logs": "Local ignored .agent/scripts and .agent/logs; no product source edits"
+}

@@ -1,0 +1,59 @@
+{
+  "status": "SHUTDOWN_RESTORE_STARTUP_RECEIPTS_VERIFIED",
+  "captured_utc": "2026-10-17T10:32:12.273712+00:00",
+  "authentication": {
+    "sql_attempts": 0,
+    "sql_statements": 0,
+    "existing_cli_session_observed": false,
+    "configured_authorized_sql_login_found_in_scoped_nonsecret_checks": false,
+    "stored_credential_decryption_or_password_guessing": false
+  },
+  "account_creation": {
+    "created": false,
+    "reason": "Not needed for authorized owner shutdown; prior request superseded by latest instruction to avoid unnecessary account. SQL privileges remain unknown."
+  },
+  "shutdown": {
+    "method": "MySQL8.4.3 native named Windows shutdown event, current process-owner/ACL rights",
+    "event": "mysqld18852_shutdown",
+    "signal_count": 1,
+    "owner_matches_current_user": true,
+    "acl_changed": false,
+    "monitor_pid": 18852,
+    "server_pid": 33712,
+    "exit_codes": {
+      "18852": 0,
+      "33712": 0
+    },
+    "normal_shutdown_log": true,
+    "shutdown_complete_log": true,
+    "windows_no_server_processes_after": true,
+    "windows_no_3306_or_33060_listeners_after": true,
+    "log_offset_before": 1856,
+    "log_sha256_after": "e4dca16303343d7b3696d552b438ad1e210c289e862a6b468bd278a7d673ba85",
+    "initial_helper_limit": "Socket refusal probe timed out and initial helper marked gate incomplete; independent Windows process/TCP table plus normal exit0/complete log verified shutdown before copy. No second signal/restart/force."
+  },
+  "restore": {
+    "files_added": 44,
+    "bytes_added": 3837376,
+    "directories_added": 5,
+    "overwritten_files": 0,
+    "all_127_original_files_unchanged": true,
+    "exact_set_44_hashes_match": true
+  },
+  "startup": {
+    "attempts": 1,
+    "monitor_pid": 10032,
+    "server_pid": 4968,
+    "one_instance": true,
+    "component_module_loaded": true,
+    "icu_missing_warning_absent": true,
+    "old_startup_not_used_as_repair_evidence": true
+  },
+  "rollback": {
+    "executed": false,
+    "reason": "Repair verification succeeded; no rollback required. Whitelist/before inventory/created-file receipt retained."
+  },
+  "direct_config_binary_datadir_acl_registry_firewall_changes": false,
+  "database_provision_migration_seed": false,
+  "commit_push": false
+}

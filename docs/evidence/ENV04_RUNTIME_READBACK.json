@@ -1,0 +1,47 @@
+{
+  "status": "STARTUP_COMPONENT_MODULE_AND_ICU_PATH_VERIFIED_SQL_NOT_QUERIED",
+  "captured_utc": "2026-10-17T10:29:45.7210263Z",
+  "monitor_pid": 10032,
+  "server_pid": 4968,
+  "processes": [
+    {
+      "ProcessId": 10032,
+      "ParentProcessId": 22756,
+      "ExecutablePath": "C:\\laragon\\bin\\mysql\\mysql-8.4.3-winx64\\bin\\mysqld.exe",
+      "CommandLine": "\"C:\\laragon\\bin\\mysql\\mysql-8.4.3-winx64\\bin\\mysqld.exe\" --defaults-file=C:\\laragon\\bin\\mysql\\mysql-8.4.3-winx64\\my.ini --console",
+      "CreationDate": "2026-10-17T17:29:44.446316+07:00"
+    },
+    {
+      "ProcessId": 4968,
+      "ParentProcessId": 10032,
+      "ExecutablePath": "C:\\laragon\\bin\\mysql\\mysql-8.4.3-winx64\\bin\\mysqld.exe",
+      "CommandLine": "C:\\laragon\\bin\\mysql\\mysql-8.4.3-winx64\\bin\\mysqld.exe --defaults-file=C:\\laragon\\bin\\mysql\\mysql-8.4.3-winx64\\my.ini --console",
+      "CreationDate": "2026-10-17T17:29:44.507104+07:00"
+    }
+  ],
+  "listeners": [
+    {
+      "LocalAddress": "::",
+      "LocalPort": 33060,
+      "OwningProcess": 4968
+    },
+    {
+      "LocalAddress": "::",
+      "LocalPort": 3306,
+      "OwningProcess": 4968
+    }
+  ],
+  "component_module": {
+    "path": "C:\\laragon\\bin\\mysql\\mysql-8.4.3-winx64\\lib\\plugin\\component_reference_cache.dll",
+    "version": "8.4.3.0",
+    "sha256": "ca3503295026c7ec00c98291cf57924f49cbd066f806ba878e59cbfa29f8f180",
+    "observed_loaded_in_server": true
+  },
+  "my_ini_sha256": "a0795e25b68c1fd804888087fb3bb9227fd580a5851e8d7b2fb657453ea8c12e",
+  "configured_datadir": "C:/laragon/data/mysql-8.4",
+  "plugin_attempted_default_path_now_populated": "C:/laragon/bin/mysql/mysql-8.4.3-winx64/lib/plugin",
+  "sql_version_datadir_plugin_dir": "NOT_QUERIED_NO_AUTHENTICATED_SQL_SESSION",
+  "icu_runtime_scope": "Complete43file official data corpus hash-verified, startup directory validation passes with prior missing warning absent. SQL regexp functional test not run.",
+  "no_new_account_or_sql": true,
+  "one_shutdown_one_startup": true
+}

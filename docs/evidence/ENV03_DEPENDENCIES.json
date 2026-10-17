@@ -1,0 +1,123 @@
+{
+  "method": "pefile static PE import and delay-import inspection; no LoadLibrary or component execution",
+  "machine_hex": "0x8664",
+  "is_amd64": true,
+  "imports": [
+    {
+      "name": "MSVCP140.dll",
+      "table": "DIRECTORY_ENTRY_IMPORT",
+      "symbols": 6,
+      "existing_candidates": [
+        "C:\\Windows\\System32\\MSVCP140.dll"
+      ],
+      "resolution": "FILE_PRESENT_STATIC_ONLY"
+    },
+    {
+      "name": "VCRUNTIME140.dll",
+      "table": "DIRECTORY_ENTRY_IMPORT",
+      "symbols": 13,
+      "existing_candidates": [
+        "C:\\Windows\\System32\\VCRUNTIME140.dll"
+      ],
+      "resolution": "FILE_PRESENT_STATIC_ONLY"
+    },
+    {
+      "name": "VCRUNTIME140_1.dll",
+      "table": "DIRECTORY_ENTRY_IMPORT",
+      "symbols": 1,
+      "existing_candidates": [
+        "C:\\Windows\\System32\\VCRUNTIME140_1.dll"
+      ],
+      "resolution": "FILE_PRESENT_STATIC_ONLY"
+    },
+    {
+      "name": "api-ms-win-crt-runtime-l1-1-0.dll",
+      "table": "DIRECTORY_ENTRY_IMPORT",
+      "symbols": 13,
+      "resolution": "WINDOWS_API_SET_CONTRACT_NOT_A_PHYSICAL_DLL"
+    },
+    {
+      "name": "api-ms-win-crt-heap-l1-1-0.dll",
+      "table": "DIRECTORY_ENTRY_IMPORT",
+      "symbols": 4,
+      "resolution": "WINDOWS_API_SET_CONTRACT_NOT_A_PHYSICAL_DLL"
+    },
+    {
+      "name": "api-ms-win-crt-string-l1-1-0.dll",
+      "table": "DIRECTORY_ENTRY_IMPORT",
+      "symbols": 1,
+      "resolution": "WINDOWS_API_SET_CONTRACT_NOT_A_PHYSICAL_DLL"
+    },
+    {
+      "name": "api-ms-win-crt-math-l1-1-0.dll",
+      "table": "DIRECTORY_ENTRY_IMPORT",
+      "symbols": 1,
+      "resolution": "WINDOWS_API_SET_CONTRACT_NOT_A_PHYSICAL_DLL"
+    },
+    {
+      "name": "KERNEL32.dll",
+      "table": "DIRECTORY_ENTRY_IMPORT",
+      "symbols": 17,
+      "existing_candidates": [
+        "C:\\Windows\\System32\\KERNEL32.dll"
+      ],
+      "resolution": "FILE_PRESENT_STATIC_ONLY"
+    }
+  ],
+  "export_names": [
+    "list_components"
+  ],
+  "limits": "Direct imports only; API-set contracts not runtime-resolved. Static presence cannot prove ABI, transitive or dynamic resolution. Actual load remains pending approved restore/restart.",
+  "runtime_files_observed": [
+    {
+      "path": "C:/Windows/System32/msvcp140.dll",
+      "bytes": 643512,
+      "sha256": "7c26614e1d733892c2deac7e245ce115504b1d80592dd0a01b08e3e5a55f89ca",
+      "machine": "0x8664",
+      "versions": {
+        "FileVersion": "14.51.36247.0",
+        "ProductVersion": "14.51.36247.0"
+      }
+    },
+    {
+      "path": "C:/Windows/System32/vcruntime140.dll",
+      "bytes": 178616,
+      "sha256": "d1f4225df2cd877dbf130d5668a021dce3f94118455ff5ec952061c30afc9ce7",
+      "machine": "0x8664",
+      "versions": {
+        "FileVersion": "14.51.36247.0",
+        "ProductVersion": "14.51.36247.0"
+      }
+    },
+    {
+      "path": "C:/Windows/System32/vcruntime140_1.dll",
+      "bytes": 50112,
+      "sha256": "a7146c08f89fe5b04541ab507cdb59ff7b44534d4ba3c668a426c6450a03434e",
+      "machine": "0x8664",
+      "versions": {
+        "FileVersion": "14.51.36247.0",
+        "ProductVersion": "14.51.36247.0"
+      }
+    },
+    {
+      "path": "C:/Windows/System32/ucrtbase.dll",
+      "bytes": 1377512,
+      "sha256": "5c52e3a303baaac0e0af8bd9b96134993da34bc9d834a31ef37e1d2cdc7fe192",
+      "machine": "0x8664",
+      "versions": {
+        "FileVersion": "10.0.26100.9444 (WinBuild.160101.0800)",
+        "ProductVersion": "10.0.26100.9444"
+      }
+    },
+    {
+      "path": "C:/Windows/System32/kernel32.dll",
+      "bytes": 844496,
+      "sha256": "8f8629741558b5df71def4e1dd8ef9645d4f806b949762c47757c50fea1a9e6d",
+      "machine": "0x8664",
+      "versions": {
+        "FileVersion": "10.0.26100.9444 (WinBuild.160101.0800)",
+        "ProductVersion": "10.0.26100.9444"
+      }
+    }
+  ]
+}

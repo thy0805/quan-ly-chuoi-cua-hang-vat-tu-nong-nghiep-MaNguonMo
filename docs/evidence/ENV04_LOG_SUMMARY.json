@@ -1,0 +1,28 @@
+{
+  "status": "NEW_STARTUP_NO_COMPONENT_OR_ICU_MISSING_ERROR",
+  "source_log_sha256": "67ae471508ed0e02ea0e73413ff2e1c83c088c301f71c465fe16d2d719651cd6",
+  "new_startup_lines": [
+    "2026-10-17T10:29:44.529842Z 0 [System] [MY-015015] [Server] MySQL Server - start.",
+    "2026-10-17T10:29:44.687459Z 0 [Warning] [MY-010097] [Server] Insecure configuration for --secure-file-priv: Current value does not restrict location of generated files. Consider setting it to a valid, non-empty path.",
+    "2026-10-17T10:29:44.687509Z 0 [System] [MY-010116] [Server] <MYSQL_INSTALL>\\bin\\mysqld.exe (mysqld 8.4.3) starting as process 4968",
+    "2026-10-17T10:29:44.712000Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.",
+    "2026-10-17T10:29:45.029102Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.",
+    "2026-10-17T10:29:45.337099Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.",
+    "2026-10-17T10:29:45.344227Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.",
+    "2026-10-17T10:29:45.405405Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060",
+    "2026-10-17T10:29:45.405486Z 0 [System] [MY-010931] [Server] <MYSQL_INSTALL>\\bin\\mysqld.exe: ready for connections. Version: '8.4.3'  socket: ''  port: 3306  MySQL Community Server - GPL."
+  ],
+  "shutdown_lines": [
+    "2026-10-17T10:28:16.219279Z 0 [System] [MY-013105] [Server] <MYSQL_INSTALL>\\bin\\mysqld.exe: Normal shutdown.",
+    "2026-10-17T10:28:16.920605Z 0 [System] [MY-010910] [Server] <MYSQL_INSTALL>\\bin\\mysqld.exe: Shutdown complete (mysqld 8.4.3)  MySQL Community Server - GPL.",
+    "2026-10-17T10:28:16.925844Z 0 [System] [MY-015016] [Server] MySQL Server - end."
+  ],
+  "component_load_error_present": false,
+  "icu_missing_warning_present": false,
+  "structured_error_present": false,
+  "remaining_warnings": [
+    "secure-file-priv existing unrestricted configuration",
+    "CA certificate self-signed"
+  ],
+  "limits": "Warnings preserved, not fixed outside whitelist. InnoDB initialization lines are normal engine startup, not mysqld --initialize; process arguments unchanged."
+}

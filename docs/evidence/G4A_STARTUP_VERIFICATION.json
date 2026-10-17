@@ -1,0 +1,40 @@
+{
+  "status": "PASS_FOR_STARTUP_BLOCKER_HANDOFF_ONLY",
+  "captured_utc": "2026-10-17T09:44:50.509115+00:00",
+  "g4a_result": "HARD_STOP_COMPONENT_NOT_IMPLEMENTED",
+  "source_checkpoint": "21c8842027c510ec4db0d09b859ccd522f8785de",
+  "runtime_files_hashed_unchanged": 68,
+  "markdown_files_readback": 27,
+  "markdown_link_errors": [],
+  "protected_git_comparison": {
+    "parent": {
+      "head": true,
+      "status": true,
+      "git_metadata": true
+    },
+    "klcn": {
+      "head": true,
+      "status": true,
+      "git_metadata": true
+    },
+    "nosql": {
+      "head": true,
+      "status": true,
+      "git_metadata": true
+    }
+  },
+  "protected_status_lines": {
+    "parent": 5343,
+    "klcn": 11,
+    "nosql": 0
+  },
+  "my_ini_unchanged": true,
+  "authenticated_sessions": 0,
+  "sql_statements": 0,
+  "no_vendor_env_staging_commit_push": true,
+  "limits": [
+    "No all-original-file hash or PostgreSQL/MongoDB probe in this startup handoff",
+    "Server greeting/process/log is not authenticated MySQL metadata or database QA",
+    "G4A migration/model/seeder/test execution still TODO"
+  ]
+}

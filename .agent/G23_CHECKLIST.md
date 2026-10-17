@@ -1,5 +1,7 @@
 # G2/G3 và xuất bản GitHub — 17/10/2026
 
+> Checkpoint lịch sử đã được Thy nghiệm thu về thiết kế/kiểm tĩnh. Quyền hiện hành ở decisions/G4A_AUTHORIZED_20261017.md và G4A_CHECKLIST.md; không dùng lệnh cấm DB G23 để ghi đè quyền G4A mới. Nội dung gate G23 dưới đây giữ nguyên để truy vết.
+
 ALLOWED: Chỉ source và hồ sơ LapTrinhMaNguonModoAN; lưu G1, chốt DEC01–06 và schema từ module, cô lập cấu hình/entrypoint/autoload/commands; kiểm tĩnh không DB; commit riêng G1 và G2/G3; push main tới https://github.com/thy0805/quan-ly-chuoi-cua-hang-vat-tu-nong-nghiep-MaNguonMo.git theo bổ sung Thy.
 FORBIDDEN: Sửa hoặc stage source/repo cha KLCN, NoSQL, Mobile, Word; tạo/kết nối/ghi DB/migration/seed; triển khai CRUD/Blade hàng loạt; public secret/log/cache/dump/archive/private; force push hoặc đổi lịch sử remote.
 SOURCE OF TRUTH: Yêu cầu Thy đính kèm 17/10 và bổ sung GitHub; G1 manifest102, source thật và working tree trước sửa; remote thực tế khi kiểm.

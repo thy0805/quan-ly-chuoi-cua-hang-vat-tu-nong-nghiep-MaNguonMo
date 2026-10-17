@@ -1,0 +1,103 @@
+{
+  "status": "VERIFIED_DIAGNOSTIC_SCOPE_ONLY_NOT_REPAIRED_NOT_G4A_RUNTIME",
+  "captured_utc": "2026-10-17T10:01:47.002971+00:00",
+  "installation": {
+    "files_before": 127,
+    "files_after": 127,
+    "same_paths_bytes_sha256": true,
+    "lib_still_absent": true
+  },
+  "source_runtime": {
+    "baseline_files": 68,
+    "changed_files": [],
+    "no_product_runtime_change": true,
+    "working_tree_changes_docs_and_evidence_only": true
+  },
+  "protected_git": {
+    "parent": {
+      "head": "4ee9b0d1ed52f18cf984b4511cc89df841a4721e",
+      "status_lines": 5343,
+      "status_unchanged": true,
+      "git_metadata_hashes_unchanged": true
+    },
+    "klcn": {
+      "head": "fc514c8a040d7d2804791ceea5a255427f5bf086",
+      "status_lines": 11,
+      "status_unchanged": true,
+      "git_metadata_hashes_unchanged": true
+    },
+    "nosql": {
+      "head": "21288936d172b8485b425c1adc7ca21972da5e48",
+      "status_lines": 0,
+      "status_unchanged": true,
+      "git_metadata_hashes_unchanged": true
+    }
+  },
+  "protected_scope_limit": "Compared HEAD/status and hashes of HEAD/index/config/packed-refs present in baseline; excluded target-project status from parent. Not a full filesystem byte audit of protected projects.",
+  "mnm": {
+    "branch": "main",
+    "head": "21c8842027c510ec4db0d09b859ccd522f8785de",
+    "status": [
+      "M .agent/DOC_INDEX.md",
+      " M .agent/G23_CHECKLIST.md",
+      " M .agent/PLAN.md",
+      " M .agent/mistake.md",
+      " M AGENTS.md",
+      " M README.md",
+      " M context.md",
+      " M docs/IMPLEMENTATION_PLAN.md",
+      "?? .agent/ENV03_CHECKLIST.md",
+      "?? .agent/G4A_CHECKLIST.md",
+      "?? .agent/decisions/ENV03_DIAGNOSTIC_AUTHORIZED_20261017.md",
+      "?? .agent/decisions/G4A_AUTHORIZED_20261017.md",
+      "?? .agent/decisions/G4A_DIRECT_MYSQL_AUTHORIZED_20261017.md",
+      "?? docs/ENV03_DIAGNOSTIC.md",
+      "?? docs/G4A_RESULT.md",
+      "?? docs/evidence/ENV03_DEPENDENCIES.json",
+      "?? docs/evidence/ENV03_OFFICIAL_PACKAGE.json",
+      "?? docs/evidence/ENV03_PACKAGE_INVENTORY.json",
+      "?? docs/evidence/ENV03_READBACK.json",
+      "?? docs/evidence/ENV03_REPAIR_MANIFEST.json",
+      "?? docs/evidence/ENV03_VERIFICATION.json",
+      "?? docs/evidence/G4A_MYSQL_READBACK.json",
+      "?? docs/evidence/G4A_MYSQL_STARTUP.json",
+      "?? docs/evidence/G4A_PREFLIGHT.json",
+      "?? docs/evidence/G4A_PREFLIGHT_VERIFICATION.json",
+      "?? docs/evidence/G4A_STARTUP_LOG_SUMMARY.json",
+      "?? docs/evidence/G4A_STARTUP_SOURCE_DIFF.json",
+      "?? docs/evidence/G4A_STARTUP_VERIFICATION.json"
+    ],
+    "remote_not_contacted_this_diagnostic": true,
+    "no_stage_commit_push": true
+  },
+  "runtime": {
+    "process_ids": [
+      18852,
+      33712
+    ],
+    "single_instance_parent_child": true,
+    "listener_owner": 33712,
+    "tcp_127_0_0_1_3306_greeting": "8.4.3",
+    "no_auth_bytes_sent": true,
+    "no_sql": true,
+    "no_restart_shutdown_second_instance": true
+  },
+  "structural": {
+    "official_inventory": 297,
+    "official_matches": 126,
+    "official_mismatches": 0,
+    "restore_whitelist": 44,
+    "component_files": 1,
+    "icu_files": 43,
+    "restore_bytes": 3837376,
+    "link_targets_checked": 10
+  },
+  "semantic": "Archive signature VALID, archived key expired disclosed; hash/version and layout compared to exact8.4.3, actual file absence distinguished from static dependency presence; no load success claim.",
+  "artifact_runtime": "Report/evidence read back, staging candidate hashes rechecked, installation127/source68 unchanged, live TCP greeting8.4.3. ZIP CRC/member/hash readback recorded separately in packaging.json.",
+  "remaining_unverified": [
+    "Approved restoration and actual component/ICU runtime load",
+    "Authenticated @@plugin_dir/@@datadir and accounts/privileges",
+    "Database ownership/provision/migration/seeder/Eloquent/Laravel boot and G4A QA",
+    "Full byte integrity of KLCN/NoSQL/datadir"
+  ]
+}

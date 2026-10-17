@@ -1,0 +1,302 @@
+{
+  "captured_utc": "2026-10-17T12:38:19.654290+00:00",
+  "g4a_status": "VERIFIED",
+  "mysql_schema_readback": {
+    "identity": {
+      "db": "mnm_vat_tu_nong_nghiep",
+      "version": "8.4.3",
+      "account": "mnm_migrate_20261017@localhost",
+      "datadir": "C:\\laragon\\data\\mysql-8.4\\",
+      "plugin_dir": "C:\\laragon\\bin\\mysql\\mysql-8.4.3-winx64\\lib\\plugin\\"
+    },
+    "counts": [
+      3,
+      5,
+      3,
+      4
+    ],
+    "schema": {
+      "users": {
+        "Table": "users",
+        "Create Table": "CREATE TABLE `users` (\n  `id` bigint NOT NULL AUTO_INCREMENT,\n  `username` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_bin NOT NULL,\n  `password_hash` text COLLATE utf8mb4_0900_as_cs NOT NULL,\n  `role` enum('admin','user') COLLATE utf8mb4_0900_as_cs NOT NULL DEFAULT 'user',\n  `is_active` tinyint(1) NOT NULL DEFAULT '1',\n  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,\n  `admin_slot` tinyint GENERATED ALWAYS AS ((case when (`role` = _utf8mb4'admin') then 1 else NULL end)) STORED,\n  PRIMARY KEY (`id`),\n  UNIQUE KEY `users_username_unique` (`username`),\n  UNIQUE KEY `users_admin_slot_unique` (`admin_slot`),\n  CONSTRAINT `users_active_check` CHECK ((`is_active` in (0,1)))\n) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_as_cs"
+      },
+      "product_categories": {
+        "Table": "product_categories",
+        "Create Table": "CREATE TABLE `product_categories` (\n  `id` bigint NOT NULL AUTO_INCREMENT,\n  `parent_id` bigint DEFAULT NULL,\n  `code` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_bin NOT NULL,\n  `name` varchar(160) COLLATE utf8mb4_0900_as_cs NOT NULL,\n  `is_active` tinyint(1) NOT NULL DEFAULT '1',\n  PRIMARY KEY (`id`),\n  UNIQUE KEY `product_categories_code_unique` (`code`),\n  KEY `product_categories_parent_id_index` (`parent_id`),\n  CONSTRAINT `product_categories_parent_id_foreign` FOREIGN KEY (`parent_id`) REFERENCES `product_categories` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,\n  CONSTRAINT `categories_active_check` CHECK ((`is_active` in (0,1)))\n) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_as_cs"
+      },
+      "units": {
+        "Table": "units",
+        "Create Table": "CREATE TABLE `units` (\n  `id` bigint NOT NULL AUTO_INCREMENT,\n  `code` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_bin NOT NULL,\n  `name` varchar(100) COLLATE utf8mb4_0900_as_cs NOT NULL,\n  `is_active` tinyint(1) NOT NULL DEFAULT '1',\n  PRIMARY KEY (`id`),\n  UNIQUE KEY `units_code_unique` (`code`),\n  CONSTRAINT `units_active_check` CHECK ((`is_active` in (0,1)))\n) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_as_cs"
+      },
+      "products": {
+        "Table": "products",
+        "Create Table": "CREATE TABLE `products` (\n  `id` bigint NOT NULL AUTO_INCREMENT,\n  `category_id` bigint NOT NULL,\n  `unit_id` bigint NOT NULL,\n  `code` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_bin NOT NULL,\n  `name` varchar(200) COLLATE utf8mb4_0900_as_cs NOT NULL,\n  `active_ingredient` varchar(200) COLLATE utf8mb4_0900_as_cs DEFAULT NULL,\n  `sale_price` decimal(18,2) NOT NULL DEFAULT '0.00',\n  `tax_rate` decimal(5,2) DEFAULT NULL,\n  `expiry_warning_days` int DEFAULT NULL,\n  `is_active` tinyint(1) NOT NULL DEFAULT '1',\n  PRIMARY KEY (`id`),\n  UNIQUE KEY `products_code_unique` (`code`),\n  KEY `products_category_id_index` (`category_id`),\n  KEY `products_unit_id_index` (`unit_id`),\n  CONSTRAINT `products_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `product_categories` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,\n  CONSTRAINT `products_unit_id_foreign` FOREIGN KEY (`unit_id`) REFERENCES `units` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,\n  CONSTRAINT `products_active_check` CHECK ((`is_active` in (0,1))),\n  CONSTRAINT `products_expiry_check` CHECK (((`expiry_warning_days` is null) or (`expiry_warning_days` between 0 and 3650))),\n  CONSTRAINT `products_price_check` CHECK ((`sale_price` >= 0)),\n  CONSTRAINT `products_tax_check` CHECK (((`tax_rate` is null) or (`tax_rate` between 0 and 100)))\n) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_as_cs"
+      }
+    },
+    "migrations": [
+      {
+        "id": 5,
+        "migration": "2026_10_17_000001_create_users_table",
+        "batch": 1
+      },
+      {
+        "id": 6,
+        "migration": "2026_10_17_000002_create_product_categories_table",
+        "batch": 1
+      },
+      {
+        "id": 7,
+        "migration": "2026_10_17_000003_create_units_table",
+        "batch": 1
+      },
+      {
+        "id": 8,
+        "migration": "2026_10_17_000004_create_products_table",
+        "batch": 1
+      }
+    ],
+    "triggers": [
+      {
+        "TRIGGER_NAME": "categories_no_self_insert",
+        "EVENT_MANIPULATION": "INSERT",
+        "ACTION_TIMING": "BEFORE",
+        "ACTION_STATEMENT": "BEGIN IF NEW.parent_id IS NOT NULL AND NEW.parent_id = NEW.id THEN SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Category cannot reference itself'; END IF; END",
+        "DEFINER": "mnm_migrate_20261017@localhost"
+      },
+      {
+        "TRIGGER_NAME": "categories_no_self_update",
+        "EVENT_MANIPULATION": "UPDATE",
+        "ACTION_TIMING": "BEFORE",
+        "ACTION_STATEMENT": "BEGIN IF NEW.parent_id IS NOT NULL AND NEW.parent_id = NEW.id THEN SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Category cannot reference itself'; END IF; END",
+        "DEFINER": "mnm_migrate_20261017@localhost"
+      }
+    ],
+    "foreign_keys": [
+      {
+        "CONSTRAINT_NAME": "product_categories_parent_id_foreign",
+        "TABLE_NAME": "product_categories",
+        "REFERENCED_TABLE_NAME": "product_categories",
+        "UPDATE_RULE": "RESTRICT",
+        "DELETE_RULE": "RESTRICT"
+      },
+      {
+        "CONSTRAINT_NAME": "products_category_id_foreign",
+        "TABLE_NAME": "products",
+        "REFERENCED_TABLE_NAME": "product_categories",
+        "UPDATE_RULE": "RESTRICT",
+        "DELETE_RULE": "RESTRICT"
+      },
+      {
+        "CONSTRAINT_NAME": "products_unit_id_foreign",
+        "TABLE_NAME": "products",
+        "REFERENCED_TABLE_NAME": "units",
+        "UPDATE_RULE": "RESTRICT",
+        "DELETE_RULE": "RESTRICT"
+      }
+    ]
+  },
+  "phpunit": {
+    "tool": "phpunit",
+    "result": "passed",
+    "tests": 11,
+    "passed": 11,
+    "assertions": 131,
+    "duration_ms": 9214
+  },
+  "phpunit_receipt": {
+    "label": "mysql-tests-final",
+    "exit_code": 0,
+    "arguments": [
+      "vendor/phpunit/phpunit/phpunit",
+      "--configuration",
+      "phpunit.xml"
+    ],
+    "account": "mnm_runtime_20261017",
+    "database": "mnm_vat_tu_nong_nghiep",
+    "elapsed_seconds": 29.037
+  },
+  "composer": {
+    "exit_code": 0,
+    "lock_sha256_before": "df8a56ec85709392532e5aaa2c28f536d185df4e848d289e55eebcebddf90ea4",
+    "lock_sha256_after": "df8a56ec85709392532e5aaa2c28f536d185df4e848d289e55eebcebddf90ea4",
+    "lock_unchanged": true,
+    "lock_packages": 108,
+    "no_scripts_plugins_or_discovery": true,
+    "vendor_autoload_exists": true
+  },
+  "laravel_boot": {
+    "captured_utc": "2026-10-17T12:23:42.262Z",
+    "arguments": [
+      "artisan",
+      "about"
+    ],
+    "label": "boot-about-07",
+    "exit_code": 0,
+    "database": "mnm_vat_tu_nong_nghiep",
+    "account": "mnm_runtime_20261017",
+    "root_credentials_on_disk": false,
+    "admin_trigger_only_bridge": []
+  },
+  "migration": {
+    "captured_utc": "2026-10-17T12:24:04.486Z",
+    "arguments": [
+      "artisan",
+      "migrate",
+      "--force",
+      "--no-interaction"
+    ],
+    "label": "migrate-first-02",
+    "exit_code": 0,
+    "database": "mnm_vat_tu_nong_nghiep",
+    "account": "mnm_migrate_20261017",
+    "root_credentials_on_disk": false,
+    "admin_trigger_only_bridge": [
+      {
+        "action": "create",
+        "status": "OK",
+        "statements": 2,
+        "event": "sql_result",
+        "driver_code": null
+      }
+    ]
+  },
+  "seeder": {
+    "captured_utc": "2026-10-17T12:24:10.921Z",
+    "arguments": [
+      "artisan",
+      "db:seed",
+      "--force",
+      "--no-interaction"
+    ],
+    "label": "seed-first",
+    "exit_code": 0,
+    "database": "mnm_vat_tu_nong_nghiep",
+    "account": "mnm_runtime_20261017",
+    "root_credentials_on_disk": false,
+    "admin_trigger_only_bridge": []
+  },
+  "fixture_guard": {
+    "exact_fixture_accepted": true,
+    "changed_fixture_rejected": true,
+    "mutation_rolled_back": true
+  },
+  "repeat_seed_expected_rejection": {
+    "label": "seed-existing-rejected",
+    "exit_code": 1,
+    "arguments": [
+      "artisan",
+      "db:seed",
+      "--force",
+      "--no-interaction"
+    ],
+    "account": "mnm_runtime_20261017",
+    "database": "mnm_vat_tu_nong_nghiep",
+    "elapsed_seconds": 11.636
+  },
+  "http": {
+    "status": 503,
+    "body": "MNM G3: runtime nghiệp vụ đang khóa, chờ triển khai và nghiệm thu giai đoạn kế tiếp.",
+    "cache_control": "no-store",
+    "temporary_http_process_stopped": true,
+    "database_access_by_entrypoint": false
+  },
+  "runtime_grants": [
+    {
+      "Grants for mnm_runtime_20261017@localhost": "GRANT USAGE ON *.* TO `mnm_runtime_20261017`@`localhost`"
+    },
+    {
+      "Grants for mnm_runtime_20261017@localhost": "GRANT SELECT, INSERT, UPDATE, DELETE ON `mnm_vat_tu_nong_nghiep`.* TO `mnm_runtime_20261017`@`localhost`"
+    }
+  ],
+  "migration_grants": [
+    {
+      "Grants for mnm_migrate_20261017@localhost": "GRANT USAGE ON *.* TO `mnm_migrate_20261017`@`localhost`"
+    },
+    {
+      "Grants for mnm_migrate_20261017@localhost": "GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, REFERENCES, INDEX, ALTER, TRIGGER ON `mnm_vat_tu_nong_nghiep`.* TO `mnm_migrate_20261017`@`localhost`"
+    }
+  ],
+  "rollback_cycle_verified": true,
+  "credential_incident": {
+    "scope": "new runtime account only",
+    "old_credential_revoked": true,
+    "new_credential_private_only": true,
+    "unsafe_local_log_removed": true,
+    "root_credential_exposed_or_persisted": false
+  },
+  "limitations": [
+    "HTTP Auth/Admin middleware/Blade/Bootstrap not implemented; entrypoint remains 503",
+    "No multi-client concurrency stress test; SQL constraints and transaction logic tested",
+    "MySQL log_bin=1/trust=0 requires authorized admin session for two trigger DDL statements; no global setting/grant changed",
+    "MySQL directly rounds excess decimal scale; Eloquent validation rejects excess scale",
+    "Private fixture rollback guard is intentionally local; not a general reset command"
+  ],
+  "rollback": {
+    "label": "rollback-owned",
+    "exit_code": 0,
+    "arguments": [
+      "artisan",
+      "migrate:rollback",
+      "--step=4",
+      "--force",
+      "--no-interaction"
+    ],
+    "account": "mnm_migrate_20261017",
+    "database": "mnm_vat_tu_nong_nghiep",
+    "elapsed_seconds": 9.254
+  },
+  "empty_after_rollback": {
+    "tables": [
+      "migrations"
+    ],
+    "migration_rows": 0,
+    "triggers": 0
+  },
+  "remigrate": {
+    "label": "migrate-final",
+    "exit_code": 0,
+    "arguments": [
+      "artisan",
+      "migrate",
+      "--force",
+      "--no-interaction"
+    ],
+    "account": "mnm_migrate_20261017",
+    "database": "mnm_vat_tu_nong_nghiep",
+    "elapsed_seconds": 4.41
+  },
+  "reseed": {
+    "label": "seed-final",
+    "exit_code": 0,
+    "arguments": [
+      "artisan",
+      "db:seed",
+      "--force",
+      "--no-interaction"
+    ],
+    "account": "mnm_runtime_20261017",
+    "database": "mnm_vat_tu_nong_nghiep",
+    "elapsed_seconds": 3.71
+  },
+  "broker_closed": {
+    "session_closed": true,
+    "root_password_on_disk": false
+  },
+  "fixture_final_integrity": {
+    "final_fixture_rows_and_hashes_unchanged": true
+  },
+  "trigger_bridge_actions": [
+    {
+      "operation": "drop",
+      "status": "OK",
+      "statements": 2,
+      "driver_code": null
+    },
+    {
+      "operation": "create",
+      "status": "OK",
+      "statements": 2,
+      "driver_code": null
+    }
+  ]
+}

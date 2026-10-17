@@ -1,0 +1,40 @@
+{
+  "status": "PASS_FOR_PREFLIGHT_HANDOFF_ONLY",
+  "captured_utc": "2026-10-17T09:29:34.542291+00:00",
+  "source_checkpoint": "21c8842027c510ec4db0d09b859ccd522f8785de",
+  "g4a_runtime_status": "BLOCKED_ENV01_NOT_IMPLEMENTED",
+  "original_runtime_files_hashed_unchanged": 68,
+  "markdown_readback_count": 26,
+  "local_markdown_link_errors": [],
+  "protected_git_comparison": {
+    "parent": {
+      "head": true,
+      "status": true,
+      "git_metadata": true
+    },
+    "klcn": {
+      "head": true,
+      "status": true,
+      "git_metadata": true
+    },
+    "nosql": {
+      "head": true,
+      "status": true,
+      "git_metadata": true
+    }
+  },
+  "protected_status_lines": {
+    "parent": 5343,
+    "klcn": 11,
+    "nosql": 0
+  },
+  "new_migrations_models_seeders": 0,
+  "laravel_mysql_business_tests_run": 0,
+  "no_vendor_or_env_created": true,
+  "no_staging_commit_push": true,
+  "limits": [
+    "Protected check compares HEAD/status/Git metadata, not original file content hashes in this preflight",
+    "Runtime source files of this project are compared byte-for-byte with preflight baseline",
+    "No actual MySQL session, Laravel boot or database QA; this is a blocker report"
+  ]
+}

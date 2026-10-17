@@ -1,0 +1,80 @@
+{
+  "status": "BLOCKED_AUTHENTICATED_SQL_SESSION_UNAVAILABLE",
+  "captured_utc": "2026-10-17T11:08:34.9036256Z",
+  "checked": [
+    "Running CLI and desktop management process metadata; Laragon running, no observed SQL client",
+    "Names of SQL-related environment variables; none present",
+    "Known option/login file existence only; no contents read",
+    "HeidiSQL HKCU session key metadata; none at checked registry location",
+    "Portable HeidiSQL/profile file metadata only; files are not evidence of a live SQL session",
+    "Prior ENV04 nonsecret Laragon/my.ini selected-key probe; no reusable identity configured in checked keys"
+  ],
+  "metadata": {
+    "client_process_count": 0,
+    "sql_related_environment_variable_count": 0,
+    "known_credential_file_metadata": [
+      {
+        "Path": "C:\\Users\\thy\\AppData\\Roaming\\MySQL\\.mylogin.cnf",
+        "Exists": false,
+        "ContentsRead": false
+      },
+      {
+        "Path": "C:\\Users\\thy\\.mylogin.cnf",
+        "Exists": false,
+        "ContentsRead": false
+      },
+      {
+        "Path": "C:\\Users\\thy\\.my.cnf",
+        "Exists": false,
+        "ContentsRead": false
+      },
+      {
+        "Path": "C:\\Users\\thy\\.my.ini",
+        "Exists": false,
+        "ContentsRead": false
+      },
+      {
+        "Path": "C:\\WINDOWS\\my.ini",
+        "Exists": false,
+        "ContentsRead": false
+      },
+      {
+        "Path": "C:\\my.ini",
+        "Exists": false,
+        "ContentsRead": false
+      },
+      {
+        "Path": "C:\\my.cnf",
+        "Exists": false,
+        "ContentsRead": false
+      }
+    ],
+    "heidisql_registry_profile_count": 0,
+    "portable_profile_metadata": [
+      {
+        "path": "C:/laragon/bin/heidisql/portable_settings.txt",
+        "exists": true,
+        "contents_read": false
+      },
+      {
+        "path": "C:/laragon/bin/heidisql/tabs.ini",
+        "exists": true,
+        "contents_read": false
+      },
+      {
+        "path": "C:/laragon/usr/profile/default.ini",
+        "exists": true,
+        "contents_read": false
+      }
+    ]
+  },
+  "sql_connector_available_in_current_tool_catalog": false,
+  "credential_values_read_or_decrypted": false,
+  "authentication_attempts": 0,
+  "sql_statements": 0,
+  "root_account_existence_and_authentication_method": "UNKNOWN_NOT_QUERIED",
+  "sql_identity_privileges_database_inventory": "NOT_QUERIED_NO_AUTHENTICATED_SESSION",
+  "limits": "No claim that MySQL lacks root/accounts or saved profiles. No exhaustive profile search. Running applications and filesystem metadata do not prove SQL authentication. OS process ownership grants no SQL rights.",
+  "minimum_user_action": "Authenticate locally to 127.0.0.1:3306 with an existing authorized MySQL administration account in a MySQL client; do not send the password in chat. An authenticated workflow must remain available for SQL preflight before any database writes.",
+  "no_account_creation_required_by_this_result": true
+}

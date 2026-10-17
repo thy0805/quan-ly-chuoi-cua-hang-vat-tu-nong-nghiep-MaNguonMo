@@ -1,0 +1,168 @@
+{
+  "status": "VERIFIED_ENV04_REPAIR_SCOPE_PENDING_THY_ACCEPTANCE",
+  "captured_utc": "2026-10-17T10:33:03.160794+00:00",
+  "env04_repair_verified": true,
+  "g4a_not_resumed": true,
+  "shutdown": {
+    "owner_windows_native_event_once": true,
+    "same_current_user_existing_acl": true,
+    "monitor18852_exit": 0,
+    "server33712_exit": 0,
+    "normal_and_complete_logs": true,
+    "windows_no_processes_or_listeners_before_copy": true,
+    "initial_socket_timeout_receipt_preserved": true,
+    "no_force_acl_password_bypass": true
+  },
+  "installation": {
+    "original_files_unchanged": 127,
+    "added_exact_whitelist_files": 44,
+    "added_bytes": 3837376,
+    "added_directories": 5,
+    "total_files_after": 171,
+    "overwritten_files": 0,
+    "all_original_and_added_paths_bytes_sha256_match": true
+  },
+  "runtime_source": {
+    "baseline_files": 68,
+    "all_hashes_unchanged": true,
+    "git_changes_docs_and_evidence_only": true
+  },
+  "protected_git": {
+    "parent": {
+      "head": "4ee9b0d1ed52f18cf984b4511cc89df841a4721e",
+      "status_lines": 5343,
+      "status_unchanged": true,
+      "git_metadata_hashes_unchanged": true
+    },
+    "klcn": {
+      "head": "fc514c8a040d7d2804791ceea5a255427f5bf086",
+      "status_lines": 11,
+      "status_unchanged": true,
+      "git_metadata_hashes_unchanged": true
+    },
+    "nosql": {
+      "head": "21288936d172b8485b425c1adc7ca21972da5e48",
+      "status_lines": 0,
+      "status_unchanged": true,
+      "git_metadata_hashes_unchanged": true
+    }
+  },
+  "protected_limit": "HEAD/status and available HEAD/index/config/packed-refs hashes; excludes target from parent. Not a full filesystem/datadir byte audit.",
+  "env03_locked_files_byte_identical_to_accepted_zip": 9,
+  "mnm": {
+    "branch": "main",
+    "head": "21c8842027c510ec4db0d09b859ccd522f8785de",
+    "git_status": [
+      "M .agent/DOC_INDEX.md",
+      " M .agent/G23_CHECKLIST.md",
+      " M .agent/PLAN.md",
+      " M .agent/mistake.md",
+      " M AGENTS.md",
+      " M README.md",
+      " M context.md",
+      " M docs/IMPLEMENTATION_PLAN.md",
+      "?? .agent/ENV03_CHECKLIST.md",
+      "?? .agent/ENV04_CHECKLIST.md",
+      "?? .agent/G4A_CHECKLIST.md",
+      "?? .agent/decisions/ENV03_DIAGNOSTIC_AUTHORIZED_20261017.md",
+      "?? .agent/decisions/ENV04_CONDITIONAL_REPAIR_AUTHORIZED_20261017.md",
+      "?? .agent/decisions/ENV04_OWNER_SHUTDOWN_AUTHORIZED_20261017.md",
+      "?? .agent/decisions/G4A_AUTHORIZED_20261017.md",
+      "?? .agent/decisions/G4A_DIRECT_MYSQL_AUTHORIZED_20261017.md",
+      "?? docs/ENV03_DIAGNOSTIC.md",
+      "?? docs/ENV04_REPAIR_RESULT.md",
+      "?? docs/G4A_RESULT.md",
+      "?? docs/evidence/ENV03_DEPENDENCIES.json",
+      "?? docs/evidence/ENV03_OFFICIAL_PACKAGE.json",
+      "?? docs/evidence/ENV03_PACKAGE_INVENTORY.json",
+      "?? docs/evidence/ENV03_READBACK.json",
+      "?? docs/evidence/ENV03_REPAIR_MANIFEST.json",
+      "?? docs/evidence/ENV03_VERIFICATION.json",
+      "?? docs/evidence/ENV04_ACTION_RECEIPTS.json",
+      "?? docs/evidence/ENV04_FILE_READBACK.json",
+      "?? docs/evidence/ENV04_INSTALLATION_INTEGRITY.json",
+      "?? docs/evidence/ENV04_LOG_SUMMARY.json",
+      "?? docs/evidence/ENV04_PREFLIGHT.json",
+      "?? docs/evidence/ENV04_RUNTIME_READBACK.json",
+      "?? docs/evidence/G4A_MYSQL_READBACK.json",
+      "?? docs/evidence/G4A_MYSQL_STARTUP.json",
+      "?? docs/evidence/G4A_PREFLIGHT.json",
+      "?? docs/evidence/G4A_PREFLIGHT_VERIFICATION.json",
+      "?? docs/evidence/G4A_STARTUP_LOG_SUMMARY.json",
+      "?? docs/evidence/G4A_STARTUP_SOURCE_DIFF.json",
+      "?? docs/evidence/G4A_STARTUP_VERIFICATION.json"
+    ],
+    "no_stage_commit_push": true,
+    "remote_not_contacted_this_stage": true
+  },
+  "runtime": {
+    "monitor_pid": 10032,
+    "server_pid": 4968,
+    "one_instance": true,
+    "ports": [
+      3306,
+      33060
+    ],
+    "port_owner": 4968,
+    "tcp_greeting_version": "8.4.3",
+    "actual_component_module_loaded": true,
+    "component_version": "8.4.3.0",
+    "component_hash": "ca3503295026c7ec00c98291cf57924f49cbd066f806ba878e59cbfa29f8f180",
+    "icu_corpus_43_hashes_match": true,
+    "new_log_no_component_or_icu_missing_error": true,
+    "new_log_sha256": "67ae471508ed0e02ea0e73413ff2e1c83c088c301f71c465fe16d2d719651cd6",
+    "same_config_sha256": "a0795e25b68c1fd804888087fb3bb9227fd580a5851e8d7b2fb657453ea8c12e"
+  },
+  "auth_and_data": {
+    "sql_attempts": 0,
+    "sql_statements": 0,
+    "new_accounts": 0,
+    "database_provision": false,
+    "migration_seed": false,
+    "direct_datadir_or_existing_database_edits": false,
+    "limits": "OS shutdown rights do not prove SQL privileges. No authenticated @@plugin_dir/@@datadir, database inventory/ownership or SQLregexp functional checks. Normal MySQL internal writes on shutdown/startup expected."
+  },
+  "structural_verification": "44paths/hash/bytes,127originals,171total,5dirs,68runtime,lockedENV03 and links/JSON receipts match.",
+  "semantic_verification": "Exact approved Oracle8.4.3 manifest; owner event matches shutdown source, normal exit/log evidence; no SQL privilege inference or unnecessary account creation.",
+  "artifact_runtime_verification": "New instance PID/module/TCP/version/newlog checked after file repair, original source/Git readback passed; ZIP CRC/member hashes in separate packaging receipt.",
+  "checked_local_links": [
+    {
+      "from": "docs/ENV04_REPAIR_RESULT.md",
+      "to": "evidence/ENV04_FILE_READBACK.json"
+    },
+    {
+      "from": "docs/ENV04_REPAIR_RESULT.md",
+      "to": "evidence/ENV04_INSTALLATION_INTEGRITY.json"
+    },
+    {
+      "from": "docs/ENV04_REPAIR_RESULT.md",
+      "to": "evidence/ENV04_RUNTIME_READBACK.json"
+    },
+    {
+      "from": "docs/ENV04_REPAIR_RESULT.md",
+      "to": "evidence/ENV04_LOG_SUMMARY.json"
+    },
+    {
+      "from": "docs/ENV04_REPAIR_RESULT.md",
+      "to": "evidence/ENV04_ACTION_RECEIPTS.json"
+    },
+    {
+      "from": ".agent/PLAN.md",
+      "to": "ENV04_CHECKLIST.md"
+    },
+    {
+      "from": ".agent/PLAN.md",
+      "to": "decisions/ENV04_CONDITIONAL_REPAIR_AUTHORIZED_20261017.md"
+    },
+    {
+      "from": ".agent/PLAN.md",
+      "to": "../docs/ENV04_REPAIR_RESULT.md"
+    }
+  ],
+  "pending": [
+    "Thy/GPT Web acceptance of ENV04",
+    "Authenticated SQL account/privileges and DB mnm_vat_tu_nong_nghiep ownership before G4A",
+    "Laravel dependency/boot/migration/model/seeder and QA, G4B/G5 not opened",
+    "SQLregexp and full MySQL feature/data integrity audit outside ENV04"
+  ]
+}

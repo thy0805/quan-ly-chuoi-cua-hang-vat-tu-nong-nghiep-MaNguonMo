@@ -7,7 +7,7 @@ use Symfony\Component\Console\Input\ArgvInput;
 require_once __DIR__.'/app/Support/RuntimeIsolation.php';
 
 if (! RuntimeIsolation::allowsCommand($argv)) {
-    fwrite(STDERR, "MNM G3: chỉ cho phép lệnh kiểm tra; database và nghiệp vụ đang khóa.\n");
+    fwrite(STDERR, "MNM: lệnh hoặc tham số nằm ngoài phạm vi G4A được duyệt.\n");
     exit(78);
 }
 

@@ -1,0 +1,17 @@
+{
+  "status": "UNRESOLVED_STARTUP_COMPONENT_ERROR",
+  "validation_exit_code": 0,
+  "validation_stdout_bytes": 0,
+  "validation_stderr_bytes": 0,
+  "source_log_sha256": "18556ae736ea5e6b6ea8b34847a645c6fe127c6c8f42648b977d5e3f49c7a01a",
+  "selected_lines": [
+    "mysqld: Can't open shared library '<MYSQL_INSTALL>\\lib\\plugin\\component_reference_cache.dll' (errno: 126 The specified module could not be found.)",
+    "mysqld: Cannot load component from specified URN: 'file://component_reference_cache'.",
+    "2026-10-17T09:39:59.181402Z 0 [Warning] [MY-010097] [Server] Insecure configuration for --secure-file-priv: Current value does not restrict location of generated files. Consider setting it to a valid, non-empty path.",
+    "2026-10-17T09:40:00.321986Z 0 [Warning] [MY-013829] [Server] Missing data directory for ICU regular expressions: <MYSQL_INSTALL>\\lib\\private\\.",
+    "2026-10-17T09:40:00.393691Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.",
+    "2026-10-17T09:40:00.445278Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060",
+    "2026-10-17T09:40:00.445400Z 0 [System] [MY-010931] [Server] <MYSQL_INSTALL>\\bin\\mysqld.exe: ready for connections. Version: '8.4.3'  socket: ''  port: 3306  MySQL Community Server - GPL."
+  ],
+  "scope": "Selected startup diagnostics, installation directory replaced; not a SQL trace"
+}

@@ -1,0 +1,46 @@
+{
+  "status": "SERVER_RUNNING_G4A_HARD_STOP_COMPONENT",
+  "captured_utc": "2026-10-17T09:42:10.817391+00:00",
+  "mode": "standalone existing Laragon MySQL",
+  "windows_service_count": 0,
+  "mysql_instance_count": 1,
+  "monitor_pid": 18852,
+  "server_pid": 33712,
+  "same_binary_and_config_for_parent_child": true,
+  "tcp_127_0_0_1_3306": "CONNECTED_GREETING_READ_NO_AUTH_SENT",
+  "server_version_from_tcp_greeting": "8.4.3",
+  "ready_log_observed": true,
+  "listeners": [
+    {
+      "LocalAddress": "::",
+      "LocalPort": 33060,
+      "OwningProcess": 33712
+    },
+    {
+      "LocalAddress": "::",
+      "LocalPort": 3306,
+      "OwningProcess": 33712
+    }
+  ],
+  "configuration_sha256_unchanged": "a0795e25b68c1fd804888087fb3bb9227fd580a5851e8d7b2fb657453ea8c12e",
+  "datadir_configured": "Existing Laragon mysql-8.4 datadir; SQL @@datadir not queried",
+  "validation_exit_code": 0,
+  "validation_logs_empty": true,
+  "startup_component_load_failure": true,
+  "component_dll_file_exists": false,
+  "component_error": "Cannot load component_reference_cache.dll, Windows errno126; DLL path absent; underlying cause not diagnosed",
+  "server_startup_structured_error_code_count": 0,
+  "helper_initial_false_negative": "Counted monitor/server as two instances and checked listening port against monitor PID; corrected read-only interpretation, no restart",
+  "no_new_instance_or_restart_after_first_start": true,
+  "authenticated_mysql_sessions": 0,
+  "sql_statements_executed": 0,
+  "database_and_privileges": "UNKNOWN_NOT_QUERIED_NO_VALID_ADMIN_SESSION_PROVIDED",
+  "no_initialize_password_reset_config_edit_or_source_runtime_change": true,
+  "no_commit_or_push": true,
+  "limits": [
+    "Server currently responds; G4A does not pass because startup stderr contains unresolved component load error",
+    "No datadir/data integrity certification from startup or greeting",
+    "Existing server may perform its normal InnoDB recovery; no application data statements issued"
+  ],
+  "process_model_source": "https://dev.mysql.com/doc/refman/8.4/en/windows-installation.html"
+}

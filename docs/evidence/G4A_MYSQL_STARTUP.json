@@ -1,0 +1,31 @@
+{
+  "status": "MYSQL_STARTUP_NOT_COMPLETED",
+  "captured_utc": "2026-10-17T09:38:00.950390+00:00",
+  "startup_method_attempted": "Computer Use sky.launch_app on existing Laragon executable",
+  "gui_launch_calls": 2,
+  "gui_result": "launched app did not expose a targetable window: C:\\laragon\\laragon.exe",
+  "targetable_laragon_windows_after_refresh": 0,
+  "laragon_processes": [
+    {
+      "pid": 21608,
+      "name": "laragon.exe"
+    },
+    {
+      "pid": 24780,
+      "name": "laragon.exe"
+    }
+  ],
+  "mysql_process_count": 0,
+  "mysql_service_count": 0,
+  "mysql_listeners": [],
+  "uac_process_observed": false,
+  "mysql_configuration_sha256_unchanged": "a0795e25b68c1fd804888087fb3bb9227fd580a5851e8d7b2fb657453ea8c12e",
+  "existing_datadir_verified_by_configuration_only": true,
+  "existing_datadir_content_inspected": false,
+  "authenticated_mysql_sessions": 0,
+  "sql_statements_executed": 0,
+  "direct_mysqld_start_executed": false,
+  "pending": "Explicit approval for direct existing mysqld process startup because no existing Windows Service is available",
+  "no_initialize_reinstall_password_reset_or_config_edit": true,
+  "no_commit_or_push": true
+}

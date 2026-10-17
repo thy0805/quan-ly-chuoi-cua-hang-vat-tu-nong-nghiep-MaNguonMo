@@ -1,0 +1,900 @@
+{
+  "status": "127_ORIGINAL_FILES_UNCHANGED_PLUS_44_WHITELIST_FILES",
+  "original_files": 127,
+  "added_files": 44,
+  "total_files_after": 171,
+  "files": [
+    {
+      "path": "bin/abseil_dll-debug.dll",
+      "bytes_before": 4503640,
+      "bytes_after": 4503640,
+      "sha256_before": "ae310580e4ba04b9294cde6b9ab5f867dbeb4f6355efec26f9a0fa3c34b6c8a2",
+      "sha256_after": "ae310580e4ba04b9294cde6b9ab5f867dbeb4f6355efec26f9a0fa3c34b6c8a2"
+    },
+    {
+      "path": "bin/abseil_dll.dll",
+      "bytes_before": 1751632,
+      "bytes_after": 1751632,
+      "sha256_before": "23888a52720c3619083d0479dccea884116880825cdb97c5553a98e78e56a35a",
+      "sha256_after": "23888a52720c3619083d0479dccea884116880825cdb97c5553a98e78e56a35a"
+    },
+    {
+      "path": "bin/abseil_dll.lib",
+      "bytes_before": 2286212,
+      "bytes_after": 2286212,
+      "sha256_before": "4f8f9d03eff79fafa32f7b46e26078ca1a87756561beaa38973b5e345472fb87",
+      "sha256_after": "4f8f9d03eff79fafa32f7b46e26078ca1a87756561beaa38973b5e345472fb87"
+    },
+    {
+      "path": "bin/ccapiserver.exe",
+      "bytes_before": 166992,
+      "bytes_after": 166992,
+      "sha256_before": "a3e15b54194abbf236e7eebd84322fd1bb6a015db9a7bfb62f17d17b07c23ca8",
+      "sha256_after": "a3e15b54194abbf236e7eebd84322fd1bb6a015db9a7bfb62f17d17b07c23ca8"
+    },
+    {
+      "path": "bin/comerr64.dll",
+      "bytes_before": 26184,
+      "bytes_after": 26184,
+      "sha256_before": "f06d9c34ca8211f5e11e541651c1147e0ca3c3e12aea2cf2e36d380b765468ca",
+      "sha256_after": "f06d9c34ca8211f5e11e541651c1147e0ca3c3e12aea2cf2e36d380b765468ca"
+    },
+    {
+      "path": "bin/echo.exe",
+      "bytes_before": 24128,
+      "bytes_after": 24128,
+      "sha256_before": "f6c1d38909bbdc7579294767bb14ca09f9c575fb529d78f4794f1e48c3844661",
+      "sha256_after": "f6c1d38909bbdc7579294767bb14ca09f9c575fb529d78f4794f1e48c3844661"
+    },
+    {
+      "path": "bin/fido2.dll",
+      "bytes_before": 254528,
+      "bytes_after": 254528,
+      "sha256_before": "16c9473faef4a47cef385f2ae01365c4b2c877652352a241b48c0696870c77a9",
+      "sha256_after": "16c9473faef4a47cef385f2ae01365c4b2c877652352a241b48c0696870c77a9"
+    },
+    {
+      "path": "bin/fido2.lib",
+      "bytes_before": 63564,
+      "bytes_after": 63564,
+      "sha256_before": "e00e685d31a1872ee72631f51e47c7800d47a5a8067751e8ad7239e6345b81fb",
+      "sha256_after": "e00e685d31a1872ee72631f51e47c7800d47a5a8067751e8ad7239e6345b81fb"
+    },
+    {
+      "path": "bin/gssapi64.dll",
+      "bytes_before": 403016,
+      "bytes_after": 403016,
+      "sha256_before": "3c12c207a853ceb3e3ceea285e528e290e5a7e91f50c2e55489044c319856ded",
+      "sha256_after": "3c12c207a853ceb3e3ceea285e528e290e5a7e91f50c2e55489044c319856ded"
+    },
+    {
+      "path": "bin/ibd2sdi.exe",
+      "bytes_before": 6442568,
+      "bytes_after": 6442568,
+      "sha256_before": "78949ebaf8c1f16e66907c1315af3bb657c76b27207a0cb48c029a1f031053e8",
+      "sha256_after": "78949ebaf8c1f16e66907c1315af3bb657c76b27207a0cb48c029a1f031053e8"
+    },
+    {
+      "path": "bin/innochecksum.exe",
+      "bytes_before": 6430800,
+      "bytes_after": 6430800,
+      "sha256_before": "c5ab2ecb636b37c537b07b9d3ab897d97c88a5f00c7b4053f6c4d42ddb595afe",
+      "sha256_after": "c5ab2ecb636b37c537b07b9d3ab897d97c88a5f00c7b4053f6c4d42ddb595afe"
+    },
+    {
+      "path": "bin/jemalloc.dll",
+      "bytes_before": 505928,
+      "bytes_after": 505928,
+      "sha256_before": "f94d9add9609dac66689c638276e4c80160714d7a420229a7162171432ee75f9",
+      "sha256_after": "f94d9add9609dac66689c638276e4c80160714d7a420229a7162171432ee75f9"
+    },
+    {
+      "path": "bin/k5sprt64.dll",
+      "bytes_before": 69192,
+      "bytes_after": 69192,
+      "sha256_before": "61b5c1ac7d05eefcbd496ef54f6185420e4ae85eb317ac95fecf9b019895a1d1",
+      "sha256_after": "61b5c1ac7d05eefcbd496ef54f6185420e4ae85eb317ac95fecf9b019895a1d1"
+    },
+    {
+      "path": "bin/krb5_64.dll",
+      "bytes_before": 1224264,
+      "bytes_after": 1224264,
+      "sha256_before": "bdd16b59768958274760fb6d2e7f5948b0723b7828f315028ac8f07626d8eeeb",
+      "sha256_after": "bdd16b59768958274760fb6d2e7f5948b0723b7828f315028ac8f07626d8eeeb"
+    },
+    {
+      "path": "bin/krbcc64.dll",
+      "bytes_before": 121928,
+      "bytes_after": 121928,
+      "sha256_before": "bed931d0a425d39244ab4cc0346091d07ff3b2b7493967643824d9e0fbd692fb",
+      "sha256_after": "bed931d0a425d39244ab4cc0346091d07ff3b2b7493967643824d9e0fbd692fb"
+    },
+    {
+      "path": "bin/libcrypto-3-x64.dll",
+      "bytes_before": 5182040,
+      "bytes_after": 5182040,
+      "sha256_before": "0748bc8f2ed9a8776cb5950605251d59e68b9858f445c49385098c8c0f577ea0",
+      "sha256_after": "0748bc8f2ed9a8776cb5950605251d59e68b9858f445c49385098c8c0f577ea0"
+    },
+    {
+      "path": "bin/libmecab.dll",
+      "bytes_before": 1849928,
+      "bytes_after": 1849928,
+      "sha256_before": "946617d27882a22a46d34d0a8fb76c64e8e8402b103f2bebc69eefde19485fae",
+      "sha256_after": "946617d27882a22a46d34d0a8fb76c64e8e8402b103f2bebc69eefde19485fae"
+    },
+    {
+      "path": "bin/libprotobuf-debug.dll",
+      "bytes_before": 13840472,
+      "bytes_after": 13840472,
+      "sha256_before": "bed1a21fbf8b1dfeaf96dfbe8e4b4a489809e12bd705e69f10af049fe5f536db",
+      "sha256_after": "bed1a21fbf8b1dfeaf96dfbe8e4b4a489809e12bd705e69f10af049fe5f536db"
+    },
+    {
+      "path": "bin/libprotobuf-lite-debug.dll",
+      "bytes_before": 2778216,
+      "bytes_after": 2778216,
+      "sha256_before": "58d9204afc52233dfe725264b90aff825f35f86a40f613a677adf321f744301e",
+      "sha256_after": "58d9204afc52233dfe725264b90aff825f35f86a40f613a677adf321f744301e"
+    },
+    {
+      "path": "bin/libprotobuf-lite.dll",
+      "bytes_before": 674904,
+      "bytes_after": 674904,
+      "sha256_before": "cdbf88950f6685cff4943342d2de6458933928e1e1ac9681dcaeb4581f108339",
+      "sha256_after": "cdbf88950f6685cff4943342d2de6458933928e1e1ac9681dcaeb4581f108339"
+    },
+    {
+      "path": "bin/libprotobuf-lite.lib",
+      "bytes_before": 1439292,
+      "bytes_after": 1439292,
+      "sha256_before": "816636caa5b96b21704d80b4b5e5a8e99d5f5fe3af9ddb95bd012fbbc21ad6f5",
+      "sha256_after": "816636caa5b96b21704d80b4b5e5a8e99d5f5fe3af9ddb95bd012fbbc21ad6f5"
+    },
+    {
+      "path": "bin/libprotobuf.dll",
+      "bytes_before": 4205136,
+      "bytes_after": 4205136,
+      "sha256_before": "d923072f2602df9a9dfce875ed302cee7fd2076f16684e5bcaf84310f439749c",
+      "sha256_after": "d923072f2602df9a9dfce875ed302cee7fd2076f16684e5bcaf84310f439749c"
+    },
+    {
+      "path": "bin/libprotobuf.lib",
+      "bytes_before": 9845436,
+      "bytes_after": 9845436,
+      "sha256_before": "9255603983708c1e83083d9c26b1042d427e27733277e350061ae03bf0513030",
+      "sha256_after": "9255603983708c1e83083d9c26b1042d427e27733277e350061ae03bf0513030"
+    },
+    {
+      "path": "bin/libsasl.dll",
+      "bytes_before": 120904,
+      "bytes_after": 120904,
+      "sha256_before": "dc6d01360766b546a37d8ca4584d63332d0809d22861c915ed3439bf9d2c1987",
+      "sha256_after": "dc6d01360766b546a37d8ca4584d63332d0809d22861c915ed3439bf9d2c1987"
+    },
+    {
+      "path": "bin/libssl-3-x64.dll",
+      "bytes_before": 788560,
+      "bytes_after": 788560,
+      "sha256_before": "a2c9560c3448c9b337688c1284d079f94bfc67440a35f1b875b8840619dd9f0a",
+      "sha256_after": "a2c9560c3448c9b337688c1284d079f94bfc67440a35f1b875b8840619dd9f0a"
+    },
+    {
+      "path": "bin/my_print_defaults.exe",
+      "bytes_before": 6306400,
+      "bytes_after": 6306400,
+      "sha256_before": "c4d1da1a8f779300b6b950711fe3fb408f8bf3bcc4355f8b92ebed2bf1a83b49",
+      "sha256_after": "c4d1da1a8f779300b6b950711fe3fb408f8bf3bcc4355f8b92ebed2bf1a83b49"
+    },
+    {
+      "path": "bin/myisam_ftdump.exe",
+      "bytes_before": 6563416,
+      "bytes_after": 6563416,
+      "sha256_before": "09a28a323801dcfe52735643402526e058d4cf6b24aebf919d14fcc7457edd1c",
+      "sha256_after": "09a28a323801dcfe52735643402526e058d4cf6b24aebf919d14fcc7457edd1c"
+    },
+    {
+      "path": "bin/myisamchk.exe",
+      "bytes_before": 6681168,
+      "bytes_after": 6681168,
+      "sha256_before": "e9ace8ffd28aa66910ea02570216a42ce1641b36b6a00075197be47f318f303e",
+      "sha256_after": "e9ace8ffd28aa66910ea02570216a42ce1641b36b6a00075197be47f318f303e"
+    },
+    {
+      "path": "bin/myisamlog.exe",
+      "bytes_before": 6523984,
+      "bytes_after": 6523984,
+      "sha256_before": "2f8a4a18bbb4f9fbf0b43714108a2c37b656f89ec8ac485808fd4f42c8ce8d94",
+      "sha256_after": "2f8a4a18bbb4f9fbf0b43714108a2c37b656f89ec8ac485808fd4f42c8ce8d94"
+    },
+    {
+      "path": "bin/myisampack.exe",
+      "bytes_before": 6585936,
+      "bytes_after": 6585936,
+      "sha256_before": "bcbbb073f602e3f1aec1cbfa6413d04ab33897a226d750c639ff6f1eadb672db",
+      "sha256_after": "bcbbb073f602e3f1aec1cbfa6413d04ab33897a226d750c639ff6f1eadb672db"
+    },
+    {
+      "path": "bin/mysql.exe",
+      "bytes_before": 7164992,
+      "bytes_after": 7164992,
+      "sha256_before": "87a1539a9bfec68bfb4a66b7e5d0079418ed8c0084cb22645e9fc3145aad3797",
+      "sha256_after": "87a1539a9bfec68bfb4a66b7e5d0079418ed8c0084cb22645e9fc3145aad3797"
+    },
+    {
+      "path": "bin/mysql_config_editor.exe",
+      "bytes_before": 6321760,
+      "bytes_after": 6321760,
+      "sha256_before": "497603ae1c29dd5e99f33b33628f70b033494468d430a246c47ecd94e0b2d238",
+      "sha256_after": "497603ae1c29dd5e99f33b33628f70b033494468d430a246c47ecd94e0b2d238"
+    },
+    {
+      "path": "bin/mysql_configurator.exe",
+      "bytes_before": 5994592,
+      "bytes_after": 5994592,
+      "sha256_before": "3836824529c913e19b3109fcc22360eda109de64fa0b55213abc92cd39894d55",
+      "sha256_after": "3836824529c913e19b3109fcc22360eda109de64fa0b55213abc92cd39894d55"
+    },
+    {
+      "path": "bin/mysql_migrate_keyring.exe",
+      "bytes_before": 7126120,
+      "bytes_after": 7126120,
+      "sha256_before": "3c5a6ece6738ab33a09bdc3b8f5eca8abf964d76fc6ea76f0173291add450816",
+      "sha256_after": "3c5a6ece6738ab33a09bdc3b8f5eca8abf964d76fc6ea76f0173291add450816"
+    },
+    {
+      "path": "bin/mysql_secure_installation.exe",
+      "bytes_before": 7028336,
+      "bytes_after": 7028336,
+      "sha256_before": "0afeab22a037148b002e074e12f615b4c0e5f096fd8f0d9a126934391db551a5",
+      "sha256_after": "0afeab22a037148b002e074e12f615b4c0e5f096fd8f0d9a126934391db551a5"
+    },
+    {
+      "path": "bin/mysql_tzinfo_to_sql.exe",
+      "bytes_before": 6252640,
+      "bytes_after": 6252640,
+      "sha256_before": "a54030f2e0c7cbac5673ec4e826e29c252177fd7aeebe41975304926c783be38",
+      "sha256_after": "a54030f2e0c7cbac5673ec4e826e29c252177fd7aeebe41975304926c783be38"
+    },
+    {
+      "path": "bin/mysqladmin.exe",
+      "bytes_before": 7041616,
+      "bytes_after": 7041616,
+      "sha256_before": "8bb7c255a218b3682fbd86b9aab4f243eeb4a0428d47bc2d924684f533d6471d",
+      "sha256_after": "8bb7c255a218b3682fbd86b9aab4f243eeb4a0428d47bc2d924684f533d6471d"
+    },
+    {
+      "path": "bin/mysqlbinlog.exe",
+      "bytes_before": 7561296,
+      "bytes_after": 7561296,
+      "sha256_before": "98b78ddc32280d225933501abae4a90ad2b9d3eb93870a147eb593eb5a6ac947",
+      "sha256_after": "98b78ddc32280d225933501abae4a90ad2b9d3eb93870a147eb593eb5a6ac947"
+    },
+    {
+      "path": "bin/mysqlcheck.exe",
+      "bytes_before": 7047248,
+      "bytes_after": 7047248,
+      "sha256_before": "5cac65bc855e1d0642324a0c1ad44fc815e410340368be07fa16bab0cc959c0e",
+      "sha256_after": "5cac65bc855e1d0642324a0c1ad44fc815e410340368be07fa16bab0cc959c0e"
+    },
+    {
+      "path": "bin/mysqld.exe",
+      "bytes_before": 53530696,
+      "bytes_after": 53530696,
+      "sha256_before": "ee6b6ba65d99bcea50b6605bc0650588c4d5b91b11aefcf4d9e5bd2c12e07d8e",
+      "sha256_after": "ee6b6ba65d99bcea50b6605bc0650588c4d5b91b11aefcf4d9e5bd2c12e07d8e"
+    },
+    {
+      "path": "bin/mysqld_multi.pl",
+      "bytes_before": 28827,
+      "bytes_after": 28827,
+      "sha256_before": "e2330940486ce167e95907bcd5fb318868c259c0a1ea656b83d8230a0f034e60",
+      "sha256_after": "e2330940486ce167e95907bcd5fb318868c259c0a1ea656b83d8230a0f034e60"
+    },
+    {
+      "path": "bin/mysqldump.exe",
+      "bytes_before": 7131208,
+      "bytes_after": 7131208,
+      "sha256_before": "25d8eab0985f55864d5007574ec275b79fdf761cf53c3a0a766ec4f2bdd10acc",
+      "sha256_after": "25d8eab0985f55864d5007574ec275b79fdf761cf53c3a0a766ec4f2bdd10acc"
+    },
+    {
+      "path": "bin/mysqldumpslow.pl",
+      "bytes_before": 7932,
+      "bytes_after": 7932,
+      "sha256_before": "51d717a199212a4e62aa1c4c7c0f206f20691f7f629808b52fc5d48c29494001",
+      "sha256_after": "51d717a199212a4e62aa1c4c7c0f206f20691f7f629808b52fc5d48c29494001"
+    },
+    {
+      "path": "bin/mysqlimport.exe",
+      "bytes_before": 7034960,
+      "bytes_after": 7034960,
+      "sha256_before": "06b82e049b9ecaf3ceacb966fe82ed9a2c98ed32fdd526e94f2f00060bebf620",
+      "sha256_after": "06b82e049b9ecaf3ceacb966fe82ed9a2c98ed32fdd526e94f2f00060bebf620"
+    },
+    {
+      "path": "bin/mysqlshow.exe",
+      "bytes_before": 7031376,
+      "bytes_after": 7031376,
+      "sha256_before": "dbe04b2218ec3b98104f78b5b1a929f83737e3800615eb5cad7b3908116378d0",
+      "sha256_after": "dbe04b2218ec3b98104f78b5b1a929f83737e3800615eb5cad7b3908116378d0"
+    },
+    {
+      "path": "bin/mysqlslap.exe",
+      "bytes_before": 7051344,
+      "bytes_after": 7051344,
+      "sha256_before": "6c4846e47acad0c0d1ce9f0d16368f50d80bd10f03d9bbb681b4a5f17d23e23c",
+      "sha256_after": "6c4846e47acad0c0d1ce9f0d16368f50d80bd10f03d9bbb681b4a5f17d23e23c"
+    },
+    {
+      "path": "bin/perror.exe",
+      "bytes_before": 7248456,
+      "bytes_after": 7248456,
+      "sha256_before": "d7bd0f4018236e3ada214400a4922270f29a9f3c22296da555e6539b7a21e26e",
+      "sha256_after": "d7bd0f4018236e3ada214400a4922270f29a9f3c22296da555e6539b7a21e26e"
+    },
+    {
+      "path": "bin/sasl2/saslGSSAPI.dll",
+      "bytes_before": 46160,
+      "bytes_after": 46160,
+      "sha256_before": "240cdaf5e24f70c1d1135cd2873e6074fe463b688c7f337c3ba6571ecc8aefc8",
+      "sha256_after": "240cdaf5e24f70c1d1135cd2873e6074fe463b688c7f337c3ba6571ecc8aefc8"
+    },
+    {
+      "path": "bin/sasl2/saslSCRAM.dll",
+      "bytes_before": 57416,
+      "bytes_after": 57416,
+      "sha256_before": "1336650bccc290d7eab452f26811d44b4937bd7db80252e6889c4e2a1dc9b92c",
+      "sha256_after": "1336650bccc290d7eab452f26811d44b4937bd7db80252e6889c4e2a1dc9b92c"
+    },
+    {
+      "path": "bin/xpprof64.dll",
+      "bytes_before": 58440,
+      "bytes_after": 58440,
+      "sha256_before": "b08cba6411e473258a85b1339fce65e9d194a3bb2214bd8a00c7e44fcb5dfea6",
+      "sha256_after": "b08cba6411e473258a85b1339fce65e9d194a3bb2214bd8a00c7e44fcb5dfea6"
+    },
+    {
+      "path": "docs/INFO_BIN",
+      "bytes_before": 11447,
+      "bytes_after": 11447,
+      "sha256_before": "029c919ad76f3421702f6648b5119dd7f2cc56d69beb1955dcdcdc1a8276ab5a",
+      "sha256_after": "029c919ad76f3421702f6648b5119dd7f2cc56d69beb1955dcdcdc1a8276ab5a"
+    },
+    {
+      "path": "docs/INFO_SRC",
+      "bytes_before": 213,
+      "bytes_after": 213,
+      "sha256_before": "6e8f8e46be7e0322d5e1459147a83b8efda2eea4dd123ce498c21ec0913cb71b",
+      "sha256_after": "6e8f8e46be7e0322d5e1459147a83b8efda2eea4dd123ce498c21ec0913cb71b"
+    },
+    {
+      "path": "include/errmsg.h",
+      "bytes_before": 5818,
+      "bytes_after": 5818,
+      "sha256_before": "257679af44970fd4e38e904f990a0e579d08d6b6635005b59a51ff5ce76443c5",
+      "sha256_after": "257679af44970fd4e38e904f990a0e579d08d6b6635005b59a51ff5ce76443c5"
+    },
+    {
+      "path": "include/field_types.h",
+      "bytes_before": 3175,
+      "bytes_after": 3175,
+      "sha256_before": "756623711fedae2a73f8d0db35b3956e5a14a93e36cd3a816d55bf0779b0efaf",
+      "sha256_after": "756623711fedae2a73f8d0db35b3956e5a14a93e36cd3a816d55bf0779b0efaf"
+    },
+    {
+      "path": "include/my_command.h",
+      "bytes_before": 4432,
+      "bytes_after": 4432,
+      "sha256_before": "3da2fe1bb52f329236431b501378f1b8bd438c3c7224ad54690e510a20e9cd98",
+      "sha256_after": "3da2fe1bb52f329236431b501378f1b8bd438c3c7224ad54690e510a20e9cd98"
+    },
+    {
+      "path": "include/my_compress.h",
+      "bytes_before": 3697,
+      "bytes_after": 3697,
+      "sha256_before": "10120adbb1f78cb284f2aeeba0282f910a43cf5aa1d6361eaf13297f22970566",
+      "sha256_after": "10120adbb1f78cb284f2aeeba0282f910a43cf5aa1d6361eaf13297f22970566"
+    },
+    {
+      "path": "include/my_list.h",
+      "bytes_before": 2120,
+      "bytes_after": 2120,
+      "sha256_before": "46e0b6f8d3005e96cb5fe8ef3e6161b0c584323e49742ab9851a34f47e541bc5",
+      "sha256_after": "46e0b6f8d3005e96cb5fe8ef3e6161b0c584323e49742ab9851a34f47e541bc5"
+    },
+    {
+      "path": "include/mysql/client_plugin.h",
+      "bytes_before": 8508,
+      "bytes_after": 8508,
+      "sha256_before": "9c8630d447fb4ae0ee56ac736e843ad9092093cada99b5ff436c967357435886",
+      "sha256_after": "9c8630d447fb4ae0ee56ac736e843ad9092093cada99b5ff436c967357435886"
+    },
+    {
+      "path": "include/mysql/plugin_auth_common.h",
+      "bytes_before": 6917,
+      "bytes_after": 6917,
+      "sha256_before": "4f8bf448ec3f083fe50766920b741f753e0d31d39f7dbaa1a84468c56fb71ba1",
+      "sha256_after": "4f8bf448ec3f083fe50766920b741f753e0d31d39f7dbaa1a84468c56fb71ba1"
+    },
+    {
+      "path": "include/mysql/udf_registration_types.h",
+      "bytes_before": 3875,
+      "bytes_after": 3875,
+      "sha256_before": "f3efc3a9eaecdfe618d3dd902c1f7e6a226dd44cbd397ccfab03ca0c52de4515",
+      "sha256_after": "f3efc3a9eaecdfe618d3dd902c1f7e6a226dd44cbd397ccfab03ca0c52de4515"
+    },
+    {
+      "path": "include/mysql.h",
+      "bytes_before": 34136,
+      "bytes_after": 34136,
+      "sha256_before": "4245067f59b0a7e1dd2e478a60adc1b6d1649ecce75c329ff687b298e9df888c",
+      "sha256_after": "4245067f59b0a7e1dd2e478a60adc1b6d1649ecce75c329ff687b298e9df888c"
+    },
+    {
+      "path": "include/mysql_com.h",
+      "bytes_before": 42018,
+      "bytes_after": 42018,
+      "sha256_before": "7d157a689633b9bc0bce24a5c556c7061c1266fb26e8483d827fd4b44b53998b",
+      "sha256_after": "7d157a689633b9bc0bce24a5c556c7061c1266fb26e8483d827fd4b44b53998b"
+    },
+    {
+      "path": "include/mysql_time.h",
+      "bytes_before": 3603,
+      "bytes_after": 3603,
+      "sha256_before": "b3748ec3656005d9ddf929e2ec83fd3a4e2ce98666ef9e73b0c12bf82a36541c",
+      "sha256_after": "b3748ec3656005d9ddf929e2ec83fd3a4e2ce98666ef9e73b0c12bf82a36541c"
+    },
+    {
+      "path": "include/mysql_version.h",
+      "bytes_before": 1161,
+      "bytes_after": 1161,
+      "sha256_before": "4935d8dfb4900f351b28d3b8dc0f3173bb16a904d160429fc2624482117b66da",
+      "sha256_after": "4935d8dfb4900f351b28d3b8dc0f3173bb16a904d160429fc2624482117b66da"
+    },
+    {
+      "path": "include/mysqld_error.h",
+      "bytes_before": 283152,
+      "bytes_after": 283152,
+      "sha256_before": "4225ec89cb5430ae85187a559ffe3edede95a2d7f1902f174ab4344cf916a79d",
+      "sha256_after": "4225ec89cb5430ae85187a559ffe3edede95a2d7f1902f174ab4344cf916a79d"
+    },
+    {
+      "path": "include/mysqlx_ername.h",
+      "bytes_before": 7774,
+      "bytes_after": 7774,
+      "sha256_before": "47472fcfa9ef277839e5dd3cc8e3fbf691b54220f6e5c5b317b897e6e14b7f4a",
+      "sha256_after": "47472fcfa9ef277839e5dd3cc8e3fbf691b54220f6e5c5b317b897e6e14b7f4a"
+    },
+    {
+      "path": "include/mysqlx_error.h",
+      "bytes_before": 4261,
+      "bytes_after": 4261,
+      "sha256_before": "20f6e8cbf664b50fd2602917f8e41e80229505469b00fa950ecc1aa75f04e027",
+      "sha256_after": "20f6e8cbf664b50fd2602917f8e41e80229505469b00fa950ecc1aa75f04e027"
+    },
+    {
+      "path": "include/mysqlx_version.h",
+      "bytes_before": 1890,
+      "bytes_after": 1890,
+      "sha256_before": "1a495a83c1879d7f817b050a62678541fd4f1f1624908488994636ddc21d7601",
+      "sha256_after": "1a495a83c1879d7f817b050a62678541fd4f1f1624908488994636ddc21d7601"
+    },
+    {
+      "path": "include/openssl/applink.c",
+      "bytes_before": 3660,
+      "bytes_after": 3660,
+      "sha256_before": "64f2bbf22447c293a26c309459ac6ed5a77912c2d8133cccf5cbe5dc75360ce8",
+      "sha256_after": "64f2bbf22447c293a26c309459ac6ed5a77912c2d8133cccf5cbe5dc75360ce8"
+    },
+    {
+      "path": "LICENSE",
+      "bytes_before": 257471,
+      "bytes_after": 257471,
+      "sha256_before": "51b2f21995e69e87971329294c9be0d80ae2876348a4cbd4a1bdabe5b6393037",
+      "sha256_after": "51b2f21995e69e87971329294c9be0d80ae2876348a4cbd4a1bdabe5b6393037"
+    },
+    {
+      "path": "my.ini",
+      "bytes_before": 447,
+      "bytes_after": 447,
+      "sha256_before": "a0795e25b68c1fd804888087fb3bb9227fd580a5851e8d7b2fb657453ea8c12e",
+      "sha256_after": "a0795e25b68c1fd804888087fb3bb9227fd580a5851e8d7b2fb657453ea8c12e"
+    },
+    {
+      "path": "README",
+      "bytes_before": 666,
+      "bytes_after": 666,
+      "sha256_before": "d385ba545c6f9c709f45bc2e1bd4b86c16c6e863a7cce493c17e60e399c52a98",
+      "sha256_after": "d385ba545c6f9c709f45bc2e1bd4b86c16c6e863a7cce493c17e60e399c52a98"
+    },
+    {
+      "path": "share/bulgarian/errmsg.sys",
+      "bytes_before": 409302,
+      "bytes_after": 409302,
+      "sha256_before": "fc737f3da21db3b7d55afc019d49fc284a5e1573c404e935d4805cb1467f2dd0",
+      "sha256_after": "fc737f3da21db3b7d55afc019d49fc284a5e1573c404e935d4805cb1467f2dd0"
+    },
+    {
+      "path": "share/charsets/armscii8.xml",
+      "bytes_before": 6011,
+      "bytes_after": 6011,
+      "sha256_before": "cc950a4e20e4ea7872617998fd2e4b84ac2621cfc858a116e30d15c0ef96fe01",
+      "sha256_after": "cc950a4e20e4ea7872617998fd2e4b84ac2621cfc858a116e30d15c0ef96fe01"
+    },
+    {
+      "path": "share/charsets/ascii.xml",
+      "bytes_before": 5997,
+      "bytes_after": 5997,
+      "sha256_before": "e69e77baf42575872759f4ea3fb917417e7eec713fe2ebac9629e5ff2ce73886",
+      "sha256_after": "e69e77baf42575872759f4ea3fb917417e7eec713fe2ebac9629e5ff2ce73886"
+    },
+    {
+      "path": "share/charsets/cp1250.xml",
+      "bytes_before": 8726,
+      "bytes_after": 8726,
+      "sha256_before": "266e0d10e5c6f7fd648f52ebc40c11f365a9cce7e97b28cadce93c3bc650e42c",
+      "sha256_after": "266e0d10e5c6f7fd648f52ebc40c11f365a9cce7e97b28cadce93c3bc650e42c"
+    },
+    {
+      "path": "share/charsets/cp1251.xml",
+      "bytes_before": 8812,
+      "bytes_after": 8812,
+      "sha256_before": "705fb5f8a471f566443c34bad6ca9a99fd1503205ad3a801944487e2c316ec32",
+      "sha256_after": "705fb5f8a471f566443c34bad6ca9a99fd1503205ad3a801944487e2c316ec32"
+    },
+    {
+      "path": "share/charsets/cp1256.xml",
+      "bytes_before": 6060,
+      "bytes_after": 6060,
+      "sha256_before": "9cca5256e9873080a4033434bede2eea68492629de7a38da5cb2fb7cbdf30fdb",
+      "sha256_after": "9cca5256e9873080a4033434bede2eea68492629de7a38da5cb2fb7cbdf30fdb"
+    },
+    {
+      "path": "share/charsets/cp1257.xml",
+      "bytes_before": 9393,
+      "bytes_after": 9393,
+      "sha256_before": "c14c5981c339762ae356b25b7a07644fcafc617d36b50570d7ca64134f9295e0",
+      "sha256_after": "c14c5981c339762ae356b25b7a07644fcafc617d36b50570d7ca64134f9295e0"
+    },
+    {
+      "path": "share/charsets/cp850.xml",
+      "bytes_before": 5997,
+      "bytes_after": 5997,
+      "sha256_before": "015fe14c2bb867ce4ba7935c24eea07d18b0930b84ef6a94732db0414299f41f",
+      "sha256_after": "015fe14c2bb867ce4ba7935c24eea07d18b0930b84ef6a94732db0414299f41f"
+    },
+    {
+      "path": "share/charsets/cp852.xml",
+      "bytes_before": 6013,
+      "bytes_after": 6013,
+      "sha256_before": "eeb31fb7ba0d90dc3a62a5f182702338ead59ec29144cbb53d6a7a1ace0b8d9c",
+      "sha256_after": "eeb31fb7ba0d90dc3a62a5f182702338ead59ec29144cbb53d6a7a1ace0b8d9c"
+    },
+    {
+      "path": "share/charsets/cp866.xml",
+      "bytes_before": 6104,
+      "bytes_after": 6104,
+      "sha256_before": "772a691ed737da8d1c7cd5fca09685dd9c0378857c3bbc24e3b5567fd24e2cc0",
+      "sha256_after": "772a691ed737da8d1c7cd5fca09685dd9c0378857c3bbc24e3b5567fd24e2cc0"
+    },
+    {
+      "path": "share/charsets/dec8.xml",
+      "bytes_before": 7020,
+      "bytes_after": 7020,
+      "sha256_before": "b32f97f56a3960d5400d0fa7192c4f351cbef270d9e393543280b0fcff2c44a6",
+      "sha256_after": "b32f97f56a3960d5400d0fa7192c4f351cbef270d9e393543280b0fcff2c44a6"
+    },
+    {
+      "path": "share/charsets/geostd8.xml",
+      "bytes_before": 6007,
+      "bytes_after": 6007,
+      "sha256_before": "2e48b5d8c45da98fa0ec25ef3a135c4d30da4b42c55c7b84461e2a1370443d64",
+      "sha256_after": "2e48b5d8c45da98fa0ec25ef3a135c4d30da4b42c55c7b84461e2a1370443d64"
+    },
+    {
+      "path": "share/charsets/greek.xml",
+      "bytes_before": 6219,
+      "bytes_after": 6219,
+      "sha256_before": "9d339917eb427e497f823d49b130b91f2e414ca590845c84621528d6cde41843",
+      "sha256_after": "9d339917eb427e497f823d49b130b91f2e414ca590845c84621528d6cde41843"
+    },
+    {
+      "path": "share/charsets/hebrew.xml",
+      "bytes_before": 6002,
+      "bytes_after": 6002,
+      "sha256_before": "287d26cfedc3c6c78d34c2607e7c89d91c321f0b48f265a6e9ec165c2eafd26e",
+      "sha256_after": "287d26cfedc3c6c78d34c2607e7c89d91c321f0b48f265a6e9ec165c2eafd26e"
+    },
+    {
+      "path": "share/charsets/hp8.xml",
+      "bytes_before": 5993,
+      "bytes_after": 5993,
+      "sha256_before": "7ee13224173cf0fa52af6551630d1f451ef50d4c5012afb49f7826fabe8a4e0f",
+      "sha256_after": "7ee13224173cf0fa52af6551630d1f451ef50d4c5012afb49f7826fabe8a4e0f"
+    },
+    {
+      "path": "share/charsets/Index.xml",
+      "bytes_before": 19525,
+      "bytes_after": 19525,
+      "sha256_before": "83551523a5a33b33cda26207440f7c63421154526b78a96375a931840b6a32a2",
+      "sha256_after": "83551523a5a33b33cda26207440f7c63421154526b78a96375a931840b6a32a2"
+    },
+    {
+      "path": "share/charsets/keybcs2.xml",
+      "bytes_before": 6020,
+      "bytes_after": 6020,
+      "sha256_before": "d446a109d0a504b38947cbcb36d1abc9118fe4033032c229fbc8cf6fcbd79c96",
+      "sha256_after": "d446a109d0a504b38947cbcb36d1abc9118fe4033032c229fbc8cf6fcbd79c96"
+    },
+    {
+      "path": "share/charsets/koi8r.xml",
+      "bytes_before": 6001,
+      "bytes_after": 6001,
+      "sha256_before": "6550b306b04fc5f69a233ea2b0427954d2ab7741e02927da479e84e94edb0a2d",
+      "sha256_after": "6550b306b04fc5f69a233ea2b0427954d2ab7741e02927da479e84e94edb0a2d"
+    },
+    {
+      "path": "share/charsets/koi8u.xml",
+      "bytes_before": 7023,
+      "bytes_after": 7023,
+      "sha256_before": "d0a8cb1de11ef570e0521d010b34cfcb74638e66137b378114c186dd4b053a5f",
+      "sha256_after": "d0a8cb1de11ef570e0521d010b34cfcb74638e66137b378114c186dd4b053a5f"
+    },
+    {
+      "path": "share/charsets/latin1.xml",
+      "bytes_before": 10301,
+      "bytes_after": 10301,
+      "sha256_before": "8afb9f20b76373031ef84dc077425c4ba1297ff2b54aeb077bd3f93d3d56117c",
+      "sha256_after": "8afb9f20b76373031ef84dc077425c4ba1297ff2b54aeb077bd3f93d3d56117c"
+    },
+    {
+      "path": "share/charsets/latin2.xml",
+      "bytes_before": 7723,
+      "bytes_after": 7723,
+      "sha256_before": "1aa687e3d26e85ede104bb62983b49aa845f29e7263f6283b645299716140d7e",
+      "sha256_after": "1aa687e3d26e85ede104bb62983b49aa845f29e7263f6283b645299716140d7e"
+    },
+    {
+      "path": "share/charsets/latin5.xml",
+      "bytes_before": 6000,
+      "bytes_after": 6000,
+      "sha256_before": "acb916bf820b088ce9e1a012e9a2fe5f19f52c4b66cbc425e08c1e79ab75a21b",
+      "sha256_after": "acb916bf820b088ce9e1a012e9a2fe5f19f52c4b66cbc425e08c1e79ab75a21b"
+    },
+    {
+      "path": "share/charsets/latin7.xml",
+      "bytes_before": 7929,
+      "bytes_after": 7929,
+      "sha256_before": "64cf99567127b03faa171d928bbcacd2451f000e3729f64763c1dc67c65378e7",
+      "sha256_after": "64cf99567127b03faa171d928bbcacd2451f000e3729f64763c1dc67c65378e7"
+    },
+    {
+      "path": "share/charsets/macce.xml",
+      "bytes_before": 8538,
+      "bytes_after": 8538,
+      "sha256_before": "f474df7e0e0845a88ba7aabb04562705a2ab00185d037a7b1e12070f0d61fff0",
+      "sha256_after": "f474df7e0e0845a88ba7aabb04562705a2ab00185d037a7b1e12070f0d61fff0"
+    },
+    {
+      "path": "share/charsets/macroman.xml",
+      "bytes_before": 8549,
+      "bytes_after": 8549,
+      "sha256_before": "c9c87850ae02bbd426c977a3635329b144f604274d7f6c4f7ff76b38a204ec50",
+      "sha256_after": "c9c87850ae02bbd426c977a3635329b144f604274d7f6c4f7ff76b38a204ec50"
+    },
+    {
+      "path": "share/charsets/README",
+      "bytes_before": 1749,
+      "bytes_after": 1749,
+      "sha256_before": "0af62ce1ae651e980006f2e9d29bd2f24e1cd18c6a0b1914e9c437cc80e990ab",
+      "sha256_after": "0af62ce1ae651e980006f2e9d29bd2f24e1cd18c6a0b1914e9c437cc80e990ab"
+    },
+    {
+      "path": "share/charsets/swe7.xml",
+      "bytes_before": 7021,
+      "bytes_after": 7021,
+      "sha256_before": "a5ac2e1374340b7d636fde7a6a5139e3902e73d40588006e705142ede90c0711",
+      "sha256_after": "a5ac2e1374340b7d636fde7a6a5139e3902e73d40588006e705142ede90c0711"
+    },
+    {
+      "path": "share/czech/errmsg.sys",
+      "bytes_before": 409224,
+      "bytes_after": 409224,
+      "sha256_before": "6014e3d3b36c352c1505f8b5ec6fc9f323252b21a642fd9cb6e349e5ee9de6e3",
+      "sha256_after": "6014e3d3b36c352c1505f8b5ec6fc9f323252b21a642fd9cb6e349e5ee9de6e3"
+    },
+    {
+      "path": "share/danish/errmsg.sys",
+      "bytes_before": 409198,
+      "bytes_after": 409198,
+      "sha256_before": "44a95354e66952a00dac4a5087eaad358de639a7886051f33766d1a70df9beb0",
+      "sha256_after": "44a95354e66952a00dac4a5087eaad358de639a7886051f33766d1a70df9beb0"
+    },
+    {
+      "path": "share/dictionary.txt",
+      "bytes_before": 25575,
+      "bytes_after": 25575,
+      "sha256_before": "d031a0f90d77595abe02112adf69a86560e3168ba379fd450176a8e070763077",
+      "sha256_after": "d031a0f90d77595abe02112adf69a86560e3168ba379fd450176a8e070763077"
+    },
+    {
+      "path": "share/dutch/errmsg.sys",
+      "bytes_before": 410212,
+      "bytes_after": 410212,
+      "sha256_before": "617d5579a69a6c2ceacf002acab4e2232421d537800154338af5f280bb606c2d",
+      "sha256_after": "617d5579a69a6c2ceacf002acab4e2232421d537800154338af5f280bb606c2d"
+    },
+    {
+      "path": "share/english/errmsg.sys",
+      "bytes_before": 408465,
+      "bytes_after": 408465,
+      "sha256_before": "dcccc8be0aff3d83788b220f376b5938294f94114d63251725cab9888508ee30",
+      "sha256_after": "dcccc8be0aff3d83788b220f376b5938294f94114d63251725cab9888508ee30"
+    },
+    {
+      "path": "share/estonian/errmsg.sys",
+      "bytes_before": 408729,
+      "bytes_after": 408729,
+      "sha256_before": "98dbe078d4d2211321a3610639a91926b8c0a6bfe6ba7f9d2c5ae9c1ff621838",
+      "sha256_after": "98dbe078d4d2211321a3610639a91926b8c0a6bfe6ba7f9d2c5ae9c1ff621838"
+    },
+    {
+      "path": "share/french/errmsg.sys",
+      "bytes_before": 409838,
+      "bytes_after": 409838,
+      "sha256_before": "0bc47279420da5e145588372de4b213bd5571be129b6bbf7738fb7c49db6de7c",
+      "sha256_after": "0bc47279420da5e145588372de4b213bd5571be129b6bbf7738fb7c49db6de7c"
+    },
+    {
+      "path": "share/german/errmsg.sys",
+      "bytes_before": 416024,
+      "bytes_after": 416024,
+      "sha256_before": "ff30742bb17fde32faeff7da306ce9247f6d5e6b0cea6093f5c61c9f611eb8fd",
+      "sha256_after": "ff30742bb17fde32faeff7da306ce9247f6d5e6b0cea6093f5c61c9f611eb8fd"
+    },
+    {
+      "path": "share/greek/errmsg.sys",
+      "bytes_before": 415256,
+      "bytes_after": 415256,
+      "sha256_before": "717be6fd73217fedf3004153ceee0fc33c781c9610bc86b5c3dca94c1f5a16d0",
+      "sha256_after": "717be6fd73217fedf3004153ceee0fc33c781c9610bc86b5c3dca94c1f5a16d0"
+    },
+    {
+      "path": "share/hungarian/errmsg.sys",
+      "bytes_before": 409106,
+      "bytes_after": 409106,
+      "sha256_before": "78c8a5e2748a6e36ed469ae188026cd6a8bc47a0e493b4292aa0028c68cd81e2",
+      "sha256_after": "78c8a5e2748a6e36ed469ae188026cd6a8bc47a0e493b4292aa0028c68cd81e2"
+    },
+    {
+      "path": "share/install_rewriter.sql",
+      "bytes_before": 2323,
+      "bytes_after": 2323,
+      "sha256_before": "54e85384140a33a7412f26241e7cdc4ab9d3b7ba8138ac0525eb7b6f62478dec",
+      "sha256_after": "54e85384140a33a7412f26241e7cdc4ab9d3b7ba8138ac0525eb7b6f62478dec"
+    },
+    {
+      "path": "share/italian/errmsg.sys",
+      "bytes_before": 410209,
+      "bytes_after": 410209,
+      "sha256_before": "4782b08b6185ef824beb23dfb33114ce5f67a2d6a484f99fcbb8ef300974e2cd",
+      "sha256_after": "4782b08b6185ef824beb23dfb33114ce5f67a2d6a484f99fcbb8ef300974e2cd"
+    },
+    {
+      "path": "share/japanese/errmsg.sys",
+      "bytes_before": 415834,
+      "bytes_after": 415834,
+      "sha256_before": "f12147145da32961b6d5fc0fa8fd3a3ae285cc7835f6be6ffdb21d07ac5a04fc",
+      "sha256_after": "f12147145da32961b6d5fc0fa8fd3a3ae285cc7835f6be6ffdb21d07ac5a04fc"
+    },
+    {
+      "path": "share/korean/errmsg.sys",
+      "bytes_before": 411505,
+      "bytes_after": 411505,
+      "sha256_before": "00f3de92a99726fb0338aaeb011cab799b568cbf0112baf8616cff8ba44cafa8",
+      "sha256_after": "00f3de92a99726fb0338aaeb011cab799b568cbf0112baf8616cff8ba44cafa8"
+    },
+    {
+      "path": "share/messages_to_clients.txt",
+      "bytes_before": 644817,
+      "bytes_after": 644817,
+      "sha256_before": "0d61c66ae8f7e0a4d4ecf9012cf2e6ad32f550c2c884b8dd0c59f8474644297c",
+      "sha256_after": "0d61c66ae8f7e0a4d4ecf9012cf2e6ad32f550c2c884b8dd0c59f8474644297c"
+    },
+    {
+      "path": "share/messages_to_error_log.txt",
+      "bytes_before": 416321,
+      "bytes_after": 416321,
+      "sha256_before": "0030472721274e65ff365bc45904c51a7529c3689fed4b1e23269c80a3ad1849",
+      "sha256_after": "0030472721274e65ff365bc45904c51a7529c3689fed4b1e23269c80a3ad1849"
+    },
+    {
+      "path": "share/norwegian/errmsg.sys",
+      "bytes_before": 408535,
+      "bytes_after": 408535,
+      "sha256_before": "63cc4d2465ebc29c011f07f0aeb6258a5df649ac7af399430b27cae2fb3aeab0",
+      "sha256_after": "63cc4d2465ebc29c011f07f0aeb6258a5df649ac7af399430b27cae2fb3aeab0"
+    },
+    {
+      "path": "share/norwegian-ny/errmsg.sys",
+      "bytes_before": 408588,
+      "bytes_after": 408588,
+      "sha256_before": "264b056ba579d1d373c0b64b396cbd03f49d27101a517d76eb7ffd6b9e52cf47",
+      "sha256_after": "264b056ba579d1d373c0b64b396cbd03f49d27101a517d76eb7ffd6b9e52cf47"
+    },
+    {
+      "path": "share/polish/errmsg.sys",
+      "bytes_before": 409394,
+      "bytes_after": 409394,
+      "sha256_before": "709eb72371f9e3da63ee66a356b37fe2434835c1acf20cb8419bb79443271eb6",
+      "sha256_after": "709eb72371f9e3da63ee66a356b37fe2434835c1acf20cb8419bb79443271eb6"
+    },
+    {
+      "path": "share/portuguese/errmsg.sys",
+      "bytes_before": 411356,
+      "bytes_after": 411356,
+      "sha256_before": "45763209eac97474e1af1ee880e59886f78bfd2771275e4edcf23a7b8a815e59",
+      "sha256_after": "45763209eac97474e1af1ee880e59886f78bfd2771275e4edcf23a7b8a815e59"
+    },
+    {
+      "path": "share/romanian/errmsg.sys",
+      "bytes_before": 410177,
+      "bytes_after": 410177,
+      "sha256_before": "bf47f02a3f12f306c1ca73df61595a3cb5f6d4daf211734944c57d6af6e29a39",
+      "sha256_after": "bf47f02a3f12f306c1ca73df61595a3cb5f6d4daf211734944c57d6af6e29a39"
+    },
+    {
+      "path": "share/russian/errmsg.sys",
+      "bytes_before": 423650,
+      "bytes_after": 423650,
+      "sha256_before": "ad0998ec39af56064015d2c8f9cf1152c2b26557f93c769c4e083c1d666fd9bd",
+      "sha256_after": "ad0998ec39af56064015d2c8f9cf1152c2b26557f93c769c4e083c1d666fd9bd"
+    },
+    {
+      "path": "share/serbian/errmsg.sys",
+      "bytes_before": 410797,
+      "bytes_after": 410797,
+      "sha256_before": "a4ab4836167be23bfcee8aeeb236ad441e71a0ae578c3b34bda3681e691b4bbf",
+      "sha256_after": "a4ab4836167be23bfcee8aeeb236ad441e71a0ae578c3b34bda3681e691b4bbf"
+    },
+    {
+      "path": "share/slovak/errmsg.sys",
+      "bytes_before": 408991,
+      "bytes_after": 408991,
+      "sha256_before": "9d3ec6683d2d847d066f714695d1ead25d4a6cc7194f2e62325b5b7dcb5c7b57",
+      "sha256_after": "9d3ec6683d2d847d066f714695d1ead25d4a6cc7194f2e62325b5b7dcb5c7b57"
+    },
+    {
+      "path": "share/spanish/errmsg.sys",
+      "bytes_before": 410065,
+      "bytes_after": 410065,
+      "sha256_before": "5a39a7aa871e5d33019098929ec075d4e0e3ef76dc11b27c681927620912a05d",
+      "sha256_after": "5a39a7aa871e5d33019098929ec075d4e0e3ef76dc11b27c681927620912a05d"
+    },
+    {
+      "path": "share/swedish/errmsg.sys",
+      "bytes_before": 409278,
+      "bytes_after": 409278,
+      "sha256_before": "17de84a6c8664cb4820f3f88114898fbfd9ba59715277bb697962334c04ddba9",
+      "sha256_after": "17de84a6c8664cb4820f3f88114898fbfd9ba59715277bb697962334c04ddba9"
+    },
+    {
+      "path": "share/ukrainian/errmsg.sys",
+      "bytes_before": 418273,
+      "bytes_after": 418273,
+      "sha256_before": "ca4ee1c640fedf25e3d8b1b0936c65b606b0fdd0c8ab9fc3c2ffd2ed4966b1a1",
+      "sha256_after": "ca4ee1c640fedf25e3d8b1b0936c65b606b0fdd0c8ab9fc3c2ffd2ed4966b1a1"
+    },
+    {
+      "path": "share/uninstall_rewriter.sql",
+      "bytes_before": 1325,
+      "bytes_after": 1325,
+      "sha256_before": "e70b2fcff8473d928bb981ebd26ee63a1310029a0c64c6e31ea5a42319b22bc9",
+      "sha256_after": "e70b2fcff8473d928bb981ebd26ee63a1310029a0c64c6e31ea5a42319b22bc9"
+    }
+  ],
+  "added_file_hashes_in": "ENV04_FILE_READBACK.json",
+  "direct_datadir_write": false,
+  "datadir_scope_limit": "No agent direct datadir edits or SQL. Normal MySQL shutdown/startup internal data writes are expected; not a datadir byte-integrity audit."
+}
