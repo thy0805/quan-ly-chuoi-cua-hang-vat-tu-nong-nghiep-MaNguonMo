@@ -1,0 +1,50 @@
+{
+  "database": "mnm_vat_tu_nong_nghiep",
+  "mysql_version": "8.4.3",
+  "final_suite": {
+    "tool": "phpunit",
+    "result": "passed",
+    "tests": 26,
+    "passed": 26,
+    "assertions": 425,
+    "duration_ms": 83450
+  },
+  "g4a_regression_tests": 11,
+  "g4b_http_tests": 15,
+  "g4b_test_methods": [
+    "test_guest_redirect_json_unauthorized_and_real_csrf_rejection",
+    "test_wrong_password_and_inactive_login_are_rejected_without_hash_leak",
+    "test_session_fixation_logout_and_old_cookie_replay",
+    "test_login_throttling_limits_repeated_failures",
+    "test_active_middleware_revokes_existing_session",
+    "test_user_read_access_and_server_side_write_denial",
+    "test_admin_catalog_crud_and_restrict_over_http",
+    "test_category_cycle_active_parent_and_no_deactivation_cascade",
+    "test_product_validation_decimal_ids_and_inactive_reference_parity",
+    "test_search_unicode_wildcards_and_stable_pagination",
+    "test_query_validation_and_not_found_contract",
+    "test_username_password_user_crud_and_single_admin_guards",
+    "test_csrf_blocks_authenticated_writes_and_logout",
+    "test_html_validation_redirect_and_output_escaping",
+    "test_fk_rejects_reference_added_after_delete_precheck"
+  ],
+  "full_suite_command": "python -X utf8 .agent/scripts/g4b_run.py regression-parity-final vendor/phpunit/phpunit/phpunit --configuration phpunit.xml",
+  "private_runner": "Local ignored runner loads current private credentials and redacts password values; not in Git or ZIP",
+  "initial_focused_run": {
+    "tool": "phpunit",
+    "result": "passed",
+    "tests": 14,
+    "passed": 14,
+    "assertions": 268,
+    "duration_ms": 37026
+  },
+  "real_csrf_checks": "APP_ENV local; setUp asserts runningUnitTests false; no disabled middleware or actingAs shortcuts",
+  "fixture_strategy": "Dedicated QA-G4B synthetic records in transaction with rollback; exact demo content baseline before and readback after tests; no migrate/seed/reset",
+  "fk_race_limit": "Single-connection deterministic interleaving after delete precheck, real MySQL FK rejection and transaction rollback. No multi-client load/stress test.",
+  "not_verified": [
+    "Final Bootstrap appearance/responsiveness/browser visual QA (G5)",
+    "UML/ERD rendered export and final report/demo (G6)",
+    "Production deployment/security/load/performance"
+  ],
+  "final_tcp_http_evidence": "G4B_TCP_HTTP.json"
+}

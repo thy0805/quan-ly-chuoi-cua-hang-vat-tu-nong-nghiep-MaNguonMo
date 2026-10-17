@@ -40,3 +40,9 @@ Startup stderr có lỗi tải component_reference_cache.dll ở dạng văn b�
 ## Shutdown Windows và probe cổng timeout
 
 ENV04: MySQL native event đã tạo normal shutdown/complete, server và monitor exit0 nhưng Python TCPconnect timeout; helper chỉ chấp nhận ConnectionRefused nên trả gate incomplete. Giữ receipt gốc và readback độc lập Get-NetTCPConnection/Win32_Process: không còn listener3306/33060/process trướccopy, không signal lại hoặc force. Quy tắc: timeout không tương đương refused và không tự chứng minh cổng đóng; dùng bảng TCP/PID Windows cùng exit/log khi xác minh shutdown. Native event chỉ dùng khi Thy cho phép owner shutdown và exact source/PID/owner/ACL đã kiểm; không suy OSrights thành SQLrights.
+
+## Helper kiểm Laravel không được suy thành công từ exit code
+
+G4B: exception của script sau bootstrap có thể được Laravel console handler trình bày nhưng process vẫn exit0. Probe route đầu chưa resolve HTTP Kernel nên chưa đồng bộ middleware groups, không chứng minh ứng dụng thiếu CSRF. Đã resolve HTTP Kernel và đọc toàn bộ middleware của32route; HTTP thật vẫn kiểm419. Phòng tránh: parse payload JSON và invariant thành công, kèm runtime/readback; không chỉ dựa exit0.
+
+Khi port HTTP phải đối chiếu query/password rule với nguồn G1: giữ per_page1..50,active_only và min10; không tự thu hẹp thành danh sách kích thước UI hoặc min12. Bcrypt giới hạn72byte phải validation theo byte để mật khẩu Unicode vượt giới hạn trả422 trước khi hash, không phát sinh500.

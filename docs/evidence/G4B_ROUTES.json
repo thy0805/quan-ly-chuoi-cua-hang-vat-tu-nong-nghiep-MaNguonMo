@@ -1,0 +1,800 @@
+{
+  "route_count": 32,
+  "all_contracts_verified": true,
+  "routes": [
+    {
+      "name": "login",
+      "uri": "login",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "middleware": [
+        "web"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings"
+      ],
+      "requires_admin": false
+    },
+    {
+      "name": "login.store",
+      "uri": "login",
+      "methods": [
+        "POST"
+      ],
+      "middleware": [
+        "web"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings"
+      ],
+      "requires_admin": false
+    },
+    {
+      "name": "home",
+      "uri": "/",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser"
+      ],
+      "requires_admin": false
+    },
+    {
+      "name": "logout",
+      "uri": "logout",
+      "methods": [
+        "POST"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser"
+      ],
+      "requires_admin": false
+    },
+    {
+      "name": "categories.index",
+      "uri": "categories",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser"
+      ],
+      "requires_admin": false
+    },
+    {
+      "name": "categories.create",
+      "uri": "categories/create",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active",
+        "admin"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser",
+        "App\\Http\\Middleware\\RequireAdmin"
+      ],
+      "requires_admin": true
+    },
+    {
+      "name": "categories.store",
+      "uri": "categories",
+      "methods": [
+        "POST"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active",
+        "admin"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser",
+        "App\\Http\\Middleware\\RequireAdmin"
+      ],
+      "requires_admin": true
+    },
+    {
+      "name": "categories.edit",
+      "uri": "categories/{record}/edit",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active",
+        "admin"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser",
+        "App\\Http\\Middleware\\RequireAdmin"
+      ],
+      "requires_admin": true
+    },
+    {
+      "name": "categories.update",
+      "uri": "categories/{record}",
+      "methods": [
+        "PUT",
+        "PATCH"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active",
+        "admin"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser",
+        "App\\Http\\Middleware\\RequireAdmin"
+      ],
+      "requires_admin": true
+    },
+    {
+      "name": "categories.destroy",
+      "uri": "categories/{record}",
+      "methods": [
+        "DELETE"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active",
+        "admin"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser",
+        "App\\Http\\Middleware\\RequireAdmin"
+      ],
+      "requires_admin": true
+    },
+    {
+      "name": "categories.show",
+      "uri": "categories/{record}",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser"
+      ],
+      "requires_admin": false
+    },
+    {
+      "name": "units.index",
+      "uri": "units",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser"
+      ],
+      "requires_admin": false
+    },
+    {
+      "name": "units.create",
+      "uri": "units/create",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active",
+        "admin"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser",
+        "App\\Http\\Middleware\\RequireAdmin"
+      ],
+      "requires_admin": true
+    },
+    {
+      "name": "units.store",
+      "uri": "units",
+      "methods": [
+        "POST"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active",
+        "admin"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser",
+        "App\\Http\\Middleware\\RequireAdmin"
+      ],
+      "requires_admin": true
+    },
+    {
+      "name": "units.edit",
+      "uri": "units/{record}/edit",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active",
+        "admin"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser",
+        "App\\Http\\Middleware\\RequireAdmin"
+      ],
+      "requires_admin": true
+    },
+    {
+      "name": "units.update",
+      "uri": "units/{record}",
+      "methods": [
+        "PUT",
+        "PATCH"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active",
+        "admin"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser",
+        "App\\Http\\Middleware\\RequireAdmin"
+      ],
+      "requires_admin": true
+    },
+    {
+      "name": "units.destroy",
+      "uri": "units/{record}",
+      "methods": [
+        "DELETE"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active",
+        "admin"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser",
+        "App\\Http\\Middleware\\RequireAdmin"
+      ],
+      "requires_admin": true
+    },
+    {
+      "name": "units.show",
+      "uri": "units/{record}",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser"
+      ],
+      "requires_admin": false
+    },
+    {
+      "name": "products.index",
+      "uri": "products",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser"
+      ],
+      "requires_admin": false
+    },
+    {
+      "name": "products.create",
+      "uri": "products/create",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active",
+        "admin"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser",
+        "App\\Http\\Middleware\\RequireAdmin"
+      ],
+      "requires_admin": true
+    },
+    {
+      "name": "products.store",
+      "uri": "products",
+      "methods": [
+        "POST"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active",
+        "admin"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser",
+        "App\\Http\\Middleware\\RequireAdmin"
+      ],
+      "requires_admin": true
+    },
+    {
+      "name": "products.edit",
+      "uri": "products/{record}/edit",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active",
+        "admin"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser",
+        "App\\Http\\Middleware\\RequireAdmin"
+      ],
+      "requires_admin": true
+    },
+    {
+      "name": "products.update",
+      "uri": "products/{record}",
+      "methods": [
+        "PUT",
+        "PATCH"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active",
+        "admin"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser",
+        "App\\Http\\Middleware\\RequireAdmin"
+      ],
+      "requires_admin": true
+    },
+    {
+      "name": "products.destroy",
+      "uri": "products/{record}",
+      "methods": [
+        "DELETE"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active",
+        "admin"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser",
+        "App\\Http\\Middleware\\RequireAdmin"
+      ],
+      "requires_admin": true
+    },
+    {
+      "name": "products.show",
+      "uri": "products/{record}",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser"
+      ],
+      "requires_admin": false
+    },
+    {
+      "name": "users.index",
+      "uri": "users",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active",
+        "admin"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser",
+        "App\\Http\\Middleware\\RequireAdmin"
+      ],
+      "requires_admin": true
+    },
+    {
+      "name": "users.create",
+      "uri": "users/create",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active",
+        "admin"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser",
+        "App\\Http\\Middleware\\RequireAdmin"
+      ],
+      "requires_admin": true
+    },
+    {
+      "name": "users.store",
+      "uri": "users",
+      "methods": [
+        "POST"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active",
+        "admin"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser",
+        "App\\Http\\Middleware\\RequireAdmin"
+      ],
+      "requires_admin": true
+    },
+    {
+      "name": "users.edit",
+      "uri": "users/{record}/edit",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active",
+        "admin"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser",
+        "App\\Http\\Middleware\\RequireAdmin"
+      ],
+      "requires_admin": true
+    },
+    {
+      "name": "users.show",
+      "uri": "users/{record}",
+      "methods": [
+        "GET",
+        "HEAD"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active",
+        "admin"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser",
+        "App\\Http\\Middleware\\RequireAdmin"
+      ],
+      "requires_admin": true
+    },
+    {
+      "name": "users.update",
+      "uri": "users/{record}",
+      "methods": [
+        "PUT",
+        "PATCH"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active",
+        "admin"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser",
+        "App\\Http\\Middleware\\RequireAdmin"
+      ],
+      "requires_admin": true
+    },
+    {
+      "name": "users.destroy",
+      "uri": "users/{record}",
+      "methods": [
+        "DELETE"
+      ],
+      "middleware": [
+        "web",
+        "auth",
+        "active",
+        "admin"
+      ],
+      "resolved_middleware": [
+        "Illuminate\\Cookie\\Middleware\\EncryptCookies",
+        "Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse",
+        "Illuminate\\Session\\Middleware\\StartSession",
+        "Illuminate\\View\\Middleware\\ShareErrorsFromSession",
+        "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestForgery",
+        "Illuminate\\Auth\\Middleware\\Authenticate",
+        "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+        "App\\Http\\Middleware\\EnsureActiveUser",
+        "App\\Http\\Middleware\\RequireAdmin"
+      ],
+      "requires_admin": true
+    }
+  ]
+}

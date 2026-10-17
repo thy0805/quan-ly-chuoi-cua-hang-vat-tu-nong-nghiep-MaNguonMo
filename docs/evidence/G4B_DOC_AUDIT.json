@@ -1,0 +1,412 @@
+{
+  "scope": "Workspace Markdown excluding third-party dependencies, private/archive/rawlogs/skill files",
+  "method": "Read current and historical Markdown, classify authority by checkpoint; update only current documents; preserve locked reports/evidence",
+  "markdown_files": [
+    {
+      "path": ".agent/AUTH02_CHECKLIST.md",
+      "role": "Checklist/hồ sơ theo checkpoint",
+      "status": "Lịch sử/tham khảo",
+      "read_when": "Chỉ truy vết; decision hiện hành/G4B_RESULT ưu tiên",
+      "read_bytes": 1098
+    },
+    {
+      "path": ".agent/CLONE_CHECKLIST.md",
+      "role": "Checklist/hồ sơ theo checkpoint",
+      "status": "Lịch sử/tham khảo",
+      "read_when": "Chỉ truy vết; decision hiện hành/G4B_RESULT ưu tiên",
+      "read_bytes": 3055
+    },
+    {
+      "path": ".agent/decisions/AUTH02_LOCAL_LOGIN_20261017.md",
+      "role": "Quyết định/quyền theo checkpoint",
+      "status": "Lịch sử/tham khảo",
+      "read_when": "Chỉ truy vết; decision hiện hành/G4B_RESULT ưu tiên",
+      "read_bytes": 2031
+    },
+    {
+      "path": ".agent/decisions/CLONE_FIRST_20261017.md",
+      "role": "Quyết định/quyền theo checkpoint",
+      "status": "Lịch sử/tham khảo",
+      "read_when": "Chỉ truy vết; decision hiện hành/G4B_RESULT ưu tiên",
+      "read_bytes": 1089
+    },
+    {
+      "path": ".agent/decisions/ENV03_DIAGNOSTIC_AUTHORIZED_20261017.md",
+      "role": "Quyết định/quyền theo checkpoint",
+      "status": "Lịch sử/tham khảo",
+      "read_when": "Chỉ truy vết; decision hiện hành/G4B_RESULT ưu tiên",
+      "read_bytes": 1361
+    },
+    {
+      "path": ".agent/decisions/ENV04_ACCEPTED_G4A_RESUMED_20261017.md",
+      "role": "Quyết định/quyền theo checkpoint",
+      "status": "Lịch sử/tham khảo",
+      "read_when": "Chỉ truy vết; decision hiện hành/G4B_RESULT ưu tiên",
+      "read_bytes": 2225
+    },
+    {
+      "path": ".agent/decisions/ENV04_CONDITIONAL_REPAIR_AUTHORIZED_20261017.md",
+      "role": "Quyết định/quyền theo checkpoint",
+      "status": "Lịch sử/tham khảo",
+      "read_when": "Chỉ truy vết; decision hiện hành/G4B_RESULT ưu tiên",
+      "read_bytes": 1936
+    },
+    {
+      "path": ".agent/decisions/ENV04_OWNER_SHUTDOWN_AUTHORIZED_20261017.md",
+      "role": "Quyết định/quyền theo checkpoint",
+      "status": "Lịch sử/tham khảo",
+      "read_when": "Chỉ truy vết; decision hiện hành/G4B_RESULT ưu tiên",
+      "read_bytes": 2989
+    },
+    {
+      "path": ".agent/decisions/G23_ACCEPTED_SCOPE_20261017.md",
+      "role": "Quyết định/quyền theo checkpoint",
+      "status": "Lịch sử/tham khảo",
+      "read_when": "Chỉ truy vết; decision hiện hành/G4B_RESULT ưu tiên",
+      "read_bytes": 1060
+    },
+    {
+      "path": ".agent/decisions/G4A_ACCEPTED_G4B_AUTHORIZED_20261017.md",
+      "role": "Quyền nghiệm thu G4A/push/G4B",
+      "status": "Hiện hành ưu tiên",
+      "read_when": "Trước Git/HTTP; thay các giới hạn lịch sử",
+      "read_bytes": 1381
+    },
+    {
+      "path": ".agent/decisions/G4A_AUTHORIZED_20261017.md",
+      "role": "Quyết định/quyền theo checkpoint",
+      "status": "Lịch sử/tham khảo",
+      "read_when": "Chỉ truy vết; decision hiện hành/G4B_RESULT ưu tiên",
+      "read_bytes": 1587
+    },
+    {
+      "path": ".agent/decisions/G4A_DIRECT_MYSQL_AUTHORIZED_20261017.md",
+      "role": "Quyết định/quyền theo checkpoint",
+      "status": "Lịch sử/tham khảo",
+      "read_when": "Chỉ truy vết; decision hiện hành/G4B_RESULT ưu tiên",
+      "read_bytes": 1653
+    },
+    {
+      "path": ".agent/decisions/G4A_TRIGGER_ADMIN_DDL_20261017.md",
+      "role": "Quyết định/quyền theo checkpoint",
+      "status": "Lịch sử/tham khảo",
+      "read_when": "Chỉ truy vết; decision hiện hành/G4B_RESULT ưu tiên",
+      "read_bytes": 2189
+    },
+    {
+      "path": ".agent/DOC_INDEX.md",
+      "role": "Bản đồ nguồn chuẩn",
+      "status": "Hiện hành",
+      "read_when": "Đầu phiên/đổi tài liệu",
+      "read_bytes": 9543
+    },
+    {
+      "path": ".agent/ENV03_CHECKLIST.md",
+      "role": "Checklist/hồ sơ theo checkpoint",
+      "status": "Lịch sử/tham khảo",
+      "read_when": "Chỉ truy vết; decision hiện hành/G4B_RESULT ưu tiên",
+      "read_bytes": 2464
+    },
+    {
+      "path": ".agent/ENV04_CHECKLIST.md",
+      "role": "Checklist/hồ sơ theo checkpoint",
+      "status": "Lịch sử/tham khảo",
+      "read_when": "Chỉ truy vết; decision hiện hành/G4B_RESULT ưu tiên",
+      "read_bytes": 2804
+    },
+    {
+      "path": ".agent/G23_CHECKLIST.md",
+      "role": "Checklist/hồ sơ theo checkpoint",
+      "status": "Lịch sử/tham khảo",
+      "read_when": "Chỉ truy vết; decision hiện hành/G4B_RESULT ưu tiên",
+      "read_bytes": 2949
+    },
+    {
+      "path": ".agent/G4A_CHECKLIST.md",
+      "role": "Checklist/hồ sơ theo checkpoint",
+      "status": "Lịch sử/tham khảo",
+      "read_when": "Chỉ truy vết; decision hiện hành/G4B_RESULT ưu tiên",
+      "read_bytes": 3117
+    },
+    {
+      "path": ".agent/G4A_IMPLEMENTATION_CHECKLIST.md",
+      "role": "Checklist/hồ sơ theo checkpoint",
+      "status": "Lịch sử/tham khảo",
+      "read_when": "Chỉ truy vết; decision hiện hành/G4B_RESULT ưu tiên",
+      "read_bytes": 3289
+    },
+    {
+      "path": ".agent/G4A_RESUME_CHECKLIST.md",
+      "role": "Checklist/hồ sơ theo checkpoint",
+      "status": "Lịch sử/tham khảo",
+      "read_when": "Chỉ truy vết; decision hiện hành/G4B_RESULT ưu tiên",
+      "read_bytes": 1552
+    },
+    {
+      "path": ".agent/G4B_CHECKLIST.md",
+      "role": "Scope/A01–A03/B01–B04",
+      "status": "Hiện hành",
+      "read_when": "QA/handoff; Thy/G2/G4A là nguồn",
+      "read_bytes": 2468
+    },
+    {
+      "path": ".agent/mistake.md",
+      "role": "Lỗi có thể tái diễn",
+      "status": "Hiện hành",
+      "read_when": "Trước task liên quan",
+      "read_bytes": 6439
+    },
+    {
+      "path": ".agent/PLAN.md",
+      "role": "Kế hoạch và điểm dừng",
+      "status": "Hiện hành",
+      "read_when": "Chọn bước tiếp; G4B_CHECKLIST ưu tiên",
+      "read_bytes": 1246
+    },
+    {
+      "path": ".agent/rule.md",
+      "role": "Quy tắc hồ sơ và ZIP",
+      "status": "Hiện hành",
+      "read_when": "Trước viết báo cáo",
+      "read_bytes": 1364
+    },
+    {
+      "path": "AGENTS.md",
+      "role": "Quy tắc phạm vi/quyền",
+      "status": "Hiện hành",
+      "read_when": "Đầu phiên; Thy mới nhất ưu tiên",
+      "read_bytes": 2639
+    },
+    {
+      "path": "context.md",
+      "role": "Recovery/trạng thái",
+      "status": "Hiện hành",
+      "read_when": "Đầu phiên; evidence thực tế ưu tiên",
+      "read_bytes": 2865
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "role": "Kiến trúc runtime G4B",
+      "status": "Hiện hành",
+      "read_when": "Review source; G2/ERD ưu tiên thiết kế",
+      "read_bytes": 2044
+    },
+    {
+      "path": "docs/AUDIT_KLCN.md",
+      "role": "Checklist/hồ sơ theo checkpoint",
+      "status": "Lịch sử/tham khảo",
+      "read_when": "Chỉ truy vết; decision hiện hành/G4B_RESULT ưu tiên",
+      "read_bytes": 5832
+    },
+    {
+      "path": "docs/BIEN_BAN_GIAI_DOAN_1.md",
+      "role": "Checklist/hồ sơ theo checkpoint",
+      "status": "Lịch sử/tham khảo",
+      "read_when": "Chỉ truy vết; decision hiện hành/G4B_RESULT ưu tiên",
+      "read_bytes": 5932
+    },
+    {
+      "path": "docs/CONVERSION_MAPPING.md",
+      "role": "Mapping G1→G23→G4 dự kiến",
+      "status": "Lịch sử/tham khảo nguồn",
+      "read_when": "Khi port; source/G4B_RESULT mới là runtime",
+      "read_bytes": 1994
+    },
+    {
+      "path": "docs/ENV03_DIAGNOSTIC.md",
+      "role": "Chẩn đoán trước ENV04",
+      "status": "LOCKED chẩn đoán theo thời điểm",
+      "read_when": "Truy vết; ENV04/G4B mới ưu tiên trạng thái",
+      "read_bytes": 12479
+    },
+    {
+      "path": "docs/ENV04_REPAIR_RESULT.md",
+      "role": "Phục hồi MySQL44file",
+      "status": "LOCKED evidence theo thời điểm",
+      "read_when": "Truy vết; không replay ENV04",
+      "read_bytes": 8173
+    },
+    {
+      "path": "docs/ERD_MYSQL.md",
+      "role": "Schema bốn bảng/ba FK/Eloquent",
+      "status": "LOCKED thiết kế",
+      "read_when": "Đối chiếu MySQL; readback G4A/G4B là runtime",
+      "read_bytes": 5915
+    },
+    {
+      "path": "docs/FUNCTIONS_USE_CASES.md",
+      "role": "Rubric/chức năng/phân công",
+      "status": "Hiện hành",
+      "read_when": "Nghiệm thu môn; rubric gốc khi có",
+      "read_bytes": 2152
+    },
+    {
+      "path": "docs/G2_DECISIONS.md",
+      "role": "DEC01–06/quy tắc thiết kế",
+      "status": "LOCKED thiết kế; trạng thái G2 là lịch sử",
+      "read_when": "Port module; không dùng TODO G2 làm trạng thái G4B",
+      "read_bytes": 7052
+    },
+    {
+      "path": "docs/G3_ISOLATION_RESULT.md",
+      "role": "Cô lập tĩnh G3",
+      "status": "Lịch sử đã nghiệm thu",
+      "read_when": "Truy vết; DB-deny/HTTP503 không còn là runtime G4B",
+      "read_bytes": 4567
+    },
+    {
+      "path": "docs/G4A_RESULT.md",
+      "role": "Bàn giao G4A được nghiệm thu",
+      "status": "LOCKED evidence theo thời điểm",
+      "read_when": "Truy vết; không viết lại câu chờ nghiệm thu cũ",
+      "read_bytes": 5809
+    },
+    {
+      "path": "docs/G4B_RESULT.md",
+      "role": "Bàn giao/runtime/giới hạn",
+      "status": "Hiện hành",
+      "read_when": "GPT Web nghiệm thu; evidence ưu tiên",
+      "read_bytes": 8963
+    },
+    {
+      "path": "docs/IMPLEMENTATION_PLAN.md",
+      "role": "Các giai đoạn G1–G6",
+      "status": "Hiện hành",
+      "read_when": "Lập kế hoạch; PLAN/checklist ưu tiên",
+      "read_bytes": 1275
+    },
+    {
+      "path": "docs/PUBLICATION.md",
+      "role": "G4A publication và lịch sử G23",
+      "status": "Hiện hành đầu tài liệu",
+      "read_when": "Review Git; receipt mới ưu tiên",
+      "read_bytes": 5046
+    },
+    {
+      "path": "docs/README_GUI_GPT_WEB.md",
+      "role": "Checklist/hồ sơ theo checkpoint",
+      "status": "Lịch sử/tham khảo",
+      "read_when": "Chỉ truy vết; decision hiện hành/G4B_RESULT ưu tiên",
+      "read_bytes": 2666
+    },
+    {
+      "path": "docs/REUSED_FILES.md",
+      "role": "Checklist/hồ sơ theo checkpoint",
+      "status": "Lịch sử/tham khảo",
+      "read_when": "Chỉ truy vết; decision hiện hành/G4B_RESULT ưu tiên",
+      "read_bytes": 7934
+    },
+    {
+      "path": "README.md",
+      "role": "Điểm vào cho nhóm/GPT Web",
+      "status": "Hiện hành",
+      "read_when": "Đọc trước; G4B_RESULT chi tiết",
+      "read_bytes": 2159
+    }
+  ],
+  "new_current_evidence": "G4B_RESULT and G4B_* override checkpoint runtime descriptions; G2/ERD remain canonical design",
+  "locked_files_rewritten": false,
+  "links_readback": {
+    "passed": true,
+    "current_markdown_checked": 11,
+    "relative_links_checked": 24,
+    "links": [
+      {
+        "from": "README.md",
+        "target": "docs/G4B_RESULT.md"
+      },
+      {
+        "from": "README.md",
+        "target": "docs/evidence/G4B_HTTP_QA.json"
+      },
+      {
+        "from": "README.md",
+        "target": "docs/evidence/G4B_SOURCE_DIFF.json"
+      },
+      {
+        "from": "README.md",
+        "target": "docs/evidence/G4B_FIXTURE_INTEGRITY.json"
+      },
+      {
+        "from": "README.md",
+        "target": "docs/G2_DECISIONS.md"
+      },
+      {
+        "from": "README.md",
+        "target": "context.md"
+      },
+      {
+        "from": "README.md",
+        "target": ".agent/PLAN.md"
+      },
+      {
+        "from": "README.md",
+        "target": ".agent/G4B_CHECKLIST.md"
+      },
+      {
+        "from": "README.md",
+        "target": "docs/FUNCTIONS_USE_CASES.md"
+      },
+      {
+        "from": "docs/G4B_RESULT.md",
+        "target": "evidence/G4B_SOURCE_DIFF.json"
+      },
+      {
+        "from": "docs/G4B_RESULT.md",
+        "target": "evidence/G4B_SOURCE_PATCH.diff"
+      },
+      {
+        "from": "docs/G4B_RESULT.md",
+        "target": "evidence/G4B_HTTP_QA.json"
+      },
+      {
+        "from": "docs/G4B_RESULT.md",
+        "target": "evidence/G4B_HTTP_TEST_LOG.txt"
+      },
+      {
+        "from": "docs/G4B_RESULT.md",
+        "target": "evidence/G4B_ROUTES.json"
+      },
+      {
+        "from": "docs/G4B_RESULT.md",
+        "target": "evidence/G4B_TCP_HTTP.json"
+      },
+      {
+        "from": "docs/G4B_RESULT.md",
+        "target": "evidence/G4B_MYSQL_READBACK.json"
+      },
+      {
+        "from": "docs/G4B_RESULT.md",
+        "target": "evidence/G4B_FIXTURE_INTEGRITY.json"
+      },
+      {
+        "from": "docs/G4B_RESULT.md",
+        "target": "evidence/G4B_PROTECTED_VERIFICATION.json"
+      },
+      {
+        "from": "docs/G4B_RESULT.md",
+        "target": "evidence/G4B_G4A_PUBLICATION.json"
+      },
+      {
+        "from": "docs/IMPLEMENTATION_PLAN.md",
+        "target": "../context.md"
+      },
+      {
+        "from": "docs/IMPLEMENTATION_PLAN.md",
+        "target": "../.agent/G4B_CHECKLIST.md"
+      },
+      {
+        "from": "docs/IMPLEMENTATION_PLAN.md",
+        "target": "G4B_RESULT.md"
+      },
+      {
+        "from": "docs/IMPLEMENTATION_PLAN.md",
+        "target": "../.agent/decisions/G4A_ACCEPTED_G4B_AUTHORIZED_20261017.md"
+      },
+      {
+        "from": "docs/PUBLICATION.md",
+        "target": "evidence/G4B_G4A_PUBLICATION.json"
+      }
+    ]
+  }
+}

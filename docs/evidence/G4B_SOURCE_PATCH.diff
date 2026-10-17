@@ -1,0 +1,1100 @@
+--- /dev/null
++++ b/app/Http/Controllers/CatalogController.php
+@@ -0,0 +1,131 @@
++<?php
++
++namespace App\Http\Controllers;
++
++use App\Http\Requests\CatalogListRequest;
++use App\Http\Requests\CatalogWriteRequest;
++use App\Models\ProductCategory;
++use App\Models\Unit;
++use App\Services\CatalogDeletion;
++use App\Support\CatalogResources;
++use App\Support\DecimalId;
++use Illuminate\Database\QueryException;
++use Illuminate\Http\Request;
++use Illuminate\Support\Facades\DB;
++use Illuminate\Validation\ValidationException;
++
++class CatalogController extends Controller
++{
++    public function index(CatalogListRequest $request)
++    {
++        $catalog = $request->route('catalog');
++        $definition = CatalogResources::definition($catalog);
++        $filters = $request->validated();
++        $query = $definition['model']::query()->with($definition['relations']);
++        if ($request->boolean('active_only')) {
++            $query->where('is_active', true);
++        }
++        if (($filters['q'] ?? '') !== '') {
++            $query->where(function ($query) use ($definition, $filters) {
++                foreach ($definition['search'] as $column) {
++                    $query->orWhereRaw('LOWER('.$column.') LIKE ?', ['%'.mb_strtolower($filters['q']).'%']);
++                }
++            });
++        }
++        foreach (['is_active', ...($catalog === 'products' ? ['category_id', 'unit_id'] : [])] as $key) {
++            if (isset($filters[$key])) {
++                $query->where($key, $filters[$key]);
++            }
++        }
++        $records = $query->orderBy('name')->orderBy('id')->paginate($filters['per_page'] ?? 20)->withQueryString();
++
++        return $request->expectsJson() ? response()->json($records) : view('catalog.index', compact('catalog', 'definition', 'records'));
++    }
++
++    public function show(Request $request)
++    {
++        $catalog = $request->route('catalog');
++        $definition = CatalogResources::definition($catalog);
++        $record = $this->record($request)->load($definition['relations']);
++
++        return $request->expectsJson() ? response()->json(['data' => $record]) : view('catalog.show', compact('catalog', 'definition', 'record'));
++    }
++
++    public function create(Request $request)
++    {
++        return $this->form($request);
++    }
++
++    public function edit(Request $request)
++    {
++        return $this->form($request, $this->record($request));
++    }
++
++    public function store(CatalogWriteRequest $request)
++    {
++        $model = CatalogResources::definition($request->route('catalog'))['model'];
++        $record = $this->write(fn () => DB::transaction(fn () => $model::create($request->validated()), 3));
++
++        return $request->expectsJson() ? response()->json(['data' => $record->fresh()], 201) : redirect()->route($request->route('catalog').'.index')->with('status', 'Đã tạo dữ liệu.');
++    }
++
++    public function update(CatalogWriteRequest $request)
++    {
++        $record = $this->record($request);
++        $this->write(fn () => DB::transaction(function () use ($record, $request) {
++            $record->fill($request->validated())->save();
++        }, 3));
++
++        return $request->expectsJson() ? response()->json(['data' => $record->fresh()]) : redirect()->route($request->route('catalog').'.index')->with('status', 'Đã cập nhật dữ liệu.');
++    }
++
++    public function destroy(Request $request)
++    {
++        CatalogDeletion::delete($this->record($request));
++
++        return $request->expectsJson() ? response()->noContent() : redirect()->route($request->route('catalog').'.index')->with('status', 'Đã xóa dữ liệu.');
++    }
++
++    private function record(Request $request)
++    {
++        $id = (string) $request->route('record');
++        try {
++            DecimalId::parse($id, 'id');
++        } catch (ValidationException) {
++            abort(404);
++        }
++        $model = CatalogResources::definition($request->route('catalog'))['model'];
++
++        return $model::findOrFail($id);
++    }
++
++    private function write(callable $operation)
++    {
++        try {
++            return $operation();
++        } catch (QueryException $error) {
++            if (($error->errorInfo[1] ?? null) === 1062) {
++                throw ValidationException::withMessages(['code' => 'Mã đã được sử dụng.']);
++            }
++            throw $error;
++        }
++    }
++
++    private function form(Request $request, $record = null)
++    {
++        $catalog = $request->route('catalog');
++        $definition = CatalogResources::definition($catalog);
++        $categories = ProductCategory::query()->where(function ($query) use ($record, $catalog) {
++            $query->where('is_active', true);
++            if ($catalog === 'products' && $record) {
++                $query->orWhereKey($record->category_id);
++            }
++            if ($catalog === 'categories' && $record?->parent_id) {
++                $query->orWhereKey($record->parent_id);
++            }
++        })->when($catalog === 'categories' && $record, fn ($query) => $query->where('id', '<>', $record->id))->orderBy('name')->orderBy('id')->get();
++        $units = Unit::query()->where('is_active', true)->when($catalog === 'products' && $record, fn ($query) => $query->orWhereKey($record->unit_id))->orderBy('name')->orderBy('id')->get();
++
++        return view('catalog.form', compact('catalog', 'definition', 'record', 'categories', 'units'));
++    }
++}
+--- /dev/null
++++ b/app/Http/Controllers/SessionController.php
+@@ -0,0 +1,42 @@
++<?php
++
++namespace App\Http\Controllers;
++
++use App\Http\Requests\LoginRequest;
++use Illuminate\Http\Request;
++use Illuminate\Support\Facades\Auth;
++use Illuminate\Support\Facades\RateLimiter;
++use Illuminate\Validation\ValidationException;
++
++class SessionController extends Controller
++{
++    public function create()
++    {
++        return Auth::check() ? redirect()->route('products.index') : view('auth.login');
++    }
++
++    public function store(LoginRequest $request)
++    {
++        $key = 'mnm-login:'.hash('sha256', mb_strtolower($request->string('username')->toString()).'|'.$request->ip());
++        if (RateLimiter::tooManyAttempts($key, 5)) {
++            abort(429, 'Đăng nhập quá nhiều lần. Vui lòng thử lại sau.');
++        }
++        if (! Auth::attempt([...$request->safe()->only(['username', 'password']), 'is_active' => true])) {
++            RateLimiter::hit($key, 60);
++            throw ValidationException::withMessages(['username' => 'Thông tin đăng nhập không hợp lệ hoặc tài khoản đã ngừng hoạt động.']);
++        }
++        RateLimiter::clear($key);
++        $request->session()->regenerate(true);
++
++        return $request->expectsJson() ? response()->json(['user' => $request->user()]) : redirect()->intended(route('products.index'));
++    }
++
++    public function destroy(Request $request)
++    {
++        Auth::logout();
++        $request->session()->invalidate();
++        $request->session()->regenerateToken();
++
++        return $request->expectsJson() ? response()->noContent() : redirect()->route('login');
++    }
++}
+--- /dev/null
++++ b/app/Http/Controllers/UserController.php
+@@ -0,0 +1,109 @@
++<?php
++
++namespace App\Http\Controllers;
++
++use App\Http\Requests\CatalogListRequest;
++use App\Http\Requests\UserWriteRequest;
++use App\Models\User;
++use App\Support\DecimalId;
++use Illuminate\Database\QueryException;
++use Illuminate\Http\Request;
++use Illuminate\Support\Facades\DB;
++use Illuminate\Support\Facades\Hash;
++use Illuminate\Validation\ValidationException;
++
++class UserController extends Controller
++{
++    public function index(CatalogListRequest $request)
++    {
++        $filters = $request->validated();
++        $query = User::query();
++        if ($request->boolean('active_only')) {
++            $query->where('is_active', true);
++        }
++        if (($filters['q'] ?? '') !== '') {
++            $query->whereRaw('LOWER(username) LIKE ?', ['%'.mb_strtolower($filters['q']).'%']);
++        }
++        if (isset($filters['is_active'])) {
++            $query->where('is_active', $filters['is_active']);
++        }
++        $records = $query->orderBy('username')->orderBy('id')->paginate($filters['per_page'] ?? 20)->withQueryString();
++
++        return $request->expectsJson() ? response()->json($records) : view('users.index', compact('records'));
++    }
++
++    public function show(Request $request)
++    {
++        $record = $this->record($request);
++
++        return $request->expectsJson() ? response()->json(['data' => $record]) : view('users.show', compact('record'));
++    }
++
++    public function create()
++    {
++        return view('users.form', ['record' => null]);
++    }
++
++    public function edit(Request $request)
++    {
++        return view('users.form', ['record' => $this->record($request)]);
++    }
++
++    public function store(UserWriteRequest $request)
++    {
++        $record = $this->write(fn () => DB::transaction(fn () => User::create($this->attributes($request)), 3));
++
++        return $request->expectsJson() ? response()->json(['data' => $record->fresh()], 201) : redirect()->route('users.index')->with('status', 'Đã tạo tài khoản nhân viên.');
++    }
++
++    public function update(UserWriteRequest $request)
++    {
++        $record = $this->record($request);
++        $this->write(fn () => DB::transaction(function () use ($record, $request) {
++            User::query()->lockForUpdate()->findOrFail($record->id)->fill($this->attributes($request))->save();
++        }, 3));
++
++        return $request->expectsJson() ? response()->json(['data' => $record->fresh()]) : redirect()->route('users.index')->with('status', 'Đã cập nhật tài khoản.');
++    }
++
++    public function destroy(Request $request)
++    {
++        $record = $this->record($request);
++        DB::transaction(fn () => User::query()->lockForUpdate()->findOrFail($record->id)->delete(), 3);
++
++        return $request->expectsJson() ? response()->noContent() : redirect()->route('users.index')->with('status', 'Đã xóa tài khoản.');
++    }
++
++    private function attributes(UserWriteRequest $request): array
++    {
++        $attributes = $request->safe()->only(['username', 'is_active']);
++        if ($request->filled('password')) {
++            $attributes['password_hash'] = Hash::make($request->validated('password'));
++        }
++
++        return $attributes;
++    }
++
++    private function record(Request $request): User
++    {
++        try {
++            $id = DecimalId::parse((string) $request->route('record'), 'id');
++        } catch (ValidationException) {
++            abort(404);
++        }
++
++        return User::findOrFail($id);
++    }
++
++    private function write(callable $operation)
++    {
++        try {
++            return $operation();
++        } catch (QueryException $error) {
++            if (($error->errorInfo[1] ?? null) === 1062) {
++                throw ValidationException::withMessages(['username' => 'Tên đăng nhập đã được sử dụng.']);
++            }
++            throw $error;
++        }
++    }
++}
+--- /dev/null
++++ b/app/Http/Middleware/EnsureActiveUser.php
+@@ -0,0 +1,24 @@
++<?php
++
++namespace App\Http\Middleware;
++
++use Closure;
++use Illuminate\Http\Request;
++use Illuminate\Support\Facades\Auth;
++
++class EnsureActiveUser
++{
++    public function handle(Request $request, Closure $next)
++    {
++        $user = $request->user()?->fresh();
++        if (! $user || ! $user->is_active) {
++            Auth::logout();
++            $request->session()->invalidate();
++            $request->session()->regenerateToken();
++            abort(403, 'Tài khoản đã ngừng hoạt động.');
++        }
++        Auth::setUser($user);
++
++        return $next($request);
++    }
++}
+--- /dev/null
++++ b/app/Http/Middleware/RequireAdmin.php
+@@ -0,0 +1,16 @@
++<?php
++
++namespace App\Http\Middleware;
++
++use Closure;
++use Illuminate\Http\Request;
++
++class RequireAdmin
++{
++    public function handle(Request $request, Closure $next)
++    {
++        abort_unless($request->user()?->role === 'admin', 403, 'Chỉ Admin được thực hiện thao tác này.');
++
++        return $next($request);
++    }
++}
+--- /dev/null
++++ b/app/Http/Requests/CatalogListRequest.php
+@@ -0,0 +1,19 @@
++<?php
++
++namespace App\Http\Requests;
++
++use App\Support\DecimalId;
++use Illuminate\Foundation\Http\FormRequest;
++
++class CatalogListRequest extends FormRequest
++{
++    public function authorize(): bool
++    {
++        return $this->user()?->is_active === true;
++    }
++
++    public function rules(): array
++    {
++        return ['q' => ['nullable', 'string', 'max:160'], 'page' => ['sometimes', 'integer', 'min:1', 'max:1000000'], 'per_page' => ['nullable', 'integer', 'min:1', 'max:50'], 'active_only' => ['nullable', 'boolean'], 'is_active' => ['nullable', 'boolean'], 'category_id' => ['nullable', 'string', DecimalId::rule()], 'unit_id' => ['nullable', 'string', DecimalId::rule()]];
++    }
++}
+--- /dev/null
++++ b/app/Http/Requests/CatalogWriteRequest.php
+@@ -0,0 +1,31 @@
++<?php
++
++namespace App\Http\Requests;
++
++use App\Support\DecimalId;
++use App\Support\DecimalLimit;
++use Illuminate\Foundation\Http\FormRequest;
++
++class CatalogWriteRequest extends FormRequest
++{
++    public function authorize(): bool
++    {
++        return $this->user()?->is_active === true && $this->user()?->role === 'admin';
++    }
++
++    public function rules(): array
++    {
++        $create = $this->isMethod('POST');
++        $presence = $create ? 'required' : 'sometimes';
++        $product = $this->route('catalog') === 'products';
++        $rules = ['code' => [$presence, 'required', 'string', 'max:'.($product ? 60 : 40)], 'name' => [$presence, 'required', 'string', 'max:'.match ($this->route('catalog')) {'products' => 200, 'categories' => 160, default => 100}], 'is_active' => ['sometimes', 'required', 'boolean']];
++        if ($this->route('catalog') === 'categories') {
++            $rules['parent_id'] = ['sometimes', 'nullable', 'string', DecimalId::rule()];
++        }
++        if ($product) {
++            $rules += ['category_id' => [$presence, 'required', 'string', DecimalId::rule()], 'unit_id' => [$presence, 'required', 'string', DecimalId::rule()], 'active_ingredient' => ['sometimes', 'nullable', 'string', 'max:200'], 'sale_price' => [$presence, 'required', 'numeric', 'min:0', 'decimal:0,2', DecimalLimit::rule(16, 2)], 'tax_rate' => ['sometimes', 'nullable', 'numeric', 'min:0', 'max:100', 'decimal:0,2'], 'expiry_warning_days' => ['sometimes', 'nullable', 'integer', 'min:0', 'max:3650']];
++        }
++
++        return $rules;
++    }
++}
+--- /dev/null
++++ b/app/Http/Requests/LoginRequest.php
+@@ -0,0 +1,18 @@
++<?php
++
++namespace App\Http\Requests;
++
++use Illuminate\Foundation\Http\FormRequest;
++
++class LoginRequest extends FormRequest
++{
++    public function authorize(): bool
++    {
++        return true;
++    }
++
++    public function rules(): array
++    {
++        return ['username' => ['required', 'string', 'max:80'], 'password' => ['required', 'string', 'max:1024']];
++    }
++}
+--- /dev/null
++++ b/app/Http/Requests/UserWriteRequest.php
+@@ -0,0 +1,34 @@
++<?php
++
++namespace App\Http\Requests;
++
++use Closure;
++use App\Models\User;
++use App\Support\DecimalId;
++use Illuminate\Foundation\Http\FormRequest;
++use Illuminate\Validation\Rule;
++use Illuminate\Validation\ValidationException;
++
++class UserWriteRequest extends FormRequest
++{
++    public function authorize(): bool
++    {
++        return $this->user()?->is_active === true && $this->user()?->role === 'admin';
++    }
++
++    public function rules(): array
++    {
++        $record = $this->route('record');
++        try {
++            $user = $record ? User::findOrFail(DecimalId::parse($record, 'id')) : null;
++        } catch (ValidationException) {
++            abort(404);
++        }
++
++        return ['username' => [$user ? 'sometimes' : 'required', 'required', 'string', 'max:80', Rule::unique('users', 'username')->ignore($user?->id)], 'password' => [$user ? 'nullable' : 'required', 'string', 'min:10', 'max:255', 'confirmed', function (string $attribute, mixed $value, Closure $fail) {
++            if (is_string($value) && strlen($value) > 72) {
++                $fail('Mật khẩu vượt giới hạn 72 byte của bcrypt.');
++            }
++        }], 'is_active' => ['sometimes', 'required', 'boolean'], 'role' => ['sometimes', Rule::in([$user?->role ?? 'user'])], 'password_hash' => ['prohibited']];
++    }
++}
+--- /dev/null
++++ b/app/Services/CatalogDeletion.php
+@@ -0,0 +1,31 @@
++<?php
++
++namespace App\Services;
++
++use App\Models\CatalogModel;
++use App\Models\ProductCategory;
++use App\Models\Unit;
++use Illuminate\Database\QueryException;
++use Illuminate\Support\Facades\DB;
++use Illuminate\Validation\ValidationException;
++
++final class CatalogDeletion
++{
++    public static function delete(CatalogModel $record): void
++    {
++        try {
++            DB::transaction(function () use ($record) {
++                $locked = $record->newQuery()->lockForUpdate()->findOrFail($record->id);
++                if (($locked instanceof ProductCategory && ($locked->children()->exists() || $locked->products()->exists())) || ($locked instanceof Unit && $locked->products()->exists())) {
++                    throw ValidationException::withMessages(['delete' => 'Không thể xóa dữ liệu đang được tham chiếu.']);
++                }
++                $locked->delete();
++            }, 3);
++        } catch (QueryException $error) {
++            if (($error->errorInfo[1] ?? null) === 1451) {
++                throw ValidationException::withMessages(['delete' => 'Dữ liệu vừa được tham chiếu; thao tác xóa đã bị từ chối.']);
++            }
++            throw $error;
++        }
++    }
++}
+--- /dev/null
++++ b/app/Support/CatalogResources.php
+@@ -0,0 +1,20 @@
++<?php
++
++namespace App\Support;
++
++use App\Models\Product;
++use App\Models\ProductCategory;
++use App\Models\Unit;
++
++final class CatalogResources
++{
++    public static function definition(string $name): array
++    {
++        return match ($name) {
++            'categories' => ['model' => ProductCategory::class, 'title' => 'Danh mục vật tư', 'search' => ['code', 'name'], 'relations' => ['parent'], 'fields' => ['code' => 'Mã danh mục', 'name' => 'Tên danh mục', 'parent_id' => 'Danh mục cha', 'is_active' => 'Đang hoạt động']],
++            'units' => ['model' => Unit::class, 'title' => 'Đơn vị tính', 'search' => ['code', 'name'], 'relations' => [], 'fields' => ['code' => 'Mã đơn vị', 'name' => 'Tên đơn vị', 'is_active' => 'Đang hoạt động']],
++            'products' => ['model' => Product::class, 'title' => 'Vật tư', 'search' => ['code', 'name', 'active_ingredient'], 'relations' => ['category', 'unit'], 'fields' => ['code' => 'Mã vật tư', 'name' => 'Tên vật tư', 'category_id' => 'Danh mục', 'unit_id' => 'Đơn vị tính', 'active_ingredient' => 'Hoạt chất', 'sale_price' => 'Giá bán', 'tax_rate' => 'Thuế (%)', 'expiry_warning_days' => 'Số ngày cảnh báo hạn', 'is_active' => 'Đang hoạt động']],
++            default => abort(404),
++        };
++    }
++}
+--- a/bootstrap/app.php
++++ b/bootstrap/app.php
+@@ -1,9 +1,17 @@
+ <?php
+ 
+ use Illuminate\Foundation\Application;
++use Illuminate\Foundation\Configuration\Middleware;
++use App\Http\Middleware\EnsureActiveUser;
++use App\Http\Middleware\RequireAdmin;
+ 
+ $app = Application::configure(basePath: dirname(__DIR__))
+     ->withExceptions()
++    ->withMiddleware(function (Middleware $middleware) {
++        $middleware->alias(['active' => EnsureActiveUser::class, 'admin' => RequireAdmin::class]);
++        $middleware->redirectGuestsTo(fn () => route('login'));
++        $middleware->redirectUsersTo(fn () => route('products.index'));
++    })
+     ->withRouting(
+         web: __DIR__.'/../routes/web.php',
+         commands: __DIR__.'/../routes/console.php',
+--- a/public/index.php
++++ b/public/index.php
+@@ -1,6 +1,8 @@
+ <?php
+ 
+-http_response_code(503);
+-header('Content-Type: text/plain; charset=UTF-8');
+-header('Cache-Control: no-store');
+-echo 'MNM G3: runtime nghiệp vụ đang khóa, chờ triển khai và nghiệm thu giai đoạn kế tiếp.';
++use Illuminate\Http\Request;
++
++define('LARAVEL_START', microtime(true));
++require __DIR__.'/../vendor/autoload.php';
++$app = require_once __DIR__.'/../bootstrap/app.php';
++$app->handleRequest(Request::capture());
+--- /dev/null
++++ b/resources/views/auth/login.blade.php
+@@ -0,0 +1,11 @@
++@extends('layouts.app')
++@section('title', 'Đăng nhập')
++@section('content')
++    <h1>Đăng nhập</h1>
++    <form method="post" action="{{ route('login.store') }}">
++        @csrf
++        <label>Tên đăng nhập<input name="username" value="{{ old('username') }}" maxlength="80" autocomplete="username" required autofocus></label>
++        <label>Mật khẩu<input type="password" name="password" autocomplete="current-password" required></label>
++        <button type="submit">Đăng nhập</button>
++    </form>
++@endsection
+--- /dev/null
++++ b/resources/views/catalog/form.blade.php
+@@ -0,0 +1,26 @@
++@extends('layouts.app')
++@section('title', $definition['title'])
++@section('content')
++    <h1>{{ $record ? 'Cập nhật' : 'Thêm' }} — {{ $definition['title'] }}</h1>
++    <form method="post" action="{{ $record ? route($catalog.'.update', ['record' => $record->id]) : route($catalog.'.store') }}">
++        @csrf
++        @if($record)@method('PUT')@endif
++        @foreach($definition['fields'] as $field => $label)
++            <label>{{ $label }}
++                @if($field === 'is_active')
++                    <input type="hidden" name="is_active" value="0"><input type="checkbox" name="is_active" value="1" @checked(old($field, $record?->{$field} ?? true))>
++                @elseif(in_array($field, ['parent_id','category_id','unit_id'], true))
++                    <select name="{{ $field }}" @required(!$record && $field !== 'parent_id')>
++                        <option value="">{{ $field === 'parent_id' ? 'Không có danh mục cha' : 'Chọn dữ liệu' }}</option>
++                        @foreach($field === 'unit_id' ? $units : $categories as $option)
++                            <option value="{{ $option->id }}" @selected((string)old($field, $record?->{$field}) === $option->id) @disabled(!$option->is_active && $field !== 'parent_id')>{{ $option->name }}{{ $option->is_active ? '' : ' (ngừng)' }}</option>
++                        @endforeach
++                    </select>
++                @else
++                    <input name="{{ $field }}" value="{{ old($field, $record?->{$field} ?? ($field === 'sale_price' ? '0.00' : '')) }}" @required(in_array($field,['code','name','sale_price'],true)) @if(in_array($field,['sale_price','tax_rate'],true)) inputmode="decimal" @endif>
++                @endif
++            </label>
++        @endforeach
++        <button type="submit">Lưu</button> <a href="{{ route($catalog.'.index') }}">Quay lại</a>
++    </form>
++@endsection
+--- /dev/null
++++ b/resources/views/catalog/index.blade.php
+@@ -0,0 +1,35 @@
++@extends('layouts.app')
++@section('title', $definition['title'])
++@section('content')
++    <h1>{{ $definition['title'] }}</h1>
++    <form method="get" action="{{ route($catalog.'.index') }}">
++        <label>Tìm kiếm<input name="q" value="{{ request('q') }}" maxlength="160"></label>
++        <label>Số dòng<select name="per_page">@foreach([10,20,50] as $size)<option value="{{ $size }}" @selected((int)request('per_page',20) === $size)>{{ $size }}</option>@endforeach</select></label>
++        <button type="submit">Tìm</button>
++    </form>
++    @if(auth()->user()->role === 'admin')<p><a href="{{ route($catalog.'.create') }}">Thêm mới</a></p>@endif
++    <p>Tổng số: {{ $records->total() }}</p>
++    <table>
++        <thead><tr><th>Mã</th><th>Tên</th>@if($catalog === 'products')<th>Danh mục / Đơn vị</th><th>Giá bán</th>@endif<th>Trạng thái</th><th>Thao tác</th></tr></thead>
++        <tbody>
++            @forelse($records as $row)
++                <tr>
++                    <td>{{ $row->code }}</td><td>{{ $row->name }}</td>
++                    @if($catalog === 'products')<td>{{ $row->category->name }} / {{ $row->unit->name }}</td><td>{{ $row->sale_price }}</td>@endif
++                    <td>{{ $row->is_active ? 'Hoạt động' : 'Ngừng' }}</td>
++                    <td><a href="{{ route($catalog.'.show', ['record' => $row->id]) }}">Xem</a>
++                        @if(auth()->user()->role === 'admin')
++                            <a href="{{ route($catalog.'.edit', ['record' => $row->id]) }}">Sửa</a>
++                            <form method="post" action="{{ route($catalog.'.destroy', ['record' => $row->id]) }}">@csrf @method('DELETE')<button type="submit">Xóa</button></form>
++                        @endif
++                    </td>
++                </tr>
++            @empty<tr><td colspan="6">Chưa có dữ liệu phù hợp.</td></tr>@endforelse
++        </tbody>
++    </table>
++    <nav aria-label="Phân trang">
++        @if($records->previousPageUrl())<a href="{{ $records->previousPageUrl() }}">Trang trước</a>@endif
++        <span>Trang {{ $records->currentPage() }} / {{ $records->lastPage() }}</span>
++        @if($records->nextPageUrl())<a href="{{ $records->nextPageUrl() }}">Trang sau</a>@endif
++    </nav>
++@endsection
+--- /dev/null
++++ b/resources/views/catalog/show.blade.php
+@@ -0,0 +1,11 @@
++@extends('layouts.app')
++@section('title', $definition['title'])
++@section('content')
++    <h1>{{ $record->name }}</h1>
++    <dl>
++        @foreach($definition['fields'] as $field => $label)
++            <dt>{{ $label }}</dt><dd>{{ $field === 'is_active' ? ($record->is_active ? 'Hoạt động' : 'Ngừng') : $record->{$field} }}</dd>
++        @endforeach
++    </dl>
++    <a href="{{ route($catalog.'.index') }}">Quay lại</a>
++@endsection
+--- /dev/null
++++ b/resources/views/layouts/app.blade.php
+@@ -0,0 +1,33 @@
++<!DOCTYPE html>
++<html lang="vi">
++<head>
++    <meta charset="utf-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1">
++    <title>@yield('title', 'Quản lý vật tư nông nghiệp')</title>
++    <style>
++        body { font: 16px/1.5 system-ui, sans-serif; max-width: 1100px; margin: 32px auto; padding: 0 16px; color: #18352a; }
++        nav, .actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
++        a { color: #176147; } table { width: 100%; border-collapse: collapse; margin: 20px 0; }
++        td, th { border: 1px solid #c4d3cb; text-align: left; padding: 8px; }
++        label { display: block; margin: 14px 0; } input:not([type=checkbox]), select { display: block; padding: 8px; max-width: 100%; min-width: 220px; }
++        button { padding: 8px 14px; cursor: pointer; } .errors { color: #8c2020; } .status { background: #e2f1e8; padding: 12px; }
++    </style>
++</head>
++<body>
++    @auth
++        <nav aria-label="Điều hướng">
++            <a href="{{ route('products.index') }}">Vật tư</a>
++            <a href="{{ route('categories.index') }}">Danh mục</a>
++            <a href="{{ route('units.index') }}">Đơn vị tính</a>
++            @if(auth()->user()->role === 'admin')<a href="{{ route('users.index') }}">Tài khoản</a>@endif
++            <span>{{ auth()->user()->username }}</span>
++            <form method="post" action="{{ route('logout') }}">@csrf<button type="submit">Đăng xuất</button></form>
++        </nav>
++    @endauth
++    @if(session('status'))<p class="status" role="status">{{ session('status') }}</p>@endif
++    @if($errors->any())
++        <ul class="errors" role="alert">@foreach($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul>
++    @endif
++    <main>@yield('content')</main>
++</body>
++</html>
+--- /dev/null
++++ b/resources/views/users/form.blade.php
+@@ -0,0 +1,14 @@
++@extends('layouts.app')
++@section('title', 'Tài khoản')
++@section('content')
++    <h1>{{ $record ? 'Cập nhật tài khoản' : 'Thêm nhân viên' }}</h1>
++    <form method="post" action="{{ $record ? route('users.update',['record'=>$record->id]) : route('users.store') }}">
++        @csrf @if($record)@method('PUT')@endif
++        <label>Tên đăng nhập<input name="username" value="{{ old('username',$record?->username) }}" maxlength="80" required></label>
++        <p>Vai trò: {{ $record?->role ?? 'user' }}</p>
++        <label>Mật khẩu {{ $record ? '(để trống để giữ nguyên)' : '' }}<input type="password" name="password" autocomplete="new-password" @required(!$record)></label>
++        <label>Xác nhận mật khẩu<input type="password" name="password_confirmation" autocomplete="new-password" @required(!$record)></label>
++        <label>Đang hoạt động<input type="hidden" name="is_active" value="0"><input type="checkbox" name="is_active" value="1" @checked(old('is_active',$record?->is_active ?? true))></label>
++        <button type="submit">Lưu</button> <a href="{{ route('users.index') }}">Quay lại</a>
++    </form>
++@endsection
+--- /dev/null
++++ b/resources/views/users/index.blade.php
+@@ -0,0 +1,16 @@
++@extends('layouts.app')
++@section('title', 'Quản lý tài khoản')
++@section('content')
++    <h1>Quản lý tài khoản</h1>
++    <form method="get"><label>Tìm tài khoản<input name="q" value="{{ request('q') }}" maxlength="160"></label><button type="submit">Tìm</button></form>
++    <p><a href="{{ route('users.create') }}">Thêm nhân viên</a></p>
++    <table><thead><tr><th>Tên đăng nhập</th><th>Vai trò</th><th>Trạng thái</th><th>Thao tác</th></tr></thead><tbody>
++        @foreach($records as $row)
++            <tr><td>{{ $row->username }}</td><td>{{ $row->role }}</td><td>{{ $row->is_active ? 'Hoạt động' : 'Ngừng' }}</td><td>
++                <a href="{{ route('users.show',['record'=>$row->id]) }}">Xem</a> <a href="{{ route('users.edit',['record'=>$row->id]) }}">Sửa</a>
++                @if($row->role !== 'admin')<form method="post" action="{{ route('users.destroy',['record'=>$row->id]) }}">@csrf @method('DELETE')<button type="submit">Xóa</button></form>@endif
++            </td></tr>
++        @endforeach
++    </tbody></table>
++    <nav aria-label="Phân trang">@if($records->previousPageUrl())<a href="{{ $records->previousPageUrl() }}">Trang trước</a>@endif <span>Trang {{ $records->currentPage() }} / {{ $records->lastPage() }}</span> @if($records->nextPageUrl())<a href="{{ $records->nextPageUrl() }}">Trang sau</a>@endif</nav>
++@endsection
+--- /dev/null
++++ b/resources/views/users/show.blade.php
+@@ -0,0 +1,7 @@
++@extends('layouts.app')
++@section('title', 'Thông tin tài khoản')
++@section('content')
++    <h1>{{ $record->username }}</h1>
++    <p>Vai trò: {{ $record->role }}</p><p>Trạng thái: {{ $record->is_active ? 'Hoạt động' : 'Ngừng' }}</p>
++    <a href="{{ route('users.index') }}">Quay lại</a>
++@endsection
+--- a/routes/web.php
++++ b/routes/web.php
+@@ -1 +1,34 @@
+ <?php
++
++use App\Http\Controllers\CatalogController;
++use App\Http\Controllers\SessionController;
++use App\Http\Controllers\UserController;
++use Illuminate\Support\Facades\Route;
++
++Route::get('/login', [SessionController::class, 'create'])->name('login');
++Route::post('/login', [SessionController::class, 'store'])->name('login.store');
++
++Route::middleware(['auth', 'active'])->group(function () {
++    Route::get('/', fn () => redirect()->route('products.index'))->name('home');
++    Route::post('/logout', [SessionController::class, 'destroy'])->name('logout');
++    foreach (['categories', 'units', 'products'] as $catalog) {
++        Route::get('/'.$catalog, [CatalogController::class, 'index'])->defaults('catalog', $catalog)->name($catalog.'.index');
++        Route::middleware('admin')->group(function () use ($catalog) {
++            Route::get('/'.$catalog.'/create', [CatalogController::class, 'create'])->defaults('catalog', $catalog)->name($catalog.'.create');
++            Route::post('/'.$catalog, [CatalogController::class, 'store'])->defaults('catalog', $catalog)->name($catalog.'.store');
++            Route::get('/'.$catalog.'/{record}/edit', [CatalogController::class, 'edit'])->where('record', '[1-9][0-9]{0,18}')->defaults('catalog', $catalog)->name($catalog.'.edit');
++            Route::match(['PUT', 'PATCH'], '/'.$catalog.'/{record}', [CatalogController::class, 'update'])->where('record', '[1-9][0-9]{0,18}')->defaults('catalog', $catalog)->name($catalog.'.update');
++            Route::delete('/'.$catalog.'/{record}', [CatalogController::class, 'destroy'])->where('record', '[1-9][0-9]{0,18}')->defaults('catalog', $catalog)->name($catalog.'.destroy');
++        });
++        Route::get('/'.$catalog.'/{record}', [CatalogController::class, 'show'])->where('record', '[1-9][0-9]{0,18}')->defaults('catalog', $catalog)->name($catalog.'.show');
++    }
++    Route::middleware('admin')->group(function () {
++        Route::get('/users', [UserController::class, 'index'])->name('users.index');
++        Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
++        Route::post('/users', [UserController::class, 'store'])->name('users.store');
++        Route::get('/users/{record}/edit', [UserController::class, 'edit'])->where('record', '[1-9][0-9]{0,18}')->name('users.edit');
++        Route::get('/users/{record}', [UserController::class, 'show'])->where('record', '[1-9][0-9]{0,18}')->name('users.show');
++        Route::match(['PUT', 'PATCH'], '/users/{record}', [UserController::class, 'update'])->where('record', '[1-9][0-9]{0,18}')->name('users.update');
++        Route::delete('/users/{record}', [UserController::class, 'destroy'])->where('record', '[1-9][0-9]{0,18}')->name('users.destroy');
++    });
++});
+--- /dev/null
++++ b/tests/Feature/G4BHttpTest.php
+@@ -0,0 +1,340 @@
++<?php
++
++namespace Tests\Feature;
++
++use App\Models\Product;
++use App\Models\ProductCategory;
++use App\Models\Unit;
++use App\Models\User;
++use Illuminate\Support\Facades\Auth;
++use Illuminate\Support\Facades\DB;
++use Illuminate\Support\Facades\Hash;
++use Illuminate\Support\Facades\RateLimiter;
++use Tests\TestCase;
++
++class G4BHttpTest extends TestCase
++{
++    private const PASSWORD = 'G4B-test-fixture-only!';
++
++    private array $cookies = [];
++    private array $sessionIds = [];
++    private string $prefix;
++    private User $employee;
++    private User $inactive;
++
++    protected function setUp(): void
++    {
++        parent::setUp();
++        $this->assertFalse($this->app->runningUnitTests());
++        $this->assertSame('mnm_vat_tu_nong_nghiep', DB::selectOne('SELECT DATABASE() AS db')->db);
++        DB::beginTransaction();
++        $this->prefix = 'QA-G4B-'.bin2hex(random_bytes(5));
++        $hash = Hash::make(self::PASSWORD);
++        $this->employee = User::create(['username' => $this->prefix.'-user', 'password_hash' => $hash]);
++        $this->inactive = User::create(['username' => $this->prefix.'-inactive', 'password_hash' => $hash, 'is_active' => false]);
++    }
++
++    protected function tearDown(): void
++    {
++        while (DB::transactionLevel() > 0) {
++            DB::rollBack();
++        }
++        Auth::forgetGuards();
++        foreach (array_unique($this->sessionIds) as $id) {
++            if (preg_match('/^[A-Za-z0-9]{40}$/D', $id)) {
++                $path = storage_path('mnm/framework/sessions/'.$id);
++                if (is_file($path)) {
++                    unlink($path);
++                }
++            }
++        }
++        parent::tearDown();
++    }
++
++    private function browse(string $method, string $uri, array $data = [], bool $json = true)
++    {
++        Auth::forgetGuards();
++        $this->app['session']->forgetDrivers();
++        $this->app->forgetInstance('session.store');
++        $response = $this->call($method, $uri, $data, $this->cookies, [], ['HTTP_ACCEPT' => $json ? 'application/json' : 'text/html', 'REMOTE_ADDR' => '127.0.0.1']);
++        foreach ($response->headers->getCookies() as $cookie) {
++            $this->cookies[$cookie->getName()] = $cookie->getValue();
++        }
++        $this->sessionIds[] = $this->app['session']->driver()->getId();
++
++        return $response;
++    }
++
++    private function token(): string
++    {
++        return $this->app['session']->driver()->token();
++    }
++
++    private function login(bool $admin = true): void
++    {
++        $this->browse('GET', '/login', [], false)->assertOk()->assertSee('name="_token"', false);
++        $this->browse('POST', '/login', ['_token' => $this->token(), 'username' => $admin ? 'admin_demo' : $this->employee->username, 'password' => $admin ? getenv('MNM_DEMO_ADMIN_PASSWORD') : self::PASSWORD])->assertOk();
++    }
++
++    private function write(string $method, string $uri, array $data = [])
++    {
++        return $this->browse($method, $uri, ['_token' => $this->token(), ...$data]);
++    }
++
++    private function fixtures(): array
++    {
++        $category = ProductCategory::create(['code' => $this->prefix.'-CAT', 'name' => $this->prefix.' Danh mục 🌱']);
++        $unit = Unit::create(['code' => $this->prefix.'-UNIT', 'name' => $this->prefix.' Đơn vị']);
++        $product = Product::create(['code' => $this->prefix.'-PRODUCT', 'name' => $this->prefix.' Phân hữu cơ 🌱', 'category_id' => $category->id, 'unit_id' => $unit->id, 'sale_price' => '12.34']);
++
++        return [$category, $unit, $product];
++    }
++
++    public function test_guest_redirect_json_unauthorized_and_real_csrf_rejection(): void
++    {
++        $this->browse('GET', '/products', [], false)->assertRedirect('/login');
++        $this->browse('GET', '/products')->assertUnauthorized();
++        $this->browse('GET', '/login', [], false)->assertOk()->assertSee('Đăng nhập')->assertSee('name="_token"', false);
++        $this->browse('POST', '/login', ['username' => $this->employee->username, 'password' => self::PASSWORD])->assertStatus(419);
++        $this->write('POST', '/login', ['username' => []])->assertUnprocessable()->assertJsonValidationErrors(['username', 'password']);
++    }
++
++    public function test_wrong_password_and_inactive_login_are_rejected_without_hash_leak(): void
++    {
++        $this->browse('GET', '/login');
++        foreach ([[$this->employee->username, 'wrong'], [$this->inactive->username, self::PASSWORD]] as [$username, $password]) {
++            $this->write('POST', '/login', compact('username', 'password'))->assertUnprocessable()->assertJsonValidationErrors('username')->assertDontSee($this->employee->password_hash, false);
++            $this->browse('GET', '/products')->assertUnauthorized();
++        }
++    }
++
++    public function test_session_fixation_logout_and_old_cookie_replay(): void
++    {
++        $this->browse('GET', '/login');
++        $anonymousCookies = $this->cookies;
++        $anonymousId = $this->app['session']->driver()->getId();
++        $anonymousToken = $this->token();
++        $this->write('POST', '/login', ['username' => $this->employee->username, 'password' => self::PASSWORD])->assertOk()->assertJsonMissingPath('user.password_hash');
++        $authenticatedId = $this->app['session']->driver()->getId();
++        $authenticatedToken = $this->token();
++        $authenticatedCookies = $this->cookies;
++        $this->assertNotSame($anonymousId, $authenticatedId);
++        $this->assertNotSame($anonymousToken, $authenticatedToken);
++        $this->cookies = $anonymousCookies;
++        $this->browse('GET', '/products')->assertUnauthorized();
++        $this->cookies = $authenticatedCookies;
++        $this->browse('GET', '/products')->assertOk();
++        $this->write('POST', '/logout')->assertNoContent();
++        $this->assertNotSame($authenticatedId, $this->app['session']->driver()->getId());
++        $this->assertNotSame($authenticatedToken, $this->token());
++        $this->cookies = $authenticatedCookies;
++        $this->browse('GET', '/products')->assertUnauthorized();
++    }
++
++    public function test_login_throttling_limits_repeated_failures(): void
++    {
++        $key = 'mnm-login:'.hash('sha256', mb_strtolower($this->employee->username).'|127.0.0.1');
++        try {
++            $this->browse('GET', '/login');
++            for ($attempt = 0; $attempt < 5; $attempt++) {
++                $this->write('POST', '/login', ['username' => $this->employee->username, 'password' => 'wrong'])->assertUnprocessable();
++            }
++            $this->write('POST', '/login', ['username' => $this->employee->username, 'password' => self::PASSWORD])->assertStatus(429);
++            $this->browse('GET', '/products')->assertUnauthorized();
++        } finally {
++            RateLimiter::clear($key);
++        }
++    }
++
++    public function test_active_middleware_revokes_existing_session(): void
++    {
++        $this->login(false);
++        $this->employee->update(['is_active' => false]);
++        $this->browse('GET', '/products')->assertForbidden();
++        $this->browse('GET', '/products')->assertUnauthorized();
++    }
++
++    public function test_user_read_access_and_server_side_write_denial(): void
++    {
++        [$category, $unit, $product] = $this->fixtures();
++        $this->login(false);
++        foreach (['categories' => $category, 'units' => $unit, 'products' => $product] as $catalog => $record) {
++            $this->browse('GET', '/'.$catalog)->assertOk();
++            $this->browse('GET', '/'.$catalog.'/'.$record->id)->assertOk();
++            $this->browse('GET', '/'.$catalog.'/create')->assertForbidden();
++            $this->browse('GET', '/'.$catalog.'/'.$record->id.'/edit')->assertForbidden();
++            $this->write('POST', '/'.$catalog, ['code' => 'ATTACK', 'name' => 'Không được ghi'])->assertForbidden();
++            $this->write('PATCH', '/'.$catalog.'/'.$record->id, ['name' => 'Không được sửa'])->assertForbidden();
++            $this->write('DELETE', '/'.$catalog.'/'.$record->id)->assertForbidden();
++        }
++        $this->browse('GET', '/users')->assertForbidden();
++        $this->write('PATCH', '/users/'.$this->employee->id, ['role' => 'admin'])->assertForbidden();
++        $this->browse('GET', '/products', [], false)->assertOk()->assertDontSee('Thêm mới')->assertDontSee('>Xóa<', false);
++        $this->assertSame('user', $this->employee->fresh()->role);
++        $this->assertStringContainsString('Phân hữu cơ', $product->fresh()->name);
++    }
++
++    public function test_admin_catalog_crud_and_restrict_over_http(): void
++    {
++        $this->login();
++        foreach (['categories', 'units', 'products'] as $catalog) {
++            $this->browse('GET', '/'.$catalog.'/create', [], false)->assertOk();
++        }
++        $category = $this->write('POST', '/categories', ['code' => $this->prefix.'-C', 'name' => 'Danh mục HTTP'])->assertCreated()->json('data');
++        $unit = $this->write('POST', '/units', ['code' => $this->prefix.'-U', 'name' => 'Đơn vị HTTP'])->assertCreated()->json('data');
++        $product = $this->write('POST', '/products', ['code' => $this->prefix.'-P', 'name' => 'Phân hữu cơ HTTP 🌱', 'category_id' => $category['id'], 'unit_id' => $unit['id'], 'sale_price' => '9999999999999999.99', 'tax_rate' => '100.00', 'expiry_warning_days' => 3650])->assertCreated()->assertJsonPath('data.sale_price', '9999999999999999.99')->json('data');
++        $this->assertIsString($product['id']);
++        $this->browse('GET', '/products/'.$product['id'].'/edit', [], false)->assertOk()->assertSee('Phân hữu cơ HTTP 🌱');
++        $this->write('PATCH', '/products/'.$product['id'], ['sale_price' => '0', 'tax_rate' => null, 'expiry_warning_days' => null])->assertOk()->assertJsonPath('data.sale_price', '0.00')->assertJsonPath('data.tax_rate', null);
++        $this->write('DELETE', '/categories/'.$category['id'])->assertUnprocessable()->assertJsonValidationErrors('delete');
++        $this->write('DELETE', '/units/'.$unit['id'])->assertUnprocessable()->assertJsonValidationErrors('delete');
++        $this->write('DELETE', '/products/'.$product['id'])->assertNoContent();
++        $this->write('DELETE', '/units/'.$unit['id'])->assertNoContent();
++        $this->write('DELETE', '/categories/'.$category['id'])->assertNoContent();
++        $this->browse('GET', '/products/'.$product['id'])->assertNotFound();
++    }
++
++    public function test_category_cycle_active_parent_and_no_deactivation_cascade(): void
++    {
++        [$root] = $this->fixtures();
++        $child = ProductCategory::create(['code' => $this->prefix.'-CHILD', 'name' => 'Nhóm con', 'parent_id' => $root->id]);
++        $grandchild = ProductCategory::create(['code' => $this->prefix.'-GRAND', 'name' => 'Nhóm cháu', 'parent_id' => $child->id]);
++        $this->login();
++        $this->write('PATCH', '/categories/'.$root->id, ['parent_id' => $grandchild->id])->assertUnprocessable()->assertJsonValidationErrors('parent_id');
++        $this->write('PATCH', '/categories/'.$root->id, ['parent_id' => $root->id])->assertUnprocessable()->assertJsonValidationErrors('parent_id');
++        $this->write('DELETE', '/categories/'.$root->id)->assertUnprocessable();
++        $this->write('PATCH', '/categories/'.$root->id, ['is_active' => false])->assertOk();
++        $this->assertTrue($child->fresh()->is_active);
++        $this->write('POST', '/categories', ['code' => $this->prefix.'-BAD', 'name' => 'Sai cha', 'parent_id' => $root->id, 'is_active' => false])->assertUnprocessable()->assertJsonValidationErrors('parent_id');
++        $this->write('PATCH', '/categories/'.$child->id, ['is_active' => false])->assertOk();
++        $this->write('PATCH', '/categories/'.$child->id, ['name' => 'Đổi tên nhóm ngừng'])->assertOk();
++        $this->write('PATCH', '/categories/'.$child->id, ['is_active' => true])->assertUnprocessable();
++    }
++
++    public function test_product_validation_decimal_ids_and_inactive_reference_parity(): void
++    {
++        [$category, $unit, $product] = $this->fixtures();
++        $this->login();
++        foreach (['sale_price' => '-1', 'tax_rate' => '100.01', 'expiry_warning_days' => 3651] as $key => $value) {
++            $this->write('PATCH', '/products/'.$product->id, [$key => $value])->assertUnprocessable()->assertJsonValidationErrors($key);
++        }
++        $this->write('PATCH', '/products/'.$product->id, ['sale_price' => '1.239'])->assertUnprocessable()->assertJsonValidationErrors('sale_price');
++        $this->write('PATCH', '/products/'.$product->id, ['sale_price' => '10000000000000000.00'])->assertUnprocessable()->assertJsonValidationErrors('sale_price');
++        $this->write('PATCH', '/products/'.$product->id, ['unit_id' => '9223372036854775808'])->assertUnprocessable();
++        $this->write('PATCH', '/products/'.$product->id, ['category_id' => '9223372036854775807'])->assertUnprocessable();
++        $this->write('PATCH', '/products/'.$product->id, ['is_active' => false])->assertOk();
++        $this->write('PATCH', '/categories/'.$category->id, ['is_active' => false])->assertOk();
++        $this->write('PATCH', '/units/'.$unit->id, ['is_active' => false])->assertOk();
++        $this->write('PATCH', '/products/'.$product->id, ['name' => 'Đổi tên vật tư ngừng'])->assertOk();
++        $this->write('PATCH', '/products/'.$product->id, ['category_id' => $category->id])->assertUnprocessable();
++        $this->write('PATCH', '/products/'.$product->id, ['unit_id' => $unit->id])->assertUnprocessable();
++        $this->write('PATCH', '/products/'.$product->id, ['is_active' => true])->assertUnprocessable();
++    }
++
++    public function test_search_unicode_wildcards_and_stable_pagination(): void
++    {
++        $ids = [];
++        for ($index = 0; $index < 12; $index++) {
++            $ids[] = Unit::create(['code' => $this->prefix.'-'.str_pad((string) $index, 2, '0', STR_PAD_LEFT), 'name' => $this->prefix.' Đồng tên 🌱'])->id;
++        }
++        $this->login(false);
++        $query = '/units?'.http_build_query(['q' => $this->prefix.' đồng tên 🌱', 'per_page' => 10]);
++        $first = $this->browse('GET', $query)->assertOk()->assertJsonPath('total', 12)->assertJsonPath('per_page', 10)->json('data');
++        $second = $this->browse('GET', $query.'&page=2')->assertOk()->json('data');
++        $this->assertSame($ids, array_column([...$first, ...$second], 'id'));
++        $this->browse('GET', $query.'&per_page=1')->assertOk()->assertJsonCount(1, 'data')->assertJsonPath('per_page', 1);
++        $this->browse('GET', $query.'&per_page=11')->assertOk()->assertJsonCount(11, 'data');
++        Unit::create(['code' => $this->prefix.'-OFF', 'name' => $this->prefix.' Ngừng', 'is_active' => false]);
++        $this->browse('GET', '/units?'.http_build_query(['q' => $this->prefix, 'active_only' => 1]))->assertOk()->assertJsonPath('total', 12);
++        $this->browse('GET', '/units?'.http_build_query(['q' => $this->prefix, 'is_active' => 0]))->assertOk()->assertJsonPath('total', 1);
++        $this->browse('GET', '/units?'.http_build_query(['q' => $this->prefix.'-0_']))->assertOk()->assertJsonPath('total', 10);
++        $this->browse('GET', $query.'&page=3')->assertOk()->assertJsonCount(0, 'data');
++        $html = $this->browse('GET', $query, [], false)->assertOk();
++        $html->assertSee('Trang sau')->assertSee('per_page=10', false);
++    }
++
++    public function test_query_validation_and_not_found_contract(): void
++    {
++        $this->login(false);
++        foreach (['page=0', 'page=-1', 'page=1e2', 'per_page=1000', 'q[]=bad', 'category_id=01', 'unit_id=9223372036854775808', 'is_active=bad', 'active_only=bad'] as $query) {
++            $this->browse('GET', '/products?'.$query)->assertUnprocessable();
++        }
++        foreach (['0', '01', 'abc', '9223372036854775808', '9223372036854775807'] as $id) {
++            $this->browse('GET', '/products/'.$id)->assertNotFound();
++        }
++        $this->browse('GET', '/products?'.http_build_query(['q' => "' OR 1=1 --"]))->assertOk()->assertJsonPath('total', 0);
++    }
++
++    public function test_username_password_user_crud_and_single_admin_guards(): void
++    {
++        $this->login();
++        $this->browse('GET', '/users/create', [], false)->assertOk();
++        $username = $this->prefix.'-managed';
++        $payload = ['username' => $username, 'password' => self::PASSWORD, 'password_confirmation' => self::PASSWORD];
++        $user = $this->write('POST', '/users', $payload)->assertCreated()->assertJsonMissingPath('data.password_hash')->assertJsonPath('data.role', 'user')->json('data');
++        $this->assertTrue(Hash::check(self::PASSWORD, User::findOrFail($user['id'])->password_hash));
++        $this->write('POST', '/users', $payload)->assertUnprocessable()->assertJsonValidationErrors('username');
++        $this->write('POST', '/users', [...$payload, 'username' => $this->prefix.'-short', 'password' => 'short', 'password_confirmation' => 'short'])->assertUnprocessable()->assertJsonValidationErrors('password');
++        $this->write('POST', '/users', [...$payload, 'username' => $this->prefix.'-admin', 'role' => 'admin'])->assertUnprocessable()->assertJsonValidationErrors('role');
++        $this->write('PATCH', '/users/'.$user['id'], ['password_hash' => 'raw'])->assertUnprocessable()->assertJsonValidationErrors('password_hash');
++        $this->write('PATCH', '/users/'.$user['id'], ['role' => 'admin'])->assertUnprocessable();
++        $unicodePassword = str_repeat('🌱', 19);
++        $this->write('PATCH', '/users/'.$user['id'], ['password' => $unicodePassword, 'password_confirmation' => $unicodePassword])->assertUnprocessable()->assertJsonValidationErrors('password');
++        $replacement = 'TenChars!1';
++        $this->write('PATCH', '/users/'.$user['id'], ['password' => $replacement, 'password_confirmation' => $replacement])->assertOk()->assertJsonMissingPath('data.password_hash');
++        $this->assertTrue(Hash::check($replacement, User::findOrFail($user['id'])->password_hash));
++        $this->write('PATCH', '/users/'.$user['id'], ['username' => $username.'-edited', 'is_active' => false])->assertOk()->assertJsonPath('data.is_active', false);
++        $this->browse('GET', '/users/'.$user['id'].'/edit', [], false)->assertOk()->assertDontSee(User::findOrFail($user['id'])->password_hash, false);
++        $this->browse('GET', '/users?'.http_build_query(['q' => $username]))->assertOk()->assertJsonPath('total', 1);
++        $this->write('DELETE', '/users/'.$user['id'])->assertNoContent();
++        $admin = User::where('role', 'admin')->firstOrFail();
++        $this->write('PATCH', '/users/'.$admin->id, ['is_active' => false])->assertUnprocessable()->assertJsonValidationErrors('role');
++        $this->write('PATCH', '/users/'.$admin->id, ['role' => 'user'])->assertUnprocessable();
++        $this->write('DELETE', '/users/'.$admin->id)->assertUnprocessable()->assertJsonValidationErrors('role');
++        $this->assertTrue($admin->fresh()->is_active);
++        $this->assertSame(1, User::where('role', 'admin')->count());
++        $this->write('PATCH', '/users/9223372036854775808', ['username' => 'invalid-id'])->assertNotFound();
++    }
++
++    public function test_csrf_blocks_authenticated_writes_and_logout(): void
++    {
++        $this->login();
++        $this->browse('POST', '/units', ['code' => $this->prefix, 'name' => 'Thiếu CSRF'])->assertStatus(419);
++        $this->browse('POST', '/units', ['_token' => 'wrong-token', 'code' => $this->prefix, 'name' => 'Sai CSRF'])->assertStatus(419);
++        $this->browse('POST', '/logout')->assertStatus(419);
++        $this->browse('GET', '/products')->assertOk();
++        $this->assertFalse(Unit::where('code', $this->prefix)->exists());
++    }
++
++    public function test_html_validation_redirect_and_output_escaping(): void
++    {
++        $this->login();
++        $this->browse('POST', '/units', ['_token' => $this->token(), 'code' => $this->prefix, 'name' => ''], false)->assertRedirect();
++        $unit = Unit::create(['code' => $this->prefix, 'name' => '<script>alert(1)</script>']);
++        $this->browse('GET', '/units/'.$unit->id, [], false)->assertOk()->assertSee('&lt;script&gt;alert(1)&lt;/script&gt;', false)->assertDontSee('<script>alert(1)</script>', false);
++        $this->write('POST', '/units', ['code' => $this->prefix, 'name' => 'Trùng'])->assertUnprocessable()->assertJsonValidationErrors('code');
++    }
++
++    public function test_fk_rejects_reference_added_after_delete_precheck(): void
++    {
++        $category = ProductCategory::create(['code' => $this->prefix, 'name' => 'Danh mục race fixture']);
++        $this->login();
++        $originalDispatcher = ProductCategory::getEventDispatcher();
++        ProductCategory::setEventDispatcher(clone $originalDispatcher);
++        $insertedBetweenCheckAndDelete = false;
++        ProductCategory::deleting(function ($record) use ($category, &$insertedBetweenCheckAndDelete) {
++            if ($record->id === $category->id) {
++                ProductCategory::create(['code' => $this->prefix.'-LATE', 'name' => 'Tham chiếu sau precheck', 'parent_id' => $category->id]);
++                $insertedBetweenCheckAndDelete = true;
++            }
++        });
++        try {
++            $this->write('DELETE', '/categories/'.$category->id)->assertUnprocessable()->assertJsonValidationErrors('delete');
++            $this->assertTrue($insertedBetweenCheckAndDelete);
++            $this->assertNotNull($category->fresh());
++            $this->assertFalse(ProductCategory::where('code', $this->prefix.'-LATE')->exists());
++        } finally {
++            ProductCategory::setEventDispatcher($originalDispatcher);
++        }
++    }
++}

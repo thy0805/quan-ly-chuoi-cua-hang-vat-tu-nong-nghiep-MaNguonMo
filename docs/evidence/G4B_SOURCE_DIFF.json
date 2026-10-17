@@ -1,0 +1,145 @@
+{
+  "base_commit": "61332e5e7236a7b28dd71197b3f3848b14aaff74",
+  "source_count": 23,
+  "source_files": [
+    {
+      "path": "app/Http/Controllers/CatalogController.php",
+      "bytes": 5258,
+      "sha256": "5fe43a78c89bdc2d345c9aa0751d8da73fca24b0a7d01364990209b91535965c",
+      "kind": "new"
+    },
+    {
+      "path": "app/Http/Controllers/SessionController.php",
+      "bytes": 1554,
+      "sha256": "90d00fbb8b164e56f2a672fa80dbddf0374fc8e283e68d6178218e8c4800e7c8",
+      "kind": "new"
+    },
+    {
+      "path": "app/Http/Controllers/UserController.php",
+      "bytes": 3782,
+      "sha256": "c9c4ffcc963bb1fc4daeeaaf39cb1782cb7c1ce1645906223d84310f0419a1ac",
+      "kind": "new"
+    },
+    {
+      "path": "app/Http/Middleware/EnsureActiveUser.php",
+      "bytes": 576,
+      "sha256": "8bcc5b98f225ed7cf4ddd552608b5f070a8b0d12da13e4b710739f271a07f0c6",
+      "kind": "new"
+    },
+    {
+      "path": "app/Http/Middleware/RequireAdmin.php",
+      "bytes": 328,
+      "sha256": "f44ac0caee5f36b7b9da2b72f6a46547e7a0d35f89d35c0f136ae7018c85e16b",
+      "kind": "new"
+    },
+    {
+      "path": "app/Http/Requests/CatalogListRequest.php",
+      "bytes": 682,
+      "sha256": "03f7f4cbfea04c3f06997dc4fe606b326e7049e0391dec7678cf7ee2237b106d",
+      "kind": "new"
+    },
+    {
+      "path": "app/Http/Requests/CatalogWriteRequest.php",
+      "bytes": 1541,
+      "sha256": "8f348bb758c6174468e48c5c77ea16413c1b4ed805a436d9764a1d80fc054039",
+      "kind": "new"
+    },
+    {
+      "path": "app/Http/Requests/LoginRequest.php",
+      "bytes": 359,
+      "sha256": "95fe67d9eb31e2f5c96b7493531c6eb58a39e72ec68a2c005ac258702a539324",
+      "kind": "new"
+    },
+    {
+      "path": "app/Http/Requests/UserWriteRequest.php",
+      "bytes": 1296,
+      "sha256": "3d2dbcac4e6c2839bdeff41eb8d7e6e197f15b9130d056ca0c8ee958c3487bf7",
+      "kind": "new"
+    },
+    {
+      "path": "app/Services/CatalogDeletion.php",
+      "bytes": 1205,
+      "sha256": "cc63b250b681dcdda88f13321997234f14702fb3181c3170afbfee45b480f2a6",
+      "kind": "new"
+    },
+    {
+      "path": "app/Support/CatalogResources.php",
+      "bytes": 1322,
+      "sha256": "12c54582705d12b9941ded3995c157b576e62e119d0b92e3ac794dae1831223a",
+      "kind": "new"
+    },
+    {
+      "path": "bootstrap/app.php",
+      "bytes": 746,
+      "sha256": "c6a27c0944e41cfc4c18c654ea4c07a2727223693a35ab7d3b2f0f937b476671",
+      "kind": "modified"
+    },
+    {
+      "path": "public/index.php",
+      "bytes": 216,
+      "sha256": "95fcf18bfeb2a7803877224ac01ee07c4160b57457d5b6bb8458046c5822324f",
+      "kind": "modified"
+    },
+    {
+      "path": "resources/views/auth/login.blade.php",
+      "bytes": 527,
+      "sha256": "2ca56fa7712387920e1998a9649fd41820ebbb1c07c812fdb8ba8d92b97ccbca",
+      "kind": "new"
+    },
+    {
+      "path": "resources/views/catalog/form.blade.php",
+      "bytes": 1876,
+      "sha256": "46cb6f2e07a69bfdfc258b607b308cd8cbd78c81ae6fb06e9fa13bb4c05deab6",
+      "kind": "new"
+    },
+    {
+      "path": "resources/views/catalog/index.blade.php",
+      "bytes": 2262,
+      "sha256": "14616017ceb2b61e8126e943501baae743c1f876462c1c8f6393ce900194d21d",
+      "kind": "new"
+    },
+    {
+      "path": "resources/views/catalog/show.blade.php",
+      "bytes": 433,
+      "sha256": "2d86545194dbf057b119428110c5dd74865ee43b9e8516a505dd5abbc9d52c7b",
+      "kind": "new"
+    },
+    {
+      "path": "resources/views/layouts/app.blade.php",
+      "bytes": 1791,
+      "sha256": "adcffd598d05c0f1e1462beebd959e3e75fe372014247cba2053ea580e708f0d",
+      "kind": "new"
+    },
+    {
+      "path": "resources/views/users/form.blade.php",
+      "bytes": 1164,
+      "sha256": "9f37b7a55ad887462faf82007d3df86fd415b673ddc4741b3b22abfd82c85ce7",
+      "kind": "new"
+    },
+    {
+      "path": "resources/views/users/index.blade.php",
+      "bytes": 1377,
+      "sha256": "e96e497e715367e2e6a10a89e457d3512f8bb03c3cea34628beaef3a5a7b7554",
+      "kind": "new"
+    },
+    {
+      "path": "resources/views/users/show.blade.php",
+      "bytes": 312,
+      "sha256": "370c4461c7148be52bef36e0890a5b00e9236c650fe3955557609bfb62b5c3ea",
+      "kind": "new"
+    },
+    {
+      "path": "routes/web.php",
+      "bytes": 2739,
+      "sha256": "01bbf9d61a788acbbd053744a4d1a016c21c7acdcae354e71d813f96d9835c66",
+      "kind": "modified"
+    },
+    {
+      "path": "tests/Feature/G4BHttpTest.php",
+      "bytes": 21477,
+      "sha256": "5816e2d51bbdf81d145cda4bea15a9431c1079d9ef5999a047cde8abfe852f50",
+      "kind": "new"
+    }
+  ],
+  "locked_models_schema_dependencies_unchanged": true
+}

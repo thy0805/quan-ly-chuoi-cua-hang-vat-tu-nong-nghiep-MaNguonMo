@@ -1,0 +1,20 @@
+{
+  "repository": "https://github.com/thy0805/quan-ly-chuoi-cua-hang-vat-tu-nong-nghiep-MaNguonMo",
+  "branch": "main",
+  "local_commit": "61332e5e7236a7b28dd71197b3f3848b14aaff74",
+  "remote_commit": "61332e5e7236a7b28dd71197b3f3848b14aaff74",
+  "tree_matches": true,
+  "working_tree_clean": true,
+  "tracked_files": 166,
+  "g4a_checkpoint_files": 77,
+  "tracked_file_categories": {
+    "documentation_governance": 82,
+    "source_config_infrastructure": 80,
+    "tests": 4
+  },
+  "working_tree_clean_scope": "Verified immediately after G4A push and before G4B; current G4B is uncommitted.",
+  "reviewed_staged_files": 77,
+  "accepted_g4a_source_manifest_files": 23,
+  "secret_scan": "PASS: all77staged blobs and explicit whitelist; see local stage-review.json",
+  "force_push": false
+}

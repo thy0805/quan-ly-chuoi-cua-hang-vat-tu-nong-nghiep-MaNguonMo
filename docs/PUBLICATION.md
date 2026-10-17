@@ -1,3 +1,17 @@
+# Publication hiện hành — G4A đã push, G4B chưa push
+
+Repo: https://github.com/thy0805/quan-ly-chuoi-cua-hang-vat-tu-nong-nghiep-MaNguonMo; branch `main`; commit **61332e5e7236a7b28dd71197b3f3848b14aaff74**.
+
+G4A đã được Thy nghiệm thu trước khi commit. Rà23 source theo manifest và accepted ZIP48member; explicit whitelist77 staged file, staged diff/blob và secret/private/large/nested Git scan đạt. Protected HEAD/status/metadata không đổi. Push không force; remote SHA/tree bằng local,166 tracked files,working tree sạch ngay trước G4B.
+
+166 file trên remote được phân loại:80 source/config/infrastructure (gồm marker thư mục),4 file test,82 tài liệu/governance/evidence. Đây là số tệp, không phải số test. Receipt đã lọc: [G4B_G4A_PUBLICATION.json](evidence/G4B_G4A_PUBLICATION.json); receipt raw/local ở .agent/logs/g4a-publication/.
+
+G4B source hiện nằm local và ZIP bàn giao, không nằm commit trên. Chưa stage/commit/push G4B; chờ nghiệm thu. Secret scan giới hạn ở giá trị credential hiện hành đã biết, mẫu key/token và rà whitelist, không chứng minh phát hiện mọi bí mật có thể có.
+
+---
+
+Phần dưới giữ lịch sử publication G2/G3; các câu G4 TODO/chưa runtime chỉ đúng tại checkpoint cũ và không được dùng làm trạng thái hiện hành.
+
 # Publication G2/G3 — đã kiểm nguồn trên GitHub
 
 Repo: https://github.com/thy0805/quan-ly-chuoi-cua-hang-vat-tu-nong-nghiep-MaNguonMo
@@ -17,7 +31,7 @@ Branch: `main`. G1 source checkpoint: `87b605b26cda9b8e3210beef807efb130a273a74`
 
 ## Trạng thái giai đoạn và protected source
 
-G1 ACCEPTED về hồ sơ clone/audit. G2 VERIFIED đặc tả DEC01–06/ERD4 bảng/3FK. G3 VERIFIED tĩnh/biên với lint26,probe38,process12,Composer3. HTTP503/DB-deny chủ động. Chưa boot Laravel/container thật; chưa MySQL/DDL/migration/seed/tài khoản/Auth/CRUD/Blade/Bootstrap hoặc browser QA. Mermaid/PlantUML chưa render. G4 TODO.
+G1 ACCEPTED về hồ sơ clone/audit. G2 VERIFIED đặc tả DEC01–06/ERD4 bảng/3 FK. G3 VERIFIED tĩnh/biên với lint26,probe38,process12,Composer3. HTTP503/DB-deny chủ động. Chưa boot Laravel/container thật; chưa MySQL/DDL/migration/seed/tài khoản/Auth/CRUD/Blade/Bootstrap hoặc browser QA. Mermaid/PlantUML chưa render. G4 TODO.
 
 Snapshot KLCN/NoSQL/parent trước/sau giữ HEAD/status/hash/Git metadata trong phạm vi kiểm: KLCN319 file và11 dirty Mobile cũ; NoSQL1030 file clean; parent2969 tracked/5343 dòng dirty cũ sau loại subtree mới. Không hash ignored originals hoặc probe DB. Xem evidence/PROTECTED_SOURCE.json; raw before/after giữ local.
 

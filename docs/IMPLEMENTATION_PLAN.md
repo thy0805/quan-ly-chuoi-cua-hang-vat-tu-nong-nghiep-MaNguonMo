@@ -1,14 +1,14 @@
-# Kế hoạch hiện hành sau G4A
+# Kế hoạch hiện hành sau triển khai G4B
 
-Nguồn trạng thái: [context](../context.md),[checklist](../.agent/G4A_IMPLEMENTATION_CHECKLIST.md),[G4A_RESULT](G4A_RESULT.md).
+Nguồn trạng thái: [context](../context.md), [G4B checklist](../.agent/G4B_CHECKLIST.md), [G4B_RESULT](G4B_RESULT.md). Quyền: [G4A accepted/G4B authorized](../.agent/decisions/G4A_ACCEPTED_G4B_AUTHORIZED_20261017.md).
 
-| Giai đoạn | Trạng thái | Evidence/bước tiếp |
+| Giai đoạn | Trạng thái | Evidence / bước tiếp |
 |---|---|---|
-| G1/G2/G3/ENV03/ENV04 | LOCKED theo phạm vi | Giữ checkpoint/thiết kế/11 artifact ENV04 |
-| G4A dependency/boot/schema/models/seeder | VERIFIED phạm vi đã chạy | MySQL 8.4.3 thật/4 migration/seed/11 tests131 assertions |
-| G4A rollback/remigrate/finalhandoff | VERIFIED,chờ nghiệm thu | Rollback đúng bốn migration đạt; readback chỉ còn ledger migrations rỗng và0trigger; remigrate/reseed rồi11 tests/131 assertions cuối đạt. |
-| G4B Auth/CRUD HTTP | TODO,chưa mở | Thy nghiệm thu G4A và duyệt;server-side role/active/CSRF/DELETE/race |
-| G5 Blade/Bootstrap/browserQA | TODO,chưa mở | UI/search/pagination/validation/responsive sau Auth/CRUD |
-| G6 báo cáo/demo | TODO | Rubric gốc/renderERD/UseCase,chứng minh chức năng thực tế |
+| G1/G2/G3/ENV03/ENV04 | LOCKED theo phạm vi | Giữ checkpoint/audit/thiết kế và ENV04 |
+| G4A MySQL/Eloquent/migration/seeder | LOCKED, đã push | Thy nghiệm thu; main 61332e5e7236a7b28dd71197b3f3848b14aaff74 |
+| G4B Auth/role/CRUD/search/pagination | VERIFIED kỹ thuật, chờ nghiệm thu | 26 test / 425 assertions toàn suite;24TCP requests;32 routes;fixture/schema/ledger/protected giữ |
+| G4B publication | TODO, chưa được duyệt | Không stage/commit/push trước nghiệm thu |
+| G5 Blade/Bootstrap/browser visual QA | TODO, chưa mở | Chỉ sau Thy duyệt; chưa UI/responsive hoàn chỉnh |
+| G6 báo cáo/demo | TODO | Rubric gốc/renderERD/UseCase, kiểm trình bày và demo |
 
-Chưa commit/push G4A;không dùng testmodel thay testHTTP hoặc thuyết trình ứng dụng hoàn chỉnh. Một ZIP cho mỗi checkpoint;GitHub chỉ push khi đã được duyệt đúng phạm vi.
+Không migrate/seed/DROP/TRUNCATE/reset demo ở G4B. Không mở Shop/POS/checkout/kho/công nợ. Một ZIP nhỏ mỗi checkpoint; GitHub chỉ push đúng giai đoạn được duyệt.

@@ -12,10 +12,10 @@ ACCEPTANCE: G4A push SHA/readback/tree sạch; HTTP focused tests guest/user/adm
 
 | ID | Hạng mục | Nguồn chuẩn | Trạng thái | Evidence | Ghi chú |
 |---|---|---|---|---|---|
-| A01 | G4A acceptance/manifest/base/remote | ZIP/Thy/Git | IN_PROGRESS | Base và origin/main đều21c8842 | Không divergence |
-| A02 | Stage review/secret/protected | Explicit whitelist | TODO | Chưa stage | Không add -A |
-| A03 | Commit/push/readback/clean | Main đúng remote | TODO | Chưa commit | Trước G4B |
-| B01 | HTTP contract/Auth/role/CSRF | G2/Thy/G4A | TODO | Chưa sửa source | Blade tối thiểu |
-| B02 | CRUD/users/search/pagination | G4A models/rules | TODO | Chưa sửa source | Không schema |
-| B03 | MySQL HTTP/regression/fixture QA | B01/B02 | TODO | Chưa chạy | Không reset demo |
-| B04 | Security/protected/readback/diff/ZIP | Baseline/test evidence | TODO | Chưa làm | Chưa push G4B |
+| A01 | G4A acceptance/manifest/base/remote | ZIP/Thy/Git | VERIFIED | Accepted ZIP48hash,source23;remote base21c8842 | Không divergence |
+| A02 | Stage review/secret/protected | Explicit whitelist | VERIFIED | publication/stage-review.json;77file explicit whitelist | Không add -A |
+| A03 | Commit/push/readback/clean | Main đúng remote | VERIFIED | publication/remote-readback.json;61332e5e7236a7b28dd71197b3f3848b14aaff74 | Trước G4B |
+| B01 | HTTP contract/Auth/role/CSRF | G2/Thy/G4A | VERIFIED |26test425assertions và24TCP HTTP | Blade tối thiểu |
+| B02 | CRUD/users/search/pagination | G4A models/rules | VERIFIED |26test425assertions và24TCP HTTP | Không schema |
+| B03 | MySQL HTTP/regression/fixture QA | B01/B02 | VERIFIED | HTTP_QA/ROUTES/FIXTURE_INTEGRITY/MYSQL_READBACK;26test425assertions | Không reset demo |
+| B04 | Security/protected/readback/diff/ZIP | Baseline/test evidence | VERIFIED | G4B_RESULT/G4B_*;52PHP/32routes/24links;ZIP preview52payload53entry CRC/hash;package-final.json | Chưa push G4B |
