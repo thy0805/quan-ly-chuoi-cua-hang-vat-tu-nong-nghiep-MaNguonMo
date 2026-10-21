@@ -1,0 +1,91 @@
+{
+  "status": "ACCEPTED_LOCKED_D01_D02",
+  "accepted_by": "Thy",
+  "date": "2026-10-21",
+  "baseline_commit": "ab2e564b6e433c0ceb7ee5ced86d1776e265b2f1",
+  "application_changes": {
+    "file": "lang/vi/validation.php",
+    "added_lines": 4,
+    "business_rules_changed": false
+  },
+  "regression_test": "tests/Feature/ValidationLocalizationTest.php",
+  "source_file_sha256": {
+    "lang/vi/validation.php": "078db42e45c4f3e4e5043134b49b1eff3da77d8ede6bbfb381119c984c202a58",
+    "tests/Feature/ValidationLocalizationTest.php": "cf541453aa9996898956bc79d9c9a9785f581280abb69ddfc4425c654af33bfb"
+  },
+  "tests": {
+    "before_patch": {
+      "cases": 13,
+      "expected_failures": 13,
+      "assertions": 65
+    },
+    "after_patch": {
+      "new_cases": 19,
+      "existing_regressions": 4,
+      "passed": 23,
+      "total": 23,
+      "assertions": 188
+    },
+    "database": "isolated MySQL test",
+    "rerun_during_publication": false
+  },
+  "visual": {
+    "cases": [
+      "V02",
+      "V07",
+      "V10"
+    ],
+    "viewports": [
+      [
+        1366,
+        768
+      ],
+      [
+        768,
+        1024
+      ],
+      [
+        320,
+        700
+      ]
+    ],
+    "required_images_verified": 9
+  },
+  "protection_before_publication": {
+    "frozen_source_files_verified": 177,
+    "old_evidence_files_verified": 157,
+    "business_tables_data_schema_equal": 5,
+    "test_tables_data_schema_equal": 12,
+    "auto_increment_counter_excluded": true
+  },
+  "accepted_evidence_zip": {
+    "name": "MNM_NHOM6_C2_C3_QA_FOLLOWUP_DRAFT_20261021.zip",
+    "sha256": "ad1ffbb929624c10d4ae502f18d4cc8b5622ed155b6e7fd278c7fe60da0c2b0d",
+    "payloads_verified": 49,
+    "crc": "PASS"
+  },
+  "print_at_acceptance": {
+    "P01": "PARTIAL",
+    "P02": "PARTIAL",
+    "P03": "BLOCKED",
+    "P04": "BLOCKED",
+    "P05": "PARTIAL",
+    "independent_followup": "A4 portrait, headers/footers off if available, genuine PDFs, multipage QA"
+  },
+  "publication_whitelist": [
+    "lang/vi/validation.php",
+    "tests/Feature/ValidationLocalizationTest.php",
+    "docs/D01_D02_LOCK_RESULT.md",
+    "docs/evidence/D01_D02_VERIFICATION_20261021.json",
+    ".agent/decisions/D01_D02_LOCKED_20261021.md"
+  ],
+  "excluded": [
+    "G7",
+    "audit",
+    "private credentials",
+    "raw logs",
+    "screenshots",
+    "PDFs",
+    "unrelated working tree changes"
+  ]
+}
