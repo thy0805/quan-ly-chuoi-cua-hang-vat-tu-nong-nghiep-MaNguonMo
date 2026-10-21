@@ -1,0 +1,608 @@
+{
+  "phase": "C2-R DRAFT",
+  "date": "2026-10-21",
+  "baseline_c1": "08ffd61a43a315b685deb0b74f1a1d85c1dbf020",
+  "baseline_c2_zip_sha256": "036cdd7288bfb5a4cd6040e2de09d3aeb07a8d0df0a3091f6297c5ea0b538391",
+  "scope_source_files": [
+    "app/Support/SaleMoney.php",
+    "app/Services/SaleService.php",
+    "tests/Feature/SaleTest.php"
+  ],
+  "before_boundaries": {
+    "tool": "phpunit",
+    "result": "passed",
+    "tests": 3,
+    "passed": 3,
+    "assertions": 42,
+    "duration_ms": 14818
+  },
+  "after_boundaries": {
+    "tool": "phpunit",
+    "result": "passed",
+    "tests": 4,
+    "passed": 4,
+    "assertions": 52,
+    "duration_ms": 766
+  },
+  "regression": {
+    "tool": "phpunit",
+    "result": "passed",
+    "tests": 61,
+    "passed": 61,
+    "assertions": 1095,
+    "duration_ms": 21164
+  },
+  "arithmetic_proof": {
+    "status": "PASS",
+    "php_int_size": 8,
+    "php_int_max": "9223372036854775807",
+    "money_max_cent": "999999999999999999",
+    "max_one_step_old_loop": "1999999999999999998",
+    "one_step_type": "integer",
+    "unchecked_ten_lines_type": "double",
+    "unchecked_float_to_decimal": "TypeError",
+    "scope": "Unchecked demonstration only; old application loop validated after each add and rejects at second line"
+  },
+  "concurrency_c2": {
+    "status": "PASS",
+    "run": "ac4cd690",
+    "cases": [
+      {
+        "case": "same_invoice_two_confirmations",
+        "workers": 2,
+        "outcomes": [
+          {
+            "status": "ok",
+            "id": "40",
+            "state": "confirmed"
+          },
+          {
+            "status": "ok",
+            "id": "40",
+            "state": "confirmed"
+          }
+        ],
+        "final_stock": "8.000"
+      },
+      {
+        "case": "two_invoices_insufficient_stock",
+        "workers": 2,
+        "outcomes": [
+          {
+            "status": "ok",
+            "id": "41",
+            "state": "confirmed"
+          },
+          {
+            "status": "validation",
+            "fields": [
+              "quantity"
+            ]
+          }
+        ],
+        "final_stock": "1.000"
+      },
+      {
+        "case": "many_lines_reverse_input_order",
+        "workers": 2,
+        "outcomes": [
+          {
+            "status": "ok",
+            "id": "43",
+            "state": "confirmed"
+          },
+          {
+            "status": "ok",
+            "id": "44",
+            "state": "confirmed"
+          }
+        ],
+        "final_stocks": [
+          "8.000",
+          "8.000"
+        ]
+      },
+      {
+        "case": "same_client_key_concurrent_draft",
+        "workers": 2,
+        "outcomes": [
+          {
+            "status": "ok",
+            "id": "45",
+            "state": "draft"
+          },
+          {
+            "status": "ok",
+            "id": "45",
+            "state": "draft"
+          }
+        ],
+        "final_stock": "10.000"
+      }
+    ],
+    "workers": 8,
+    "barrier": "Parent locks products until both workers are ready and blocked",
+    "database": "mnm_inventory_test_20261021"
+  },
+  "http": {
+    "status": "PASS",
+    "transport": "Real TCP HTTP 127.0.0.1:8092; isolated test runtime",
+    "requests": 15,
+    "checks": [
+      {
+        "method": "GET",
+        "path": "/login",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/login",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/sales/14",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/sales/create",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/sales",
+        "status": 422
+      },
+      {
+        "method": "POST",
+        "path": "/sales",
+        "status": 422
+      },
+      {
+        "method": "PATCH",
+        "path": "/sales/14",
+        "status": 422
+      },
+      {
+        "method": "GET",
+        "path": "/sales/14",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/sales/32",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/sales/32/print",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/assets/sales.js",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/assets/sales-print.css",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/inventory?q=C2-HTTP-A",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/inventory?q=C2-HTTP-B",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/logout",
+        "status": 204
+      }
+    ],
+    "boundary_create_replay_edit": "HTTP422 with errors.total; no HTTP500",
+    "draft_unchanged": true,
+    "invoice32_total": "55000.00",
+    "invoice32_status": "confirmed",
+    "c2_demo_stock_unchanged": [
+      "8.000",
+      "6.500"
+    ],
+    "print_scope": "HTML only; no browser print preview/PDF verified",
+    "transport_label_readback": "Corrected inherited descriptive label using executed harness base and server receipt; request results unchanged"
+  },
+  "http_before": {
+    "sales": {
+      "rows": 15,
+      "sha256": "7b0c88ddbf110968affeb03b8987555bdd3fe9a26e32298cbfa1631316776960"
+    },
+    "sale_lines": {
+      "rows": 21,
+      "sha256": "d84d6efabf23f9414ff3fb9345175b4344c335783c9fa3d6fbb08211edc44dc4"
+    },
+    "product_stocks": {
+      "rows": 27,
+      "sha256": "c4e0e8d4bd66ae401cbf50b8c300c866307139f86581b3558ec2c6d6da0ecc87"
+    },
+    "inventory_movements": {
+      "rows": 50,
+      "sha256": "682587335091d44b6f2a80234f709b786d6d92bd56afdffa17521b6fab472211"
+    }
+  },
+  "http_after": {
+    "sales": {
+      "rows": 15,
+      "sha256": "7b0c88ddbf110968affeb03b8987555bdd3fe9a26e32298cbfa1631316776960"
+    },
+    "sale_lines": {
+      "rows": 21,
+      "sha256": "d84d6efabf23f9414ff3fb9345175b4344c335783c9fa3d6fbb08211edc44dc4"
+    },
+    "product_stocks": {
+      "rows": 27,
+      "sha256": "c4e0e8d4bd66ae401cbf50b8c300c866307139f86581b3558ec2c6d6da0ecc87"
+    },
+    "inventory_movements": {
+      "rows": 50,
+      "sha256": "682587335091d44b6f2a80234f709b786d6d92bd56afdffa17521b6fab472211"
+    }
+  },
+  "http_failed_attempt": {
+    "status": "FAILED",
+    "stage": "GET draft JSON parse",
+    "reason": "PHP Notice from unmodified vendor framework server.php line21: file_put_contents php://stdout errno13 Permission denied; Notice prepended to JSON",
+    "scope": "Old development server stdout; no business HTTP500 reproduced",
+    "remediation": "Use separate isolated test server8092 with directly inherited writable stdout/stderr files; no vendor/config/guard change"
+  },
+  "mysql_readback": {
+    "status": "PASS",
+    "identity": {
+      "db": "mnm_inventory_test_20261021",
+      "account": "mnm_c1_test_migrate@localhost",
+      "version": "8.4.3",
+      "datadir": "C:\\laragon\\data\\mysql-8.4\\"
+    },
+    "schema": {
+      "tables": [
+        {
+          "name": "inventory_movements"
+        },
+        {
+          "name": "migrations"
+        },
+        {
+          "name": "product_categories"
+        },
+        {
+          "name": "product_stocks"
+        },
+        {
+          "name": "products"
+        },
+        {
+          "name": "sale_lines"
+        },
+        {
+          "name": "sales"
+        },
+        {
+          "name": "units"
+        },
+        {
+          "name": "users"
+        }
+      ],
+      "business_columns": 62,
+      "checks": [
+        {
+          "name": "categories_active_check",
+          "tab": "product_categories"
+        },
+        {
+          "name": "movement_balance_check",
+          "tab": "inventory_movements"
+        },
+        {
+          "name": "movement_quantity_check",
+          "tab": "inventory_movements"
+        },
+        {
+          "name": "movement_source_check",
+          "tab": "inventory_movements"
+        },
+        {
+          "name": "products_active_check",
+          "tab": "products"
+        },
+        {
+          "name": "products_expiry_check",
+          "tab": "products"
+        },
+        {
+          "name": "products_price_check",
+          "tab": "products"
+        },
+        {
+          "name": "products_tax_check",
+          "tab": "products"
+        },
+        {
+          "name": "sale_line_total_check",
+          "tab": "sale_lines"
+        },
+        {
+          "name": "sale_line_values_check",
+          "tab": "sale_lines"
+        },
+        {
+          "name": "sales_state_check",
+          "tab": "sales"
+        },
+        {
+          "name": "sales_total_check",
+          "tab": "sales"
+        },
+        {
+          "name": "sales_version_check",
+          "tab": "sales"
+        },
+        {
+          "name": "stocks_quantity_check",
+          "tab": "product_stocks"
+        },
+        {
+          "name": "units_active_check",
+          "tab": "units"
+        },
+        {
+          "name": "users_active_check",
+          "tab": "users"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "name": "inventory_movements_product_id_foreign",
+          "tab": "inventory_movements"
+        },
+        {
+          "name": "inventory_movements_user_id_foreign",
+          "tab": "inventory_movements"
+        },
+        {
+          "name": "product_categories_parent_id_foreign",
+          "tab": "product_categories"
+        },
+        {
+          "name": "product_stocks_product_id_foreign",
+          "tab": "product_stocks"
+        },
+        {
+          "name": "products_category_id_foreign",
+          "tab": "products"
+        },
+        {
+          "name": "products_unit_id_foreign",
+          "tab": "products"
+        },
+        {
+          "name": "sale_lines_product_id_foreign",
+          "tab": "sale_lines"
+        },
+        {
+          "name": "sale_lines_sale_id_foreign",
+          "tab": "sale_lines"
+        },
+        {
+          "name": "sales_user_id_foreign",
+          "tab": "sales"
+        }
+      ],
+      "triggers": [
+        {
+          "name": "categories_no_self_insert",
+          "event": "INSERT",
+          "tab": "product_categories"
+        },
+        {
+          "name": "categories_no_self_update",
+          "event": "UPDATE",
+          "tab": "product_categories"
+        },
+        {
+          "name": "inventory_no_delete",
+          "event": "DELETE",
+          "tab": "inventory_movements"
+        },
+        {
+          "name": "inventory_no_update",
+          "event": "UPDATE",
+          "tab": "inventory_movements"
+        },
+        {
+          "name": "sales_no_delete",
+          "event": "DELETE",
+          "tab": "sales"
+        },
+        {
+          "name": "sales_no_update",
+          "event": "UPDATE",
+          "tab": "sales"
+        },
+        {
+          "name": "sale_lines_no_delete",
+          "event": "DELETE",
+          "tab": "sale_lines"
+        },
+        {
+          "name": "sale_lines_no_insert",
+          "event": "INSERT",
+          "tab": "sale_lines"
+        },
+        {
+          "name": "sale_lines_no_update",
+          "event": "UPDATE",
+          "tab": "sale_lines"
+        }
+      ],
+      "migrations": 7
+    },
+    "ledger": {
+      "movements": 50,
+      "products_with_stock": 27,
+      "chain_and_stock_match": true
+    },
+    "sales": {
+      "headers": 15,
+      "lines": 21,
+      "sale_movements": 16,
+      "header_totals_match": true,
+      "source_per_line_exactly_once": true
+    },
+    "http_invoice": "BH-00000032",
+    "http_total": "55000.00",
+    "http_stock": [
+      {
+        "product_id": "156",
+        "code": "C2-HTTP-A",
+        "initial": "10",
+        "sold": "2",
+        "final": "8.000",
+        "sale_movement_id": "165",
+        "source_id": "44"
+      },
+      {
+        "product_id": "157",
+        "code": "C2-HTTP-B",
+        "initial": "8",
+        "sold": "1.5",
+        "final": "6.500",
+        "sale_movement_id": "166",
+        "source_id": "45"
+      }
+    ],
+    "c1_fixture": {
+      "id": 21,
+      "stock": "15.000",
+      "movements": 2
+    },
+    "mode": "READ ONLY"
+  },
+  "protected": {
+    "status": "PASS",
+    "baseline_files": 165,
+    "only_source_changes": [
+      "app/Support/SaleMoney.php",
+      "app/Services/SaleService.php",
+      "tests/Feature/SaleTest.php"
+    ],
+    "unchanged_protected_files": 162,
+    "source_php_lint": "3/3 PASS",
+    "repos": {
+      "D:/Hoctap/KhoaLuanCuNhan/SourceCode": {
+        "before": {
+          "head": "fc514c8a040d7d2804791ceea5a255427f5bf086",
+          "status": " M mobile-noi-bo/lib/sales/confirm_workspace.dart\n M mobile-noi-bo/lib/sales/sales_workspace.dart\n M mobile-noi-bo/pubspec.lock\n M mobile-noi-bo/pubspec.yaml\n?? mobile-noi-bo/assets/\n?? mobile-noi-bo/lib/sales/invoice_pdf.dart\n?? mobile-noi-bo/lib/sales/invoice_print_button.dart\n?? mobile-noi-bo/test/invoice_pdf_test.dart\n?? mobile-noi-bo/test/invoice_print_widget_test.dart\n"
+        },
+        "after": {
+          "head": "fc514c8a040d7d2804791ceea5a255427f5bf086",
+          "status": " M mobile-noi-bo/lib/sales/confirm_workspace.dart\n M mobile-noi-bo/lib/sales/sales_workspace.dart\n M mobile-noi-bo/pubspec.lock\n M mobile-noi-bo/pubspec.yaml\n?? mobile-noi-bo/assets/\n?? mobile-noi-bo/lib/sales/invoice_pdf.dart\n?? mobile-noi-bo/lib/sales/invoice_print_button.dart\n?? mobile-noi-bo/test/invoice_pdf_test.dart\n?? mobile-noi-bo/test/invoice_print_widget_test.dart\n"
+        },
+        "unchanged": true
+      },
+      "D:/Hoctap/KhoaLuanCuNhan/Nosql/SourceCode-Mongo": {
+        "before": {
+          "head": "341a83a3bd6f579fad840e54d6c10f69b99362ec",
+          "status": ""
+        },
+        "after": {
+          "head": "341a83a3bd6f579fad840e54d6c10f69b99362ec",
+          "status": ""
+        },
+        "unchanged": true
+      }
+    },
+    "c1_head_unchanged": true,
+    "index_empty": true,
+    "limits": "Other repositories checked by HEAD/status, not complete source byte hashes",
+    "http_failed_attempts_did_not_write": true
+  },
+  "business_before": {
+    "tables": {
+      "migrations": {
+        "rows": 4,
+        "content_sha256": "04f38c982ac5de38d0d6884d98901b10c05ce04238520258f163fb89aff91635",
+        "ddl_sha256": "ccd0d4d3c4c746d7919aa0aaff32fca50b703db6d9eac4f744425b6db5dcb409"
+      },
+      "product_categories": {
+        "rows": 5,
+        "content_sha256": "6753cc101ced6cea3c446d8b40d145a25dc3ce8e6d59cabdd2e66a714c0168dd",
+        "ddl_sha256": "c17cbd5104bc23d484334d1b54fed8dbbf72331040175a598e8aa5c28852894f"
+      },
+      "products": {
+        "rows": 4,
+        "content_sha256": "d190e385a7f570849ab22da7dc0d2cdb4cebd63987414d06b4e6b0559be76fa6",
+        "ddl_sha256": "77eb6698ce31aaecb83b1b3b30d1ba3375265274d78ec7674b0f0edd358c21f6"
+      },
+      "units": {
+        "rows": 3,
+        "content_sha256": "e960250de19e568f603617ea3aa81f78d928ac4483492d76381e7e0b3bf6fddd",
+        "ddl_sha256": "415615b4fcb3d23eb07efc7db4e107716054d93d0c33a04de001b382c2bc1212"
+      },
+      "users": {
+        "rows": 3,
+        "content_sha256": "b9e63f5f397d3ec4a7c6ca90f664fe1f8c7ac0095540b2dfde4bf1e0cbc76cce",
+        "ddl_sha256": "7903e339936cd728ef8f2e3217c19520d1e1bd0b5f2dfe1d74ef14ac67fb2732"
+      }
+    },
+    "triggers_sha256": "1f0885aa6eb99b70894f75e153d38879a68dc08441d9bac18b4bea8d294ea409"
+  },
+  "business_after": {
+    "tables": {
+      "migrations": {
+        "rows": 4,
+        "content_sha256": "04f38c982ac5de38d0d6884d98901b10c05ce04238520258f163fb89aff91635",
+        "ddl_sha256": "ccd0d4d3c4c746d7919aa0aaff32fca50b703db6d9eac4f744425b6db5dcb409"
+      },
+      "product_categories": {
+        "rows": 5,
+        "content_sha256": "6753cc101ced6cea3c446d8b40d145a25dc3ce8e6d59cabdd2e66a714c0168dd",
+        "ddl_sha256": "c17cbd5104bc23d484334d1b54fed8dbbf72331040175a598e8aa5c28852894f"
+      },
+      "products": {
+        "rows": 4,
+        "content_sha256": "d190e385a7f570849ab22da7dc0d2cdb4cebd63987414d06b4e6b0559be76fa6",
+        "ddl_sha256": "77eb6698ce31aaecb83b1b3b30d1ba3375265274d78ec7674b0f0edd358c21f6"
+      },
+      "units": {
+        "rows": 3,
+        "content_sha256": "e960250de19e568f603617ea3aa81f78d928ac4483492d76381e7e0b3bf6fddd",
+        "ddl_sha256": "415615b4fcb3d23eb07efc7db4e107716054d93d0c33a04de001b382c2bc1212"
+      },
+      "users": {
+        "rows": 3,
+        "content_sha256": "b9e63f5f397d3ec4a7c6ca90f664fe1f8c7ac0095540b2dfde4bf1e0cbc76cce",
+        "ddl_sha256": "7903e339936cd728ef8f2e3217c19520d1e1bd0b5f2dfe1d74ef14ac67fb2732"
+      }
+    },
+    "triggers_sha256": "1f0885aa6eb99b70894f75e153d38879a68dc08441d9bac18b4bea8d294ea409"
+  },
+  "browser": {
+    "status": "PENDING",
+    "viewports": [
+      1366,
+      768,
+      320
+    ],
+    "screenshots": 0,
+    "print_preview_pdf": "PENDING",
+    "reason": "No callable browser/computer control or screenshot tools; open_in_codex can only open a tab. No settings bypass."
+  },
+  "c2_commit_push": "NOT PERFORMED",
+  "functional_status": "VERIFIED; acceptance/visual pending",
+  "interpretation": "Before code change all three integration boundary tests already passed; no application HTTP500/TypeError reproduced. Checked-add is an explicit pre-add safeguard. Generic unchecked arithmetic proof is not an app-route reproduction."
+}

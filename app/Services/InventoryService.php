@@ -18,6 +18,21 @@ final class InventoryService
 {
     public function move(User $actor, array $input): InventoryMovement
     {
+        return $this->record($actor, $input, false);
+    }
+
+    public function sell(User $actor, \App\Models\SaleLine $line): InventoryMovement
+    {
+        if (DB::transactionLevel() < 1) throw new \LogicException('Sale inventory requires an enclosing transaction.');
+        $sale = \App\Models\Sale::lockForUpdate()->findOrFail($line->sale_id);
+        abort_unless($sale->user_id === $actor->id && $sale->status === 'draft', 403);
+        $fresh = $sale->lines()->whereKey($line->id)->lockForUpdate()->firstOrFail();
+
+        return $this->record($actor, ['product_id' => $fresh->product_id, 'direction' => 'out', 'quantity' => $fresh->quantity, 'note' => 'Bán hàng '.$sale->number, 'source_type' => 'sale', 'source_id' => $fresh->id, 'idempotency_key' => (string) \Illuminate\Support\Str::uuid()], true);
+    }
+
+    private function record(User $actor, array $input, bool $sale): InventoryMovement
+    {
         $data = Validator::make($input, [
             'product_id' => ['required', 'string', DecimalId::rule()],
             'direction' => ['required', Rule::in(['in', 'out'])],
@@ -37,9 +52,9 @@ final class InventoryService
             throw ValidationException::withMessages(['source_id' => 'Tham chiếu nguồn không hợp lệ.']);
         }
         try {
-            return DB::transaction(function () use ($actor, $data) {
+            return DB::transaction(function () use ($actor, $data, $sale) {
                 $currentActor = User::query()->sharedLock()->find($actor->id);
-                abort_unless($currentActor?->is_active && $currentActor->role === 'admin', 403, 'Chỉ Admin đang hoạt động được nhập/xuất kho.');
+                abort_unless($currentActor?->is_active && ($currentActor->role === 'admin' || ($sale && $currentActor->role === 'user')), 403, 'Chỉ Admin đang hoạt động được nhập/xuất kho.');
                 $product = Product::query()->lockForUpdate()->find($data['product_id']);
                 if (! $product) throw ValidationException::withMessages(['product_id' => 'Vật tư không tồn tại.']);
                 $existing = InventoryMovement::where('idempotency_key', $data['idempotency_key'])->first();

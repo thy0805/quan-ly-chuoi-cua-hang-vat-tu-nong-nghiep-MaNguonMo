@@ -1,0 +1,13 @@
+{
+  "status": "VERIFIED",
+  "branch": "main",
+  "commit": "08ffd61a43a315b685deb0b74f1a1d85c1dbf020",
+  "remote_sha": "08ffd61a43a315b685deb0b74f1a1d85c1dbf020",
+  "tree": "7809520d80f2195f74ea9a8ad98b9345098da281",
+  "remote_tree": "7809520d80f2195f74ea9a8ad98b9345098da281",
+  "published_files": 320,
+  "c1_changed_files": 54,
+  "whitelist_review": "c1-stage-review.json",
+  "g7_excluded": true,
+  "no_force": true
+}

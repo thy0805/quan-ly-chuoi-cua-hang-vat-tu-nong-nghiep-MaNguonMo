@@ -24,6 +24,11 @@ class Product extends CatalogModel
         return $this->hasMany(InventoryMovement::class);
     }
 
+    public function saleLines(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(SaleLine::class);
+    }
+
     protected function casts(): array
     {
         return [...parent::casts(), 'category_id' => 'string', 'unit_id' => 'string', 'sale_price' => 'decimal:2', 'tax_rate' => 'decimal:2', 'expiry_warning_days' => 'integer'];

@@ -1,0 +1,828 @@
+{
+  "date": "2026-10-21",
+  "phase": "C2 DRAFT",
+  "baseline_c1": "08ffd61a43a315b685deb0b74f1a1d85c1dbf020",
+  "application_service_http_mysql": "VERIFIED",
+  "browser_desktop_tablet_mobile": "PENDING",
+  "interactive_print": "PENDING",
+  "c2_acceptance_commit_push": "PENDING / NOT PERFORMED",
+  "regression": {
+    "status": "PASS",
+    "command": "tools/Test-Sales.ps1",
+    "tool": "phpunit",
+    "result": "passed",
+    "tests": 57,
+    "passed": 57,
+    "assertions": 1041,
+    "duration_ms": 16898,
+    "capture": "Exact JSON returned by completed tool session 91648 during this task; not a rerun"
+  },
+  "c2_concurrency": {
+    "status": "PASS",
+    "run": "3d858a1b",
+    "cases": [
+      {
+        "case": "same_invoice_two_confirmations",
+        "workers": 2,
+        "outcomes": [
+          {
+            "status": "ok",
+            "id": "13",
+            "state": "confirmed"
+          },
+          {
+            "status": "ok",
+            "id": "13",
+            "state": "confirmed"
+          }
+        ],
+        "final_stock": "8.000"
+      },
+      {
+        "case": "two_invoices_insufficient_stock",
+        "workers": 2,
+        "outcomes": [
+          {
+            "status": "validation",
+            "fields": [
+              "quantity"
+            ]
+          },
+          {
+            "status": "ok",
+            "id": "15",
+            "state": "confirmed"
+          }
+        ],
+        "final_stock": "1.000"
+      },
+      {
+        "case": "many_lines_reverse_input_order",
+        "workers": 2,
+        "outcomes": [
+          {
+            "status": "ok",
+            "id": "16",
+            "state": "confirmed"
+          },
+          {
+            "status": "ok",
+            "id": "17",
+            "state": "confirmed"
+          }
+        ],
+        "final_stocks": [
+          "8.000",
+          "8.000"
+        ]
+      },
+      {
+        "case": "same_client_key_concurrent_draft",
+        "workers": 2,
+        "outcomes": [
+          {
+            "status": "ok",
+            "id": "18",
+            "state": "draft"
+          },
+          {
+            "status": "ok",
+            "id": "18",
+            "state": "draft"
+          }
+        ],
+        "final_stock": "10.000"
+      }
+    ],
+    "workers": 8,
+    "barrier": "Parent locks products until both workers are ready and blocked",
+    "database": "mnm_inventory_test_20261021"
+  },
+  "c1_concurrency_regression": {
+    "status": "PASS",
+    "database": "mnm_inventory_test_20261021",
+    "real_php_process_workers": 8,
+    "cases": [
+      {
+        "case": "concurrent_first_stock",
+        "status": "PASS",
+        "quantity": "6.000",
+        "movements": 2,
+        "lock_barrier": true
+      },
+      {
+        "case": "concurrent_overdraw",
+        "status": "PASS",
+        "quantity": "5.000",
+        "one_rejected": true,
+        "lock_barrier": true
+      },
+      {
+        "case": "concurrent_identical_replay",
+        "status": "PASS",
+        "quantity": "7.001",
+        "movements": 1,
+        "lock_barrier": true
+      },
+      {
+        "case": "concurrent_conflicting_payload",
+        "status": "PASS",
+        "one_rolled_back": true,
+        "lock_barrier": true
+      }
+    ],
+    "fixture_product_ids": [
+      "160",
+      "161",
+      "162",
+      "163",
+      "164"
+    ],
+    "all_stock_history_chains_match": true
+  },
+  "http_demo": {
+    "status": "PASS",
+    "transport": "Real TCP HTTP 127.0.0.1:8091; Laravel session/CSRF; isolated test runtime",
+    "sale_id": "32",
+    "number": "BH-00000032",
+    "total": "55000.00",
+    "line_count": 2,
+    "readback": [
+      {
+        "product_id": "156",
+        "code": "C2-HTTP-A",
+        "initial": "10",
+        "sold": "2",
+        "final": "8.000",
+        "sale_movement_id": "165",
+        "source_id": "44"
+      },
+      {
+        "product_id": "157",
+        "code": "C2-HTTP-B",
+        "initial": "8",
+        "sold": "1.5",
+        "final": "6.500",
+        "sale_movement_id": "166",
+        "source_id": "45"
+      }
+    ],
+    "requests": 34,
+    "checks": [
+      {
+        "method": "GET",
+        "path": "/login",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/login",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/sales",
+        "status": 419
+      },
+      {
+        "method": "GET",
+        "path": "/sales/create",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/sales",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/sales",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/inventory?q=C2-HTTP-A",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/inventory?q=C2-HTTP-B",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/sales/32/edit",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/sales/32/print",
+        "status": 409
+      },
+      {
+        "method": "GET",
+        "path": "/sales/create",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/sales/32/confirm",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/sales/32/confirm",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/sales/32/print",
+        "status": 200
+      },
+      {
+        "method": "PATCH",
+        "path": "/sales/32",
+        "status": 422
+      },
+      {
+        "method": "GET",
+        "path": "/inventory/in",
+        "status": 403
+      },
+      {
+        "method": "GET",
+        "path": "/sales/31",
+        "status": 404
+      },
+      {
+        "method": "GET",
+        "path": "/sales/31/edit",
+        "status": 404
+      },
+      {
+        "method": "GET",
+        "path": "/sales/31/print",
+        "status": 404
+      },
+      {
+        "method": "POST",
+        "path": "/sales/31/confirm",
+        "status": 404
+      },
+      {
+        "method": "GET",
+        "path": "/assets/sales.js",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/assets/sales-print.css",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/inventory?q=C2-HTTP-A",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/inventory/history?product_id=156",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/inventory?q=C2-HTTP-B",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/inventory/history?product_id=157",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/login",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/login",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/sales/32",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/sales/create",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/sales/32/confirm",
+        "status": 403
+      },
+      {
+        "method": "POST",
+        "path": "/logout",
+        "status": 204
+      },
+      {
+        "method": "GET",
+        "path": "/sales/create",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/logout",
+        "status": 204
+      }
+    ],
+    "browser_visual": "PENDING - no callable browser tool in current session",
+    "no_real_business_db_write": true
+  },
+  "mysql_readback": {
+    "status": "PASS",
+    "identity": {
+      "db": "mnm_inventory_test_20261021",
+      "account": "mnm_c1_test_migrate@localhost",
+      "version": "8.4.3",
+      "datadir": "C:\\laragon\\data\\mysql-8.4\\"
+    },
+    "schema": {
+      "tables": [
+        {
+          "name": "inventory_movements"
+        },
+        {
+          "name": "migrations"
+        },
+        {
+          "name": "product_categories"
+        },
+        {
+          "name": "product_stocks"
+        },
+        {
+          "name": "products"
+        },
+        {
+          "name": "sale_lines"
+        },
+        {
+          "name": "sales"
+        },
+        {
+          "name": "units"
+        },
+        {
+          "name": "users"
+        }
+      ],
+      "business_columns": 62,
+      "checks": [
+        {
+          "name": "categories_active_check",
+          "tab": "product_categories"
+        },
+        {
+          "name": "movement_balance_check",
+          "tab": "inventory_movements"
+        },
+        {
+          "name": "movement_quantity_check",
+          "tab": "inventory_movements"
+        },
+        {
+          "name": "movement_source_check",
+          "tab": "inventory_movements"
+        },
+        {
+          "name": "products_active_check",
+          "tab": "products"
+        },
+        {
+          "name": "products_expiry_check",
+          "tab": "products"
+        },
+        {
+          "name": "products_price_check",
+          "tab": "products"
+        },
+        {
+          "name": "products_tax_check",
+          "tab": "products"
+        },
+        {
+          "name": "sale_line_total_check",
+          "tab": "sale_lines"
+        },
+        {
+          "name": "sale_line_values_check",
+          "tab": "sale_lines"
+        },
+        {
+          "name": "sales_state_check",
+          "tab": "sales"
+        },
+        {
+          "name": "sales_total_check",
+          "tab": "sales"
+        },
+        {
+          "name": "sales_version_check",
+          "tab": "sales"
+        },
+        {
+          "name": "stocks_quantity_check",
+          "tab": "product_stocks"
+        },
+        {
+          "name": "units_active_check",
+          "tab": "units"
+        },
+        {
+          "name": "users_active_check",
+          "tab": "users"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "name": "inventory_movements_product_id_foreign",
+          "tab": "inventory_movements"
+        },
+        {
+          "name": "inventory_movements_user_id_foreign",
+          "tab": "inventory_movements"
+        },
+        {
+          "name": "product_categories_parent_id_foreign",
+          "tab": "product_categories"
+        },
+        {
+          "name": "product_stocks_product_id_foreign",
+          "tab": "product_stocks"
+        },
+        {
+          "name": "products_category_id_foreign",
+          "tab": "products"
+        },
+        {
+          "name": "products_unit_id_foreign",
+          "tab": "products"
+        },
+        {
+          "name": "sale_lines_product_id_foreign",
+          "tab": "sale_lines"
+        },
+        {
+          "name": "sale_lines_sale_id_foreign",
+          "tab": "sale_lines"
+        },
+        {
+          "name": "sales_user_id_foreign",
+          "tab": "sales"
+        }
+      ],
+      "triggers": [
+        {
+          "name": "categories_no_self_insert",
+          "event": "INSERT",
+          "tab": "product_categories"
+        },
+        {
+          "name": "categories_no_self_update",
+          "event": "UPDATE",
+          "tab": "product_categories"
+        },
+        {
+          "name": "inventory_no_delete",
+          "event": "DELETE",
+          "tab": "inventory_movements"
+        },
+        {
+          "name": "inventory_no_update",
+          "event": "UPDATE",
+          "tab": "inventory_movements"
+        },
+        {
+          "name": "sales_no_delete",
+          "event": "DELETE",
+          "tab": "sales"
+        },
+        {
+          "name": "sales_no_update",
+          "event": "UPDATE",
+          "tab": "sales"
+        },
+        {
+          "name": "sale_lines_no_delete",
+          "event": "DELETE",
+          "tab": "sale_lines"
+        },
+        {
+          "name": "sale_lines_no_insert",
+          "event": "INSERT",
+          "tab": "sale_lines"
+        },
+        {
+          "name": "sale_lines_no_update",
+          "event": "UPDATE",
+          "tab": "sale_lines"
+        }
+      ],
+      "migrations": 7
+    },
+    "ledger": {
+      "movements": 39,
+      "products_with_stock": 22,
+      "chain_and_stock_match": true
+    },
+    "sales": {
+      "headers": 9,
+      "lines": 13,
+      "sale_movements": 10,
+      "header_totals_match": true,
+      "source_per_line_exactly_once": true
+    },
+    "http_invoice": "BH-00000032",
+    "http_total": "55000.00",
+    "http_stock": [
+      {
+        "product_id": "156",
+        "code": "C2-HTTP-A",
+        "initial": "10",
+        "sold": "2",
+        "final": "8.000",
+        "sale_movement_id": "165",
+        "source_id": "44"
+      },
+      {
+        "product_id": "157",
+        "code": "C2-HTTP-B",
+        "initial": "8",
+        "sold": "1.5",
+        "final": "6.500",
+        "sale_movement_id": "166",
+        "source_id": "45"
+      }
+    ],
+    "c1_fixture": {
+      "id": 21,
+      "stock": "15.000",
+      "movements": 2
+    },
+    "mode": "READ ONLY"
+  },
+  "seeder": {
+    "status": "PASS",
+    "database": "mnm_inventory_test_20261021",
+    "seeder": "SaleDemoSeeder",
+    "sale_id": "33",
+    "total": "55000.00",
+    "line_count": 2,
+    "tables_order": [
+      "products",
+      "product_stocks",
+      "inventory_movements",
+      "sales",
+      "sale_lines"
+    ],
+    "before": [
+      22,
+      16,
+      29,
+      8,
+      11
+    ],
+    "first": [
+      24,
+      18,
+      33,
+      9,
+      13
+    ],
+    "second": [
+      24,
+      18,
+      33,
+      9,
+      13
+    ],
+    "replay_unchanged": true
+  },
+  "static": {
+    "status": "PASS",
+    "php_files": 62,
+    "php_errors": [],
+    "js_syntax": true,
+    "node_harness": {
+      "status": "PASS",
+      "scope": "Node VM with small DOM test double; not a real browser",
+      "assertions": 8,
+      "checks": [
+        "sparse old-input indexes do not collide",
+        "labels match new field ids",
+        "removed indexes are not reused",
+        "decimal price stays a string",
+        "50 line cap",
+        "add control disabled at cap",
+        "one line minimum",
+        "print handler delegates"
+      ]
+    },
+    "powershell": [
+      {
+        "file": "tools/Test-Sales.ps1",
+        "errors": 0
+      },
+      {
+        "file": "tools/Start-InventoryDemo.ps1",
+        "errors": 0
+      }
+    ]
+  },
+  "routes": {
+    "status": "PASS",
+    "total": 47,
+    "sales": [
+      {
+        "uri": "sales",
+        "methods": [
+          "GET",
+          "HEAD"
+        ],
+        "name": "sales.index",
+        "middleware": [
+          "web",
+          "auth",
+          "active",
+          "App\\Http\\Middleware\\EnsureInventoryInstalled",
+          "App\\Http\\Middleware\\EnsureSalesInstalled"
+        ]
+      },
+      {
+        "uri": "sales/create",
+        "methods": [
+          "GET",
+          "HEAD"
+        ],
+        "name": "sales.create",
+        "middleware": [
+          "web",
+          "auth",
+          "active",
+          "App\\Http\\Middleware\\EnsureInventoryInstalled",
+          "App\\Http\\Middleware\\EnsureSalesInstalled"
+        ]
+      },
+      {
+        "uri": "sales",
+        "methods": [
+          "POST"
+        ],
+        "name": "sales.store",
+        "middleware": [
+          "web",
+          "auth",
+          "active",
+          "App\\Http\\Middleware\\EnsureInventoryInstalled",
+          "App\\Http\\Middleware\\EnsureSalesInstalled"
+        ]
+      },
+      {
+        "uri": "sales/{sale}",
+        "methods": [
+          "GET",
+          "HEAD"
+        ],
+        "name": "sales.show",
+        "middleware": [
+          "web",
+          "auth",
+          "active",
+          "App\\Http\\Middleware\\EnsureInventoryInstalled",
+          "App\\Http\\Middleware\\EnsureSalesInstalled"
+        ]
+      },
+      {
+        "uri": "sales/{sale}/edit",
+        "methods": [
+          "GET",
+          "HEAD"
+        ],
+        "name": "sales.edit",
+        "middleware": [
+          "web",
+          "auth",
+          "active",
+          "App\\Http\\Middleware\\EnsureInventoryInstalled",
+          "App\\Http\\Middleware\\EnsureSalesInstalled"
+        ]
+      },
+      {
+        "uri": "sales/{sale}",
+        "methods": [
+          "PATCH"
+        ],
+        "name": "sales.update",
+        "middleware": [
+          "web",
+          "auth",
+          "active",
+          "App\\Http\\Middleware\\EnsureInventoryInstalled",
+          "App\\Http\\Middleware\\EnsureSalesInstalled"
+        ]
+      },
+      {
+        "uri": "sales/{sale}/confirm",
+        "methods": [
+          "POST"
+        ],
+        "name": "sales.confirm",
+        "middleware": [
+          "web",
+          "auth",
+          "active",
+          "App\\Http\\Middleware\\EnsureInventoryInstalled",
+          "App\\Http\\Middleware\\EnsureSalesInstalled"
+        ]
+      },
+      {
+        "uri": "sales/{sale}/print",
+        "methods": [
+          "GET",
+          "HEAD"
+        ],
+        "name": "sales.print",
+        "middleware": [
+          "web",
+          "auth",
+          "active",
+          "App\\Http\\Middleware\\EnsureInventoryInstalled",
+          "App\\Http\\Middleware\\EnsureSalesInstalled"
+        ]
+      }
+    ]
+  },
+  "business_database": {
+    "status": "UNCHANGED",
+    "mode": "READ ONLY",
+    "content_ddl_trigger_hashes_match": true,
+    "tables": [
+      "migrations",
+      "product_categories",
+      "products",
+      "units",
+      "users"
+    ]
+  },
+  "protected": {
+    "artifact_count": 27,
+    "artifact_hashes_unchanged": true,
+    "other_repo_head_status_unchanged": true,
+    "scope_limit": "Other repositories verified by HEAD/status snapshot, not full source byte hashes"
+  },
+  "source_files": [
+    "app/Http/Controllers/SaleController.php",
+    "app/Http/Controllers/UserController.php",
+    "app/Http/Middleware/EnsureSalesInstalled.php",
+    "app/Http/Requests/SaleListRequest.php",
+    "app/Http/Requests/SaleWriteRequest.php",
+    "app/Models/Product.php",
+    "app/Models/User.php",
+    "app/Models/Sale.php",
+    "app/Models/SaleLine.php",
+    "app/Services/InventoryService.php",
+    "app/Services/SaleService.php",
+    "app/Support/SaleMoney.php",
+    "database/migrations/2026_10_21_000007_create_sales_tables.php",
+    "database/seeders/SaleDemoSeeder.php",
+    "public/assets/sales.js",
+    "public/assets/sales-print.css",
+    "resources/views/layouts/app.blade.php",
+    "routes/web.php",
+    "tests/Feature/InventoryTest.php",
+    "tests/Feature/SaleTest.php",
+    "tests/Support/sales_concurrency.php",
+    "tests/Support/sales_form.js",
+    "tools/Test-Sales.ps1",
+    "resources/views/sales/form.blade.php",
+    "resources/views/sales/index.blade.php",
+    "resources/views/sales/line.blade.php",
+    "resources/views/sales/print.blade.php",
+    "resources/views/sales/show.blade.php",
+    "resources/views/sales/table.blade.php",
+    "resources/views/sales/unavailable.blade.php"
+  ],
+  "source_file_count": 30,
+  "limitations": [
+    "No browser/screenshot tool callable; no C2 screenshots.",
+    "Node DOM test double is not browser visual verification.",
+    "No business DB migration/seed/write. Isolated MySQL test only.",
+    "No actual mobile touchscreen or print dialog verified.",
+    "No C2 commit/push, C3, G7, Word or Rose changes."
+  ]
+}

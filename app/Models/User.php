@@ -25,6 +25,11 @@ class User extends Authenticatable
         return $this->hasMany(InventoryMovement::class);
     }
 
+    public function sales(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Sale::class);
+    }
+
     protected function casts(): array
     {
         return ['id' => 'string', 'is_active' => 'boolean', 'created_at' => 'immutable_datetime'];

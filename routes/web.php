@@ -25,6 +25,16 @@ Route::middleware(['auth', 'active'])->group(function () {
             }
         });
     });
+    Route::middleware([EnsureInventoryInstalled::class, \App\Http\Middleware\EnsureSalesInstalled::class])->group(function () {
+        Route::get('/sales', [\App\Http\Controllers\SaleController::class, 'index'])->name('sales.index');
+        Route::get('/sales/create', [\App\Http\Controllers\SaleController::class, 'create'])->name('sales.create');
+        Route::post('/sales', [\App\Http\Controllers\SaleController::class, 'store'])->name('sales.store');
+        Route::get('/sales/{sale}', [\App\Http\Controllers\SaleController::class, 'show'])->where('sale', '[1-9][0-9]{0,18}')->name('sales.show');
+        Route::get('/sales/{sale}/edit', [\App\Http\Controllers\SaleController::class, 'edit'])->where('sale', '[1-9][0-9]{0,18}')->name('sales.edit');
+        Route::patch('/sales/{sale}', [\App\Http\Controllers\SaleController::class, 'update'])->where('sale', '[1-9][0-9]{0,18}')->name('sales.update');
+        Route::post('/sales/{sale}/confirm', [\App\Http\Controllers\SaleController::class, 'confirm'])->where('sale', '[1-9][0-9]{0,18}')->name('sales.confirm');
+        Route::get('/sales/{sale}/print', [\App\Http\Controllers\SaleController::class, 'print'])->where('sale', '[1-9][0-9]{0,18}')->name('sales.print');
+    });
     foreach (['categories', 'units', 'products'] as $catalog) {
         Route::get('/'.$catalog, [CatalogController::class, 'index'])->defaults('catalog', $catalog)->name($catalog.'.index');
         Route::middleware('admin')->group(function () use ($catalog) {

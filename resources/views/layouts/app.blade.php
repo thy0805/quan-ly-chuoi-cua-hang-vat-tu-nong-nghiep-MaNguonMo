@@ -23,6 +23,7 @@
                     <a href="{{ route($section === 'dashboard' ? 'dashboard' : $section.'.index') }}" class="{{ request()->routeIs($section === 'dashboard' ? 'dashboard' : $section.'.*') ? 'is-current' : '' }}" @if(request()->routeIs($section === 'dashboard' ? 'dashboard' : $section.'.*')) aria-current="page" @endif><x-icon :name="$icon" />{{ $label }}</a>
                 @endforeach
                 <a href="{{ route('inventory.index') }}" class="{{ request()->routeIs('inventory.*') ? 'is-current' : '' }}" @if(request()->routeIs('inventory.*')) aria-current="page" @endif><x-icon name="box" />Quản lý tồn kho</a>
+                <a href="{{ route('sales.index') }}" class="{{ request()->routeIs('sales.*') ? 'is-current' : '' }}" @if(request()->routeIs('sales.*')) aria-current="page" @endif><x-icon name="box" />Bán hàng tại quầy</a>
                 @if(auth()->user()->role === 'admin')<a href="{{ route('users.index') }}" class="{{ request()->routeIs('users.*') ? 'is-current' : '' }}" @if(request()->routeIs('users.*')) aria-current="page" @endif><x-icon name="users" />Tài khoản</a>@endif
             </nav>
             <div class="sidebar-note"><x-icon name="leaf" /><strong>Chăm từng mùa vụ.</strong><span>Quản lý vật tư rõ ràng,<br>đồng hành cùng nhà nông.</span></div>
@@ -32,7 +33,7 @@
     <div class="app-workspace">
         <header class="app-header">
             <div class="d-flex align-items-center gap-3 min-width-0"><button class="btn btn-light d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#app-sidebar" aria-controls="app-sidebar" aria-label="Mở menu"><x-icon name="menu" /></button><span class="header-caption">Quản lý cửa hàng<span class="d-none d-md-inline"> / Vật tư nông nghiệp</span></span></div>
-            <div class="header-account"><span class="avatar">{{ mb_strtoupper(mb_substr(auth()->user()->username,0,1)) }}</span><span class="account-name">{{ auth()->user()->username }}<small>{{ auth()->user()->role === 'admin' ? 'Quản trị viên' : 'Nhân viên · Chỉ xem' }}</small></span><form method="post" action="{{ route('logout') }}">@csrf<button class="btn btn-light logout-button" type="submit" aria-label="Đăng xuất"><x-icon name="logout" /><span class="d-none d-xl-inline">Đăng xuất</span></button></form></div>
+            <div class="header-account"><span class="avatar">{{ mb_strtoupper(mb_substr(auth()->user()->username,0,1)) }}</span><span class="account-name">{{ auth()->user()->username }}<small>{{ auth()->user()->role === 'admin' ? 'Quản trị viên' : 'Nhân viên' }}</small></span><form method="post" action="{{ route('logout') }}">@csrf<button class="btn btn-light logout-button" type="submit" aria-label="Đăng xuất"><x-icon name="logout" /><span class="d-none d-xl-inline">Đăng xuất</span></button></form></div>
         </header>
         <main id="main-content" class="app-main" tabindex="-1">@include('partials.feedback') @yield('content')</main>
         <footer class="app-footer"><span>Mầm Xanh · Quản lý vật tư nông nghiệp</span><span>Nhóm 6</span></footer>

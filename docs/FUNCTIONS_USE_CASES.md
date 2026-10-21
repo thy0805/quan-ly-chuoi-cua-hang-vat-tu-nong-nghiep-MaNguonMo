@@ -1,3 +1,7 @@
+# C2 FUNCTIONAL ACCEPTED / LOCKED — 21/10/2026
+
+Thy đã duyệt C2/C2-R:61tests/1095assertions,4race/8workers,15HTTP. Browser1366/768/320 và Print Preview/PDF PENDING. Xem .agent/decisions/C2_FUNCTIONAL_LOCKED_C3_AUTHORIZED_20261021.md. Các trạng thái DRAFT/chưa nghiệm thu bên dưới là lịch sử. Database nghiệp vụ chưa migrate; G7/audit chưa nghiệm thu được giữ ngoài commit.
+
 # C1 ACCEPTED/LOCKED — 21/10/2026
 
 Thy đã nghiệm thu chức năng và15ảnh responsive; xem .agent/decisions/C1_LOCKED_C2_AUTHORIZED_20261021.md và docs/evidence/C1_VISUAL_ACCEPTED.json. Database nghiệp vụ chưa migrate; chưa kiểm đầy đủ cảm ứng điện thoại thật. Các trạng thái chưa nghiệm thu/visual pending/chưa commit trong snapshot bên dưới phản ánh thời điểm trước nghiệm thu. C2 được giao riêng, chưa có implementation trong checkpoint C1 này. G7/audit đang làm được giữ ngoài commit.
