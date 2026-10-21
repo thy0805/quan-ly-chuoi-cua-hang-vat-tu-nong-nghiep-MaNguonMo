@@ -1,3 +1,17 @@
+# C1 ACCEPTED/LOCKED — 21/10/2026
+
+Thy đã nghiệm thu chức năng và15ảnh responsive; xem .agent/decisions/C1_LOCKED_C2_AUTHORIZED_20261021.md và docs/evidence/C1_VISUAL_ACCEPTED.json. Database nghiệp vụ chưa migrate; chưa kiểm đầy đủ cảm ứng điện thoại thật. Các trạng thái chưa nghiệm thu/visual pending/chưa commit trong snapshot bên dưới phản ánh thời điểm trước nghiệm thu. C2 được giao riêng, chưa có implementation trong checkpoint C1 này. G7/audit đang làm được giữ ngoài commit.
+
+## C1 hiện hành — 21/10/2026
+
+C1 đã kiểm chức năng; visual QA và nghiệm thu pending. C2/3 chỉ kế hoạch; không tự mở giai đoạn hoặc migrate nghiệp vụ. Canonical [PLAN](../.agent/PLAN.md).
+
+Nguồn hiện tại [C1_RESULT](C1_RESULT.md) và [C1_VERIFICATION](evidence/C1_VERIFICATION.json). Các trạng thái giữ source G5/4bảng/không kho bên dưới là snapshot trước mở rộng; G6/G7 đã khóa không bị viết lại. Database nghiệp vụ vẫn giữ schema cũ, test schema mới đã kiểm độc lập.
+
+---
+
+## Lịch sử từ checkpoint G6 đã công bố
+
 Cập nhật hiện hành18/10/2026: G6/G6-R đã ACCEPTED/LOCKED, được chốt Git theo decision G6_ACCEPTED_G7_DRAFT_AUTHORIZED_20261018. Publication đang kiểm, SHA sau push đọc tại context/receipt mới. Sau remote readback sạch chỉ chuẩn bị G7 DRAFT, chưa commit/push G7. Các trạng thái G6 DRAFT/chưa push bên dưới giữ checkpoint cũ; source/nghiệp vụ và accepted G6 content không sửa.
 
 # Tiến độ hiện hành — G6 DRAFT

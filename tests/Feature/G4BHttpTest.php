@@ -26,7 +26,7 @@ class G4BHttpTest extends TestCase
     {
         parent::setUp();
         $this->assertFalse($this->app->runningUnitTests());
-        $this->assertSame('mnm_vat_tu_nong_nghiep', DB::selectOne('SELECT DATABASE() AS db')->db);
+        $this->assertSame(\App\Support\InventoryTestProfile::DATABASE, DB::selectOne('SELECT DATABASE() AS db')->db);
         DB::beginTransaction();
         $this->prefix = 'QA-G4B-'.bin2hex(random_bytes(5));
         $hash = Hash::make(self::PASSWORD);
@@ -42,7 +42,7 @@ class G4BHttpTest extends TestCase
         Auth::forgetGuards();
         foreach (array_unique($this->sessionIds) as $id) {
             if (preg_match('/^[A-Za-z0-9]{40}$/D', $id)) {
-                $path = storage_path('mnm/framework/sessions/'.$id);
+                $path = config('session.files').'/'.$id;
                 if (is_file($path)) {
                     unlink($path);
                 }

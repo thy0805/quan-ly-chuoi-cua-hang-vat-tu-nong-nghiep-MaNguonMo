@@ -69,7 +69,14 @@ class UserController extends Controller
     public function destroy(Request $request)
     {
         $record = $this->record($request);
-        DB::transaction(fn () => User::query()->lockForUpdate()->findOrFail($record->id)->delete(), 3);
+        try {
+            DB::transaction(fn () => User::query()->lockForUpdate()->findOrFail($record->id)->delete(), 3);
+        } catch (QueryException $error) {
+            if (($error->errorInfo[1] ?? null) === 1451) {
+                throw ValidationException::withMessages(['delete' => 'Không thể xóa tài khoản đã có lịch sử kho.']);
+            }
+            throw $error;
+        }
 
         return $request->expectsJson() ? response()->noContent() : redirect()->route('users.index')->with('status', 'Đã xóa tài khoản.');
     }

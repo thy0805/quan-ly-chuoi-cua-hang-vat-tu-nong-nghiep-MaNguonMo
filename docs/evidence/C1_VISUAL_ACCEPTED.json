@@ -1,0 +1,16 @@
+{
+  "status": "VERIFIED",
+  "zip": "MNM_NHOM6_C1_ANH_GIAO_DIEN_20261021.zip",
+  "zip_sha256": "5b9d45b7540bb9be8278297737c4ece850e178bedb95a3d962c447aed028b200",
+  "zip_bytes": 643614,
+  "images": 15,
+  "members": 17,
+  "crc": "PASS",
+  "sha256_readback": "15/15 PASS",
+  "application_hashes_unchanged": 119,
+  "old_handoff_sha256_unchanged": true,
+  "no_migrate_seed_or_movement_submit": true,
+  "acceptance": "LOCKED development/responsive QA by Thy 2026-10-21",
+  "scope": "Visual only; no C2, commit or push",
+  "source": "15-image ZIP reviewed by Thy/GPT Web; no physical-device touch certification"
+}

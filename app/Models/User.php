@@ -20,6 +20,11 @@ class User extends Authenticatable
 
     protected $hidden = ['password_hash'];
 
+    public function inventoryMovements(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(InventoryMovement::class);
+    }
+
     protected function casts(): array
     {
         return ['id' => 'string', 'is_active' => 'boolean', 'created_at' => 'immutable_datetime'];

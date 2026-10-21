@@ -53,24 +53,24 @@ class G4AMysqlTest extends TestCase
     public function test_schema_matches_signed_keys_relations_checks_and_generated_admin(): void
     {
         $identity = DB::selectOne('SELECT DATABASE() AS db, VERSION() AS version, CURRENT_USER() AS account');
-        $this->assertSame('mnm_vat_tu_nong_nghiep', $identity->db);
+        $this->assertSame(\App\Support\InventoryTestProfile::DATABASE, $identity->db);
         $this->assertStringStartsWith('8.4.', $identity->version);
-        $this->assertSame('mnm_runtime_20261017@localhost', $identity->account);
-        $tables = DB::select('SELECT TABLE_NAME, ENGINE, TABLE_COLLATION FROM information_schema.TABLES WHERE TABLE_SCHEMA = DATABASE() ORDER BY TABLE_NAME');
+        $this->assertSame('mnm_c1_test_runtime@localhost', $identity->account);
+        $tables = DB::select("SELECT TABLE_NAME, ENGINE, TABLE_COLLATION FROM information_schema.TABLES WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME IN ('migrations','product_categories','products','units','users') ORDER BY TABLE_NAME");
         $this->assertSame(['migrations', 'product_categories', 'products', 'units', 'users'], array_column($tables, 'TABLE_NAME'));
         foreach ($tables as $table) {
             $this->assertSame('InnoDB', $table->ENGINE);
             $this->assertSame('utf8mb4_0900_as_cs', $table->TABLE_COLLATION);
         }
-        $foreign = DB::select('SELECT DELETE_RULE, UPDATE_RULE FROM information_schema.REFERENTIAL_CONSTRAINTS WHERE CONSTRAINT_SCHEMA = DATABASE()');
+        $foreign = DB::select("SELECT DELETE_RULE, UPDATE_RULE FROM information_schema.REFERENTIAL_CONSTRAINTS WHERE CONSTRAINT_SCHEMA = DATABASE() AND TABLE_NAME IN ('product_categories','products','units','users')");
         $this->assertCount(3, $foreign);
         foreach ($foreign as $relation) {
             $this->assertSame('RESTRICT', $relation->DELETE_RULE);
             $this->assertSame('RESTRICT', $relation->UPDATE_RULE);
         }
-        $checks = DB::select("SELECT CONSTRAINT_NAME FROM information_schema.TABLE_CONSTRAINTS WHERE CONSTRAINT_SCHEMA = DATABASE() AND CONSTRAINT_TYPE = 'CHECK'");
+        $checks = DB::select("SELECT CONSTRAINT_NAME FROM information_schema.TABLE_CONSTRAINTS WHERE CONSTRAINT_SCHEMA = DATABASE() AND CONSTRAINT_TYPE = 'CHECK' AND TABLE_NAME IN ('product_categories','products','units','users')");
         $this->assertCount(7, $checks);
-        $keys = DB::select("SELECT COLUMN_TYPE FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME <> 'migrations' AND COLUMN_NAME IN ('id', 'parent_id', 'category_id', 'unit_id')");
+        $keys = DB::select("SELECT COLUMN_TYPE FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME IN ('product_categories','products','units','users') AND COLUMN_NAME IN ('id', 'parent_id', 'category_id', 'unit_id')");
         $this->assertCount(7, $keys);
         foreach ($keys as $key) {
             $this->assertSame('bigint', $key->COLUMN_TYPE);
@@ -85,7 +85,7 @@ class G4AMysqlTest extends TestCase
 
     public function test_synthetic_seed_models_relations_casts_and_password_hashes(): void
     {
-        $this->assertSame([3, 5, 3, 4], [User::count(), ProductCategory::count(), Unit::count(), Product::count()]);
+        $this->assertSame([3, 5, 3, 4], [User::whereIn('username', ['admin_demo', 'nhanvien_demo_1', 'nhanvien_demo_2'])->count(), ProductCategory::whereIn('code', ['PHANBON', 'HUUCO', 'VOSINH', 'BVTV', 'NGUNG'])->count(), Unit::whereIn('code', ['KG', 'CHAI', 'GOI'])->count(), Product::whereIn('code', ['DEMO-01', 'DEMO-02', 'DEMO-03', 'DEMO-04'])->count()]);
         $product = Product::where('code', 'DEMO-01')->firstOrFail();
         $this->assertSame('Phân bón hữu cơ 🌱', $product->name);
         $this->assertSame('HUUCO', $product->category->code);
@@ -226,7 +226,7 @@ class G4AMysqlTest extends TestCase
 
     public function test_runtime_account_has_only_schema_crud_and_cannot_create_tables(): void
     {
-        $privileges = DB::select("SELECT PRIVILEGE_TYPE FROM information_schema.SCHEMA_PRIVILEGES WHERE TABLE_SCHEMA = DATABASE() AND GRANTEE = CONCAT(CHAR(39), 'mnm_runtime_20261017', CHAR(39), '@', CHAR(39), 'localhost', CHAR(39)) ORDER BY PRIVILEGE_TYPE");
+        $privileges = DB::select("SELECT PRIVILEGE_TYPE FROM information_schema.SCHEMA_PRIVILEGES WHERE TABLE_SCHEMA = DATABASE() AND GRANTEE = CONCAT(CHAR(39), 'mnm_c1_test_runtime', CHAR(39), '@', CHAR(39), 'localhost', CHAR(39)) ORDER BY PRIVILEGE_TYPE");
         $this->assertSame(['DELETE', 'INSERT', 'SELECT', 'UPDATE'], array_column($privileges, 'PRIVILEGE_TYPE'));
         $this->databaseRejects(fn () => DB::statement('CREATE TABLE mnm_permission_probe (id INT)'), 1142);
         $this->assertSame(0, (int) DB::selectOne("SELECT COUNT(*) AS n FROM information_schema.TABLES WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'mnm_permission_probe'")->n);

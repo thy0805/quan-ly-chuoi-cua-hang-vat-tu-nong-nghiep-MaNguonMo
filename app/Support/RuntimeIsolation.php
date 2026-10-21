@@ -32,14 +32,14 @@ final class RuntimeIsolation
         $valid = $database['default'] === 'mysql'
             && array_keys($database['connections']) === ['mysql']
             && ($mysql['driver'] ?? null) === 'mysql'
-            && ($mysql['database'] ?? null) === 'mnm_vat_tu_nong_nghiep'
+            && ($mysql['database'] ?? null) === (InventoryTestProfile::active() ? InventoryTestProfile::DATABASE : 'mnm_vat_tu_nong_nghiep')
             && ($mysql['host'] ?? null) === '127.0.0.1'
             && empty($mysql['url']) && empty($mysql['unix_socket'])
             && ($mysql['engine'] ?? null) === 'InnoDB'
             && ($mysql['charset'] ?? null) === 'utf8mb4'
             && ($mysql['timezone'] ?? null) === '+00:00'
             && $configuration['session']['driver'] === 'file'
-            && $configuration['session']['cookie'] === 'mnm_nhom6_session'
+            && $configuration['session']['cookie'] === (InventoryTestProfile::active() ? 'mnm_inventory_test_session' : 'mnm_nhom6_session')
             && $configuration['session']['domain'] === null
             && $configuration['cache']['default'] === 'file'
             && $configuration['queue']['default'] === 'null';
@@ -59,10 +59,12 @@ final class RuntimeIsolation
     public static function assertDatabaseConfiguration(array $mysql): void
     {
         if (($mysql['driver'] ?? null) !== 'mysql'
-            || ($mysql['database'] ?? null) !== 'mnm_vat_tu_nong_nghiep'
+            || ($mysql['database'] ?? null) !== (InventoryTestProfile::active() ? InventoryTestProfile::DATABASE : 'mnm_vat_tu_nong_nghiep')
             || ($mysql['host'] ?? null) !== '127.0.0.1'
             || (string) ($mysql['port'] ?? '') !== '3306'
-            || ! in_array($mysql['username'] ?? '', ['mnm_runtime_20261017', 'mnm_migrate_20261017'], true)
+            || ! (InventoryTestProfile::active()
+                ? InventoryTestProfile::accountAllowed($mysql['username'] ?? '')
+                : in_array($mysql['username'] ?? '', ['mnm_runtime_20261017', 'mnm_migrate_20261017'], true))
             || ! is_string($mysql['password'] ?? null) || $mysql['password'] === ''
             || ! empty($mysql['url']) || ! empty($mysql['unix_socket'])
             || isset($mysql['read']) || isset($mysql['write'])) {
@@ -74,7 +76,7 @@ final class RuntimeIsolation
     {
         $identity = $pdo->query('SELECT DATABASE() AS db, VERSION() AS version, CURRENT_USER() AS account, @@datadir AS datadir')->fetch(PDO::FETCH_ASSOC);
         $datadir = strtolower(str_replace('\\', '/', $identity['datadir']));
-        if ($identity['db'] !== 'mnm_vat_tu_nong_nghiep'
+        if ($identity['db'] !== (InventoryTestProfile::active() ? InventoryTestProfile::DATABASE : 'mnm_vat_tu_nong_nghiep')
             || ! str_starts_with($identity['version'], '8.4.')
             || $identity['account'] !== $mysql['username'].'@localhost'
             || rtrim($datadir, '/') !== 'c:/laragon/data/mysql-8.4') {

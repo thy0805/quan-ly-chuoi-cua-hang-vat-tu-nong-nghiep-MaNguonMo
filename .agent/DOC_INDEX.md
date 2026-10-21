@@ -1,3 +1,32 @@
+# C1 ACCEPTED/LOCKED — 21/10/2026
+
+Thy đã nghiệm thu chức năng và15ảnh responsive; xem .agent/decisions/C1_LOCKED_C2_AUTHORIZED_20261021.md và docs/evidence/C1_VISUAL_ACCEPTED.json. Database nghiệp vụ chưa migrate; chưa kiểm đầy đủ cảm ứng điện thoại thật. Các trạng thái chưa nghiệm thu/visual pending/chưa commit trong snapshot bên dưới phản ánh thời điểm trước nghiệm thu. C2 được giao riêng, chưa có implementation trong checkpoint C1 này. G7/audit đang làm được giữ ngoài commit.
+
+# Bản đồ nguồn hiện hành — Cụm 1
+
+## C1 hiện hành — 21/10/2026
+
+Ưu tiên: yêu cầu C1 Thy21/10 → decision C1 → code/schema/test receipt hiện hành → context/PLAN → các snapshot G1–G7 theo thời điểm. Hồ sơ G6/G7 vẫn giữ byte nhưng chưa mô tả phần mở rộng kho; không dùng làm ERD hiện hành của test schema mới.
+
+| Tài liệu | Vai trò/trạng thái | Đọc khi |
+|---|---|---|
+| [context](../context.md) | Điểm tiếp tục hiện hành | Đầu phiên |
+| [PLAN](PLAN.md) | Kế hoạch C1 hiện hành | Chọn việc tiếp |
+| [Checklist C1](C1_INVENTORY_CHECKLIST.md) | Scope và evidence | Trước sửa/kiểm C1 |
+| [Visual C1](C1_VISUAL_CHECKLIST_20261021.md) | Hiện hành:15ảnh browser và ZIP ảnh riêng; thay trạng thái browser disabled tại lần bàn giao trước | Rà giao diện và nghiệm thu C1 |
+| [Decision C1](decisions/C1_INVENTORY_20261021.md) | Quyền mở rộng và invariants | Có mâu thuẫn phạm vi cũ |
+| [Kết quả C1](../docs/C1_RESULT.md) | Bàn giao, giới hạn, file | Nghiệm thu |
+| [Hướng dẫn C1](../docs/c1/README.md) | Chức năng/URL | Xem ứng dụng |
+| [Thiết kế C1](../docs/c1/THIET_KE.md) | Schema/transaction/replay | Sửa kho; lập C2/3 |
+| [Demo Windows](../docs/c1/CHAY_VA_DEMO.md) | Test-only runtime/demo | Thuyết trình |
+| [C1 verification](../docs/evidence/C1_VERIFICATION.json) | Bằng chứng đã lọc | Đối chiếu kết quả |
+
+G1–G6 LOCKED; G7 DRAFT chờ nghiệm thu, không sửa Word/slide hoặc sơ đồ cũ trong C1. Rubric kỹ thuật Thy đã cung cấp20/10; phân công thực tế và duyệt đề tài vẫn chưa xác nhận. Các nhãn hiện hành ở bảng cũ bên dưới chỉ mô tả thời điểm trước C1.
+
+---
+
+## Lịch sử từ checkpoint G6 đã công bố
+
 # Nguồn hiện hành18/10 — G6 ACCEPTED/LOCKED; publication rồi G7 DRAFT
 
 Ưu tiên: Thy mới nhất → decision18/10 → code/accepted artifact → context/PLAN/checklist mới → checkpoint cũ. G6/G6R_RESULT,8Markdown G6,diagram/evidence/checklist cũ giữ byte; chữ DRAFT/chưa push phản ánh thời điểm trước quyết định nghiệm thu. Không tự rewrite các artifact đã khóa.

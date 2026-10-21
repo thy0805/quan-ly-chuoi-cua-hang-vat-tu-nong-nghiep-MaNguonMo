@@ -4,6 +4,8 @@ use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\InventoryController;
+use App\Http\Middleware\EnsureInventoryInstalled;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/login', [SessionController::class, 'create'])->name('login');
@@ -13,6 +15,16 @@ Route::middleware(['auth', 'active'])->group(function () {
     Route::get('/dashboard', DashboardController::class)->name('dashboard');
     Route::get('/', fn () => redirect()->route('products.index'))->name('home');
     Route::post('/logout', [SessionController::class, 'destroy'])->name('logout');
+    Route::middleware(EnsureInventoryInstalled::class)->group(function () {
+        Route::get('/inventory', [InventoryController::class, 'index'])->name('inventory.index');
+        Route::get('/inventory/history', [InventoryController::class, 'history'])->name('inventory.history');
+        Route::middleware('admin')->group(function () {
+            foreach (['in', 'out'] as $direction) {
+                Route::get('/inventory/'.$direction, [InventoryController::class, 'create'])->defaults('direction', $direction)->name('inventory.'.$direction.'.create');
+                Route::post('/inventory/'.$direction, [InventoryController::class, 'store'])->defaults('direction', $direction)->name('inventory.'.$direction.'.store');
+            }
+        });
+    });
     foreach (['categories', 'units', 'products'] as $catalog) {
         Route::get('/'.$catalog, [CatalogController::class, 'index'])->defaults('catalog', $catalog)->name($catalog.'.index');
         Route::middleware('admin')->group(function () use ($catalog) {

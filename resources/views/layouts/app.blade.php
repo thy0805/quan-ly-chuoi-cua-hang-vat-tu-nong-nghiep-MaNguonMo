@@ -22,6 +22,7 @@
                 @foreach(['dashboard' => ['Tổng quan','dashboard'], 'products' => ['Vật tư','box'], 'categories' => ['Danh mục','folder'], 'units' => ['Đơn vị tính','unit']] as $section => [$label,$icon])
                     <a href="{{ route($section === 'dashboard' ? 'dashboard' : $section.'.index') }}" class="{{ request()->routeIs($section === 'dashboard' ? 'dashboard' : $section.'.*') ? 'is-current' : '' }}" @if(request()->routeIs($section === 'dashboard' ? 'dashboard' : $section.'.*')) aria-current="page" @endif><x-icon :name="$icon" />{{ $label }}</a>
                 @endforeach
+                <a href="{{ route('inventory.index') }}" class="{{ request()->routeIs('inventory.*') ? 'is-current' : '' }}" @if(request()->routeIs('inventory.*')) aria-current="page" @endif><x-icon name="box" />Quản lý tồn kho</a>
                 @if(auth()->user()->role === 'admin')<a href="{{ route('users.index') }}" class="{{ request()->routeIs('users.*') ? 'is-current' : '' }}" @if(request()->routeIs('users.*')) aria-current="page" @endif><x-icon name="users" />Tài khoản</a>@endif
             </nav>
             <div class="sidebar-note"><x-icon name="leaf" /><strong>Chăm từng mùa vụ.</strong><span>Quản lý vật tư rõ ràng,<br>đồng hành cùng nhà nông.</span></div>

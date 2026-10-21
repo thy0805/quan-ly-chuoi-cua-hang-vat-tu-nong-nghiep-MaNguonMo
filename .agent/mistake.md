@@ -59,3 +59,10 @@ G5: công cụ báo disabled dù ảnh setting bật; sau restart browser dùng 
 ## Test nhiều request và singleton redirect giữ session cũ
 
 Test G5 tự reset session driver nhưng redirect singleton còn giữ store cũ, làm kiểm flash/old-input sai dù browser thật hoạt động. Sửa riêng helper test mới bằng forgetInstance('redirect') khi reset store; không đổi backend đã khóa để ép test qua. Login redirect có thể về intended URL từ request Guest trước đó; test cần kiểm đúng contract thay vì mặc định products cho mọi tình huống.
+
+
+## Test MySQL có trigger, metadata quyền hạn và fixture mở rộng
+
+C1: MySQL bật binlog có thể từ chối CREATE TRIGGER dù account có TRIGGER trên schema (1419). Không cấp SUPER hoặc đổi server config để ép test. Dùng phiên DDL đã được ủy quyền, giới hạn đúng schema/câu lệnh; giữ log thất bại và xác minh trigger thực thi. Account runtime không có TRIGGER nên information_schema.TRIGGERS có thể rỗng dù trigger hoạt động; metadata phải đọc bằng account đủ quyền, đồng thời thử UPDATE/DELETE thật trong transaction test.
+
+Test đếm toàn bộ product/stock/movement hoặc seed fixture sẽ sai khi có fixture race/demo đã giữ. C1 tách vật tư riêng theo từng test và rollback; assert seed theo định danh/codes, giữ invariant 4 bảng cũ thay vì giả schema chỉ có4bảng mãi. Không xóa fixture/lịch sử bất biến để ép test đạt.

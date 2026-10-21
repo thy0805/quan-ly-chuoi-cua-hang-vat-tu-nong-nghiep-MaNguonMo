@@ -1,3 +1,22 @@
+# C1 ACCEPTED/LOCKED — 21/10/2026
+
+Thy đã nghiệm thu chức năng và15ảnh responsive; xem .agent/decisions/C1_LOCKED_C2_AUTHORIZED_20261021.md và docs/evidence/C1_VISUAL_ACCEPTED.json. Database nghiệp vụ chưa migrate; chưa kiểm đầy đủ cảm ứng điện thoại thật. Các trạng thái chưa nghiệm thu/visual pending/chưa commit trong snapshot bên dưới phản ánh thời điểm trước nghiệm thu. C2 được giao riêng, chưa có implementation trong checkpoint C1 này. G7/audit đang làm được giữ ngoài commit.
+
+# Quy tắc hiện hành Mã nguồn mở
+
+## C1 hiện hành — 21/10/2026
+
+- Đọc context, PLAN, DOC_INDEX, mistake và checklist/decision C1. Thy đã giao triển khai trọn Cụm1 tồn kho; quyền này thay giới hạn chỉ docs/không sửa source/không kho trong nhiệm vụ G7 cũ.
+- Chỉ repository này. Không sửa KLCN/NoSQL/Word/slide/evidence ZIP/sơ đồ đã khóa; không tự commit/push hoặc làm Cụm2/3.
+- Chỉ ghi test database mnm_inventory_test_20261021 với profile và account test chính xác. Database nghiệp vụ chỉ đọc; không tự migrate/seed/reset. Giữ guard bình thường, không dùng root cho runtime, không in credentials.
+- Một dịch vụ kho dùng transaction, product lock, decimal milli-unit, token/source unique, lịch sử bất biến/FK RESTRICT. Không sửa tồn qua CRUD vật tư hoặc đổi đơn vị sau giao dịch.
+- Chưa visual QA C1: công cụ browser báo disabled không chứng minh setting của Thy bị tắt. Không lấy ảnh G5 làm ảnh kho mới. Chỉ ghi PASS khi có runtime/readback thực tế.
+- Giữ các quy tắc giao tiếp, bảo mật và nguồn chuẩn bên dưới khi không mâu thuẫn với phạm vi C1 mới. Phần scope G7 bên dưới là lịch sử, không là quyền tự mở G7 hoặc cấm C1 đã giao.
+
+---
+
+## Lịch sử từ checkpoint G6 đã công bố
+
 # Quy tắc riêng Mã nguồn mở — Nhóm 6
 
 - Giao tiếp tiếng Việt có dấu, gọi Thy/xưng tui; không thêm comment code khi chưa được yêu cầu.

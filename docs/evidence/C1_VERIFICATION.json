@@ -1,0 +1,200 @@
+{
+  "checkpoint": "C1 inventory",
+  "date": "2026-10-21",
+  "status": "FUNCTIONAL_VERIFIED_VISUAL_PENDING_ACCEPTANCE_PENDING",
+  "baseline_head": "ad30d92dbc0550839c788e3d17a293dcc9218c45",
+  "remote_main": "ad30d92dbc0550839c788e3d17a293dcc9218c45",
+  "committed_or_pushed": false,
+  "database_business": "mnm_vat_tu_nong_nghiep",
+  "business_inventory_migrated": false,
+  "business_content_ddl_triggers_ledger_unchanged": true,
+  "business_missing_inventory_guard": 503,
+  "database_test": "mnm_inventory_test_20261021",
+  "mysql_version": "8.4.3",
+  "test_schema": {
+    "tables": 6,
+    "columns": 42,
+    "foreign_keys": 6,
+    "checks": 11
+  },
+  "test_triggers": [
+    {
+      "TRIGGER_NAME": "categories_no_self_insert",
+      "EVENT_MANIPULATION": "INSERT",
+      "EVENT_OBJECT_TABLE": "product_categories"
+    },
+    {
+      "TRIGGER_NAME": "categories_no_self_update",
+      "EVENT_MANIPULATION": "UPDATE",
+      "EVENT_OBJECT_TABLE": "product_categories"
+    },
+    {
+      "TRIGGER_NAME": "inventory_no_delete",
+      "EVENT_MANIPULATION": "DELETE",
+      "EVENT_OBJECT_TABLE": "inventory_movements"
+    },
+    {
+      "TRIGGER_NAME": "inventory_no_update",
+      "EVENT_MANIPULATION": "UPDATE",
+      "EVENT_OBJECT_TABLE": "inventory_movements"
+    }
+  ],
+  "ledger_reconciliation": {
+    "stock_rows": 9,
+    "movement_rows": 14,
+    "ledger_reconciled": true,
+    "demo": {
+      "product_id": "21",
+      "stock": "15.000",
+      "movement_count": 2
+    }
+  },
+  "tests": {
+    "tool": "phpunit",
+    "result": "passed",
+    "tests": 44,
+    "passed": 44,
+    "assertions": 828,
+    "duration_ms": 47463
+  },
+  "concurrency": {
+    "status": "PASS",
+    "database": "mnm_inventory_test_20261021",
+    "real_php_process_workers": 8,
+    "cases": [
+      {
+        "case": "concurrent_first_stock",
+        "status": "PASS",
+        "quantity": "6.000",
+        "movements": 2,
+        "lock_barrier": true
+      },
+      {
+        "case": "concurrent_overdraw",
+        "status": "PASS",
+        "quantity": "5.000",
+        "one_rejected": true,
+        "lock_barrier": true
+      },
+      {
+        "case": "concurrent_identical_replay",
+        "status": "PASS",
+        "quantity": "7.001",
+        "movements": 1,
+        "lock_barrier": true
+      },
+      {
+        "case": "concurrent_conflicting_payload",
+        "status": "PASS",
+        "one_rolled_back": true,
+        "lock_barrier": true
+      }
+    ],
+    "fixture_product_ids": [
+      "76",
+      "77",
+      "78",
+      "79",
+      "80"
+    ],
+    "all_stock_history_chains_match": true
+  },
+  "http_demo": {
+    "result": "PASS",
+    "transport": "real TCP HTTP with CSRF and cookie sessions",
+    "database": "mnm_inventory_test_20261021",
+    "product_id": "21",
+    "product_code": "C1-DEMO-20-5",
+    "in": "20.000",
+    "out": "5.000",
+    "stock": "15.000",
+    "movement_count": 2,
+    "replay": "same movement id, no duplicate",
+    "overdraw": 422,
+    "role_checks": [
+      {
+        "path": "/inventory",
+        "status": 200
+      },
+      {
+        "path": "/inventory/history",
+        "status": 200
+      },
+      {
+        "path": "/inventory/in",
+        "status": 403
+      },
+      {
+        "path": "/inventory/out",
+        "status": 403
+      },
+      {
+        "path": "POST /inventory/in",
+        "status": 403
+      }
+    ],
+    "assets": [
+      {
+        "path": "/assets/app.css",
+        "status": 200
+      },
+      {
+        "path": "/assets/app.js",
+        "status": 200
+      },
+      {
+        "path": "/assets/bootstrap/bootstrap.min.css",
+        "status": 200
+      },
+      {
+        "path": "/assets/bootstrap/bootstrap.bundle.min.js",
+        "status": 200
+      }
+    ],
+    "visual_qa": "PENDING: browser tool disabled; no screenshots captured"
+  },
+  "php_lint_files": 67,
+  "powershell_tools": "Parser syntax passed; both tools executed on Windows",
+  "routes": 39,
+  "new_inventory_routes": 6,
+  "changed_source_files": 34,
+  "protected_artifacts": 47,
+  "protected_artifact_hashes_unchanged": true,
+  "protected_repositories": {
+    "klcn": {
+      "head": "fc514c8a040d7d2804791ceea5a255427f5bf086",
+      "status_sha256": "56257794dfe34428f7be38b42373389c2dd2b55c771748e64da6f55f3f6e5658",
+      "status_lines": 11
+    },
+    "nosql": {
+      "head": "341a83a3bd6f579fad840e54d6c10f69b99362ec",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status_lines": 0
+    }
+  },
+  "protected_limit": "HEAD and porcelain status matched; no initial full content hash of protected repositories",
+  "index_empty": true,
+  "git_diff_check": "PASS",
+  "markdown_read": 77,
+  "markdown_control_fence_issues": [],
+  "visual_qa": {
+    "status": "PENDING",
+    "reason": "Browser tool returned Local browser use is disabled in Work settings",
+    "screenshots_captured": 0,
+    "viewports_unverified": [
+      1366,
+      768,
+      320
+    ]
+  },
+  "not_implemented": [
+    "C2 sales/invoices",
+    "C3 suppliers/purchasing"
+  ],
+  "limits": [
+    "No business database deployment",
+    "No long duration load test",
+    "No automatic new machine provisioning",
+    "G7/Word/slides unchanged"
+  ]
+}

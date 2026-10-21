@@ -4,6 +4,8 @@ namespace App\Models;
 
 use App\Support\CatalogIntegrity;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Facades\DB;
 
 class Product extends CatalogModel
@@ -11,6 +13,16 @@ class Product extends CatalogModel
     protected $fillable = ['category_id', 'unit_id', 'code', 'name', 'active_ingredient', 'sale_price', 'tax_rate', 'expiry_warning_days', 'is_active'];
 
     protected array $referenceTouches = [];
+
+    public function stock(): HasOne
+    {
+        return $this->hasOne(ProductStock::class);
+    }
+
+    public function inventoryMovements(): HasMany
+    {
+        return $this->hasMany(InventoryMovement::class);
+    }
 
     protected function casts(): array
     {
@@ -39,6 +51,12 @@ class Product extends CatalogModel
     public function save(array $options = []): bool
     {
         return DB::transaction(function () use ($options) {
+            if ($this->exists && $this->isDirty('unit_id')) {
+                $this->newQuery()->lockForUpdate()->findOrFail($this->id);
+                if (\Illuminate\Support\Facades\Schema::hasTable('inventory_movements') && $this->inventoryMovements()->exists()) {
+                    throw \Illuminate\Validation\ValidationException::withMessages(['unit_id' => 'Không thể đổi đơn vị tính của vật tư đã có lịch sử kho.']);
+                }
+            }
             CatalogIntegrity::product($this, $this->referenceTouches);
             $saved = parent::save($options);
             $this->referenceTouches = [];
