@@ -24,6 +24,8 @@ class Product extends CatalogModel
         return $this->hasMany(InventoryMovement::class);
     }
 
+    public function purchaseLines(): HasMany { return $this->hasMany(PurchaseLine::class); }
+
     public function saleLines(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(SaleLine::class);

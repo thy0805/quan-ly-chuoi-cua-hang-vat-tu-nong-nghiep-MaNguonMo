@@ -100,7 +100,7 @@ class InventoryTest extends TestCase
     public function test_inventory_schema_has_unique_product_decimal_constraints_and_immutable_triggers(): void
     {
         $tables = DB::select('SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA=DATABASE() ORDER BY TABLE_NAME');
-        $this->assertSame(['inventory_movements', 'migrations', 'product_categories', 'product_stocks', 'products', 'sale_lines', 'sales', 'units', 'users'], array_column($tables, 'TABLE_NAME'));
+        $this->assertSame(['inventory_movements', 'migrations', 'product_categories', 'product_stocks', 'products', 'purchase_lines', 'purchases', 'sale_lines', 'sales', 'suppliers', 'units', 'users'], array_column($tables, 'TABLE_NAME'));
         $columns = DB::select("SELECT COLUMN_TYPE FROM information_schema.COLUMNS WHERE TABLE_SCHEMA=DATABASE() AND TABLE_NAME IN ('inventory_movements','product_stocks') AND COLUMN_NAME IN ('id','product_id','user_id')");
         foreach ($columns as $column) $this->assertSame('bigint', $column->COLUMN_TYPE);
         $quantities = DB::select("SELECT NUMERIC_PRECISION,NUMERIC_SCALE FROM information_schema.COLUMNS WHERE TABLE_SCHEMA=DATABASE() AND TABLE_NAME IN ('inventory_movements','product_stocks') AND COLUMN_NAME IN ('quantity','quantity_before','quantity_after')");
@@ -109,7 +109,7 @@ class InventoryTest extends TestCase
         $constraints = DB::select("SELECT DELETE_RULE,UPDATE_RULE FROM information_schema.REFERENTIAL_CONSTRAINTS WHERE CONSTRAINT_SCHEMA=DATABASE() AND TABLE_NAME IN ('inventory_movements','product_stocks')");
         $this->assertCount(3, $constraints);
         foreach ($constraints as $constraint) $this->assertSame(['RESTRICT', 'RESTRICT'], [$constraint->DELETE_RULE, $constraint->UPDATE_RULE]);
-        $this->assertSame(7, DB::table('migrations')->count());
+        $this->assertSame(8, DB::table('migrations')->count());
         $this->move($this->data());
         try { ProductStock::create(['product_id' => $this->product->id, 'quantity' => '1.000', 'updated_at' => now()]); $this->fail('Expected one stock/product'); } catch (QueryException $error) { $this->assertSame(1062, $error->errorInfo[1]); }
     }

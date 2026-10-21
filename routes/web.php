@@ -35,6 +35,22 @@ Route::middleware(['auth', 'active'])->group(function () {
         Route::post('/sales/{sale}/confirm', [\App\Http\Controllers\SaleController::class, 'confirm'])->where('sale', '[1-9][0-9]{0,18}')->name('sales.confirm');
         Route::get('/sales/{sale}/print', [\App\Http\Controllers\SaleController::class, 'print'])->where('sale', '[1-9][0-9]{0,18}')->name('sales.print');
     });
+    Route::middleware([EnsureInventoryInstalled::class, \App\Http\Middleware\EnsurePurchasesInstalled::class])->group(function () {
+        foreach (['suppliers' => \App\Http\Controllers\SupplierController::class, 'purchases' => \App\Http\Controllers\PurchaseController::class] as $section => $controller) {
+            $parameter = $section === 'suppliers' ? 'supplier' : 'purchase';
+            Route::get('/'.$section, [$controller, 'index'])->name($section.'.index');
+            Route::middleware('admin')->group(function () use ($section, $controller, $parameter) {
+                Route::get('/'.$section.'/create', [$controller, 'create'])->name($section.'.create');
+                Route::post('/'.$section, [$controller, 'store'])->name($section.'.store');
+                Route::get('/'.$section.'/{'.$parameter.'}/edit', [$controller, 'edit'])->where($parameter, '[1-9][0-9]{0,18}')->name($section.'.edit');
+                Route::patch('/'.$section.'/{'.$parameter.'}', [$controller, 'update'])->where($parameter, '[1-9][0-9]{0,18}')->name($section.'.update');
+                if ($section === 'suppliers') Route::delete('/suppliers/{supplier}', [$controller, 'destroy'])->where('supplier', '[1-9][0-9]{0,18}')->name('suppliers.destroy');
+                else Route::post('/purchases/{purchase}/confirm', [$controller, 'confirm'])->where('purchase', '[1-9][0-9]{0,18}')->name('purchases.confirm');
+            });
+            Route::get('/'.$section.'/{'.$parameter.'}', [$controller, 'show'])->where($parameter, '[1-9][0-9]{0,18}')->name($section.'.show');
+            if ($section === 'purchases') Route::get('/purchases/{purchase}/print', [$controller, 'print'])->where('purchase', '[1-9][0-9]{0,18}')->name('purchases.print');
+        }
+    });
     foreach (['categories', 'units', 'products'] as $catalog) {
         Route::get('/'.$catalog, [CatalogController::class, 'index'])->defaults('catalog', $catalog)->name($catalog.'.index');
         Route::middleware('admin')->group(function () use ($catalog) {

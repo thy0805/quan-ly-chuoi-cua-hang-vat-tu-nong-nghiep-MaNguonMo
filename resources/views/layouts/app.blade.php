@@ -24,6 +24,7 @@
                 @endforeach
                 <a href="{{ route('inventory.index') }}" class="{{ request()->routeIs('inventory.*') ? 'is-current' : '' }}" @if(request()->routeIs('inventory.*')) aria-current="page" @endif><x-icon name="box" />Quản lý tồn kho</a>
                 <a href="{{ route('sales.index') }}" class="{{ request()->routeIs('sales.*') ? 'is-current' : '' }}" @if(request()->routeIs('sales.*')) aria-current="page" @endif><x-icon name="box" />Bán hàng tại quầy</a>
+                @foreach(['suppliers' => 'Nhà cung cấp', 'purchases' => 'Nhập hàng'] as $section => $label)<a href="{{ route($section.'.index') }}" class="{{ request()->routeIs($section.'.*') ? 'is-current' : '' }}" @if(request()->routeIs($section.'.*')) aria-current="page" @endif><x-icon name="box" />{{ $label }}</a>@endforeach
                 @if(auth()->user()->role === 'admin')<a href="{{ route('users.index') }}" class="{{ request()->routeIs('users.*') ? 'is-current' : '' }}" @if(request()->routeIs('users.*')) aria-current="page" @endif><x-icon name="users" />Tài khoản</a>@endif
             </nav>
             <div class="sidebar-note"><x-icon name="leaf" /><strong>Chăm từng mùa vụ.</strong><span>Quản lý vật tư rõ ràng,<br>đồng hành cùng nhà nông.</span></div>

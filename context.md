@@ -1,3 +1,25 @@
+# C1/C2/C3 chức năng LOCKED — 21/10/2026
+
+Thy đã nghiệm thu C3 và cho phép công bố riêng source lên main. C1 ACCEPTED/LOCKED; C2/C3 FUNCTIONAL ACCEPTED/LOCKED. Browser responsive 1366/768/320 và Print Preview/PDF C2+C3 vẫn PENDING. Không mở C4/G7/Word/slide; không migration/seed database nghiệp vụ.
+
+Nguồn hiện hành: `.agent/decisions/C3_FUNCTIONAL_LOCKED_20261021.md`, `.agent/C3_PUBLICATION_CHECKLIST_20261021.md`, `docs/C3_FUNCTIONAL_ACCEPTED.md`, `docs/C2_C3_VISUAL_PRINT_PENDING.md`. Source C3 36 file khớp ZIP đã duyệt SHA-256 549bd1622801fdbe1c053de0f67cca47f97b074602703f4034a884041236588e; baseline C2 2d5d323e5fa629508a83aa5f542081343a0f7902.
+
+Hồ sơ C3 DRAFT gốc, `docs/c3`, evidence và các snapshot bên dưới là lịch sử theo thời điểm, giữ nguyên để truy vết. Quyết định khóa mới có quyền ưu tiên đối với trạng thái nghiệm thu/push. G7/audit cũ được giữ riêng, không gộp vào commit C3. KLCN/NoSQL/Word/Rose và accepted ZIP được bảo toàn. Evidence chức năng đã duyệt: 75 tests/1.277 assertions, sáu ca đồng thời/12 worker, 48 HTTP; không chạy lại test ghi dữ liệu trong lượt công bố.
+
+CURRENT TASK: Khóa và công bố C3 theo quyền Thy; dừng phát triển ba cụm sau push/readback và bàn giao.
+SOURCE CHECKPOINT: Baseline C2 main 2d5d323e5fa629508a83aa5f542081343a0f7902; source C3 exact ZIP đã nghiệm thu; receipt công bố mới được bàn giao sau push.
+ALLOWED SCOPE: Whitelist 36 source C3 và hồ sơ khóa/công bố, phần trạng thái tài liệu điều phối; không sửa mã nghiệp vụ.
+LOCKED: G1–G6/C1; C2/C3 chức năng; accepted evidence/ZIP; KLCN/NoSQL/Word/Rose; G7 PAUSED.
+APPLIED BUT UNVERIFIED: Commit/push/readback còn kiểm theo publication checklist; không tự coi commit là đã công bố.
+VERIFIED: ZIP 50/50 payload CRC/SHA; 42 file source/tài liệu khớp nguyên byte; 141 file baseline ngoài bảy tích hợp khớp; snapshot database nghiệp vụ chỉ đọc trước công bố.
+PENDING: Visual responsive 1366/768/320 và Print Preview/PDF C2+C3; triển khai database nghiệp vụ cần quyền riêng.
+LAST EVIDENCE: .agent/logs/c3-lock/before.json; docs/evidence/C3_VERIFICATION.json; .agent/C3_PUBLICATION_CHECKLIST_20261021.md.
+NEXT EXACT ACTION: Kiểm staged whitelist/secret, commit C3 riêng, push đúng main/readback, kiểm bảo toàn và ZIP evidence nhỏ; sau đó dừng. Không mở C4/G7 hoặc migration/seed.
+
+---
+
+## Snapshot trước khi khóa Git C3
+
 # C2 FUNCTIONAL ACCEPTED / LOCKED — 21/10/2026
 
 Thy đã duyệt C2/C2-R:61tests/1095assertions,4race/8workers,15HTTP. Browser1366/768/320 và Print Preview/PDF PENDING. Xem .agent/decisions/C2_FUNCTIONAL_LOCKED_C3_AUTHORIZED_20261021.md. Các trạng thái DRAFT/chưa nghiệm thu bên dưới là lịch sử. Database nghiệp vụ chưa migrate; G7/audit chưa nghiệm thu được giữ ngoài commit.

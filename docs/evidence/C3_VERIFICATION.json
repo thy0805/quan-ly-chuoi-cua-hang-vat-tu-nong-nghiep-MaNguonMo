@@ -1,0 +1,1820 @@
+{
+  "checkpoint": "C3_DRAFT",
+  "source_baseline": "2d5d323e5fa629508a83aa5f542081343a0f7902",
+  "c2_publication": {
+    "status": "VERIFIED_STAGED_C2_ONLY",
+    "files": 51,
+    "paths": [
+      ".agent/C2_CHECKLIST_20261021.md",
+      ".agent/C2_R_CHECKLIST_20261021.md",
+      ".agent/DOC_INDEX.md",
+      ".agent/PLAN.md",
+      ".agent/decisions/C2_FUNCTIONAL_LOCKED_C3_AUTHORIZED_20261021.md",
+      "AGENTS.md",
+      "README.md",
+      "app/Http/Controllers/SaleController.php",
+      "app/Http/Controllers/UserController.php",
+      "app/Http/Middleware/EnsureSalesInstalled.php",
+      "app/Http/Requests/SaleListRequest.php",
+      "app/Http/Requests/SaleWriteRequest.php",
+      "app/Models/Product.php",
+      "app/Models/Sale.php",
+      "app/Models/SaleLine.php",
+      "app/Models/User.php",
+      "app/Services/InventoryService.php",
+      "app/Services/SaleService.php",
+      "app/Support/SaleMoney.php",
+      "context.md",
+      "database/migrations/2026_10_21_000007_create_sales_tables.php",
+      "database/seeders/SaleDemoSeeder.php",
+      "docs/ARCHITECTURE.md",
+      "docs/C2_RESULT.md",
+      "docs/C2_R_RESULT.md",
+      "docs/FUNCTIONS_USE_CASES.md",
+      "docs/IMPLEMENTATION_PLAN.md",
+      "docs/PUBLICATION.md",
+      "docs/c2/C2_R_NOTE.md",
+      "docs/c2/CHAY_VA_DEMO.md",
+      "docs/c2/README.md",
+      "docs/c2/THIET_KE.md",
+      "docs/evidence/C1_PUBLICATION_20261021.json",
+      "docs/evidence/C2_R_VERIFICATION.json",
+      "docs/evidence/C2_VERIFICATION.json",
+      "public/assets/sales-print.css",
+      "public/assets/sales.js",
+      "resources/views/layouts/app.blade.php",
+      "resources/views/sales/form.blade.php",
+      "resources/views/sales/index.blade.php",
+      "resources/views/sales/line.blade.php",
+      "resources/views/sales/print.blade.php",
+      "resources/views/sales/show.blade.php",
+      "resources/views/sales/table.blade.php",
+      "resources/views/sales/unavailable.blade.php",
+      "routes/web.php",
+      "tests/Feature/InventoryTest.php",
+      "tests/Feature/SaleTest.php",
+      "tests/Support/sales_concurrency.php",
+      "tests/Support/sales_form.js",
+      "tools/Test-Sales.ps1"
+    ],
+    "source_overlay_matches_accepted_zip": 30,
+    "secret_scan": "PASS all staged blobs in c3_checkpoint.py",
+    "whitespace": "No errors except accepted Test-Sales.ps1 existing blank EOF; preserved accepted source bytes",
+    "g7_audit_excluded": true,
+    "staged_tree": "db971cafdc9d5daf8fc18f39709e68aac1bf0f6b",
+    "visual_print": "PENDING",
+    "commit": "2d5d323e5fa629508a83aa5f542081343a0f7902",
+    "branch": "main",
+    "remote": "https://github.com/thy0805/quan-ly-chuoi-cua-hang-vat-tu-nong-nghiep-MaNguonMo.git",
+    "remote_sha_readback": "2d5d323e5fa629508a83aa5f542081343a0f7902",
+    "tree": "db971cafdc9d5daf8fc18f39709e68aac1bf0f6b",
+    "tracked_files": 355,
+    "functional": "ACCEPTED_LOCKED"
+  },
+  "functional_status": "VERIFIED in isolated MySQL test; PENDING Thy acceptance",
+  "visual_print": "PENDING - no callable browser/computer tool; no fabricated screenshots/PDF",
+  "regression": {
+    "tool": "phpunit",
+    "result": "passed",
+    "tests": 75,
+    "passed": 75,
+    "assertions": 1277,
+    "duration_ms": 20491
+  },
+  "concurrency": {
+    "status": "PASS",
+    "run": "119f14fa",
+    "cases": [
+      {
+        "case": "same_purchase_two_confirmations",
+        "workers": 2,
+        "outcomes": [
+          {
+            "status": "ok",
+            "id": "25",
+            "state": "confirmed"
+          },
+          {
+            "status": "ok",
+            "id": "25",
+            "state": "confirmed"
+          }
+        ],
+        "final_stock": "12.000"
+      },
+      {
+        "case": "two_purchases_same_product",
+        "workers": 2,
+        "outcomes": [
+          {
+            "status": "ok",
+            "id": "26",
+            "state": "confirmed"
+          },
+          {
+            "status": "ok",
+            "id": "27",
+            "state": "confirmed"
+          }
+        ],
+        "final_stock": "18.000"
+      },
+      {
+        "case": "reverse_multiline_product_order",
+        "workers": 2,
+        "outcomes": [
+          {
+            "status": "ok",
+            "id": "28",
+            "state": "confirmed"
+          },
+          {
+            "status": "ok",
+            "id": "29",
+            "state": "confirmed"
+          }
+        ],
+        "final_stocks": [
+          "12.000",
+          "12.000"
+        ]
+      },
+      {
+        "case": "same_client_key_draft",
+        "workers": 2,
+        "outcomes": [
+          {
+            "status": "ok",
+            "id": "30",
+            "state": "draft"
+          },
+          {
+            "status": "ok",
+            "id": "30",
+            "state": "draft"
+          }
+        ],
+        "final_stock": "10.000"
+      },
+      {
+        "case": "purchase_and_sale_same_product",
+        "workers": 2,
+        "outcomes": [
+          {
+            "status": "ok",
+            "id": "31",
+            "state": "confirmed"
+          },
+          {
+            "status": "ok",
+            "id": "78",
+            "state": "confirmed"
+          }
+        ],
+        "final_stock": "3.000"
+      },
+      {
+        "case": "two_purchases_stock_overflow",
+        "workers": 2,
+        "outcomes": [
+          {
+            "status": "ok",
+            "id": "32",
+            "state": "confirmed"
+          },
+          {
+            "status": "validation",
+            "fields": [
+              "quantity"
+            ]
+          }
+        ],
+        "final_stock": "999999999999.999"
+      }
+    ],
+    "workers": 12,
+    "barrier": "Parent product lock, both workers ready and running before release",
+    "database": "mnm_inventory_test_20261021"
+  },
+  "http": {
+    "status": "PASS",
+    "transport": "Real TCP HTTP 127.0.0.1:8092, test-only session/CSRF",
+    "supplier_id": "44",
+    "purchase_id": "48",
+    "purchase_number": "PN-00000048",
+    "purchase_total": "420000.00",
+    "sale_id": "95",
+    "sale_total": "67500.00",
+    "readback": [
+      {
+        "id": "465",
+        "code": "C3-HTTP-f738f634-A",
+        "final": "18.000",
+        "purchase_line": "69",
+        "purchase_movement": "402",
+        "sale_line": "134",
+        "sale_movement": "404"
+      },
+      {
+        "id": "466",
+        "code": "C3-HTTP-f738f634-B",
+        "final": "7.000",
+        "purchase_line": "70",
+        "purchase_movement": "403",
+        "sale_line": "135",
+        "sale_movement": "405"
+      }
+    ],
+    "requests": 48,
+    "checks": [
+      {
+        "method": "GET",
+        "path": "/login",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/login",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/purchases/create",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/suppliers",
+        "status": 201
+      },
+      {
+        "method": "GET",
+        "path": "/suppliers/44",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/suppliers/44/edit",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/suppliers",
+        "status": 422
+      },
+      {
+        "method": "PATCH",
+        "path": "/suppliers/44",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/suppliers?q=C3-HTTP-f738f634&per_page=1",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/purchases",
+        "status": 419
+      },
+      {
+        "method": "GET",
+        "path": "/purchases/create",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/purchases",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/purchases",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/purchases/48/edit",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/purchases/48/print",
+        "status": 409
+      },
+      {
+        "method": "PATCH",
+        "path": "/purchases/48",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/purchases/48/confirm",
+        "status": 422
+      },
+      {
+        "method": "POST",
+        "path": "/purchases/48/confirm",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/purchases/48/confirm",
+        "status": 200
+      },
+      {
+        "method": "PATCH",
+        "path": "/purchases/48",
+        "status": 422
+      },
+      {
+        "method": "GET",
+        "path": "/purchases/48/print",
+        "status": 200
+      },
+      {
+        "method": "DELETE",
+        "path": "/suppliers/44",
+        "status": 422
+      },
+      {
+        "method": "GET",
+        "path": "/purchases?supplier_id=44&status=confirmed&per_page=1",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/purchases?q=PN-00000048",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/purchases?q=C3-HTTP-f738f634-A",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/login",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/login",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/sales/create",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/suppliers",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/purchases",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/purchases/48",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/purchases/create",
+        "status": 403
+      },
+      {
+        "method": "GET",
+        "path": "/suppliers/create",
+        "status": 403
+      },
+      {
+        "method": "POST",
+        "path": "/purchases/48/confirm",
+        "status": 403
+      },
+      {
+        "method": "PATCH",
+        "path": "/purchases/48",
+        "status": 403
+      },
+      {
+        "method": "POST",
+        "path": "/suppliers",
+        "status": 403
+      },
+      {
+        "method": "POST",
+        "path": "/sales",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/sales/95/confirm",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/sales/95/confirm",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/inventory?q=C3-HTTP-f738f634-A",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/inventory/history?product_id=465",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/inventory?q=C3-HTTP-f738f634-B",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/inventory/history?product_id=466",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/assets/purchases.js",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/assets/sales-print.css",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/assets/bootstrap/bootstrap.min.css",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/logout",
+        "status": 204
+      },
+      {
+        "method": "POST",
+        "path": "/logout",
+        "status": 204
+      }
+    ],
+    "visual_print": "PENDING; HTML is not browser/print QA"
+  },
+  "demo_launcher": {
+    "status": "PASS",
+    "purpose": "Exact foreground Windows launcher + final C3 HTML headings; no business transaction performed",
+    "port": 8093,
+    "requests": 11,
+    "checks": [
+      {
+        "method": "GET",
+        "path": "/login",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/login",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/purchases",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/purchases/create",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/suppliers",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/purchases/48",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/purchases/48/print",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/assets/purchases.js",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/assets/sales-print.css",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/purchases/create",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/logout",
+        "status": 204
+      }
+    ],
+    "browser_visual": "PENDING"
+  },
+  "static": {
+    "status": "PASS",
+    "php_syntax_files": 77,
+    "javascript": {
+      "sales": {
+        "status": "PASS",
+        "scope": "Node VM with small DOM test double; not a real browser",
+        "assertions": 8,
+        "checks": [
+          "sparse old-input indexes do not collide",
+          "labels match new field ids",
+          "removed indexes are not reused",
+          "decimal price stays a string",
+          "50 line cap",
+          "add control disabled at cap",
+          "one line minimum",
+          "print handler delegates"
+        ]
+      },
+      "purchases": {
+        "status": "PASS",
+        "scope": "Node VM with small DOM test double; not a real browser",
+        "assertions": 8,
+        "checks": [
+          "sparse old-input indexes do not collide",
+          "labels match new field ids",
+          "removed indexes are not reused",
+          "decimal price stays a string",
+          "50 line cap",
+          "add control disabled at cap",
+          "one line minimum",
+          "print handler delegates"
+        ]
+      }
+    },
+    "no_new_package": true,
+    "visual_print": "PENDING; syntax/DOM double does not verify visual layout"
+  },
+  "powershell_syntax": {
+    "status": "PASS",
+    "files": [
+      "tools/Test-Purchases.ps1",
+      "tools/Start-PurchasingDemo.ps1"
+    ],
+    "runtime_launcher_port": 8093,
+    "runtime_launcher_http_requests": 11,
+    "temporary_8093_stopped": true,
+    "existing_8092_preserved": true
+  },
+  "routes": {
+    "status": "PASS",
+    "total": 62,
+    "c3": [
+      {
+        "uri": "suppliers",
+        "methods": [
+          "GET",
+          "HEAD"
+        ],
+        "name": "suppliers.index",
+        "middleware": [
+          "web",
+          "auth",
+          "active",
+          "App\\Http\\Middleware\\EnsureInventoryInstalled",
+          "App\\Http\\Middleware\\EnsurePurchasesInstalled"
+        ]
+      },
+      {
+        "uri": "suppliers/create",
+        "methods": [
+          "GET",
+          "HEAD"
+        ],
+        "name": "suppliers.create",
+        "middleware": [
+          "web",
+          "auth",
+          "active",
+          "App\\Http\\Middleware\\EnsureInventoryInstalled",
+          "App\\Http\\Middleware\\EnsurePurchasesInstalled",
+          "admin"
+        ]
+      },
+      {
+        "uri": "suppliers",
+        "methods": [
+          "POST"
+        ],
+        "name": "suppliers.store",
+        "middleware": [
+          "web",
+          "auth",
+          "active",
+          "App\\Http\\Middleware\\EnsureInventoryInstalled",
+          "App\\Http\\Middleware\\EnsurePurchasesInstalled",
+          "admin"
+        ]
+      },
+      {
+        "uri": "suppliers/{supplier}/edit",
+        "methods": [
+          "GET",
+          "HEAD"
+        ],
+        "name": "suppliers.edit",
+        "middleware": [
+          "web",
+          "auth",
+          "active",
+          "App\\Http\\Middleware\\EnsureInventoryInstalled",
+          "App\\Http\\Middleware\\EnsurePurchasesInstalled",
+          "admin"
+        ]
+      },
+      {
+        "uri": "suppliers/{supplier}",
+        "methods": [
+          "PATCH"
+        ],
+        "name": "suppliers.update",
+        "middleware": [
+          "web",
+          "auth",
+          "active",
+          "App\\Http\\Middleware\\EnsureInventoryInstalled",
+          "App\\Http\\Middleware\\EnsurePurchasesInstalled",
+          "admin"
+        ]
+      },
+      {
+        "uri": "suppliers/{supplier}",
+        "methods": [
+          "DELETE"
+        ],
+        "name": "suppliers.destroy",
+        "middleware": [
+          "web",
+          "auth",
+          "active",
+          "App\\Http\\Middleware\\EnsureInventoryInstalled",
+          "App\\Http\\Middleware\\EnsurePurchasesInstalled",
+          "admin"
+        ]
+      },
+      {
+        "uri": "suppliers/{supplier}",
+        "methods": [
+          "GET",
+          "HEAD"
+        ],
+        "name": "suppliers.show",
+        "middleware": [
+          "web",
+          "auth",
+          "active",
+          "App\\Http\\Middleware\\EnsureInventoryInstalled",
+          "App\\Http\\Middleware\\EnsurePurchasesInstalled"
+        ]
+      },
+      {
+        "uri": "purchases",
+        "methods": [
+          "GET",
+          "HEAD"
+        ],
+        "name": "purchases.index",
+        "middleware": [
+          "web",
+          "auth",
+          "active",
+          "App\\Http\\Middleware\\EnsureInventoryInstalled",
+          "App\\Http\\Middleware\\EnsurePurchasesInstalled"
+        ]
+      },
+      {
+        "uri": "purchases/create",
+        "methods": [
+          "GET",
+          "HEAD"
+        ],
+        "name": "purchases.create",
+        "middleware": [
+          "web",
+          "auth",
+          "active",
+          "App\\Http\\Middleware\\EnsureInventoryInstalled",
+          "App\\Http\\Middleware\\EnsurePurchasesInstalled",
+          "admin"
+        ]
+      },
+      {
+        "uri": "purchases",
+        "methods": [
+          "POST"
+        ],
+        "name": "purchases.store",
+        "middleware": [
+          "web",
+          "auth",
+          "active",
+          "App\\Http\\Middleware\\EnsureInventoryInstalled",
+          "App\\Http\\Middleware\\EnsurePurchasesInstalled",
+          "admin"
+        ]
+      },
+      {
+        "uri": "purchases/{purchase}/edit",
+        "methods": [
+          "GET",
+          "HEAD"
+        ],
+        "name": "purchases.edit",
+        "middleware": [
+          "web",
+          "auth",
+          "active",
+          "App\\Http\\Middleware\\EnsureInventoryInstalled",
+          "App\\Http\\Middleware\\EnsurePurchasesInstalled",
+          "admin"
+        ]
+      },
+      {
+        "uri": "purchases/{purchase}",
+        "methods": [
+          "PATCH"
+        ],
+        "name": "purchases.update",
+        "middleware": [
+          "web",
+          "auth",
+          "active",
+          "App\\Http\\Middleware\\EnsureInventoryInstalled",
+          "App\\Http\\Middleware\\EnsurePurchasesInstalled",
+          "admin"
+        ]
+      },
+      {
+        "uri": "purchases/{purchase}/confirm",
+        "methods": [
+          "POST"
+        ],
+        "name": "purchases.confirm",
+        "middleware": [
+          "web",
+          "auth",
+          "active",
+          "App\\Http\\Middleware\\EnsureInventoryInstalled",
+          "App\\Http\\Middleware\\EnsurePurchasesInstalled",
+          "admin"
+        ]
+      },
+      {
+        "uri": "purchases/{purchase}",
+        "methods": [
+          "GET",
+          "HEAD"
+        ],
+        "name": "purchases.show",
+        "middleware": [
+          "web",
+          "auth",
+          "active",
+          "App\\Http\\Middleware\\EnsureInventoryInstalled",
+          "App\\Http\\Middleware\\EnsurePurchasesInstalled"
+        ]
+      },
+      {
+        "uri": "purchases/{purchase}/print",
+        "methods": [
+          "GET",
+          "HEAD"
+        ],
+        "name": "purchases.print",
+        "middleware": [
+          "web",
+          "auth",
+          "active",
+          "App\\Http\\Middleware\\EnsureInventoryInstalled",
+          "App\\Http\\Middleware\\EnsurePurchasesInstalled"
+        ]
+      }
+    ],
+    "write_admin_read_authenticated": true
+  },
+  "mysql_readback": {
+    "status": "PASS",
+    "identity": {
+      "db": "mnm_inventory_test_20261021",
+      "account": "mnm_c1_test_migrate@localhost",
+      "version": "8.4.3",
+      "datadir": "C:\\laragon\\data\\mysql-8.4\\"
+    },
+    "schema": {
+      "tables": [
+        {
+          "name": "inventory_movements"
+        },
+        {
+          "name": "migrations"
+        },
+        {
+          "name": "product_categories"
+        },
+        {
+          "name": "product_stocks"
+        },
+        {
+          "name": "products"
+        },
+        {
+          "name": "purchase_lines"
+        },
+        {
+          "name": "purchases"
+        },
+        {
+          "name": "sale_lines"
+        },
+        {
+          "name": "sales"
+        },
+        {
+          "name": "suppliers"
+        },
+        {
+          "name": "units"
+        },
+        {
+          "name": "users"
+        }
+      ],
+      "business_columns": 94,
+      "checks": [
+        {
+          "name": "categories_active_check",
+          "tab": "product_categories"
+        },
+        {
+          "name": "movement_balance_check",
+          "tab": "inventory_movements"
+        },
+        {
+          "name": "movement_quantity_check",
+          "tab": "inventory_movements"
+        },
+        {
+          "name": "movement_source_check",
+          "tab": "inventory_movements"
+        },
+        {
+          "name": "products_active_check",
+          "tab": "products"
+        },
+        {
+          "name": "products_expiry_check",
+          "tab": "products"
+        },
+        {
+          "name": "products_price_check",
+          "tab": "products"
+        },
+        {
+          "name": "products_tax_check",
+          "tab": "products"
+        },
+        {
+          "name": "purchase_line_total_check",
+          "tab": "purchase_lines"
+        },
+        {
+          "name": "purchase_line_values_check",
+          "tab": "purchase_lines"
+        },
+        {
+          "name": "purchases_state_check",
+          "tab": "purchases"
+        },
+        {
+          "name": "purchases_total_check",
+          "tab": "purchases"
+        },
+        {
+          "name": "purchases_version_check",
+          "tab": "purchases"
+        },
+        {
+          "name": "sale_line_total_check",
+          "tab": "sale_lines"
+        },
+        {
+          "name": "sale_line_values_check",
+          "tab": "sale_lines"
+        },
+        {
+          "name": "sales_state_check",
+          "tab": "sales"
+        },
+        {
+          "name": "sales_total_check",
+          "tab": "sales"
+        },
+        {
+          "name": "sales_version_check",
+          "tab": "sales"
+        },
+        {
+          "name": "stocks_quantity_check",
+          "tab": "product_stocks"
+        },
+        {
+          "name": "suppliers_active_check",
+          "tab": "suppliers"
+        },
+        {
+          "name": "suppliers_identity_check",
+          "tab": "suppliers"
+        },
+        {
+          "name": "units_active_check",
+          "tab": "units"
+        },
+        {
+          "name": "users_active_check",
+          "tab": "users"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "name": "inventory_movements_product_id_foreign",
+          "tab": "inventory_movements"
+        },
+        {
+          "name": "inventory_movements_user_id_foreign",
+          "tab": "inventory_movements"
+        },
+        {
+          "name": "product_categories_parent_id_foreign",
+          "tab": "product_categories"
+        },
+        {
+          "name": "product_stocks_product_id_foreign",
+          "tab": "product_stocks"
+        },
+        {
+          "name": "products_category_id_foreign",
+          "tab": "products"
+        },
+        {
+          "name": "products_unit_id_foreign",
+          "tab": "products"
+        },
+        {
+          "name": "purchase_lines_product_id_foreign",
+          "tab": "purchase_lines"
+        },
+        {
+          "name": "purchase_lines_purchase_id_foreign",
+          "tab": "purchase_lines"
+        },
+        {
+          "name": "purchases_supplier_id_foreign",
+          "tab": "purchases"
+        },
+        {
+          "name": "purchases_user_id_foreign",
+          "tab": "purchases"
+        },
+        {
+          "name": "sale_lines_product_id_foreign",
+          "tab": "sale_lines"
+        },
+        {
+          "name": "sale_lines_sale_id_foreign",
+          "tab": "sale_lines"
+        },
+        {
+          "name": "sales_user_id_foreign",
+          "tab": "sales"
+        }
+      ],
+      "triggers": [
+        {
+          "name": "categories_no_self_insert",
+          "event": "INSERT",
+          "tab": "product_categories"
+        },
+        {
+          "name": "categories_no_self_update",
+          "event": "UPDATE",
+          "tab": "product_categories"
+        },
+        {
+          "name": "inventory_no_delete",
+          "event": "DELETE",
+          "tab": "inventory_movements"
+        },
+        {
+          "name": "inventory_no_update",
+          "event": "UPDATE",
+          "tab": "inventory_movements"
+        },
+        {
+          "name": "purchases_no_delete",
+          "event": "DELETE",
+          "tab": "purchases"
+        },
+        {
+          "name": "purchases_no_update",
+          "event": "UPDATE",
+          "tab": "purchases"
+        },
+        {
+          "name": "purchase_lines_no_delete",
+          "event": "DELETE",
+          "tab": "purchase_lines"
+        },
+        {
+          "name": "purchase_lines_no_insert",
+          "event": "INSERT",
+          "tab": "purchase_lines"
+        },
+        {
+          "name": "purchase_lines_no_update",
+          "event": "UPDATE",
+          "tab": "purchase_lines"
+        },
+        {
+          "name": "sales_no_delete",
+          "event": "DELETE",
+          "tab": "sales"
+        },
+        {
+          "name": "sales_no_update",
+          "event": "UPDATE",
+          "tab": "sales"
+        },
+        {
+          "name": "sale_lines_no_delete",
+          "event": "DELETE",
+          "tab": "sale_lines"
+        },
+        {
+          "name": "sale_lines_no_insert",
+          "event": "INSERT",
+          "tab": "sale_lines"
+        },
+        {
+          "name": "sale_lines_no_update",
+          "event": "UPDATE",
+          "tab": "sale_lines"
+        }
+      ],
+      "migrations": 8
+    },
+    "ledger": {
+      "movements": 71,
+      "products_with_stock": 36,
+      "chain_and_stock_match": true
+    },
+    "sales": {
+      "headers": 17,
+      "lines": 24,
+      "sale_movements": 19,
+      "header_totals_match": true,
+      "source_per_line_exactly_once": true
+    },
+    "purchases": {
+      "headers": 10,
+      "lines": 13,
+      "purchase_movements": 11,
+      "header_totals_match": true,
+      "source_per_line_exactly_once": true
+    },
+    "c3_http": {
+      "status": "PASS",
+      "transport": "Real TCP HTTP 127.0.0.1:8092, test-only session/CSRF",
+      "supplier_id": "44",
+      "purchase_id": "48",
+      "purchase_number": "PN-00000048",
+      "purchase_total": "420000.00",
+      "sale_id": "95",
+      "sale_total": "67500.00",
+      "readback": [
+        {
+          "id": "465",
+          "code": "C3-HTTP-f738f634-A",
+          "final": "18.000",
+          "purchase_line": "69",
+          "purchase_movement": "402",
+          "sale_line": "134",
+          "sale_movement": "404"
+        },
+        {
+          "id": "466",
+          "code": "C3-HTTP-f738f634-B",
+          "final": "7.000",
+          "purchase_line": "70",
+          "purchase_movement": "403",
+          "sale_line": "135",
+          "sale_movement": "405"
+        }
+      ],
+      "requests": 48,
+      "checks": [
+        {
+          "method": "GET",
+          "path": "/login",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/login",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/purchases/create",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/suppliers",
+          "status": 201
+        },
+        {
+          "method": "GET",
+          "path": "/suppliers/44",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/suppliers/44/edit",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/suppliers",
+          "status": 422
+        },
+        {
+          "method": "PATCH",
+          "path": "/suppliers/44",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/suppliers?q=C3-HTTP-f738f634&per_page=1",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/purchases",
+          "status": 419
+        },
+        {
+          "method": "GET",
+          "path": "/purchases/create",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/purchases",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/purchases",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/purchases/48/edit",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/purchases/48/print",
+          "status": 409
+        },
+        {
+          "method": "PATCH",
+          "path": "/purchases/48",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/purchases/48/confirm",
+          "status": 422
+        },
+        {
+          "method": "POST",
+          "path": "/purchases/48/confirm",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/purchases/48/confirm",
+          "status": 200
+        },
+        {
+          "method": "PATCH",
+          "path": "/purchases/48",
+          "status": 422
+        },
+        {
+          "method": "GET",
+          "path": "/purchases/48/print",
+          "status": 200
+        },
+        {
+          "method": "DELETE",
+          "path": "/suppliers/44",
+          "status": 422
+        },
+        {
+          "method": "GET",
+          "path": "/purchases?supplier_id=44&status=confirmed&per_page=1",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/purchases?q=PN-00000048",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/purchases?q=C3-HTTP-f738f634-A",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/login",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/login",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/sales/create",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/suppliers",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/purchases",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/purchases/48",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/purchases/create",
+          "status": 403
+        },
+        {
+          "method": "GET",
+          "path": "/suppliers/create",
+          "status": 403
+        },
+        {
+          "method": "POST",
+          "path": "/purchases/48/confirm",
+          "status": 403
+        },
+        {
+          "method": "PATCH",
+          "path": "/purchases/48",
+          "status": 403
+        },
+        {
+          "method": "POST",
+          "path": "/suppliers",
+          "status": 403
+        },
+        {
+          "method": "POST",
+          "path": "/sales",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/sales/95/confirm",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/sales/95/confirm",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/inventory?q=C3-HTTP-f738f634-A",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/inventory/history?product_id=465",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/inventory?q=C3-HTTP-f738f634-B",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/inventory/history?product_id=466",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/assets/purchases.js",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/assets/sales-print.css",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/assets/bootstrap/bootstrap.min.css",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/logout",
+          "status": 204
+        },
+        {
+          "method": "POST",
+          "path": "/logout",
+          "status": 204
+        }
+      ],
+      "visual_print": "PENDING; HTML is not browser/print QA"
+    },
+    "http_invoice": "BH-00000032",
+    "http_total": "55000.00",
+    "http_stock": [
+      {
+        "product_id": "156",
+        "code": "C2-HTTP-A",
+        "initial": "10",
+        "sold": "2",
+        "final": "8.000",
+        "sale_movement_id": "165",
+        "source_id": "44"
+      },
+      {
+        "product_id": "157",
+        "code": "C2-HTTP-B",
+        "initial": "8",
+        "sold": "1.5",
+        "final": "6.500",
+        "sale_movement_id": "166",
+        "source_id": "45"
+      }
+    ],
+    "c1_fixture": {
+      "id": 21,
+      "stock": "15.000",
+      "movements": 2
+    },
+    "mode": "READ ONLY"
+  },
+  "business_database": {
+    "mode": "READ ONLY",
+    "before": {
+      "tables": {
+        "migrations": {
+          "rows": 4,
+          "content_sha256": "04f38c982ac5de38d0d6884d98901b10c05ce04238520258f163fb89aff91635",
+          "ddl_sha256": "ccd0d4d3c4c746d7919aa0aaff32fca50b703db6d9eac4f744425b6db5dcb409"
+        },
+        "product_categories": {
+          "rows": 5,
+          "content_sha256": "6753cc101ced6cea3c446d8b40d145a25dc3ce8e6d59cabdd2e66a714c0168dd",
+          "ddl_sha256": "c17cbd5104bc23d484334d1b54fed8dbbf72331040175a598e8aa5c28852894f"
+        },
+        "products": {
+          "rows": 4,
+          "content_sha256": "d190e385a7f570849ab22da7dc0d2cdb4cebd63987414d06b4e6b0559be76fa6",
+          "ddl_sha256": "77eb6698ce31aaecb83b1b3b30d1ba3375265274d78ec7674b0f0edd358c21f6"
+        },
+        "units": {
+          "rows": 3,
+          "content_sha256": "e960250de19e568f603617ea3aa81f78d928ac4483492d76381e7e0b3bf6fddd",
+          "ddl_sha256": "415615b4fcb3d23eb07efc7db4e107716054d93d0c33a04de001b382c2bc1212"
+        },
+        "users": {
+          "rows": 3,
+          "content_sha256": "b9e63f5f397d3ec4a7c6ca90f664fe1f8c7ac0095540b2dfde4bf1e0cbc76cce",
+          "ddl_sha256": "7903e339936cd728ef8f2e3217c19520d1e1bd0b5f2dfe1d74ef14ac67fb2732"
+        }
+      },
+      "triggers_sha256": "1f0885aa6eb99b70894f75e153d38879a68dc08441d9bac18b4bea8d294ea409"
+    },
+    "after": {
+      "tables": {
+        "migrations": {
+          "rows": 4,
+          "content_sha256": "04f38c982ac5de38d0d6884d98901b10c05ce04238520258f163fb89aff91635",
+          "ddl_sha256": "ccd0d4d3c4c746d7919aa0aaff32fca50b703db6d9eac4f744425b6db5dcb409"
+        },
+        "product_categories": {
+          "rows": 5,
+          "content_sha256": "6753cc101ced6cea3c446d8b40d145a25dc3ce8e6d59cabdd2e66a714c0168dd",
+          "ddl_sha256": "c17cbd5104bc23d484334d1b54fed8dbbf72331040175a598e8aa5c28852894f"
+        },
+        "products": {
+          "rows": 4,
+          "content_sha256": "d190e385a7f570849ab22da7dc0d2cdb4cebd63987414d06b4e6b0559be76fa6",
+          "ddl_sha256": "77eb6698ce31aaecb83b1b3b30d1ba3375265274d78ec7674b0f0edd358c21f6"
+        },
+        "units": {
+          "rows": 3,
+          "content_sha256": "e960250de19e568f603617ea3aa81f78d928ac4483492d76381e7e0b3bf6fddd",
+          "ddl_sha256": "415615b4fcb3d23eb07efc7db4e107716054d93d0c33a04de001b382c2bc1212"
+        },
+        "users": {
+          "rows": 3,
+          "content_sha256": "b9e63f5f397d3ec4a7c6ca90f664fe1f8c7ac0095540b2dfde4bf1e0cbc76cce",
+          "ddl_sha256": "7903e339936cd728ef8f2e3217c19520d1e1bd0b5f2dfe1d74ef14ac67fb2732"
+        }
+      },
+      "triggers_sha256": "1f0885aa6eb99b70894f75e153d38879a68dc08441d9bac18b4bea8d294ea409"
+    },
+    "identical": true
+  },
+  "protected": {
+    "status": "PASS",
+    "c2_head_and_remote": "2d5d323e5fa629508a83aa5f542081343a0f7902",
+    "index_empty": true,
+    "source_files": 36,
+    "source_paths": [
+      "app/Http/Controllers/PurchaseController.php",
+      "app/Http/Controllers/SupplierController.php",
+      "app/Http/Controllers/UserController.php",
+      "app/Http/Middleware/EnsurePurchasesInstalled.php",
+      "app/Http/Requests/PurchaseListRequest.php",
+      "app/Http/Requests/PurchaseWriteRequest.php",
+      "app/Http/Requests/SupplierListRequest.php",
+      "app/Http/Requests/SupplierWriteRequest.php",
+      "app/Models/Product.php",
+      "app/Models/Purchase.php",
+      "app/Models/PurchaseLine.php",
+      "app/Models/Supplier.php",
+      "app/Models/User.php",
+      "app/Services/InventoryService.php",
+      "app/Services/PurchaseService.php",
+      "database/migrations/2026_10_21_000008_create_purchasing_tables.php",
+      "database/seeders/PurchaseDemoSeeder.php",
+      "public/assets/purchases.js",
+      "resources/views/layouts/app.blade.php",
+      "resources/views/purchases/form.blade.php",
+      "resources/views/purchases/index.blade.php",
+      "resources/views/purchases/line.blade.php",
+      "resources/views/purchases/print.blade.php",
+      "resources/views/purchases/show.blade.php",
+      "resources/views/purchases/table.blade.php",
+      "resources/views/purchases/unavailable.blade.php",
+      "resources/views/suppliers/form.blade.php",
+      "resources/views/suppliers/index.blade.php",
+      "resources/views/suppliers/show.blade.php",
+      "routes/web.php",
+      "tests/Feature/InventoryTest.php",
+      "tests/Feature/PurchaseTest.php",
+      "tests/Support/purchases_concurrency.php",
+      "tests/Support/purchases_form.js",
+      "tools/Start-PurchasingDemo.ps1",
+      "tools/Test-Purchases.ps1"
+    ],
+    "unchanged_tracked_source_files": 139,
+    "unchanged_tracked_source_paths": [
+      ".env.example",
+      "app/Http/Controllers/CatalogController.php",
+      "app/Http/Controllers/Controller.php",
+      "app/Http/Controllers/DashboardController.php",
+      "app/Http/Controllers/InventoryController.php",
+      "app/Http/Controllers/SaleController.php",
+      "app/Http/Controllers/SessionController.php",
+      "app/Http/Middleware/.gitkeep",
+      "app/Http/Middleware/EnsureActiveUser.php",
+      "app/Http/Middleware/EnsureInventoryInstalled.php",
+      "app/Http/Middleware/EnsureSalesInstalled.php",
+      "app/Http/Middleware/RequireAdmin.php",
+      "app/Http/Requests/.gitkeep",
+      "app/Http/Requests/CatalogListRequest.php",
+      "app/Http/Requests/CatalogWriteRequest.php",
+      "app/Http/Requests/InventoryListRequest.php",
+      "app/Http/Requests/InventoryMovementRequest.php",
+      "app/Http/Requests/LoginRequest.php",
+      "app/Http/Requests/SaleListRequest.php",
+      "app/Http/Requests/SaleWriteRequest.php",
+      "app/Http/Requests/UserWriteRequest.php",
+      "app/Models/.gitkeep",
+      "app/Models/CatalogModel.php",
+      "app/Models/InventoryMovement.php",
+      "app/Models/ProductCategory.php",
+      "app/Models/ProductStock.php",
+      "app/Models/Sale.php",
+      "app/Models/SaleLine.php",
+      "app/Models/Unit.php",
+      "app/Policies/.gitkeep",
+      "app/Providers/AppServiceProvider.php",
+      "app/Services/.gitkeep",
+      "app/Services/CatalogDeletion.php",
+      "app/Services/SaleService.php",
+      "app/Support/CatalogIntegrity.php",
+      "app/Support/CatalogResources.php",
+      "app/Support/DecimalId.php",
+      "app/Support/DecimalLimit.php",
+      "app/Support/FixtureRollbackGuard.php",
+      "app/Support/InventoryTestProfile.php",
+      "app/Support/MigrationTriggers.php",
+      "app/Support/RuntimeIsolation.php",
+      "app/Support/SaleMoney.php",
+      "app/Support/StockQuantity.php",
+      "bootstrap/app.php",
+      "bootstrap/cache/.gitignore",
+      "bootstrap/providers.php",
+      "composer.json",
+      "composer.lock",
+      "config/app.php",
+      "config/auth.php",
+      "config/cache.php",
+      "config/cors.php",
+      "config/database.php",
+      "config/filesystems.php",
+      "config/hashing.php",
+      "config/logging.php",
+      "config/mail.php",
+      "config/queue.php",
+      "config/services.php",
+      "config/session.php",
+      "config/view.php",
+      "database/.gitignore",
+      "database/factories/.gitkeep",
+      "database/migrations/.gitkeep",
+      "database/migrations/2026_10_17_000001_create_users_table.php",
+      "database/migrations/2026_10_17_000002_create_product_categories_table.php",
+      "database/migrations/2026_10_17_000003_create_units_table.php",
+      "database/migrations/2026_10_17_000004_create_products_table.php",
+      "database/migrations/2026_10_21_000005_create_product_stocks_table.php",
+      "database/migrations/2026_10_21_000006_create_inventory_movements_table.php",
+      "database/migrations/2026_10_21_000007_create_sales_tables.php",
+      "database/seeders/.gitkeep",
+      "database/seeders/DatabaseSeeder.php",
+      "database/seeders/SaleDemoSeeder.php",
+      "public/.htaccess",
+      "public/assets/app.css",
+      "public/assets/app.js",
+      "public/assets/bootstrap/LICENSE",
+      "public/assets/bootstrap/bootstrap.bundle.min.js",
+      "public/assets/bootstrap/bootstrap.min.css",
+      "public/assets/sales-print.css",
+      "public/assets/sales.js",
+      "public/favicon.ico",
+      "public/images/.gitkeep",
+      "public/index.php",
+      "public/robots.txt",
+      "resources/css/.gitkeep",
+      "resources/css/app.css",
+      "resources/js/.gitkeep",
+      "resources/js/app.js",
+      "resources/views/admin/.gitkeep",
+      "resources/views/auth/.gitkeep",
+      "resources/views/auth/login.blade.php",
+      "resources/views/catalog/form.blade.php",
+      "resources/views/catalog/index.blade.php",
+      "resources/views/catalog/show.blade.php",
+      "resources/views/components/delete-button.blade.php",
+      "resources/views/components/field-error.blade.php",
+      "resources/views/components/filters.blade.php",
+      "resources/views/components/icon.blade.php",
+      "resources/views/components/pagination.blade.php",
+      "resources/views/components/status.blade.php",
+      "resources/views/dashboard.blade.php",
+      "resources/views/inventory/filters.blade.php",
+      "resources/views/inventory/form.blade.php",
+      "resources/views/inventory/history.blade.php",
+      "resources/views/inventory/index.blade.php",
+      "resources/views/inventory/unavailable.blade.php",
+      "resources/views/layouts/.gitkeep",
+      "resources/views/partials/feedback.blade.php",
+      "resources/views/partials/table-hint.blade.php",
+      "resources/views/sales/form.blade.php",
+      "resources/views/sales/index.blade.php",
+      "resources/views/sales/line.blade.php",
+      "resources/views/sales/print.blade.php",
+      "resources/views/sales/show.blade.php",
+      "resources/views/sales/table.blade.php",
+      "resources/views/sales/unavailable.blade.php",
+      "resources/views/shop/.gitkeep",
+      "resources/views/users/form.blade.php",
+      "resources/views/users/index.blade.php",
+      "resources/views/users/show.blade.php",
+      "resources/views/welcome.blade.php",
+      "routes/api.php",
+      "routes/console.php",
+      "tests/Feature/.gitkeep",
+      "tests/Feature/G4AMysqlTest.php",
+      "tests/Feature/G4BHttpTest.php",
+      "tests/Feature/G5PresentationTest.php",
+      "tests/Feature/SaleTest.php",
+      "tests/Support/inventory_concurrency.php",
+      "tests/Support/sales_concurrency.php",
+      "tests/Support/sales_form.js",
+      "tests/TestCase.php",
+      "tests/Unit/.gitkeep",
+      "tools/Start-InventoryDemo.ps1",
+      "tools/Test-Inventory.ps1",
+      "tools/Test-Sales.ps1"
+    ],
+    "protected_artifacts": 29,
+    "protected_artifact_hashes": {
+      "MNM_NHOM6_AUDIT_RUBRIC_20261020.zip": "7e6c167e410dbc676b8883c158effc8a1f37f80a8bba609cdad0f9dfaef478c6",
+      "MNM_NHOM6_C1_ANH_GIAO_DIEN_20261021.zip": "5b9d45b7540bb9be8278297737c4ece850e178bedb95a3d962c447aed028b200",
+      "MNM_NHOM6_C1_TON_KHO_20261021.zip": "561432944489a54ec87a4e5418d7cdee7188560b711a675e6311c7bf4a767677",
+      "MNM_NHOM6_C2_DRAFT_20261021.zip": "036cdd7288bfb5a4cd6040e2de09d3aeb07a8d0df0a3091f6297c5ea0b538391",
+      "MNM_NHOM6_C2_R_DRAFT_20261021.zip": "5d635709a6cd9c878d686ca3e1ad76924429ffe091835e782d336093159d55a3",
+      "docs/g6/DEMO_KHOI_DONG.md": "f5f65b7ddc29bf161254573c8a092db061a0d0e0d2c750a50ae434b56bad6296",
+      "docs/g6/DE_TAI_CHUC_NANG.md": "9c332e311efc3c55c7653e067db378fb1a4a408c0a5a30f295a22acaa174796b",
+      "docs/g6/ERD_MYSQL_THUC_TE.md": "feb24fbc8f6ea40c04afe4a215b0d4fb1e74b1614ab9721aa1d2ca018c5e4868",
+      "docs/g6/index.html": "396abb996431f50510a5c256d4297d0dd7c22ea8c5bff41ee58a52b9a58cef51",
+      "docs/g6/MINH_HOA_LARAVEL.md": "cb55109c26d70c677a23af78064a95c7b862e0c63e392838fe7484679630351a",
+      "docs/g6/NGHIEM_THU_GIOI_HAN.md": "3a79c6cd601fee56f47cbc526d0241df5b2bdbffefd1ffe1e22a374290ea7458",
+      "docs/g6/README.md": "d9e03da5993d1528430d4a1b51bb875fcaf09b66a510614c419289ebd0de0014",
+      "docs/g6/RUBRIC_DOI_CHIEU.md": "1f87f2f5808faa98f2dd562fe360de2133e998dde3fec42499773946b6280547",
+      "docs/g6/UML_USE_CASE.md": "78140a3e6b1f3e8e361f07ab8a78bda65f30e49dda35cfa787f807768f028646",
+      "docs/g6/diagrams/erd-browser.jpg": "19205f0357859bfb5e3e3ba1d22dea2314808480b52ae910d6304eed291758b3",
+      "docs/g6/diagrams/erd.mmd": "d3121e4f023369132f0a6484649a280f71147f5381a6fe59264fdf6a98f5c0e4",
+      "docs/g6/diagrams/erd.svg": "8bf8c11cc73b7221f087c75508d5dc76a9e9cc31573192f3a6cf814719d19d2a",
+      "docs/g6/diagrams/use-cases-browser.jpg": "aa9f4612352a1adf4a7423efd8f9d85f7297e4f9a6d528703f43068b76ab5d74",
+      "docs/g6/diagrams/use-cases.json": "d5bf0058f46d51b39d48f2441cb5ba8f7f1abcfe621176bad812bafec4d6ab21",
+      "docs/g6/diagrams/use-cases.puml": "14ebd3542a158c3160ef0bf2caa44c0e5170527a453cc072e1620089995eb50c",
+      "docs/g6/diagrams/use-cases.svg": "2f8d3d9e47d97ec192d53741fc13ac7afa22fa7b255c3c2563de3a5a12278fe5",
+      "docs/g7/BAO_CAO_DU_THAO.md": "f7b3d84dd7f42e1b9ca676542ae966f907ad92e7e68b87a77116ed48ce047a5a",
+      "docs/g7/DAN_Y_SLIDE_10_12_PHUT.md": "9866339d86faeab550f4e65a7c2594ff0670ca78418b736e8d1f759018b615f9",
+      "docs/g7/HUONG_DAN_DINH_DANG_WORD.md": "3c4cb76ad2cd62c4b7b737df7016c19365428bba7741abde4a08449025a4c984",
+      "docs/g7/HUONG_DAN_WORD_VA_HAI_BANG_MAU.docx": "bae08c4107bb41ff881b7abcfe6cadee1543c5d49fc06194e8fd9e6a80c93590",
+      "docs/g7/KICH_BAN_DEMO.md": "cd1ac3930c62961dd5a8431ade6aa1dd24acf9d3aa579f6d891bc0a11d7bb327",
+      "docs/g7/MA_TRAN_RUBRIC.md": "61fac64680563cdcbc69da63d15cf87d5aeda22a9e56e83ac3d0d4b88ce2072b",
+      "docs/g7/NOI_DUNG_CON_THIEU.md": "5a4c4547e075e584a9b135a3da7b0147a794edf133b9116865ee558bfff01321",
+      "docs/g7/README.md": "b9f171c997cef19ed3b302fb7646d5dc8a5c459544b85437c2a6e44c4a317b6f"
+    },
+    "repositories": {
+      "klcn": {
+        "before": {
+          "head": "fc514c8a040d7d2804791ceea5a255427f5bf086",
+          "status": " M mobile-noi-bo/lib/sales/confirm_workspace.dart\n M mobile-noi-bo/lib/sales/sales_workspace.dart\n M mobile-noi-bo/pubspec.lock\n M mobile-noi-bo/pubspec.yaml\n?? mobile-noi-bo/assets/\n?? mobile-noi-bo/lib/sales/invoice_pdf.dart\n?? mobile-noi-bo/lib/sales/invoice_print_button.dart\n?? mobile-noi-bo/test/invoice_pdf_test.dart\n?? mobile-noi-bo/test/invoice_print_widget_test.dart\n"
+        },
+        "after": {
+          "head": "fc514c8a040d7d2804791ceea5a255427f5bf086",
+          "status": " M mobile-noi-bo/lib/sales/confirm_workspace.dart\n M mobile-noi-bo/lib/sales/sales_workspace.dart\n M mobile-noi-bo/pubspec.lock\n M mobile-noi-bo/pubspec.yaml\n?? mobile-noi-bo/assets/\n?? mobile-noi-bo/lib/sales/invoice_pdf.dart\n?? mobile-noi-bo/lib/sales/invoice_print_button.dart\n?? mobile-noi-bo/test/invoice_pdf_test.dart\n?? mobile-noi-bo/test/invoice_print_widget_test.dart\n"
+        },
+        "head_status_unchanged": true
+      },
+      "nosql": {
+        "before": {
+          "head": "341a83a3bd6f579fad840e54d6c10f69b99362ec",
+          "status": ""
+        },
+        "after": {
+          "head": "341a83a3bd6f579fad840e54d6c10f69b99362ec",
+          "status": ""
+        },
+        "head_status_unchanged": true
+      }
+    },
+    "note": "HEAD/status verification of other repositories, not full source hash audit. Earlier G7/audit edits preserved and excluded from C3 source diff."
+  },
+  "source_files": [
+    "app/Http/Controllers/PurchaseController.php",
+    "app/Http/Controllers/SupplierController.php",
+    "app/Http/Controllers/UserController.php",
+    "app/Http/Middleware/EnsurePurchasesInstalled.php",
+    "app/Http/Requests/PurchaseListRequest.php",
+    "app/Http/Requests/PurchaseWriteRequest.php",
+    "app/Http/Requests/SupplierListRequest.php",
+    "app/Http/Requests/SupplierWriteRequest.php",
+    "app/Models/Product.php",
+    "app/Models/Purchase.php",
+    "app/Models/PurchaseLine.php",
+    "app/Models/Supplier.php",
+    "app/Models/User.php",
+    "app/Services/InventoryService.php",
+    "app/Services/PurchaseService.php",
+    "database/migrations/2026_10_21_000008_create_purchasing_tables.php",
+    "database/seeders/PurchaseDemoSeeder.php",
+    "public/assets/purchases.js",
+    "resources/views/layouts/app.blade.php",
+    "resources/views/purchases/form.blade.php",
+    "resources/views/purchases/index.blade.php",
+    "resources/views/purchases/line.blade.php",
+    "resources/views/purchases/print.blade.php",
+    "resources/views/purchases/show.blade.php",
+    "resources/views/purchases/table.blade.php",
+    "resources/views/purchases/unavailable.blade.php",
+    "resources/views/suppliers/form.blade.php",
+    "resources/views/suppliers/index.blade.php",
+    "resources/views/suppliers/show.blade.php",
+    "routes/web.php",
+    "tests/Feature/InventoryTest.php",
+    "tests/Feature/PurchaseTest.php",
+    "tests/Support/purchases_concurrency.php",
+    "tests/Support/purchases_form.js",
+    "tools/Start-PurchasingDemo.ps1",
+    "tools/Test-Purchases.ps1"
+  ],
+  "execution": {
+    "regression": {
+      "label": "regression",
+      "exit_code": 0,
+      "database": "mnm_inventory_test_20261021",
+      "role": "runtime",
+      "arguments": [
+        "vendor/phpunit/phpunit/phpunit"
+      ],
+      "elapsed_seconds": 20.785
+    },
+    "purchases-races": {
+      "label": "purchases-races",
+      "exit_code": 0,
+      "database": "mnm_inventory_test_20261021",
+      "role": "runtime",
+      "arguments": [
+        "tests/Support/purchases_concurrency.php"
+      ],
+      "elapsed_seconds": 3.747
+    },
+    "mysql-readback": {
+      "label": "mysql-readback",
+      "exit_code": 0,
+      "database": "mnm_inventory_test_20261021",
+      "role": "migration",
+      "arguments": [
+        ".agent/scripts/c3_readback.php"
+      ],
+      "elapsed_seconds": 0.234
+    },
+    "routes": {
+      "label": "routes",
+      "exit_code": 0,
+      "database": "mnm_inventory_test_20261021",
+      "role": "runtime",
+      "arguments": [
+        ".agent/scripts/c3_routes.php"
+      ],
+      "elapsed_seconds": 0.225
+    },
+    "migrate-test": {
+      "label": "migrate-test",
+      "exit_code": 0,
+      "database": "mnm_inventory_test_20261021",
+      "role": "migration",
+      "arguments": [
+        ".agent/scripts/c3_migrate.php"
+      ],
+      "elapsed_seconds": 5.478
+    }
+  },
+  "limitations": [
+    "Only test schema migrated; no business migration/seed/write",
+    "C3 not staged/committed/pushed",
+    "Browser 1366/768/320 and Print Preview/PDF for C2+C3 PENDING",
+    "Existing G7/audit dirty remains outside C2 commit and C3 source diff",
+    "PHPUnit fixtures rollback; concurrency and HTTP keep their isolated test fixtures",
+    "No purchase cancel/return/AP debt/multi-branch/online shop"
+  ],
+  "source_freeze_note": "PHPUnit75/1277 after final PHP business code; final index heading changed afterward and checked by 11-request launcher HTML smoke; no business PHP changes after regression"
+}

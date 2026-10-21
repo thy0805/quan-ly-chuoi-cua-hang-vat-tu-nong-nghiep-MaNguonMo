@@ -73,7 +73,7 @@ class UserController extends Controller
             DB::transaction(fn () => User::query()->lockForUpdate()->findOrFail($record->id)->delete(), 3);
         } catch (QueryException $error) {
             if (($error->errorInfo[1] ?? null) === 1451) {
-                throw ValidationException::withMessages(['delete' => 'Không thể xóa tài khoản đã có lịch sử kho hoặc phiếu bán.']);
+                throw ValidationException::withMessages(['delete' => 'Không thể xóa tài khoản đã có lịch sử kho, phiếu bán hoặc phiếu nhập.']);
             }
             throw $error;
         }

@@ -1,3 +1,24 @@
+# C1/C2/C3 chức năng LOCKED — 21/10/2026
+
+Thy đã nghiệm thu C3 và cho phép công bố riêng source lên main. C1 ACCEPTED/LOCKED; C2/C3 FUNCTIONAL ACCEPTED/LOCKED. Browser responsive 1366/768/320 và Print Preview/PDF C2+C3 vẫn PENDING. Không mở C4/G7/Word/slide; không migration/seed database nghiệp vụ.
+
+Nguồn hiện hành: `.agent/decisions/C3_FUNCTIONAL_LOCKED_20261021.md`, `.agent/C3_PUBLICATION_CHECKLIST_20261021.md`, `docs/C3_FUNCTIONAL_ACCEPTED.md`, `docs/C2_C3_VISUAL_PRINT_PENDING.md`. Source C3 36 file khớp ZIP đã duyệt SHA-256 549bd1622801fdbe1c053de0f67cca47f97b074602703f4034a884041236588e; baseline C2 2d5d323e5fa629508a83aa5f542081343a0f7902.
+
+Hồ sơ C3 DRAFT gốc, `docs/c3`, evidence và các snapshot bên dưới là lịch sử theo thời điểm, giữ nguyên để truy vết. Quyết định khóa mới có quyền ưu tiên đối với trạng thái nghiệm thu/push. G7/audit cũ được giữ riêng, không gộp vào commit C3. KLCN/NoSQL/Word/Rose và accepted ZIP được bảo toàn. Evidence chức năng đã duyệt: 75 tests/1.277 assertions, sáu ca đồng thời/12 worker, 48 HTTP; không chạy lại test ghi dữ liệu trong lượt công bố.
+
+| Tài liệu | Vai trò / trạng thái | Đọc khi |
+|---|---|---|
+| [Quyết định khóa C3](decisions/C3_FUNCTIONAL_LOCKED_20261021.md) | Hiện hành, quyền nghiệm thu và công bố | Đầu phiên |
+| [Checklist công bố](C3_PUBLICATION_CHECKLIST_20261021.md) | Hiện hành, kiểm stage/push/bảo toàn | Trước công bố / bàn giao |
+| [C3 đã nghiệm thu](../docs/C3_FUNCTIONAL_ACCEPTED.md) | Hiện hành, phạm vi và giới hạn | Đọc GitHub / trình diễn |
+| [Visual/Print còn chờ](../docs/C2_C3_VISUAL_PRINT_PENDING.md) | Hiện hành, toàn bộ ca PENDING | Khi Thy giao QA chung |
+| [C3_RESULT gốc](../docs/C3_RESULT.md) | Lịch sử DRAFT đã được nghiệm thu chức năng | Truy vết source/evidence gốc |
+| [C3_VERIFICATION gốc](../docs/evidence/C3_VERIFICATION.json) | Lịch sử kiểm chức năng, giữ nguyên | Đối chiếu 75 tests và readback |
+
+---
+
+## Snapshot trước khi khóa Git C3
+
 # C2 FUNCTIONAL ACCEPTED / LOCKED — 21/10/2026
 
 Thy đã duyệt C2/C2-R:61tests/1095assertions,4race/8workers,15HTTP. Browser1366/768/320 và Print Preview/PDF PENDING. Xem .agent/decisions/C2_FUNCTIONAL_LOCKED_C3_AUTHORIZED_20261021.md. Các trạng thái DRAFT/chưa nghiệm thu bên dưới là lịch sử. Database nghiệp vụ chưa migrate; G7/audit chưa nghiệm thu được giữ ngoài commit.

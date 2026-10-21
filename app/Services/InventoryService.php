@@ -31,6 +31,16 @@ final class InventoryService
         return $this->record($actor, ['product_id' => $fresh->product_id, 'direction' => 'out', 'quantity' => $fresh->quantity, 'note' => 'Bán hàng '.$sale->number, 'source_type' => 'sale', 'source_id' => $fresh->id, 'idempotency_key' => (string) \Illuminate\Support\Str::uuid()], true);
     }
 
+    public function receive(User $actor, \App\Models\PurchaseLine $line): InventoryMovement
+    {
+        if (DB::transactionLevel() < 1) throw new \LogicException('Purchase inventory requires an enclosing transaction.');
+        $purchase = \App\Models\Purchase::lockForUpdate()->findOrFail($line->purchase_id);
+        abort_unless($purchase->user_id === $actor->id && $purchase->status === 'draft', 403);
+        $fresh = $purchase->lines()->whereKey($line->id)->lockForUpdate()->firstOrFail();
+
+        return $this->record($actor, ['product_id' => $fresh->product_id, 'direction' => 'in', 'quantity' => $fresh->quantity, 'note' => 'Nhập hàng '.$purchase->number, 'source_type' => 'purchase', 'source_id' => $fresh->id, 'idempotency_key' => (string) \Illuminate\Support\Str::uuid()], false);
+    }
+
     private function record(User $actor, array $input, bool $sale): InventoryMovement
     {
         $data = Validator::make($input, [
