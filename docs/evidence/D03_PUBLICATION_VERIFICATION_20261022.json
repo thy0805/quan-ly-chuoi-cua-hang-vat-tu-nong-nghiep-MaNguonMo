@@ -1,0 +1,153 @@
+{
+  "date": "2026-10-22",
+  "status": "D03_PRINT_QA_ACCEPTED_BY_USER",
+  "publication": "User authorized a separate commit and non-force push; identify the publication commit through this file history and verify remote readback separately.",
+  "baseline_main": "2399ec52f26af7a3212b7fb1659abbf6dccd5f02",
+  "source_sha256_worktree_accepted": {
+    "public/assets/sales-print.css": "d40c4dd33868221e61cdc47baaa21bd8d6c60cc9d1a8861b54912b1270123bee",
+    "resources/views/sales/print.blade.php": "a8c6813f54155c9873c81370e104acc26a1d4218c2982336ee50e6f5f1a39dfe",
+    "resources/views/purchases/print.blade.php": "3f0aa62d00887567eeced83b6a3143090d820c58b147869e3fe3f31ef0277065"
+  },
+  "normalization": ".gitattributes specifies text=auto eol=lf; staged/remote Git blobs are compared after Git normalization, while accepted worktree bytes retain the raw SHA-256 above.",
+  "whitelist": [
+    "public/assets/sales-print.css",
+    "resources/views/sales/print.blade.php",
+    "resources/views/purchases/print.blade.php",
+    ".agent/decisions/D03_PRINT_LOCKED_20261022.md",
+    "docs/D03_LOCK_RESULT.md",
+    "docs/evidence/D03_PUBLICATION_VERIFICATION_20261022.json"
+  ],
+  "accepted_receipt": {
+    "file": "MNM_NHOM6_D03_FINAL_PRINT_RECEIVED_20261022.zip",
+    "sha256": "4158570a1b200a03ed04bb08b5dcb68ba5eca5d6d0b62c0f9cc096ca31bd679a",
+    "payloads": 41,
+    "crc": "PASS",
+    "sha256_readback": "41/41 PASS"
+  },
+  "print_qa": {
+    "P01_P05": "PASS",
+    "pdf_files": 4,
+    "pages": 6,
+    "format": "A4 portrait",
+    "cases": [
+      {
+        "case": "P01",
+        "file": "D03_P01_BH95_A4.pdf",
+        "pages": 1,
+        "page_points": [
+          [
+            595.32001,
+            841.92004
+          ]
+        ],
+        "sha256": "cf4a984c6bcf5e23351f8a7dc970ccd6a9701ece79db71faef99a47e01a614d5",
+        "status": "PASS",
+        "rows_per_page": [
+          2
+        ],
+        "total_vnd": "67500.00"
+      },
+      {
+        "case": "P02",
+        "file": "D03_P02_PN48_A4.pdf",
+        "pages": 1,
+        "page_points": [
+          [
+            595.32001,
+            841.92004
+          ]
+        ],
+        "sha256": "fe6bd555dd72c85551406cfcd2b32a44c1b2c11954af1603015fb787a0382270",
+        "status": "PASS",
+        "rows_per_page": [
+          2
+        ],
+        "total_vnd": "420000.00"
+      },
+      {
+        "case": "P03",
+        "file": "D03_P03_BH99_A4.pdf",
+        "pages": 2,
+        "page_points": [
+          [
+            595.32001,
+            841.92004
+          ],
+          [
+            595.32001,
+            841.92004
+          ]
+        ],
+        "sha256": "4e9d800f1cdb9ffd33b1a995932b09578a4b62cf391dcd2034ee52f1a5510ad4",
+        "status": "PASS",
+        "rows_per_page": [
+          15,
+          10
+        ],
+        "total_vnd": "25000.00"
+      },
+      {
+        "case": "P04",
+        "file": "D03_P04_PN51_A4.pdf",
+        "pages": 2,
+        "page_points": [
+          [
+            595.32001,
+            841.92004
+          ],
+          [
+            595.32001,
+            841.92004
+          ]
+        ],
+        "sha256": "0d2263d21ec6f81ef0dc0cb4b5fa15ac4b856e1e6f6ed2ecc95925db5c98dcc2",
+        "status": "PASS",
+        "rows_per_page": [
+          12,
+          13
+        ],
+        "total_vnd": "25000.00"
+      }
+    ],
+    "P05": "All six pages reopened/rendered and visually reviewed; independent user review accepted the same package.",
+    "checks": {
+      "unit_and_quantity_headers": "PASS",
+      "unit_words_readable": "PASS",
+      "long_product_text": "PASS within four fixtures",
+      "all_rows_and_columns": "PASS",
+      "repeated_table_headers": "PASS for P03/P04 page 2",
+      "totals_notes_grouped": "PASS",
+      "no_orphan_note_page": "PASS",
+      "no_application_chrome_or_browser_headers_footers": "PASS",
+      "vietnamese": "PASS"
+    }
+  },
+  "previous_verification": {
+    "blade_renders": 8,
+    "documents_with_equal_article_text_before_after": 4,
+    "source_files_frozen_after_patch": 177,
+    "database_snapshot": {
+      "business_tables": 5,
+      "test_tables": 12,
+      "data_ddl_equal_before_after_print": true,
+      "auto_increment_counters": "Excluded per established snapshot comparison"
+    }
+  },
+  "publication_only": {
+    "source_edits": 0,
+    "database_connections": 0,
+    "migrations_or_seeds": 0,
+    "runtime_service_changes": 0,
+    "business_suite_rerun": false,
+    "reason": "Accepted source bytes and existing print evidence are checked; this task publishes the approved patch."
+  },
+  "pending": {
+    "RUNTIME-8092": "PENDING: intermittent timeout; no service/process/config/database action in publication task",
+    "G7": "PAUSED"
+  },
+  "limits": [
+    "Print acceptance covers BH95, PN48, BH99 and PN51; no universal printer/data claim.",
+    "OS dialog scale and margins were not independently measured; MediaBox and actual PDF content were checked.",
+    "Git publication does not certify Web 8092 availability."
+  ]
+}
